@@ -108,75 +108,74 @@ export default function SpeakersSection() {
     return <Briefcase size={16} className="text-white" />;
   };
 
-  // Exact Card Component from Reference
+  // Vritant-Inspired Editorial Speaker Card Component
   const SpeakerCard = ({ speaker }) => (
-    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[395px] sm:h-[410px] md:h-[420px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
+    <div className="w-[250px] sm:w-[275px] md:w-[290px] h-[385px] sm:h-[400px] flex-shrink-0 flex flex-col justify-between bg-white rounded-2xl md:rounded-3xl border border-celadon/40 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden group snap-center">
       
-      {/* 1. TOP: Quote & Description */}
-      <div className="flex flex-col items-center text-center">
-        <Quote className="self-start text-sea_green w-6 h-6 rotate-180 mb-2 shrink-0" />
-        <p className="text-pine_teal/80 text-xs sm:text-[12.5px] leading-relaxed font-sans line-clamp-6 px-1">
-          {speaker.description}
-        </p>
-      </div>
-
-      {/* 2. MIDDLE & BOTTOM: Curved Wave Background with Avatar & Details */}
-      <div className="relative pt-6 pb-1">
-        
-        {/* Soft arch background */}
-        <div className="absolute inset-0 top-3 -mx-5 -mb-5 bg-gradient-to-b from-frosted_mint/20 via-frosted_mint/40 to-celadon/25 rounded-t-[40px] -z-0" />
-
-        {/* Decorative SVG curves matching reference screenshot */}
-        <svg className="absolute bottom-0 left-0 w-20 h-28 pointer-events-none -z-0" viewBox="0 0 100 120" fill="none">
-          <path d="M0,120 L0,25 Q30,80 100,120 Z" fill="#1b4332" opacity="0.9" />
-        </svg>
-        <svg className="absolute bottom-0 right-0 w-20 h-28 pointer-events-none -z-0" viewBox="0 0 100 120" fill="none">
-          <path d="M100,120 L100,15 Q70,75 0,120 Z" fill="#95d5b2" opacity="0.45" />
-        </svg>
-
-        {/* Avatar in Center */}
-        <div className="relative z-10 flex justify-center -mt-8 mb-2">
-          <div className="relative w-14 h-14 sm:w-15 sm:h-15 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
-            {speaker.image ? (
-              <Image 
-                src={speaker.image} 
-                alt={speaker.name} 
-                fill 
-                className="object-cover" 
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-pine_teal">
-                <User size={24} />
-              </div>
-            )}
+      {/* 1. TOP: Editorial Photo Header with Theme Pill */}
+      <div className="relative w-full h-[145px] sm:h-[155px] bg-gradient-to-br from-frosted_mint/40 to-celadon/30 overflow-hidden shrink-0">
+        {speaker.image ? (
+          <Image 
+            src={speaker.image} 
+            alt={speaker.name} 
+            fill 
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105" 
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-dark_emerald/40 bg-frosted_mint">
+            <User size={36} />
           </div>
-        </div>
+        )}
 
-        {/* Name & Pill Tag */}
-        <div className="relative z-10 text-center mb-2.5">
-          <h3 className="font-serif text-base sm:text-lg font-bold text-evergreen leading-tight">
-            {speaker.name}
-          </h3>
-          <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-frosted_mint text-dark_emerald border border-celadon">
+        {/* Subtle overlay gradient at bottom of photo */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+
+        {/* Floating Theme / Tag Pill (Vritant style) */}
+        <div className="absolute top-3 left-3">
+          <span className="px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-evergreen/85 text-frosted_mint backdrop-blur-md border border-white/20 shadow-sm">
             {speaker.tag}
           </span>
         </div>
+      </div>
 
-        {/* Bottom Row: Icon + Title & Role */}
-        <div className="relative z-10 flex items-center gap-2.5 px-1 pt-1">
-          <div className="w-8 h-8 rounded-full bg-dark_emerald text-white flex items-center justify-center shrink-0 shadow-sm">
-            {getSpeakerIcon(speaker.tag, speaker.title)}
+      {/* 2. BODY: Editorial Info & Bio Excerpt */}
+      <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between text-left">
+        <div>
+          {/* Speaker Name (Editorial Serif) */}
+          <h3 className="font-serif text-base sm:text-lg font-bold text-evergreen leading-tight group-hover:text-dark_emerald transition-colors line-clamp-1">
+            {speaker.name}
+          </h3>
+
+          {/* Title & Role / Metadata Row */}
+          <div className="flex items-center gap-1.5 mt-0.5 text-[11px] sm:text-xs text-sea_green font-semibold">
+            <span className="truncate">{speaker.title}</span>
+            {speaker.role && (
+              <>
+                <span className="text-pine_teal/40 text-[10px]">•</span>
+                <span className="text-pine_teal/70 font-medium truncate text-[10px] sm:text-[11px]">{speaker.role}</span>
+              </>
+            )}
           </div>
-          <div className="min-w-0 flex-1 text-left">
-            <p className="text-xs sm:text-[12.5px] font-bold text-evergreen leading-tight truncate">
-              {speaker.title}
-            </p>
-            <p className="text-[10px] sm:text-[11px] text-pine_teal/75 font-medium leading-tight truncate mt-0.5">
-              {speaker.role}
-            </p>
-          </div>
+
+          {/* Delicate Divider Line */}
+          <div className="h-[1px] w-full bg-celadon/30 my-2" />
+
+          {/* Bio / Quote Excerpt */}
+          <p className="text-pine_teal/80 text-[11.5px] sm:text-xs leading-relaxed font-sans line-clamp-3">
+            {speaker.description}
+          </p>
         </div>
 
+        {/* 3. FOOTER: Vritant style metadata footer */}
+        <div className="pt-2.5 mt-1 border-t border-celadon/25 flex items-center justify-between text-[10px] sm:text-[11px] font-medium text-pine_teal/65">
+          <div className="flex items-center gap-1 text-dark_emerald font-semibold">
+            <Sparkles className="w-3 h-3 text-mint_leaf_2 shrink-0" />
+            <span>Voices of Change</span>
+          </div>
+          <span className="text-sea_green font-bold text-[10px] group-hover:translate-x-0.5 transition-transform">
+            Sahyadri ➔
+          </span>
+        </div>
       </div>
 
     </div>
