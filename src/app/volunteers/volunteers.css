@@ -1,0 +1,235 @@
+.roleCard {
+  background: rgb(206, 232, 214);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+
+  /* ✅ KEY FIX */
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* 🟢 FIX: Only hover on desktop */
+@media (hover: hover) {
+  .roleCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.roleIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+  display: inline-block;
+}
+
+.roleCard h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.roleCard p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+
+/* --- BRAIDED LEAF SPINE --- */
+.leafSpine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.7rem;
+  height: 100%;
+}
+
+/* 2. Create the overlap effect */
+.leafPair {
+  /* SVG is 60px tall, so 32px height forces a 50% overlap (the braid) */
+  height: 50px; 
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.leafSvg {
+  overflow: visible;
+  /* Adds depth so leaves look layered on the white background */
+  filter: drop-shadow(0 2px 4px rgba(228, 248, 239, 0.603));
+}
+
+/* 🟢 FIX: Only scale leaves on desktop hover */
+@media (hover: hover) {
+  .leafPair:hover {
+    transform: scale(1.2) translateY(-5px);
+    z-index: 10;
+  }
+}
+
+
+@keyframes floatLeaf {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(-4px); }
+}
+
+
+.roleCardDetail {
+  background: rgb(206, 232, 214);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* 🟢 FIX: This solves your specific issue where the card moved right on mobile tap */
+@media (hover: hover) {
+  .roleCardDetail:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #f0f0f0;
+  color: #397153;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.tag.active {
+  background: #397153;
+  color: white;
+}
+
+@media (hover: hover) {
+  .tag:hover {
+    background: #397153;
+    color: white;
+  }
+}
+
+
+/* FLOATING CTA CARD */
+.ctaContent {
+  background: #e5faed;
+  max-width: 750px;
+  width: 100%;
+  text-align: center;
+
+  padding: 3rem 2.5rem;
+  border-radius: 2rem;
+
+  /* floating effect */
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.12),
+    0 10px 20px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+  z-index: 2;
+}
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1b4332;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  background: #37785b;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+
+  padding: 0.9rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 🟢 FIX: Only lift button on desktop */
+@media (hover: hover) {
+  .ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(64, 145, 108, 0.35);
+  }
+}
+
+
+/* Connector line animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeInOut {
+  animation: fadeInOut 3s ease forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.25s ease-out;
+}
+
+
+@media (max-width: 640px) {
+  .ctaContent {
+    padding: 2rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.3rem;
+  }
+
+  .ctaDescription {
+    font-size: 12px;
+  }
+
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 14px;
+  }
+}

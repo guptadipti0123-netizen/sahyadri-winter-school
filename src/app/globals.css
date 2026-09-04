@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- FONTS --- */
+  /* Linking Next.js fonts to Tailwind */
+  --font-serif: var(--font-lora), serif;
+  --font-sans: var(--font-inter), sans-serif;
+
+  /* --- COLOR PALETTE (Matching your code) --- */
+  /* We use underscores in names to match your React components */
+  --color-frosted_mint: #d8f3dc;
+  --color-celadon: #b7e4c7;
+  --color-celadon_2: #95d5b2;
+  --color-mint_leaf: #74c69d;
+  --color-mint_leaf_2: #52b788;
+  --color-sea_green: #40916c;
+  --color-dark_emerald: #2d6a4f;
+  --color-pine_teal: #1b4332;
+  --color-evergreen: #081c15;
+
+  /* --- CUSTOM BACKGROUNDS --- */
+  --image-eco-gradient: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 50%, #ffffff 100%);
+  --image-glass-gradient: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 100%);
+}
+
+:root {
+  --bg-site-gradient: linear-gradient(
+    160deg,
+    rgba(216, 243, 220, 1) 0%,
+    rgba(183, 228, 199, 1) 35%,
+    rgba(149, 213, 178, 1) 100%
+  );
+}
+
+
+
+/* --- OPTIONAL: Custom Utilities --- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-eco-site {
+    background: var(--bg-site-gradient);
+  }
+}
+
+
+/* --- INFINITE SLIDER ANIMATION --- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --- INFINITE SLIDER ANIMATION --- */
+/* 1. Define the Keyframes */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 2. Configure the Animation Class */
+.animate-scroll {
+  /* By default (Mobile), NO animation. 
+     This allows the user to swipe manually if the parent has overflow-x-auto */
+  display: flex;
+  width: max-content;
+}
+
+/* 3. Desktop Behavior (768px and up) */
+@media (min-width: 768px) {
+  .animate-scroll {
+    /* Apply the animation only on larger screens */
+    animation: scroll 60s linear infinite;
+  }
+  
+  /* Pause animation when the user hovers over the container (.group/slider) */
+  /* We use proper escaping for the forward slash in group/slider */
+  .group\/slider:hover .animate-scroll,
+  .group\/slider:focus-within .animate-scroll {
+    animation-play-state: paused;
+  }
+}
+
+/* 4. Utility to hide scrollbar but allow functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
