@@ -11,12 +11,13 @@ export const metadata = {
   description: 'Understanding Real Bharat',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: '/icon.png?v=2', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico?v=2' },
     ],
     apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-icon.png?v=2', sizes: '180x180', type: 'image/png' },
     ],
+    shortcut: ['/icon.png?v=2'],
   },
 }
 
