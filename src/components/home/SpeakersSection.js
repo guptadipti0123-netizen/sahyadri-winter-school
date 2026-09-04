@@ -81,17 +81,26 @@ export default function SpeakersSection() {
     return () => cancelAnimationFrame(rafId)
   }, [])
 
-  // Modern Executive Speaker Card Component
+  // Card Component
+  // Card Component (Updated for Smaller Size)
   const SpeakerCard = ({ speaker }) => (
-    <div className="w-[300px] sm:w-[340px] md:w-[360px] h-[450px] md:h-[470px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-5 md:p-6 shadow-md hover:shadow-2xl border border-celadon/50 hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-2 group snap-center relative overflow-hidden">
+    <div className="w-[240px] md:w-[280px] flex-shrink-0 flex flex-col h-[42vh] sm:h-[52vh] md:h-[60vh] min-h-[280px] max-h-[500px] bg-white rounded-3xl shadow-xl overflow-hidden border border-white/60 relative group snap-center">
       
-      {/* Top subtle gradient accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-dark_emerald via-mint_leaf to-celadon" />
+      {/* 1. TOP: Description */}
+      <div className="bg-white p-5 md:p-6 pb-10 relative flex-col flex h-[55%]">
+        <Quote className="absolute top-4 left-4 text-frosted_mint/40 w-6 h-6 md:w-8 md:h-8 rotate-180 flex-shrink-0" />
+        
+        {/* Scrollable Text Area */}
+        <div className="relative z-10 pt-4 flex-grow overflow-y-auto md:overflow-hidden md:group-hover:overflow-y-auto custom-scrollbar pr-1">
+           <p className="text-pine_teal/70 text-xs md:text-sm leading-relaxed text-center font-medium">
+             &quot;{speaker.description}&quot;
+           </p>
+        </div>
+      </div>
 
-      {/* 1. TOP: Profile Header */}
-      <div className="flex items-center gap-3.5 pt-1">
-        {/* Avatar with gradient ring */}
-        <div className="relative w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl overflow-hidden ring-2 ring-mint_leaf/40 shadow-md shrink-0 bg-frosted_mint/40 group-hover:scale-105 transition-transform duration-300">
+      {/* 2. MIDDLE: Floating Avatar */}
+      <div className="absolute top-[59%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-[4px] border-white shadow-lg overflow-hidden bg-gray-50">
           {speaker.image ? (
             <Image 
               src={speaker.image} 
@@ -100,47 +109,36 @@ export default function SpeakersSection() {
               className="object-cover" 
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-dark_emerald/50">
-              <User size={28} />
+            <div className="w-full h-full flex items-center justify-center text-gray-400">
+              <User size={24} />
             </div>
           )}
         </div>
+      </div>
 
-        {/* Name & Designation */}
-        <div className="flex flex-col min-w-0 flex-1">
-          <span className="self-start px-2.5 py-0.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-wider bg-frosted_mint/70 text-dark_emerald border border-celadon mb-1">
-            {speaker.tag}
-          </span>
-          <h3 className="font-serif text-base md:text-lg font-bold text-evergreen leading-tight truncate group-hover:text-dark_emerald transition-colors">
+      {/* 3. BOTTOM: Details */}
+      <div className="relative bg-gradient-to-br from-evergreen to-pine_teal pt-10 px-3 md:px-4 text-center h-[45%] flex flex-col justify-center">
+        {/* SVG Wave */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden -mt-[1px]">
+           <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="w-full h-8 md:h-10 text-white fill-current transform rotate-180">
+              <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" />
+           </svg>
+        </div>
+
+        <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-1.5">
+          <h3 className="mt-1 font-serif text-lg md:text-xl font-bold text-white">
             {speaker.name}
           </h3>
-          <p className="text-xs md:text-sm font-semibold text-sea_green leading-tight truncate mt-0.5">
+          <span className="px-2 py-0.5 bg-white/10 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-sea_green border border-white/10 shadow-sm">
+            {speaker.tag}
+          </span>
+          <p className="text-xs md:text-sm font-bold text-frosted_mint/90 leading-tight">
             {speaker.title}
           </p>
-          <p className="text-[11px] text-pine_teal/65 font-medium truncate mt-0.5">
+          <p className="text-[10px] text-white/60 font-light px-1 line-clamp-2">
             {speaker.role}
           </p>
         </div>
-      </div>
-
-      {/* 2. MIDDLE: Quote / Bio Section */}
-      <div className="relative bg-gradient-to-br from-frosted_mint/35 to-frosted_mint/15 rounded-2xl p-4 md:p-5 border border-mint_leaf/20 my-3 flex-1 flex flex-col justify-center overflow-hidden">
-        <Quote className="absolute top-2.5 right-3 text-mint_leaf/25 w-7 h-7 rotate-180 pointer-events-none" />
-        
-        <p className="text-pine_teal/85 text-xs md:text-[13px] leading-relaxed font-sans line-clamp-6 text-left relative z-10">
-          &quot;{speaker.description}&quot;
-        </p>
-      </div>
-
-      {/* 3. BOTTOM: Footer Badge */}
-      <div className="pt-2 border-t border-celadon/30 flex items-center justify-between text-[11px] text-pine_teal/60 font-medium">
-        <div className="flex items-center gap-1.5 text-dark_emerald font-semibold">
-          <Sparkles className="w-3.5 h-3.5 text-mint_leaf_2" />
-          <span>Thought Leader</span>
-        </div>
-        <span className="text-[10px] px-2 py-0.5 rounded-md bg-celadon/20 text-pine_teal/70 font-semibold">
-          Sahyadri Connect
-        </span>
       </div>
     </div>
   );
