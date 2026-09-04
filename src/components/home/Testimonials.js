@@ -2,6 +2,81 @@
 import React, { useRef, useEffect, useState } from "react"
 import { Quote, Sparkles, User, Leaf } from "lucide-react"
 
+// Institute Logo / Emblem Component
+const InstituteLogo = ({ role }) => {
+  const r = (role || "").toLowerCase();
+
+  if (r.includes("iit bombay") || r.includes("iitb")) {
+    return (
+      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#0c2340" />
+        <circle cx="20" cy="20" r="14" stroke="#d4af37" strokeWidth="1.5" strokeDasharray="3 2" />
+        <path d="M14 22V16M20 22V16M26 22V16M11 16H29" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
+        <text x="20" y="30" fill="#ffffff" fontSize="6.5" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IITB</text>
+      </svg>
+    );
+  }
+
+  if (r.includes("ils")) {
+    return (
+      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#7a1414" />
+        <circle cx="20" cy="20" r="15" stroke="#f3c68f" strokeWidth="1.5" />
+        <path d="M20 12V23M15 15L20 12L25 15M13 18L17 18M23 18L27 18" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="20" y="31" fill="#f3c68f" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">ILS</text>
+      </svg>
+    );
+  }
+
+  if (r.includes("iim")) {
+    return (
+      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#0b3064" />
+        <circle cx="20" cy="20" r="15" stroke="#ffffff" strokeWidth="1" />
+        <circle cx="20" cy="17" r="4.5" fill="#f49c18" />
+        <path d="M13 22H27M16 25H24" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="20" y="32" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IIM</text>
+      </svg>
+    );
+  }
+
+  if (r.includes("iips")) {
+    return (
+      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#005f73" />
+        <circle cx="20" cy="20" r="15" stroke="#94d2bd" strokeWidth="1.5" />
+        <path d="M14 21C14 17.5 17 15 20 15C23 15 26 17.5 26 21" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="20" cy="12" r="2.5" fill="#ee9b00" />
+        <text x="20" y="31" fill="#ffffff" fontSize="6.5" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IIPS</text>
+      </svg>
+    );
+  }
+
+  if (r.includes("tiss")) {
+    return (
+      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#004b87" />
+        <circle cx="20" cy="20" r="15" stroke="#ffffff" strokeWidth="1.5" strokeDasharray="4 2" />
+        <path d="M13 17C13 13.5 17 13.5 20 16.5C23 13.5 27 13.5 27 17C27 21 20 24 20 24C20 24 13 21 13 17Z" fill="#e63946" stroke="#ffffff" strokeWidth="0.5" />
+        <text x="20" y="31" fill="#ffffff" fontSize="6.5" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">TISS</text>
+      </svg>
+    );
+  }
+
+  if (r.includes("igidr")) {
+    return (
+      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
+        <circle cx="20" cy="20" r="18" fill="#1b4332" />
+        <circle cx="20" cy="20" r="15" stroke="#d8f3dc" strokeWidth="1.5" />
+        <path d="M20 12V23M16 16L20 12L24 16M15 20H25" stroke="#74c69d" strokeWidth="1.5" strokeLinecap="round" />
+        <text x="20" y="31" fill="#ffffff" fontSize="6" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IGIDR</text>
+      </svg>
+    );
+  }
+
+  return <User size={16} className="text-pine_teal/50" />;
+};
+
 export default function TestimonialsSection() {
   const testimonials = [
     {
@@ -79,10 +154,7 @@ export default function TestimonialsSection() {
           </p>
         </div>
         
-        {/* === LAYOUT CONTAINER === 
-            Mobile: Flex Carousel
-            Desktop: 3-Column Grid
-        */}
+        {/* === LAYOUT CONTAINER === */}
         <div 
           ref={scrollRef}
           onMouseEnter={() => setIsPaused(true)}
@@ -92,7 +164,6 @@ export default function TestimonialsSection() {
           className="
             flex overflow-x-auto gap-4 snap-x snap-mandatory pb-6 -mx-4 px-4 
             md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:pb-0 md:mx-0 md:px-3
-            /* Inline style to hide scrollbar cross-browser */
             [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']
           "
         >
@@ -105,32 +176,25 @@ export default function TestimonialsSection() {
               "
             >
               
-              {/* 1. DECORATIVE BACKDROP (Shadow Leaf) 
-                  - Adjusted rounded corners to be slightly smaller than original to fit the compact size 
-              */}
-              <div className="absolute inset-0 bg-evergreen/5 rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg transform rotate-2 scale-[1.02] group-hover:rotate-4 group-hover:bg-sea_green/10 transition-all duration-500 ease-out"></div>
+              {/* 1. DECORATIVE BACKDROP (Shadow Leaf) with Green Accent */}
+              <div className="absolute inset-0 bg-celadon/25 border border-celadon/30 rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg transform rotate-2 scale-[1.02] group-hover:rotate-3 group-hover:bg-mint_leaf/30 transition-all duration-500 ease-out"></div>
 
-              {/* 2. MAIN CARD (The Paper Leaf) 
-                  - Changed p-8 (original) to p-6 (compact)
-                  - Changed rounded-tr-[3.5rem] (original) to rounded-tr-[2.5rem] (scaled)
-              */}
-              <div className="relative h-full bg-white border border-gray-100 rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg p-6 flex flex-col shadow-sm group-hover:-translate-y-1 transition-transform duration-500 ease-out min-h-[260px]">
+              {/* 2. MAIN CARD (The Paper Leaf) with Green Border */}
+              <div className="relative h-full bg-white border-2 border-celadon/60 group-hover:border-mint_leaf rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg p-6 flex flex-col shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 ease-out min-h-[260px]">
                 
-                {/* Decorative Pin/Icon */}
+                {/* Decorative Leaf Icon */}
                 <div className="absolute top-0 left-0 p-3">
-                   <Leaf size={20} className="text-frosted_mint/50 transform -rotate-45" />
+                   <Leaf size={20} className="text-mint_leaf/60 transform -rotate-45" />
                 </div>
 
-                {/* Quote Icon - Slightly smaller container */}
+                {/* Quote Icon */}
                 <div className="mb-4 flex justify-end">
-                   <div className="w-8 h-8 rounded-full bg-frosted_mint/20 flex items-center justify-center text-sea_green">
+                   <div className="w-8 h-8 rounded-full bg-frosted_mint/40 border border-celadon/40 flex items-center justify-center text-sea_green">
                       <Quote size={14} fill="currentColor" />
                    </div>
                 </div>
 
-                {/* Content 
-                    - Changed text-lg (original) to text-[15px] (compact)
-                */}
+                {/* Content */}
                 <div className="flex-grow">
                   <p className="font-serif text-pine_teal text-sm lg:text-[15px] leading-relaxed italic relative z-10">
                     &quot;{testimonial.text}&quot;
@@ -140,16 +204,16 @@ export default function TestimonialsSection() {
                 {/* Divider */}
                 <div className="w-10 h-0.5 bg-gradient-to-r from-sea_green to-transparent my-5"></div>
 
-                {/* Footer / Author */}
+                {/* Footer / Author with Institute Logo Emblem */}
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full border border-gray-100 bg-gray-50 flex items-center justify-center text-pine_teal/50 flex-shrink-0">
-                    <User size={16} />
+                  <div className="w-9 h-9 rounded-full border border-celadon/70 bg-white shadow-xs flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <InstituteLogo role={testimonial.role} />
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-evergreen uppercase tracking-wide">
                       Participant
                     </h4>
-                    <p className="text-xs font-medium text-pine_teal/70 leading-tight">
+                    <p className="text-xs font-semibold text-pine_teal/80 leading-tight">
                       {testimonial.role}
                     </p>
                   </div>
