@@ -81,67 +81,63 @@ export default function SpeakersSection() {
     return () => cancelAnimationFrame(rafId)
   }, [])
 
-  // Card Component
-  // Card Component (Updated for Smaller Size)
-  const SpeakerCard = ({ speaker }) => (
-    <div className="w-[240px] md:w-[280px] flex-shrink-0 flex flex-col h-[42vh] sm:h-[52vh] md:h-[60vh] min-h-[280px] max-h-[500px] bg-white rounded-3xl shadow-xl overflow-hidden border border-white/60 relative group snap-center">
-      
-      {/* 1. TOP: Description */}
-      <div className="bg-white p-5 md:p-6 pb-10 relative flex-col flex h-[55%]">
-        <Quote className="absolute top-4 left-4 text-frosted_mint/40 w-6 h-6 md:w-8 md:h-8 rotate-180 flex-shrink-0" />
-        
-        {/* Scrollable Text Area */}
-        <div className="relative z-10 pt-4 flex-grow overflow-y-auto md:overflow-hidden md:group-hover:overflow-y-auto custom-scrollbar pr-1">
-           <p className="text-pine_teal/70 text-xs md:text-sm leading-relaxed text-center font-medium">
-             &quot;{speaker.description}&quot;
-           </p>
-        </div>
-      </div>
+  // Compact Horizontal Green Card with Photo Block (Design C)
+  const SpeakerCard = ({ speaker }) => {
+    // Generate initials fallback (e.g., "Kedar Joshi" -> "KJ")
+    const initials = speaker.name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
 
-      {/* 2. MIDDLE: Floating Avatar */}
-      <div className="absolute top-[59%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-        <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border-[4px] border-white shadow-lg overflow-hidden bg-gray-50">
+    return (
+      <div className="w-[320px] sm:w-[380px] md:w-[430px] h-[190px] sm:h-[205px] md:h-[215px] flex-shrink-0 flex flex-row bg-gradient-to-br from-[#12533e] to-[#0c3c2c] rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl border border-white/10 hover:border-mint_leaf/40 transition-all duration-300 hover:-translate-y-1 group snap-center overflow-hidden">
+        
+        {/* LEFT: Content Details */}
+        <div className="flex-1 p-4 sm:p-5 flex flex-col justify-between min-w-0 text-left">
+          <div>
+            {/* Tag / Badge */}
+            <span className="inline-block px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-black/30 text-frosted_mint/90 border border-white/10 mb-1.5">
+              {speaker.tag}
+            </span>
+
+            {/* Name */}
+            <h3 className="font-serif text-base sm:text-lg md:text-xl font-bold text-white tracking-wide leading-tight truncate">
+              {speaker.name}
+            </h3>
+
+            {/* Subtitle: Title · Role */}
+            <p className="text-[11px] sm:text-xs font-semibold text-mint_leaf/90 truncate mt-0.5">
+              {speaker.title} {speaker.role ? `· ${speaker.role}` : ""}
+            </p>
+          </div>
+
+          {/* Description */}
+          <p className="text-white/85 text-[11px] sm:text-xs leading-relaxed line-clamp-3 font-sans mt-1.5">
+            {speaker.description}
+          </p>
+        </div>
+
+        {/* RIGHT: Photo Block */}
+        <div className="w-[95px] sm:w-[115px] md:w-[130px] shrink-0 relative bg-[#e2f7ed] flex items-center justify-center overflow-hidden border-l border-white/10">
           {speaker.image ? (
             <Image 
               src={speaker.image} 
               alt={speaker.name} 
               fill 
-              className="object-cover" 
+              className="object-cover object-top transition-transform duration-300 group-hover:scale-105" 
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-gray-400">
-              <User size={24} />
-            </div>
+            <span className="font-serif font-bold text-xl sm:text-2xl text-pine_teal">
+              {initials}
+            </span>
           )}
         </div>
-      </div>
 
-      {/* 3. BOTTOM: Details */}
-      <div className="relative bg-gradient-to-br from-evergreen to-pine_teal pt-10 px-3 md:px-4 text-center h-[45%] flex flex-col justify-center">
-        {/* SVG Wave */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden -mt-[1px]">
-           <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="w-full h-8 md:h-10 text-white fill-current transform rotate-180">
-              <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" />
-           </svg>
-        </div>
-
-        <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-1.5">
-          <h3 className="mt-1 font-serif text-lg md:text-xl font-bold text-white">
-            {speaker.name}
-          </h3>
-          <span className="px-2 py-0.5 bg-white/10 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-sea_green border border-white/10 shadow-sm">
-            {speaker.tag}
-          </span>
-          <p className="text-xs md:text-sm font-bold text-frosted_mint/90 leading-tight">
-            {speaker.title}
-          </p>
-          <p className="text-[10px] text-white/60 font-light px-1 line-clamp-2">
-            {speaker.role}
-          </p>
-        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section className="pb-6 md:px-8 bg-frosted_mint/20 relative overflow-hidden">
