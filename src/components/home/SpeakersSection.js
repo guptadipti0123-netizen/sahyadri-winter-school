@@ -1,25 +1,42 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import Image from "next/image"
-import { Quote, Sparkles, User } from "lucide-react"
+import { 
+  Quote, 
+  Sparkles, 
+  User, 
+  Briefcase, 
+  ShieldCheck, 
+  Users, 
+  GraduationCap, 
+  HeartHandshake 
+} from "lucide-react"
 
 export default function SpeakersSection() {
   const speakers = [
     {
+      name: "Kedar Joshi",
+      title: "Industry Expert",
+      role: "Development Sector",
+      description: "Actively involved in GRA (Group Rural Activities, IIT Bombay). To understand North East, volunteered for 3 years during Swami Birth Centenary of Swami Vivekanand in Maharashtra and North East India.",
+      image: "/Kedar Joshi.png",
+      tag: "M.TECH IIT BOMBAY",
+    },
+    {
       name: "V Giriraj",
       title: "IAS Officer (Retired)",
       role: "Additional Chief Secretary of Maharashtra",
-      description: "Distinguished Indian Administrative Service officer who retired as Additional Chief Secretary of Maharashtra. Held key positions including Chairman of 5th State Finance Commission, and Secretary in Finance, Rural Development, Rural Employment, and Water Conservation departments. Currently CEO of Maharashtra Bamboo Promotion Foundation.",
+      description: "Distinguished Indian Administrative Service officer who retired as Additional Chief Secretary of Maharashtra. Held key positions including Chairman of 5th State Finance Commission, and more.",
       image: "/Giriraj.png",
-      tag: "IAS Officer",
+      tag: "IAS OFFICER",
     },
     {
       name: "Varsha Parchure",
       title: "Program Implementation Lead",
       role: "CEQUE",
-      description: "Over 17 years in social sector focusing on women's and children's rights. Extensive work on children's education for underserved tribal communities, led Kheiwadi project in Palghar for academic and life skills. Empowers women through self-help groups and training on gender sensitivity, PESA Act, and MGNREGA schemes. Recipient of Antyoday Award and Thane Bhushan Award. MBA in Social Entrepreneurship and Master's in Social Work.",
+      description: "Over 17 years in social sector focusing on women's and children's rights. Extensive work on children's education for underserved tribal communities, led Kheiwadi project in Palghar for academic and life skills.",
       image: "/Varsha Parchure.png",
-      tag: "Program Lead",
+      tag: "PROGRAM LEAD",
     },
     {
       name: "Kiran Limaye",
@@ -27,35 +44,27 @@ export default function SpeakersSection() {
       role: "Gokhale Institute of Politics and Economics, Pune",
       description: "Works with Centre for Excellence in Entrepreneurship and Development, overseeing research agenda. Founder of SAJAG, organization working in early age education.",
       image: "/Kiran Limaye.png",
-      tag: "Professor",
+      tag: "PROFESSOR",
     },
     {
       name: "Surabhi Gajbhiye",
       title: "Program Director",
       role: "SAAD NGO",
-      description: "Surabhi has over a decade of experience in rural development, disaster risk reduction, child safety, mental health, climate change, and sustainable development. Former child safety specialist at SEEDS India and consultant at SAAD, Nagpur. Currently pursuing her PhD in Disaster Studies at Tata Institute of Social Sciences, Mumbai.",
+      description: "Surabhi has over a decade of experience in rural development, disaster risk reduction, child safety, mental health, climate change, and sustainable development. Former child safety specialist at SEEDS India.",
       image: "/Surabhi Gajbhiye.png",
-      tag: "Program Director",
+      tag: "PROGRAM DIRECTOR",
     },
     {
       name: "Virendra Champanerkar",
       title: "CEO",
       role: "Pragati Pratishthan",
-      description: "Leads impactful initiatives uplifting tribal communities through education, water conservation, agriculture, and skill development. Implemented solar-powered irrigation, livelihood programs, and a residential school for hearing-impaired students. His CSR partnerships improved lives of over 10,000 individuals, positioning Pragati Pratishthan as a leader in tribal development.",
+      description: "Leads impactful initiatives uplifting tribal communities through education, water conservation, agriculture, and skill development. Implemented solar-powered irrigation and livelihood programs.",
       image: "/Virendra Champanerkar.png",
       tag: "CEO",
     },
-    {
-      name: "Kedar Joshi",
-      title: "Industry Expert",
-      role: "Development Sector",
-      description: "Actively involved in GRA (Group for Rural Activities, IIT Bombay). To understand North East, volunteered for 3 years during 150th Birth Centenary of Swami Vivekanand in Maharashtra and Arunachal Pradesh.",
-      image: "/Kedar Joshi.png",
-      tag: "M.Tech IIT Bombay",
-    },
   ]
 
-  /* ---------------- AUTO SCROLL LOGIC FROM CODE 1 ---------------- */
+  /* ---------------- AUTO SCROLL LOGIC ---------------- */
   const sliderRef = useRef(null)
   const isPaused = useRef(false)
 
@@ -64,7 +73,7 @@ export default function SpeakersSection() {
     if (!slider) return
 
     let rafId
-    const speed = 0.5 // Adjusted slightly for the larger cards in Code 2
+    const speed = 0.5
 
     const animate = () => {
       if (!isPaused.current) {
@@ -81,63 +90,97 @@ export default function SpeakersSection() {
     return () => cancelAnimationFrame(rafId)
   }, [])
 
-  // Compact Horizontal Green Card with Photo Block (Design C)
-  const SpeakerCard = ({ speaker }) => {
-    // Generate initials fallback (e.g., "Kedar Joshi" -> "KJ")
-    const initials = speaker.name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-      .slice(0, 2)
-      .toUpperCase();
+  // Icon Helper mapped to role
+  const getSpeakerIcon = (tag, title) => {
+    const t = (tag + " " + title).toLowerCase();
+    if (t.includes("ias") || t.includes("officer") || t.includes("secretary")) {
+      return <ShieldCheck size={16} className="text-white" />;
+    }
+    if (t.includes("lead") || t.includes("program") || t.includes("social")) {
+      return <Users size={16} className="text-white" />;
+    }
+    if (t.includes("prof") || t.includes("academic") || t.includes("education")) {
+      return <GraduationCap size={16} className="text-white" />;
+    }
+    if (t.includes("director") || t.includes("ngo")) {
+      return <HeartHandshake size={16} className="text-white" />;
+    }
+    return <Briefcase size={16} className="text-white" />;
+  };
 
-    return (
-      <div className="w-[320px] sm:w-[380px] md:w-[430px] h-[190px] sm:h-[205px] md:h-[215px] flex-shrink-0 flex flex-row bg-gradient-to-br from-[#12533e] to-[#0c3c2c] rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl border border-white/10 hover:border-mint_leaf/40 transition-all duration-300 hover:-translate-y-1 group snap-center overflow-hidden">
+  // Exact Card Component from Reference
+  const SpeakerCard = ({ speaker }) => (
+    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[395px] sm:h-[410px] md:h-[420px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
+      
+      {/* 1. TOP: Quote & Description */}
+      <div className="flex flex-col items-center text-center">
+        <Quote className="self-start text-sea_green w-6 h-6 rotate-180 mb-2 shrink-0" />
+        <p className="text-pine_teal/80 text-xs sm:text-[12.5px] leading-relaxed font-sans line-clamp-6 px-1">
+          {speaker.description}
+        </p>
+      </div>
+
+      {/* 2. MIDDLE & BOTTOM: Curved Wave Background with Avatar & Details */}
+      <div className="relative pt-6 pb-1">
         
-        {/* LEFT: Content Details */}
-        <div className="flex-1 p-4 sm:p-5 flex flex-col justify-between min-w-0 text-left">
-          <div>
-            {/* Tag / Badge */}
-            <span className="inline-block px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-black/30 text-frosted_mint/90 border border-white/10 mb-1.5">
-              {speaker.tag}
-            </span>
+        {/* Soft arch background */}
+        <div className="absolute inset-0 top-3 -mx-5 -mb-5 bg-gradient-to-b from-frosted_mint/20 via-frosted_mint/40 to-celadon/25 rounded-t-[40px] -z-0" />
 
-            {/* Name */}
-            <h3 className="font-serif text-base sm:text-lg md:text-xl font-bold text-white tracking-wide leading-tight truncate">
-              {speaker.name}
-            </h3>
+        {/* Decorative SVG curves matching reference screenshot */}
+        <svg className="absolute bottom-0 left-0 w-20 h-28 pointer-events-none -z-0" viewBox="0 0 100 120" fill="none">
+          <path d="M0,120 L0,25 Q30,80 100,120 Z" fill="#1b4332" opacity="0.9" />
+        </svg>
+        <svg className="absolute bottom-0 right-0 w-20 h-28 pointer-events-none -z-0" viewBox="0 0 100 120" fill="none">
+          <path d="M100,120 L100,15 Q70,75 0,120 Z" fill="#95d5b2" opacity="0.45" />
+        </svg>
 
-            {/* Subtitle: Title · Role */}
-            <p className="text-[11px] sm:text-xs font-semibold text-mint_leaf/90 truncate mt-0.5">
-              {speaker.title} {speaker.role ? `· ${speaker.role}` : ""}
-            </p>
+        {/* Avatar in Center */}
+        <div className="relative z-10 flex justify-center -mt-8 mb-2">
+          <div className="relative w-14 h-14 sm:w-15 sm:h-15 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
+            {speaker.image ? (
+              <Image 
+                src={speaker.image} 
+                alt={speaker.name} 
+                fill 
+                className="object-cover" 
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-pine_teal">
+                <User size={24} />
+              </div>
+            )}
           </div>
-
-          {/* Description */}
-          <p className="text-white/85 text-[11px] sm:text-xs leading-relaxed line-clamp-3 font-sans mt-1.5">
-            {speaker.description}
-          </p>
         </div>
 
-        {/* RIGHT: Photo Block */}
-        <div className="w-[95px] sm:w-[115px] md:w-[130px] shrink-0 relative bg-[#e2f7ed] flex items-center justify-center overflow-hidden border-l border-white/10">
-          {speaker.image ? (
-            <Image 
-              src={speaker.image} 
-              alt={speaker.name} 
-              fill 
-              className="object-cover object-top transition-transform duration-300 group-hover:scale-105" 
-            />
-          ) : (
-            <span className="font-serif font-bold text-xl sm:text-2xl text-pine_teal">
-              {initials}
-            </span>
-          )}
+        {/* Name & Pill Tag */}
+        <div className="relative z-10 text-center mb-2.5">
+          <h3 className="font-serif text-base sm:text-lg font-bold text-evergreen leading-tight">
+            {speaker.name}
+          </h3>
+          <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-frosted_mint text-dark_emerald border border-celadon">
+            {speaker.tag}
+          </span>
+        </div>
+
+        {/* Bottom Row: Icon + Title & Role */}
+        <div className="relative z-10 flex items-center gap-2.5 px-1 pt-1">
+          <div className="w-8 h-8 rounded-full bg-dark_emerald text-white flex items-center justify-center shrink-0 shadow-sm">
+            {getSpeakerIcon(speaker.tag, speaker.title)}
+          </div>
+          <div className="min-w-0 flex-1 text-left">
+            <p className="text-xs sm:text-[12.5px] font-bold text-evergreen leading-tight truncate">
+              {speaker.title}
+            </p>
+            <p className="text-[10px] sm:text-[11px] text-pine_teal/75 font-medium leading-tight truncate mt-0.5">
+              {speaker.role}
+            </p>
+          </div>
         </div>
 
       </div>
-    );
-  };
+
+    </div>
+  );
 
   return (
     <section className="pb-6 md:px-8 bg-frosted_mint/20 relative overflow-hidden">
