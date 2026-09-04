@@ -108,35 +108,35 @@ export default function SpeakersSection() {
     return <Briefcase size={16} className="text-white" />;
   };
 
-  // Exact Card Component from Reference
+  // Compact Balanced Speaker Card with Clear Typography
   const SpeakerCard = ({ speaker }) => (
-    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[395px] sm:h-[410px] md:h-[420px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
+    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[360px] sm:h-[375px] md:h-[385px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
       
-      {/* 1. TOP: Quote & Description */}
+      {/* 1. TOP: Quote & Description (Compact & Centered) */}
       <div className="flex flex-col items-center text-center">
-        <Quote className="self-start text-sea_green w-6 h-6 rotate-180 mb-2 shrink-0" />
-        <p className="text-pine_teal/80 text-xs sm:text-[12.5px] leading-relaxed font-sans line-clamp-6 px-1">
+        <Quote className="self-start text-sea_green w-5 h-5 sm:w-6 sm:h-6 rotate-180 mb-1.5 shrink-0" />
+        <p className="text-pine_teal/80 text-[11.5px] sm:text-xs leading-relaxed font-sans line-clamp-5 px-1">
           {speaker.description}
         </p>
       </div>
 
-      {/* 2. MIDDLE & BOTTOM: Curved Wave Background with Avatar & Details */}
-      <div className="relative pt-6 pb-1">
+      {/* 2. MIDDLE & BOTTOM: Subtle Arch Backdrop with Avatar & Clear Details */}
+      <div className="relative pt-6 pb-0.5 mt-2">
         
-        {/* Soft arch background */}
-        <div className="absolute inset-0 top-3 -mx-5 -mb-5 bg-gradient-to-b from-frosted_mint/20 via-frosted_mint/40 to-celadon/25 rounded-t-[40px] -z-0" />
+        {/* Soft, clean light arch background (No dark overlapping curves) */}
+        <div className="absolute inset-0 top-1 -mx-5 -mb-5 bg-gradient-to-b from-frosted_mint/30 via-frosted_mint/45 to-celadon/30 rounded-t-[36px] -z-0" />
 
-        {/* Decorative SVG curves matching reference screenshot */}
-        <svg className="absolute bottom-0 left-0 w-20 h-28 pointer-events-none -z-0" viewBox="0 0 100 120" fill="none">
-          <path d="M0,120 L0,25 Q30,80 100,120 Z" fill="#1b4332" opacity="0.9" />
+        {/* Delicate subtle accent arches (low opacity so text remains 100% readable) */}
+        <svg className="absolute bottom-0 left-0 w-24 h-24 pointer-events-none -z-0" viewBox="0 0 100 100" fill="none">
+          <path d="M0,100 L0,35 Q35,70 100,100 Z" fill="#95d5b2" opacity="0.25" />
         </svg>
-        <svg className="absolute bottom-0 right-0 w-20 h-28 pointer-events-none -z-0" viewBox="0 0 100 120" fill="none">
-          <path d="M100,120 L100,15 Q70,75 0,120 Z" fill="#95d5b2" opacity="0.45" />
+        <svg className="absolute bottom-0 right-0 w-24 h-24 pointer-events-none -z-0" viewBox="0 0 100 100" fill="none">
+          <path d="M100,100 L100,30 Q65,65 0,100 Z" fill="#74c69d" opacity="0.2" />
         </svg>
 
-        {/* Avatar in Center */}
-        <div className="relative z-10 flex justify-center -mt-8 mb-2">
-          <div className="relative w-14 h-14 sm:w-15 sm:h-15 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
+        {/* Avatar in Center (Reduced gap from top content) */}
+        <div className="relative z-10 flex justify-center -mt-7 mb-1.5">
+          <div className="relative w-13 h-13 sm:w-15 sm:h-15 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
             {speaker.image ? (
               <Image 
                 src={speaker.image} 
@@ -146,32 +146,32 @@ export default function SpeakersSection() {
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-pine_teal">
-                <User size={24} />
+                <User size={22} />
               </div>
             )}
           </div>
         </div>
 
         {/* Name & Pill Tag */}
-        <div className="relative z-10 text-center mb-2.5">
+        <div className="relative z-10 text-center mb-2">
           <h3 className="font-serif text-base sm:text-lg font-bold text-evergreen leading-tight">
             {speaker.name}
           </h3>
-          <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-frosted_mint text-dark_emerald border border-celadon">
+          <span className="inline-block mt-0.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider bg-white/90 text-dark_emerald border border-celadon shadow-xs">
             {speaker.tag}
           </span>
         </div>
 
-        {/* Bottom Row: Icon + Title & Role */}
-        <div className="relative z-10 flex items-center gap-2.5 px-1 pt-1">
-          <div className="w-8 h-8 rounded-full bg-dark_emerald text-white flex items-center justify-center shrink-0 shadow-sm">
+        {/* Bottom Row: Icon + Title & Role (High Contrast & No Overlap) */}
+        <div className="relative z-10 flex items-center gap-2.5 px-1 py-1 rounded-xl bg-white/60 backdrop-blur-xs border border-white/60 shadow-xs">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-dark_emerald text-white flex items-center justify-center shrink-0 shadow-sm">
             {getSpeakerIcon(speaker.tag, speaker.title)}
           </div>
           <div className="min-w-0 flex-1 text-left">
-            <p className="text-xs sm:text-[12.5px] font-bold text-evergreen leading-tight truncate">
+            <p className="text-xs sm:text-[12px] font-bold text-evergreen leading-tight truncate">
               {speaker.title}
             </p>
-            <p className="text-[10px] sm:text-[11px] text-pine_teal/75 font-medium leading-tight truncate mt-0.5">
+            <p className="text-[10px] sm:text-[10.5px] text-dark_emerald font-semibold leading-tight truncate mt-0.5">
               {speaker.role}
             </p>
           </div>
