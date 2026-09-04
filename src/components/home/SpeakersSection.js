@@ -108,25 +108,24 @@ export default function SpeakersSection() {
     return <Briefcase size={16} className="text-white" />;
   };
 
-  // Compact Balanced Speaker Card with Clear Typography
+  // Compact Balanced Speaker Card (Without Quote Icon & Reduced Gap)
   const SpeakerCard = ({ speaker }) => (
-    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[360px] sm:h-[375px] md:h-[385px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
+    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[315px] sm:h-[325px] md:h-[335px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-4.5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
       
-      {/* 1. TOP: Quote & Description (Compact & Centered) */}
-      <div className="flex flex-col items-center text-center">
-        <Quote className="self-start text-sea_green w-5 h-5 sm:w-6 sm:h-6 rotate-180 mb-1.5 shrink-0" />
-        <p className="text-pine_teal/80 text-[11.5px] sm:text-xs leading-relaxed font-sans line-clamp-5 px-1">
-          {speaker.description}
+      {/* 1. TOP: Description (Quote Icon Removed & Text Positioned Cleanly) */}
+      <div className="flex flex-col items-center text-center pt-1 px-1">
+        <p className="text-pine_teal/80 text-[11.5px] sm:text-xs leading-relaxed font-sans line-clamp-4">
+          &quot;{speaker.description}&quot;
         </p>
       </div>
 
-      {/* 2. MIDDLE & BOTTOM: Subtle Arch Backdrop with Avatar & Clear Details */}
-      <div className="relative pt-6 pb-0.5 mt-2">
+      {/* 2. MIDDLE & BOTTOM: Subtle Arch Backdrop with Avatar & Details (Tightly Spaced) */}
+      <div className="relative pt-5 pb-0.5 mt-1">
         
-        {/* Soft, clean light arch background (No dark overlapping curves) */}
+        {/* Soft, clean light arch background */}
         <div className="absolute inset-0 top-1 -mx-5 -mb-5 bg-gradient-to-b from-frosted_mint/30 via-frosted_mint/45 to-celadon/30 rounded-t-[36px] -z-0" />
 
-        {/* Delicate subtle accent arches (low opacity so text remains 100% readable) */}
+        {/* Subtle accent arches */}
         <svg className="absolute bottom-0 left-0 w-24 h-24 pointer-events-none -z-0" viewBox="0 0 100 100" fill="none">
           <path d="M0,100 L0,35 Q35,70 100,100 Z" fill="#95d5b2" opacity="0.25" />
         </svg>
@@ -134,9 +133,9 @@ export default function SpeakersSection() {
           <path d="M100,100 L100,30 Q65,65 0,100 Z" fill="#74c69d" opacity="0.2" />
         </svg>
 
-        {/* Avatar in Center (Reduced gap from top content) */}
-        <div className="relative z-10 flex justify-center -mt-7 mb-1.5">
-          <div className="relative w-13 h-13 sm:w-15 sm:h-15 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
+        {/* Avatar in Center (Close to top text) */}
+        <div className="relative z-10 flex justify-center -mt-6 mb-1.5">
+          <div className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
             {speaker.image ? (
               <Image 
                 src={speaker.image} 
@@ -162,7 +161,7 @@ export default function SpeakersSection() {
           </span>
         </div>
 
-        {/* Bottom Row: Icon + Title & Role (High Contrast & No Overlap) */}
+        {/* Bottom Row: Icon + Title & Role */}
         <div className="relative z-10 flex items-center gap-2.5 px-1 py-1 rounded-xl bg-white/60 backdrop-blur-xs border border-white/60 shadow-xs">
           <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-dark_emerald text-white flex items-center justify-center shrink-0 shadow-sm">
             {getSpeakerIcon(speaker.tag, speaker.title)}
