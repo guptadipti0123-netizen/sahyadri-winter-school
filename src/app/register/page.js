@@ -39,7 +39,7 @@ export default function RegisterPage() {
           </div> */}
 
           <h1 className={`${noto_Sans.className} font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md`}>
-            Register for the Camp
+            Winter Camp Loading
           </h1>
 
           <p className="text-base md:text-xl italic text-pine_teal/80">
@@ -48,16 +48,16 @@ export default function RegisterPage() {
         </div>
       </section>
 
-      {/* ================= POSTER + REGISTER NOW BUTTON ================= */}
+      {/* ================= POSTER + ARE YOU INTERESTED BUTTON ================= */}
       <section className="px-4 md:px-6 pb-16 relative z-10">
         <div className="max-w-2xl mx-auto flex flex-col items-center gap-8">
 
-          {/* --- REGISTER NOW BUTTON --- */}
+          {/* --- ARE YOU INTERESTED BUTTON --- */}
           <Link
             href="/register/form"
             className="group relative inline-flex items-center justify-center gap-3 px-10 py-4 md:px-14 md:py-5 rounded-2xl bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:from-dark_emerald hover:to-evergreen hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
           >
-            Register Now
+            Are you Interested
             <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" />
             {/* Subtle glow behind button */}
             <span className="absolute inset-0 rounded-2xl bg-sea_green/20 blur-xl -z-10 group-hover:bg-sea_green/30 transition-colors duration-300" />

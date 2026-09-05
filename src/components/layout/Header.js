@@ -273,7 +273,7 @@ export default function Header() {
               className="mt-6 w-full text-center py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-sea_green to-dark_emerald shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               onClick={() => setIsOpen(false)}
             >
-              Register Now
+              Upcoming Camp
             </Link>
           </div>
         </div>
