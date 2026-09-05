@@ -35,9 +35,24 @@ export default function Header() {
       name: 'Previous Camps',
       href: '#', // Placeholder for parent
       children: [
-        { name: 'Summer School May 2026', href: '/camp-3' },
-        { name: 'Winter School Dec 2025', href: '/camp-2' },
-        { name: 'Winter School Jan 2025', href: '/camp-1' },
+        {
+          name: 'Summer School',
+          place: 'Jawhar',
+          date: 'May 2026',
+          href: '/camp-3'
+        },
+        {
+          name: 'Winter School',
+          place: 'Karjat',
+          date: 'Dec 2025',
+          href: '/camp-2'
+        },
+        {
+          name: 'Winter School',
+          place: 'Palghar',
+          date: 'Jan 2025',
+          href: '/camp-1'
+        },
       ]
     },
     { name: 'Career', href: '/career' },
@@ -98,15 +113,26 @@ export default function Header() {
 
                   {/* Dropdown Menu (Invisible bridge for hovering) */}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    <div className="bg-white backdrop-blur-md border border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[210px] w-max py-2">
+                    <div className="bg-white backdrop-blur-md border border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[230px] w-max py-1 divide-y divide-gray-100">
                       {link.children.map((child) => (
                         <Link
-                          key={child.name}
+                          key={child.href}
                           href={child.href}
-                          className={`block px-4 py-2 text-sm font-medium hover:text-sea_green hover:bg-frosted_mint/40 transition-colors whitespace-nowrap ${pathname === child.href ? 'font-bold text-sea_green bg-frosted_mint/30' : 'text-evergreen'
+                          className={`block px-4 py-2.5 hover:bg-frosted_mint/40 transition-colors ${pathname === child.href ? 'bg-frosted_mint/30' : ''
                             }`}
                         >
-                          {child.name}
+                          <div className="flex items-center justify-between gap-3">
+                            <span className={`text-sm font-semibold transition-colors ${pathname === child.href ? 'text-sea_green' : 'text-evergreen'
+                              }`}>
+                              {child.name}
+                            </span>
+                            <span className="text-[11px] font-semibold text-sea_green bg-frosted_mint/80 border border-celadon/50 px-2 py-0.5 rounded-md">
+                              {child.place}
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-pine_teal/70 font-medium mt-0.5">
+                            {child.date}
+                          </div>
                         </Link>
                       ))}
                     </div>
@@ -197,17 +223,25 @@ export default function Header() {
                     </button>
 
                     {/* Sub-menu Items */}
-                    <div className={`overflow-hidden transition-all duration-300 bg-gray-50/50 rounded-lg mb-2 ${mobileSubMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+                    <div className={`overflow-hidden transition-all duration-300 bg-gray-50/50 rounded-lg mb-2 ${mobileSubMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                       }`}>
                       {link.children.map(child => (
                         <Link
-                          key={child.name}
+                          key={child.href}
                           href={child.href}
-                          className={`block w-full py-3 px-6 text-sm text-left ${pathname === child.href ? 'text-sea_green font-bold' : 'text-gray-600'
+                          className={`block w-full py-2.5 px-6 text-left border-b border-gray-100 last:border-none ${pathname === child.href ? 'text-sea_green font-bold bg-frosted_mint/20' : 'text-gray-700'
                             }`}
                           onClick={() => setIsOpen(false)}
                         >
-                          {child.name}
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-semibold">{child.name}</span>
+                            <span className="text-[11px] font-semibold text-sea_green bg-frosted_mint/80 border border-celadon/50 px-2 py-0.5 rounded-md">
+                              {child.place}
+                            </span>
+                          </div>
+                          <div className="text-xs text-gray-500 font-medium mt-0.5">
+                            {child.date}
+                          </div>
                         </Link>
                       ))}
                     </div>
