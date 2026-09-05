@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { 
   Briefcase, Users, TrendingUp, Mail, 
-  HeartHandshake, ArrowRight, Sprout, Star 
+  HeartHandshake, ArrowRight, Sprout, Star, Sparkles 
 } from "lucide-react"
 
 import Link from "next/link"
@@ -155,12 +155,12 @@ export default function CareerPage() {
             {/* Left: Text Content */}
             <div className="p-8 md:p-16 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
-                 <div className="p-2 bg-gray-100 rounded-lg text-gray-500"><Briefcase size={20} /></div>
-                 <span className="text-sm font-bold uppercase tracking-wider text-gray-400">Current Status</span>
+                 <div className="p-2 bg-frosted_mint rounded-lg text-sea_green"><Sparkles size={20} /></div>
+                 <span className="text-sm font-bold uppercase tracking-wider text-sea_green">Get Involved</span>
               </div>
               
               <h2 className="font-serif text-xl md:text-4xl font-bold text-gray-800 mb-4">
-                No Open Positions
+                Be the part of Change
               </h2>
               
               <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
