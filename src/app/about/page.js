@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { CirclePile ,Target, Sun, Users, Heart, Sprout, Globe, MapPin, ArrowRight } from "lucide-react"
+import { Target, Sun, Compass, ArrowRight, Sparkles } from "lucide-react"
 import { Noto_Sans } from 'next/font/google'
 import MentorsSection from "@/components/home/MentorsSection"
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
             <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">
-               Initiative of Pravah Foundation
+               Experiential Rural Immersion
             </p>
           </div>
           
@@ -84,147 +84,87 @@ export default function AboutPage() {
       </section>
 
 
-      {/* ================= 3. THE "JOURNEY" SECTION (REDESIGNED) ================= */}
-      {/* Changes: Compact, Unique "Leaf Cluster" Shape, No boxy grid */}
-      <section className="px-4 py-4 relative overflow-hidden">
-        
-        <div className="max-w-3xl mx-auto bg-[#D8F3DC]/80 backdrop-blur-lg rounded-[3rem] border border-white relative overflow-hidden">
+      {/* ================= 3. MISSION, VISION & OBJECTIVE SECTION ================= */}
+      <section className="py-8 md:py-14 px-4 md:px-8 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
           
-          {/* Subtle Background Pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_white,_transparent)] opacity-50 pointer-events-none" />
+          {/* Header */}
+          <div className="text-center mb-10 space-y-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[11px] font-bold tracking-widest uppercase">
+              <Sparkles size={13} />
+              <span>Our Guiding Principles</span>
+            </div>
+            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen">
+              Mission, Vision & <span className="text-sea_green italic">Objective</span>
+            </h2>
+            <p className="text-pine_teal/80 text-sm md:text-base font-medium max-w-xl mx-auto">
+              Bridging classroom knowledge with grassroots realities to nurture empathetic leadership for India.
+            </p>
+          </div>
 
-          <div className="px-6 py-6 md:px-10 md:py-10 relative z-10">
+          {/* 3 Pillars Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Header */}
-            <div className="text-center mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white border border-celadon shadow-sm text-sea_green text-[10px] font-bold tracking-widest uppercase mb-1">
-            <CirclePile size={12} className="md:w-3.5 md:h-3.5" />
-            <span>Our Roots</span>
-          </div>
-              <h2 className="font-serif text-xl md:text-3xl font-bold text-evergreen mb-2">
-                About Pravah Foundation
-              </h2>
-              <p className="text-base md:text-xl text-evergreen/80 italic font-light">
-                &quot;Exploring cultures, exchanging ideas, connecting with people.&quot;
-              </p>
+            {/* 1. Mission Card */}
+            <div className="bg-white p-8 rounded-[2rem] border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group flex flex-col justify-between">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500 pointer-events-none">
+                <Target size={100} className="text-orange-700" />
+              </div>
+              <div className="relative z-10 space-y-3">
+                <span className="text-orange-700 font-bold tracking-wider text-xs uppercase block">
+                  Our Purpose
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-evergreen">
+                  Mission
+                </h3>
+                <p className="text-pine_teal text-sm md:text-base leading-relaxed">
+                  To inspire, equip, and empower future leaders from diverse disciplines to make meaningful differences in communities through immersive rural development experiences.
+                </p>
+              </div>
             </div>
 
-            {/* The 4 Petals Cluster Layout */}
-            <div className="max-w-2xl mx-0 sm:mx-12 grid grid-cols-2 gap-4">
-              
-              {/* Petal 1: Connect (Rounded Top-Left & Bottom-Right) */}
-              <div className="bg-white p-6 flex items-center gap-5 rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 group border border-blue-50">
-                 <div className="w-4 h-4 sm:w-10 sm:h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Users size={18} />
-                 </div>
-                 <h3 className="text-sm sm:text-lg font-bold text-gray-800">Connect</h3>
+            {/* 2. Vision Card */}
+            <div className="bg-white p-8 rounded-[2rem] border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group flex flex-col justify-between">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500 pointer-events-none">
+                <Sun size={100} className="text-amber-500" />
               </div>
-
-              {/* Petal 2: Learn (Rounded Top-Right & Bottom-Left) */}
-              <div className="bg-white p-6 flex items-center gap-5 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 group border border-emerald-50 md:flex-row-reverse md:text-right">
-                 <div className="w-4 h-4 sm:w-10 sm:h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Sun size={18} />
-                 </div>
-                 <h3 className="text-sm sm:text-lg font-bold text-gray-800">Learn</h3>
+              <div className="relative z-10 space-y-3">
+                <span className="text-amber-600 font-bold tracking-wider text-xs uppercase block">
+                  Our Future
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-evergreen">
+                  Vision
+                </h3>
+                <p className="text-pine_teal text-sm md:text-base leading-relaxed">
+                  Creating a generation of socially conscious leaders who understand the complexities of rural India and are equipped with the skills to drive inclusive development.
+                </p>
               </div>
-
-              {/* Petal 3: Network (Rounded Top-Right & Bottom-Left inverted logic) */}
-              <div className="bg-white p-6 flex items-center gap-5 rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 group border border-purple-50">
-                 <div className="w-4 h-4 sm:w-10 sm:h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Globe size={18} />
-                 </div>
-                 <h3 className="text-sm sm:text-lg font-bold text-gray-800">Network</h3>
-              </div>
-
-              {/* Petal 4: Grow (Rounded Top-Left & Bottom-Right) */}
-              <div className="bg-white p-6 flex items-center gap-5 rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 group border border-amber-50 md:flex-row-reverse md:text-right">
-                 <div className="w-4 h-4 sm:w-10 sm:h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Sprout size={18} />
-                 </div>
-                 <h3 className="text-sm sm:text-lg font-bold text-gray-800">Grow</h3>
-              </div>
-
             </div>
 
-            {/* Minimal Footer */}
-            <div className="mt-6 pt-8 border-t border-evergreen/10 flex flex-col md:flex-row items-center justify-center gap-3 text-center">
-               <div className="flex items-center gap-2">
-                  <Heart size={18} className="text-rose-500 fill-current" />
-                  <span className="font-bold text-evergreen text-sm md:text-base">Not a group, It&apos;s Family 🌱</span>
-               </div>
-               
-               <div className="hidden md:block w-1 h-1 rounded-full bg-evergreen/40" />
-               
-               <div className="flex items-start gap-2 text-sm md:text-base text-evergreen font-medium">
-                  <MapPin size={16} className="shrink-0" />
-                  <span>1002, Unnati Dham, Katraj Kondhwa Road, Pune 411048</span>
-               </div>
+            {/* 3. Objective Card */}
+            <div className="bg-white p-8 rounded-[2rem] border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group flex flex-col justify-between">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500 pointer-events-none">
+                <Compass size={100} className="text-teal-600" />
+              </div>
+              <div className="relative z-10 space-y-3">
+                <span className="text-sea_green font-bold tracking-wider text-xs uppercase block">
+                  Our Goal
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-evergreen">
+                  Objective
+                </h3>
+                <p className="text-pine_teal text-sm md:text-base leading-relaxed">
+                  To engage bright minds in social sensitization, learn alongside communities, and nurture future social leaders and entrepreneurs for India.
+                </p>
+              </div>
             </div>
 
           </div>
+
         </div>
       </section>
 
-      <section className="md:py-8 md:pb-12 overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 md:px-6">
-          
-          {/* LAYOUT LOGIC:
-             - Mobile: flex row + overflow-auto + snap-x (Horizontal Carousel)
-             - Desktop: grid + grid-cols-2 (Original Grid)
-          */}
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:px-6 pb-6 md:grid md:grid-cols-2 md:gap-8 hide-scrollbar">
-            
-            {/* Mission Card */}
-            <div className="min-w-[85vw] md:min-w-0 snap-center bg-[#ecf9f1] p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-gray-100 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
-               <div className="absolute top-0 right-0 p-6 md:p-8 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500">
-                  <Target size={100} className="text-orange-700 md:w-[120px] md:h-[120px]" />
-               </div>
-               <div className="relative z-10">
-                  <span className="text-evergreen/80 font-bold tracking-wider text-xs uppercase mb-2 block">Our Purpose</span>
-                  <h3 className="font-serif  font-bold text-evergreen mb-4 md:mb-6">Mission</h3>
-                  <p className="text-evergreen leading-relaxed text-sm md:text-lg">
-                    To inspire, equip, and empower future leaders from diverse disciplines to make meaningful differences in communities through immersive rural development experiences.
-                  </p>
-               </div>
-            </div>
-
-            {/* Vision Card */}
-            <div className="min-w-[85vw] md:min-w-0 snap-center bg-frosted_mint/50 p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-md hover:shadow-lg relative overflow-hidden group text-evergreen">
-               <div className="absolute top-0 right-0 p-6 md:p-8 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500">
-                  <Sun size={100} className="text-yellow-500 md:w-[120px] md:h-[120px]" />
-               </div>
-               <div className="relative z-10">
-                  <span className="text-evergreen/80 font-bold tracking-wider text-xs uppercase mb-2 block">Our Future</span>
-                  <h3 className="font-serif text-xl md:text-3xl font-bold text-evergreen mb-4 md:mb-6">Vision</h3>
-                  <p className="text-evergreen leading-relaxed text-sm md:text-lg">
-                    Creating a generation of socially conscious leaders who understand the complexities of rural India and are equipped with the skills to drive inclusive development.
-                  </p>
-               </div>
-            </div>
-
-          </div>
-
-          {/* Mobile Swipe Hint */}
-          <div className="md:hidden flex justify-center gap-2 mt-2">
-             <div className="w-1.5 h-1.5 rounded-full bg-evergreen/40"></div>
-             <div className="w-1.5 h-1.5 rounded-full bg-evergreen/20"></div>
-          </div>
-
-        </div>
-        
-        {/* Hide scrollbar utility */}
-        <style jsx>{`
-          .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
-      </section>
-
-      {/* ================= 5. MENTORS SECTION ================= */}
+      {/* ================= 4. MENTORS SECTION ================= */}
       <MentorsSection />
 
       {/* ================= 6. CTA SECTION (KEPT SAME) ================= */}
