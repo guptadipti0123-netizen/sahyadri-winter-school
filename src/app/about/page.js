@@ -29,12 +29,12 @@ export default function AboutPage() {
 
   const timelineMilestones = [
     {
-      date: "Jan 2025",
-      title: "Inaugural Winter Camp — Palghar",
-      edition: "1st Edition",
-      location: "Palghar, Maharashtra",
-      desc: "Where the journey began. 40 selected students from premier institutions like IIT Bombay, TISS, and ILS engaged in tribal education, community dialogues, and rural immersion.",
-      href: "/camp-1"
+      date: "May 2026",
+      title: "Upcoming Summer School — Jawhar",
+      edition: "Upcoming Edition",
+      location: "Jawhar, Palghar District",
+      desc: "Expanding to the cradle of Warli art and forest ecology. Exploring tribal self-governance under PESA, non-timber produce, and decentralized rural livelihoods.",
+      href: "/camp-3"
     },
     {
       date: "Dec 2025",
@@ -45,12 +45,12 @@ export default function AboutPage() {
       href: "/camp-2"
     },
     {
-      date: "May 2026",
-      title: "Upcoming Summer School — Jawhar",
-      edition: "Upcoming Edition",
-      location: "Jawhar, Palghar District",
-      desc: "Expanding to the cradle of Warli art and forest ecology. Exploring tribal self-governance under PESA, non-timber produce, and decentralized rural livelihoods.",
-      href: "/camp-3"
+      date: "Jan 2025",
+      title: "Inaugural Winter Camp — Palghar",
+      edition: "1st Edition",
+      location: "Palghar, Maharashtra",
+      desc: "Where the journey began. 40 selected students from premier institutions like IIT Bombay, TISS, and ILS engaged in tribal education, community dialogues, and rural immersion.",
+      href: "/camp-1"
     }
   ]
 
