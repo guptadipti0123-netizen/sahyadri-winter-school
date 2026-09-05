@@ -190,11 +190,7 @@ export default function SpeakersSection() {
       <div className="max-w-full mx-auto relative z-10">
         
         {/* HEADER */}
-        <div className="text-center mb-6 md:mb-10 px-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-celadon shadow-sm text-sea_green text-[10px] font-bold tracking-widest uppercase mb-3 mt-6">
-            <Sparkles size={12} />
-            <span>Thought Leadership</span>
-          </div>
+        <div className="text-center mb-6 md:mb-10 px-4 mt-6">
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
             Voices of <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Change</span>
           </h2>

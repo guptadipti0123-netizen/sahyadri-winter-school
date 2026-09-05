@@ -49,13 +49,6 @@ export default function BlogHubPage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 text-center relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-celadon shadow-sm backdrop-blur-md">
-            <Sparkles size={14} className="text-sea_green" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
-              Field Journals & Reflections
-            </p>
-          </div>
-
           <h1 className={`${noto_Sans.className} font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-tight drop-shadow-sm`}>
             Stories from <span className="text-sea_green italic">Real Bharat</span>
           </h1>

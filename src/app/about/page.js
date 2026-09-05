@@ -255,11 +255,6 @@ export default function AboutPage() {
 
           {/* Right Narrative */}
           <div className="md:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-celadon text-sea_green text-[11px] font-bold tracking-widest uppercase">
-              <BookOpen size={13} />
-              <span>Genesis & Purpose</span>
-            </div>
-
             <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
               Understanding <span className="text-sea_green italic">Real Bharat</span>
             </h2>
@@ -285,9 +280,6 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           
           <div className="text-center mb-12 space-y-2">
-            <span className="text-xs font-bold text-sea_green uppercase tracking-widest">
-              Milestones
-            </span>
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-evergreen">
               The Journey So Far
             </h2>
@@ -349,10 +341,6 @@ export default function AboutPage() {
       {/* ================= 4. MISSION, VISION & OBJECTIVE ================= */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12 space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[11px] font-bold tracking-widest uppercase">
-            <Sparkles size={13} />
-            <span>Core Pillars</span>
-          </div>
           <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen">
             Mission, Vision &amp; <span className="text-sea_green italic">Objective</span>
           </h2>
@@ -404,11 +392,6 @@ export default function AboutPage() {
             
             {/* Left Info Column */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-[11px] font-bold tracking-widest uppercase">
-                <Mail size={13} />
-                <span>Get In Touch</span>
-              </div>
-
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-evergreen">
                 Let&apos;s Start a <span className="italic text-sea_green">Conversation</span>
               </h2>

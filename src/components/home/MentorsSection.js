@@ -65,10 +65,6 @@ export default function MentorsSection() {
         
         {/* SECTION HEADER */}
         <div className="text-center mb-10 space-y-2.5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[11px] font-bold tracking-widest uppercase">
-            <Sparkles size={13} />
-            <span>Guiding Lights</span>
-          </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
             Our <span className="italic text-sea_green">Mentors</span> & Advisory
           </h2>
