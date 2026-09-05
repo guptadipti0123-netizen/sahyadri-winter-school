@@ -10,8 +10,9 @@ export default function Footer() {
     { name: 'Contact', href: '/contact' },
   ]
   const linksCol2 = [
-    { name: 'Winter Camp Jan 2025', href: '/camp-1' },
-    { name: 'Winter Camp Dec 2025', href: '/camp-2' },
+    { name: 'Summer School (Jawhar, May 2026)', href: '/camp-3' },
+    { name: 'Winter School (Karjat - December 2025)', href: '/camp-2' },
+    { name: 'Winter School (Palghar - January 2025)', href: '/camp-1' },
     { name: 'Career', href: '/career' },
   ]
 

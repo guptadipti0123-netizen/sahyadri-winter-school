@@ -35,8 +35,9 @@ export default function Header() {
       name: 'Previous Camps',
       href: '#', // Placeholder for parent
       children: [
-        { name: 'Winter Camp Jan 2025', href: '/camp-1' },
-        { name: 'Winter Camp Dec 2025', href: '/camp-2' },
+        { name: 'Summer School (Jawhar, May 2026)', href: '/camp-3' },
+        { name: 'Winter School (Karjat - December 2025)', href: '/camp-2' },
+        { name: 'Winter School (Palghar - January 2025)', href: '/camp-1' },
       ]
     },
     { name: 'Career', href: '/career' },
@@ -97,12 +98,12 @@ export default function Header() {
 
                   {/* Dropdown Menu (Invisible bridge for hovering) */}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    <div className="bg-white backdrop-blur-md border-b border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[160px] py-2">
+                    <div className="bg-white backdrop-blur-md border border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[280px] w-max py-2">
                       {link.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className={`block px-6 py-2 text-sm font-medium hover:text-sea_green hover:bg-gray-50 transition-colors whitespace-nowrap ${pathname === child.href ? 'font-bold text-sea_green bg-gray-50' : ''
+                          className={`block px-5 py-2.5 text-sm font-medium hover:text-sea_green hover:bg-frosted_mint/40 transition-colors whitespace-nowrap ${pathname === child.href ? 'font-bold text-sea_green bg-frosted_mint/30' : 'text-evergreen'
                             }`}
                         >
                           {child.name}
@@ -196,7 +197,7 @@ export default function Header() {
                     </button>
 
                     {/* Sub-menu Items */}
-                    <div className={`overflow-hidden transition-all duration-300 bg-gray-50/50 rounded-lg mb-2 ${mobileSubMenuOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                    <div className={`overflow-hidden transition-all duration-300 bg-gray-50/50 rounded-lg mb-2 ${mobileSubMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
                       }`}>
                       {link.children.map(child => (
                         <Link
