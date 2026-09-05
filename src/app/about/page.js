@@ -19,6 +19,37 @@ const noto_Sans = Noto_Sans({
 export default function AboutPage() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
+  const [activeCampIdx, setActiveCampIdx] = useState(0)
+
+  const heroCamps = [
+    {
+      badge: "Karjat • Dec 2025",
+      title: "Access True Expertise",
+      tag: "2nd Edition Camp",
+      caption: "Expertise, here, was measured in years of practice, not pages. Direct mentorship from distinguished experts in governance and social development.",
+      image: "/camp2/camp2-day2-i3_copy.png",
+      href: "/camp-2",
+      duration: "5 Days Immersion"
+    },
+    {
+      badge: "Palghar • Jan 2025",
+      title: "Where The Journey Began",
+      tag: "1st Edition Camp",
+      caption: "40 students, tribal hamlets, and immersive grassroots dialogue. Real learning happens outside the four walls of a classroom.",
+      image: "/floating1.jpeg",
+      href: "/camp-1",
+      duration: "Tribal Education"
+    },
+    {
+      badge: "Jawhar • May 2026",
+      title: "Forest Ecology & Livelihoods",
+      tag: "Upcoming Summer School",
+      caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
+      image: "/jawahar-village-tribal-community.jpg",
+      href: "/camp-3",
+      duration: "Summer 2026"
+    }
+  ]
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -131,29 +162,78 @@ export default function AboutPage() {
 
           </div>
 
-          {/* Right Column: Visual Offset Card */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[380px] bg-white/10 backdrop-blur-md p-4 rounded-3xl border border-white/30 shadow-2xl">
-              <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden bg-evergreen/50">
+          {/* Right Column: Camp Link Card with Instagram Captions & Background Images */}
+          <div className="lg:col-span-5 flex flex-col items-center">
+            
+            {/* Camp Selector Tabs */}
+            <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 mb-3 max-w-full overflow-x-auto">
+              {heroCamps.map((camp, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveCampIdx(idx)}
+                  className={`px-3 py-1 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                    activeCampIdx === idx
+                      ? "bg-white text-evergreen shadow-sm font-bold scale-102"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {camp.badge.split(" • ")[0]}
+                </button>
+              ))}
+            </div>
+
+            {/* Feature Card with Background Image, Instagram Caption & Camp Link */}
+            <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-evergreen/80 group">
+              <div className="relative h-[340px] sm:h-[380px] w-full">
                 <Image
-                  src="/camp2/camp2-day2-i3_copy.png"
-                  alt="Sahyadri Rural Immersion Cohort"
+                  src={heroCamps[activeCampIdx].image}
+                  alt={heroCamps[activeCampIdx].title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
-                  <div>
-                    <span className="text-white text-xs font-bold uppercase tracking-wider block">
-                      Experiential Learning
+                
+                {/* Gradient Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30" />
+                
+                {/* Top Badges */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[11px] font-bold tracking-wider uppercase">
+                    <MapPin size={11} className="text-frosted_mint" />
+                    {heroCamps[activeCampIdx].badge}
+                  </span>
+                  <span className="text-[10px] font-semibold text-frosted_mint/90 bg-black/50 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/15">
+                    {heroCamps[activeCampIdx].tag}
+                  </span>
+                </div>
+
+                {/* Bottom Content & Instagram Caption */}
+                <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 space-y-2.5 z-10 text-left">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight drop-shadow-md">
+                    {heroCamps[activeCampIdx].title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-frosted_mint/95 leading-relaxed font-light line-clamp-3 bg-black/40 backdrop-blur-sm p-3 rounded-2xl border border-white/15">
+                    &quot;{heroCamps[activeCampIdx].caption}&quot;
+                  </p>
+
+                  <div className="flex items-center justify-between pt-1">
+                    <Link
+                      href={heroCamps[activeCampIdx].href}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all group/btn"
+                    >
+                      <span>Explore Camp Page</span>
+                      <ArrowRight size={13} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                    <span className="text-[11px] font-medium text-white/75 bg-white/10 px-2.5 py-1 rounded-full border border-white/15">
+                      {heroCamps[activeCampIdx].duration}
                     </span>
-                    <p className="text-white/90 text-sm font-medium">
-                      In the Heart of Rural Bharat
-                    </p>
                   </div>
                 </div>
+
               </div>
             </div>
+
           </div>
 
         </div>
