@@ -35,9 +35,9 @@ export default function Header() {
       name: 'Previous Camps',
       href: '#', // Placeholder for parent
       children: [
-        { name: 'Summer School (Jawhar, May 2026)', href: '/camp-3' },
-        { name: 'Winter School (Karjat - December 2025)', href: '/camp-2' },
-        { name: 'Winter School (Palghar - January 2025)', href: '/camp-1' },
+        { name: 'Summer School May 2026', href: '/camp-3' },
+        { name: 'Winter School Dec 2025', href: '/camp-2' },
+        { name: 'Winter School Jan 2025', href: '/camp-1' },
       ]
     },
     { name: 'Career', href: '/career' },
@@ -98,12 +98,12 @@ export default function Header() {
 
                   {/* Dropdown Menu (Invisible bridge for hovering) */}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    <div className="bg-white backdrop-blur-md border border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[280px] w-max py-2">
+                    <div className="bg-white backdrop-blur-md border border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[210px] w-max py-2">
                       {link.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className={`block px-5 py-2.5 text-sm font-medium hover:text-sea_green hover:bg-frosted_mint/40 transition-colors whitespace-nowrap ${pathname === child.href ? 'font-bold text-sea_green bg-frosted_mint/30' : 'text-evergreen'
+                          className={`block px-4 py-2 text-sm font-medium hover:text-sea_green hover:bg-frosted_mint/40 transition-colors whitespace-nowrap ${pathname === child.href ? 'font-bold text-sea_green bg-frosted_mint/30' : 'text-evergreen'
                             }`}
                         >
                           {child.name}
