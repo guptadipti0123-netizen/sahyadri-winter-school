@@ -55,6 +55,7 @@ export default function Header() {
         },
       ]
     },
+    { name: 'Blog', href: '/blog' },
     { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
   ]

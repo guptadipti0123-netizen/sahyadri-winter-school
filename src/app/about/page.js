@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { CirclePile ,Target, Sun, Users, Heart, Sprout, Globe, MapPin, ArrowRight } from "lucide-react"
 import { Noto_Sans } from 'next/font/google'
+import MentorsSection from "@/components/home/MentorsSection"
 
 const noto_Sans = Noto_Sans({
   subsets: ['Cyrillic'],
@@ -223,7 +224,10 @@ export default function AboutPage() {
         `}</style>
       </section>
 
-      {/* ================= 5. CTA SECTION (KEPT SAME) ================= */}
+      {/* ================= 5. MENTORS SECTION ================= */}
+      <MentorsSection />
+
+      {/* ================= 6. CTA SECTION (KEPT SAME) ================= */}
       <section className="md:mb-12 relative overflow-hidden px-4">
         <div className="max-w-5xl mx-auto relative overflow-hidden px-6 py-10 md:pt-0 md:pb-5 text-center">
           
