@@ -127,14 +127,6 @@ export default function AboutPage() {
           
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 backdrop-blur-md">
-              <Sparkles size={14} className="text-frosted_mint" />
-              <span className="text-xs md:text-sm font-bold text-frosted_mint tracking-widest uppercase">
-                About Sahyadri Rural Connect
-              </span>
-            </div>
-
             <h1 className={`${noto_Sans.className} font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-white drop-shadow-md`}>
               Where Ground-Level Immersion Becomes{" "}
               <span className="italic text-frosted_mint font-serif">Meaningful Leadership.</span>
