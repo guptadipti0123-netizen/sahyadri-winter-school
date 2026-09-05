@@ -56,32 +56,28 @@ export default function AboutPage() {
 
   const visionPillars = [
     {
-      number: "01 / 04",
-      title: "People & Community First",
-      tag: "Core Ethos",
-      desc: "The realities of rural India are best understood through lived experiences alongside villagers, Gram Sabhas, and tribal elders — not distant charts.",
-      icon: <HeartHandshake className="w-6 h-6 text-sea_green" />
-    },
-    {
-      number: "02 / 04",
       title: "Mission",
       tag: "Our Purpose",
       desc: "To inspire, equip, and empower future leaders from diverse disciplines to make meaningful differences in communities through immersive rural development experiences.",
-      icon: <Target className="w-6 h-6 text-orange-700" />
+      icon: <Target className="w-6 h-6 text-sea_green" />,
+      accentColor: "from-sea_green/10 to-transparent",
+      borderColor: "border-sea_green/40 hover:border-sea_green"
     },
     {
-      number: "03 / 04",
       title: "Vision",
       tag: "Our Future",
       desc: "Creating a generation of socially conscious leaders who understand the complexities of rural India and are equipped with the skills to drive inclusive development.",
-      icon: <Sun className="w-6 h-6 text-amber-600" />
+      icon: <Sun className="w-6 h-6 text-amber-600" />,
+      accentColor: "from-amber-500/10 to-transparent",
+      borderColor: "border-amber-400/40 hover:border-amber-500"
     },
     {
-      number: "04 / 04",
       title: "Objective",
       tag: "Our Goal",
       desc: "To engage bright minds in social sensitization, learn alongside communities, and nurture future social leaders and entrepreneurs for India.",
-      icon: <Compass className="w-6 h-6 text-teal-700" />
+      icon: <Compass className="w-6 h-6 text-teal-700" />,
+      accentColor: "from-teal-600/10 to-transparent",
+      borderColor: "border-teal-500/40 hover:border-teal-600"
     }
   ]
 
@@ -278,47 +274,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= 4. OUR GUIDING PRINCIPLES (01 / 04 Grid - Vritant Style) ================= */}
+      {/* ================= 4. MISSION, VISION & OBJECTIVE ================= */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12 space-y-2">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[11px] font-bold tracking-widest uppercase">
             <Sparkles size={13} />
-            <span>Guiding Principles</span>
+            <span>Core Pillars</span>
           </div>
           <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-            Our Core <span className="text-sea_green italic">Philosophy</span>
+            Mission, Vision &amp; <span className="text-sea_green italic">Objective</span>
           </h2>
           <p className="text-pine_teal/80 text-sm md:text-base font-medium max-w-xl mx-auto">
-            The foundational pillars shaping our experiential curriculum and community partnerships.
+            The guiding principles shaping our experiential curriculum and grassroots community partnerships.
           </p>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 3 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {visionPillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-6 border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className={`bg-white rounded-3xl p-7 border-2 ${pillar.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden`}
             >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-pine_teal/60">
-                    {pillar.number}
+              <div className={`absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br ${pillar.accentColor} rounded-full blur-2xl pointer-events-none`} />
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-[11px] font-bold text-sea_green uppercase tracking-wider px-3 py-1 rounded-full bg-frosted_mint/40 border border-celadon/50">
+                    {pillar.tag}
                   </span>
-                  <div className="w-10 h-10 rounded-2xl bg-frosted_mint/50 border border-celadon/40 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-frosted_mint/50 border border-celadon/40 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
                     {pillar.icon}
                   </div>
                 </div>
 
-                <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block mb-1">
-                  {pillar.tag}
-                </span>
-
-                <h3 className="font-serif text-xl font-bold text-evergreen mb-3">
+                <h3 className="font-serif text-2xl font-bold text-evergreen mb-3">
                   {pillar.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-pine_teal/80 leading-relaxed">
+                <p className="text-xs sm:text-sm text-pine_teal/85 leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>
