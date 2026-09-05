@@ -2,81 +2,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import { Quote, Sparkles, User, Leaf } from "lucide-react"
 
-// Institute Logo / Emblem Component
-const InstituteLogo = ({ role }) => {
-  const r = (role || "").toLowerCase();
-
-  if (r.includes("iit bombay") || r.includes("iitb")) {
-    return (
-      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
-        <circle cx="20" cy="20" r="18" fill="#0c2340" />
-        <circle cx="20" cy="20" r="14" stroke="#d4af37" strokeWidth="1.5" strokeDasharray="3 2" />
-        <path d="M14 22V16M20 22V16M26 22V16M11 16H29" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
-        <text x="20" y="30" fill="#ffffff" fontSize="6.5" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IITB</text>
-      </svg>
-    );
-  }
-
-  if (r.includes("ils")) {
-    return (
-      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
-        <circle cx="20" cy="20" r="18" fill="#7a1414" />
-        <circle cx="20" cy="20" r="15" stroke="#f3c68f" strokeWidth="1.5" />
-        <path d="M20 12V23M15 15L20 12L25 15M13 18L17 18M23 18L27 18" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="20" y="31" fill="#f3c68f" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">ILS</text>
-      </svg>
-    );
-  }
-
-  if (r.includes("iim")) {
-    return (
-      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
-        <circle cx="20" cy="20" r="18" fill="#0b3064" />
-        <circle cx="20" cy="20" r="15" stroke="#ffffff" strokeWidth="1" />
-        <circle cx="20" cy="17" r="4.5" fill="#f49c18" />
-        <path d="M13 22H27M16 25H24" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="20" y="32" fill="#ffffff" fontSize="7" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IIM</text>
-      </svg>
-    );
-  }
-
-  if (r.includes("iips")) {
-    return (
-      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
-        <circle cx="20" cy="20" r="18" fill="#005f73" />
-        <circle cx="20" cy="20" r="15" stroke="#94d2bd" strokeWidth="1.5" />
-        <path d="M14 21C14 17.5 17 15 20 15C23 15 26 17.5 26 21" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="20" cy="12" r="2.5" fill="#ee9b00" />
-        <text x="20" y="31" fill="#ffffff" fontSize="6.5" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IIPS</text>
-      </svg>
-    );
-  }
-
-  if (r.includes("tiss")) {
-    return (
-      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
-        <circle cx="20" cy="20" r="18" fill="#004b87" />
-        <circle cx="20" cy="20" r="15" stroke="#ffffff" strokeWidth="1.5" strokeDasharray="4 2" />
-        <path d="M13 17C13 13.5 17 13.5 20 16.5C23 13.5 27 13.5 27 17C27 21 20 24 20 24C20 24 13 21 13 17Z" fill="#e63946" stroke="#ffffff" strokeWidth="0.5" />
-        <text x="20" y="31" fill="#ffffff" fontSize="6.5" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">TISS</text>
-      </svg>
-    );
-  }
-
-  if (r.includes("igidr")) {
-    return (
-      <svg viewBox="0 0 40 40" className="w-full h-full p-0.5" fill="none">
-        <circle cx="20" cy="20" r="18" fill="#1b4332" />
-        <circle cx="20" cy="20" r="15" stroke="#d8f3dc" strokeWidth="1.5" />
-        <path d="M20 12V23M16 16L20 12L24 16M15 20H25" stroke="#74c69d" strokeWidth="1.5" strokeLinecap="round" />
-        <text x="20" y="31" fill="#ffffff" fontSize="6" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">IGIDR</text>
-      </svg>
-    );
-  }
-
-  return <User size={16} className="text-pine_teal/50" />;
-};
-
 export default function TestimonialsSection() {
   const testimonials = [
     {
@@ -204,10 +129,10 @@ export default function TestimonialsSection() {
                 {/* Divider */}
                 <div className="w-10 h-0.5 bg-gradient-to-r from-sea_green to-transparent my-5"></div>
 
-                {/* Footer / Author with Institute Logo Emblem */}
+                {/* Footer / Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full border border-celadon/70 bg-white shadow-xs flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <InstituteLogo role={testimonial.role} />
+                  <div className="w-9 h-9 rounded-full border border-celadon/60 bg-frosted_mint/40 flex items-center justify-center text-dark_emerald flex-shrink-0">
+                    <User size={16} />
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-evergreen uppercase tracking-wide">
