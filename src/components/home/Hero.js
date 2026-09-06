@@ -50,7 +50,7 @@ const featuredSlides = [
     category: "ECOLOGY & INNOVATION",
     title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
-    image: "/camp2/camp2-day3-i1.jpg", // Real field photo: students with organic mentors
+    image: "/camp2/camp2-day3-i2.jpg", // Real field photo: organic farm & forest walk
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
     urlTag: "sahyadriconnect.org/blog/sustainable-livelihoods-and-tribal-wisdom",
     date: "Dec 27, 2025",
@@ -61,7 +61,7 @@ const featuredSlides = [
     category: "CULTURE & ECONOMY",
     title: "Echoes of History & Grassroots Enterprise: Fort Trekking & FPOs",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
-    image: "/camp2/camp2-day2-i2.jpg", // Real photo: fort trek trail
+    image: "/camp2/camp2-day2-i1.jpg", // Real photo: fort trek trail & grassroots enterprise
     link: "/blog/maratha-heritage-and-rural-immersion",
     urlTag: "sahyadriconnect.org/blog/maratha-heritage-and-rural-immersion",
     date: "Dec 25, 2025",
@@ -77,7 +77,7 @@ const sideArticles = [
     title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
     date: "May 2026",
     readTime: "4 min read",
-    image: "/sahyadri-6.jpg", // Real photo: Palghar tribal village community
+    image: "/jawahar-village-tribal-community.jpg", // Matches blog header
     link: "/blog/cradle-of-warli-art-jawhar-preview",
     tagColor: "bg-[#eef2ff] text-[#3730a3] border-[#c7d2fe]",
   },
@@ -87,7 +87,7 @@ const sideArticles = [
     title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
     date: "Dec 28, 2025",
     readTime: "5 min read",
-    image: "/camp2/camp2-day4-i1.jpg", // Real photo: solar tech & telecom
+    image: "/camp2/camp2-day4-i1.jpg", // Matches blog header
     link: "/blog/rural-connectivity-and-digital-divide",
     tagColor: "bg-[#ecfdf5] text-[#065f46] border-[#a7f3d0]",
   },
@@ -97,7 +97,7 @@ const sideArticles = [
     title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
     date: "Dec 27, 2025",
     readTime: "5 min read",
-    image: "/camp2/camp2-day3-i2.jpg", // Real photo: organic farm & forest walk
+    image: "/camp2/camp2-day3-i2.jpg", // Matches blog header
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
     tagColor: "bg-[#fef3c7] text-[#92400e] border-[#fde68a]",
   },
@@ -107,7 +107,7 @@ const sideArticles = [
     title: "Echoes of History & Grassroots Enterprise",
     date: "Dec 25, 2025",
     readTime: "6 min read",
-    image: "/camp2/camp2-day2-i3.png", // Real photo: historical fort summit
+    image: "/camp2/camp2-day2-i1.jpg", // Matches blog header
     link: "/blog/maratha-heritage-and-rural-immersion",
     tagColor: "bg-[#f5f3ff] text-[#5b21b6] border-[#ddd6fe]",
   },
