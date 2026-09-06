@@ -133,7 +133,7 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative w-full bg-[#fbf8f1] pt-20 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8 font-sans"
+      className="relative w-full bg-[#fbf8f1] pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 lg:px-8 font-sans"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
