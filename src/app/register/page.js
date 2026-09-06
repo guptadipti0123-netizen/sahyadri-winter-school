@@ -14,9 +14,7 @@ import {
   ChevronDown,
   ChevronUp,
   BookOpen,
-  HelpCircle,
-  Calendar,
-  Clock
+  HelpCircle
 } from 'lucide-react';
 
 export default function RegisterPage() {
@@ -162,35 +160,145 @@ export default function RegisterPage() {
       <section id="poster-details" className="px-4 md:px-8 py-10 max-w-6xl mx-auto relative z-10">
         <div className="bg-white rounded-3xl border-2 border-celadon/60 p-6 sm:p-10 shadow-lg grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left: Poster Showcase Template with Upcoming Overlays */}
+          {/* Left: Recreated Visual Card Template with Updated Winter 2026 Details */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
-              <Image
-                src="/SRCRegistrationPoster.png"
-                alt="Sahyadri Rural Connect Registration Poster"
-                width={1120}
-                height={1500}
-                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                priority
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
+            <div className="relative w-full max-w-[380px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-[#fcf8f0] text-[#2d241e] font-sans group">
               
-              {/* Upcoming Edition Badges */}
-              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-sea_green text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
-                Upcoming Cohort
+              {/* Top Banner Image */}
+              <div className="relative h-44 w-full bg-[#1b4332] overflow-hidden">
+                <Image
+                  src="/sahyadri-bg-hero6.jpeg"
+                  alt="Sahyadri Rural Immersion"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#fcf8f0] via-black/20 to-black/40" />
+                
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-sea_green text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+                  Upcoming Cohort
+                </div>
+                
+                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider">
+                  3rd Edition
+                </div>
+
+                <div className="absolute bottom-2 inset-x-4 text-center">
+                  <span className="text-[10px] font-extrabold tracking-widest uppercase text-emerald-900 drop-shadow-xs">
+                    Sahyadri Rural Connect
+                  </span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-black text-evergreen leading-tight">
+                    Winter School 2026
+                  </h3>
+                </div>
               </div>
-              <div className="absolute bottom-3 inset-x-3 bg-black/75 backdrop-blur-md text-white p-2.5 rounded-xl text-center shadow-lg">
-                <p className="text-[11px] font-bold text-frosted_mint uppercase tracking-wider">
-                  Winter 2026 Loading
-                </p>
-                <p className="text-[10px] text-white/80">
-                  Admissions Opening Soon • Express Interest Below
-                </p>
+
+              {/* Middle Section: Dates & Location (Matching the template structure) */}
+              <div className="p-5 pt-3 space-y-4">
+                
+                <div className="text-center space-y-0.5 border-b border-[#ebdcc6] pb-3">
+                  <h4 className="font-serif text-base sm:text-lg font-extrabold text-[#7c2d12]">
+                    Winter 2026 • Dates Announcing Soon
+                  </h4>
+                  <p className="text-xs font-semibold text-[#5c4033]">
+                    Sahyadri Foothills & Rural Hamlets (Maharashtra)
+                  </p>
+                </div>
+
+                {/* 3 Pillars Grid (Matching the Screenshot's 3-column Box Layout) */}
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  
+                  {/* Column 1 */}
+                  <div className="space-y-2">
+                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
+                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        📍
+                      </div>
+                      <span className="text-[11px] font-bold text-[#2d241e] leading-tight">
+                        Sahyadri, Maha
+                      </span>
+                    </div>
+
+                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
+                      <div className="w-7 h-7 rounded-full bg-[#c25e1a] text-white flex items-center justify-center mb-1 text-xs">
+                        🏛️
+                      </div>
+                      <span className="text-[11px] font-bold text-[#c25e1a] leading-tight">
+                        NGOs Impact
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Column 2 */}
+                  <div className="space-y-2">
+                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
+                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        ⛰️
+                      </div>
+                      <span className="text-[11px] font-bold text-[#2d241e] leading-tight">
+                        5 Days
+                      </span>
+                    </div>
+
+                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
+                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        🎖️
+                      </div>
+                      <span className="text-[11px] font-bold text-[#c25e1a] leading-tight">
+                        Expert Sessions
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Column 3 */}
+                  <div className="space-y-2">
+                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
+                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        🌾
+                      </div>
+                      <span className="text-[11px] font-bold text-[#2d241e] leading-tight">
+                        Rural Immersion
+                      </span>
+                    </div>
+
+                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
+                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        🌿
+                      </div>
+                      <span className="text-[11px] font-bold text-[#c25e1a] leading-tight">
+                        Delving into Culture
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Bottom Highlight: Premier Institutes Banner (Matching Screenshot) */}
+                <div className="bg-[#faeed6] border border-[#ebdcc6] rounded-xl p-3 text-center shadow-xs">
+                  <p className="text-xs font-extrabold text-[#7c2d12] leading-snug font-serif">
+                    40 participants from Premier Institutes like IIT, IIM, TISS, IIPS, IGIDR, ILS etc.
+                  </p>
+                </div>
+
+                {/* Card CTA Footer */}
+                <div className="pt-2 flex items-center justify-between border-t border-[#ebdcc6]/70">
+                  <span className="text-[11px] font-bold text-[#5c4033] uppercase tracking-wider">
+                    Early Expression Open
+                  </span>
+                  <Link
+                    href="/register/form"
+                    className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-sea_green text-white text-xs font-bold shadow-xs hover:bg-dark_emerald hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span>Express Interest</span>
+                    <ArrowRight size={13} />
+                  </Link>
+                </div>
+
               </div>
+
             </div>
 
             <p className="text-[11px] text-pine_teal/70 font-medium text-center mt-3">
-              Sahyadri Rural Connect • Upcoming Winter School Announcement
+              Sahyadri Rural Connect • Winter 2026 Fellowship Notice
             </p>
           </div>
 
