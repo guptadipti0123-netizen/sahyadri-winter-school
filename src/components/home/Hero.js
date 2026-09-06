@@ -115,7 +115,6 @@ const sideArticles = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
   const timerRef = useRef(null)
 
   const slideCount = featuredSlides.length
@@ -128,26 +127,21 @@ export default function Hero() {
     setCurrent((prev) => (prev - 1 + slideCount) % slideCount)
   }, [slideCount])
 
-  // Autoplay
+  // Continuous smooth autoplay every 4 seconds
   useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(() => {
-        nextSlide()
-      }, 7000)
-    }
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slideCount)
+    }, 4000)
+
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [isPaused, nextSlide])
+  }, [slideCount])
 
   const activeSlide = featuredSlides[current]
 
   return (
-    <section 
-      className="relative w-full bg-[#fbf8f1] pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 lg:px-8 font-sans"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <section className="relative w-full bg-[#fbf8f1] pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
         
         {/* --- MAIN 2-COLUMN GRID (Matching Vritant Reference Screenshot) --- */}
