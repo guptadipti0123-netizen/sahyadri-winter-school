@@ -15,7 +15,7 @@ const featuredSlides = [
   {
     id: "real-bharat",
     category: "RURAL IMMERSION",
-    title: "Understanding Real Bharat: Ground-Level Leadership & Grassroots Realities",
+    title: "First Footprints: Ground-Level Immersion & Village Dialogue in Kothimbe",
     subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
     image: "/sahyadri-bg-hero6.jpeg", // Panoramic Sahyadri Ghats
     link: "/blog/a-day-at-sahyadri-rural-connect",
@@ -24,9 +24,20 @@ const featuredSlides = [
     readTime: "5 Days Immersion",
   },
   {
+    id: "rural-connectivity",
+    category: "TECH & INFRASTRUCTURE",
+    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
+    subtitle: "Examining last-mile PMGSY road networks, BharatNet optical fiber, and solar telecom towers across Sahyadri villages.",
+    image: "/camp2/camp2-day4-i1.jpg", // Real field photo: solar telecom & rural infrastructure
+    link: "/blog/rural-connectivity-and-digital-divide",
+    urlTag: "sahyadriconnect.org/blog/rural-connectivity-and-digital-divide",
+    date: "Dec 28, 2025",
+    readTime: "5 min read",
+  },
+  {
     id: "jawhar-summer-school",
     category: "CULTURE & ART",
-    title: "Cradle of Warli Art: Previewing Summer School 2026 in Jawhar",
+    title: "Sacred Groves & Warli Canvas: Previewing Summer School 2026 in Jawhar",
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
     image: "/jawahar-village-tribal-community.jpg", // Jawhar tribal palace & landscape
     link: "/blog/cradle-of-warli-art-jawhar-preview",
@@ -37,7 +48,7 @@ const featuredSlides = [
   {
     id: "sustainable-ecology",
     category: "ECOLOGY & INNOVATION",
-    title: "Deep Roots: Tribal Ecology, Organic Agriculture & Solar Innovation",
+    title: "Roots & Rays: Indigenous Ethnobotany, Clean Energy & Regenerative Farming",
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
     image: "/camp2/camp2-day3-i1.jpg", // Real field photo: students with organic mentors
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
@@ -48,7 +59,7 @@ const featuredSlides = [
   {
     id: "maratha-heritage",
     category: "CULTURE & ECONOMY",
-    title: "Echoes of History & Grassroots Enterprise: Fort Trekking & FPOs",
+    title: "Forts, Foothills & Farmer Collectives: Maratha Heritage Meets Agrarian Enterprise",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
     image: "/camp2/camp2-day2-i2.jpg", // Real photo: fort trek trail
     link: "/blog/maratha-heritage-and-rural-immersion",
@@ -63,7 +74,7 @@ const sideArticles = [
   {
     id: "art-1",
     category: "CULTURE & ART",
-    title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
+    title: "Sacred Groves & Warli Canvas: Previewing Jawhar Summer School",
     date: "May 2026",
     readTime: "4 min read",
     image: "/sahyadri-6.jpg", // Real photo: Palghar tribal village community
@@ -72,32 +83,32 @@ const sideArticles = [
   },
   {
     id: "art-2",
-    category: "ECOLOGY & TECH",
-    title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
-    date: "Dec 27, 2025",
+    category: "TECH & CONNECTIVITY",
+    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
+    date: "Dec 28, 2025",
     readTime: "5 min read",
-    image: "/camp2/camp2-day4-i1.jpg", // Real photo: solar tech & tribal hamlet
-    link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
+    image: "/camp2/camp2-day4-i1.jpg", // Real photo: solar tech & telecom
+    link: "/blog/rural-connectivity-and-digital-divide",
     tagColor: "bg-[#ecfdf5] text-[#065f46] border-[#a7f3d0]",
   },
   {
     id: "art-3",
-    category: "CULTURE & HISTORY",
-    title: "Echoes of History: Maratha Heritage & Farmer Collectives",
-    date: "Dec 25, 2025",
-    readTime: "6 min read",
-    image: "/camp2/camp2-day2-i3.png", // Real photo: historical fort summit
-    link: "/blog/maratha-heritage-and-rural-immersion",
+    category: "ECOLOGY & TECH",
+    title: "Roots & Rays: Indigenous Ethnobotany & Regenerative Farming",
+    date: "Dec 27, 2025",
+    readTime: "5 min read",
+    image: "/camp2/camp2-day3-i2.jpg", // Real photo: organic farm & forest walk
+    link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
     tagColor: "bg-[#fef3c7] text-[#92400e] border-[#fde68a]",
   },
   {
     id: "art-4",
-    category: "FIELD STORIES",
-    title: "A Day at Sahyadri Rural Connect: Arrivals & Ground Notes",
-    date: "Dec 24, 2025",
-    readTime: "5 min read",
-    image: "/camp2/camp2-day1-i4.jpg", // Real photo: inaugural session & students
-    link: "/blog/a-day-at-sahyadri-rural-connect",
+    category: "CULTURE & HISTORY",
+    title: "Forts, Foothills & Farmer Collectives: Maratha Heritage & FPOs",
+    date: "Dec 25, 2025",
+    readTime: "6 min read",
+    image: "/camp2/camp2-day2-i3.png", // Real photo: historical fort summit
+    link: "/blog/maratha-heritage-and-rural-immersion",
     tagColor: "bg-[#f5f3ff] text-[#5b21b6] border-[#ddd6fe]",
   },
 ]

@@ -9,7 +9,7 @@ export default function BlogHubPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchQuery, setSearchQuery] = useState("")
 
-  const categories = ["All", "Field Stories", "Culture & Economy", "Ecology & Innovation", "Policy & Reflection", "Culture & Art"]
+  const categories = ["All", "Field Stories", "Culture & Economy", "Ecology & Innovation", "Tech & Infrastructure", "Culture & Art"]
 
   const filteredBlogs = blogsData.filter((blog) => {
     const matchesCategory = selectedCategory === "All" || blog.category === selectedCategory
