@@ -16,9 +16,7 @@ import {
   BookOpen,
   HelpCircle,
   Calendar,
-  MapPin,
-  Flame,
-  GraduationCap
+  Clock
 } from 'lucide-react';
 
 export default function RegisterPage() {
@@ -28,44 +26,17 @@ export default function RegisterPage() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const snapshotMetrics = [
-    {
-      icon: <Calendar className="w-5 h-5 text-emerald-700" />,
-      label: 'Upcoming Cohort',
-      value: 'Winter 2026 Edition',
-      sub: 'Dates Announcing Soon'
-    },
-    {
-      icon: <MapPin className="w-5 h-5 text-sea_green" />,
-      label: 'Immersion Location',
-      value: 'Sahyadri Rural Hamlets',
-      sub: 'Maharashtra'
-    },
-    {
-      icon: <Users className="w-5 h-5 text-amber-700" />,
-      label: 'Cohort Strength',
-      value: '40 Selected Fellows',
-      sub: 'Pan-India Representation'
-    },
-    {
-      icon: <GraduationCap className="w-5 h-5 text-dark_emerald" />,
-      label: 'Who Can Apply',
-      value: 'UG, PG & Researchers',
-      sub: 'All Academic Disciplines'
-    },
-  ];
-
   const highlights = [
     {
       icon: <Users className="w-6 h-6 text-emerald-700" />,
-      title: 'Curated Interdisciplinary Cohort',
-      desc: 'Selected scholars from IITs, TISS, IIMs, Law & Policy institutes across India learning together.',
+      title: 'Curated 40-Fellow Cohort',
+      desc: 'Selected scholars from IITs, TISS, IIMs, Law & Policy institutes across India.',
       bg: 'bg-emerald-50/80 border-emerald-200/80'
     },
     {
       icon: <TreePine className="w-6 h-6 text-sea_green" />,
       title: '100% Lived Field Immersion',
-      desc: 'Hands-on village homestays, forest biodiversity trails, and organic agricultural practice.',
+      desc: 'Off-grid village homestays, forest biodiversity trails, and organic farm work.',
       bg: 'bg-teal-50/80 border-teal-200/80'
     },
     {
@@ -77,7 +48,7 @@ export default function RegisterPage() {
     {
       icon: <Award className="w-6 h-6 text-dark_emerald" />,
       title: 'Fellowship Certification',
-      desc: 'Official certificate of completion with real interdisciplinary policy case project credits.',
+      desc: 'Official certificate of completion with real interdisciplinary policy project credits.',
       bg: 'bg-lime-50/80 border-lime-200/80'
     },
   ];
@@ -85,19 +56,19 @@ export default function RegisterPage() {
   const faqs = [
     {
       q: 'What does "Are you Interested" mean?',
-      a: 'By submitting the "Are you Interested" form, you register an early expression of interest for the upcoming winter school. You will receive priority notifications, application guidelines, and curriculum updates directly before public rollout.'
+      a: 'By clicking "Are you Interested" and submitting your details, you register an early expression of interest for the upcoming winter camp. When admissions officially open, priority notifications and application guidelines will be sent directly to your email.'
     },
     {
-      q: 'Who is eligible to participate in the upcoming cohort?',
-      a: 'The fellowship is open to undergraduate, postgraduate, and PhD scholars from all academic disciplines (Law, Engineering, Public Policy, Economics, Social Sciences, Management, etc.) as well as early-career professionals.'
+      q: 'Is prior rural or trekking experience mandatory?',
+      a: 'Not at all. The fellowship welcomes students and researchers from all backgrounds. All you need is intellectual curiosity, empathy, and willingness to participate actively in community life.'
     },
     {
-      q: 'Are food, lodging, and safety arranged?',
-      a: 'Yes. All selected fellows receive organized community lodging, authentic nutritious Maharashtrian meals, 24/7 faculty supervision, and guided field logistics throughout the 5 days.'
+      q: 'Are food, lodging, and local transit arranged?',
+      a: 'Yes. All selected fellows receive organized community lodging, authentic nutritious Maharashtrian meals, and guided field logistics throughout the 5 days.'
     },
     {
       q: 'Will participants receive a certificate?',
-      a: 'Yes. All fellows who complete the 5-day immersion and present their group action blueprint will receive a verified certificate of completion from Sahyadri Rural Connect.'
+      a: 'Yes. All participants who complete the 5-day immersion and present their group action blueprint will receive a certificate of completion from Sahyadri Rural Connect.'
     }
   ];
 
@@ -121,9 +92,10 @@ export default function RegisterPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
           
-          {/* Upcoming Status Badge */}
+          {/* Status Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-celadon shadow-sm backdrop-blur-md">
-            <Flame className="w-4 h-4 text-emerald-600 animate-bounce" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 -ml-5" />
             <p className="text-xs sm:text-sm font-bold text-evergreen tracking-wider uppercase">
               Upcoming Edition • Winter Camp Loading
             </p>
@@ -131,12 +103,12 @@ export default function RegisterPage() {
 
           {/* Main Title */}
           <h1 className="font-extrabold font-serif text-3xl sm:text-5xl md:text-6xl text-evergreen leading-tight drop-shadow-sm">
-            Sahyadri Winter School <span className="text-sea_green italic">2026</span>
+            Winter Camp <span className="text-sea_green italic">Loading</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl text-pine_teal/90 max-w-3xl mx-auto leading-relaxed">
-            A transformative 5-day grassroots residential fellowship in rural Maharashtra. Experience lived field realities, engage with community leaders, and co-create actionable policy solutions.
+            A transformative 5-day grassroots residential fellowship taking university students and researchers to the heart of rural Maharashtra.
           </p>
 
           {/* Top CTA Buttons */}
@@ -151,42 +123,18 @@ export default function RegisterPage() {
             </Link>
 
             <a
-              href="#upcoming-details"
+              href="#poster-details"
               className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-sm sm:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300"
             >
               <BookOpen size={17} />
-              <span>Upcoming Cohort Blueprint</span>
+              <span>Explore Camp Details</span>
             </a>
           </div>
 
         </div>
       </section>
 
-      {/* ================= 2. UPCOMING EDITION SNAPSHOT MATRIX ================= */}
-      <section className="px-4 md:px-8 py-6 max-w-6xl mx-auto relative z-10">
-        <div className="bg-white/90 backdrop-blur-md rounded-3xl border border-celadon/60 p-6 shadow-sm grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {snapshotMetrics.map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3.5 p-2">
-              <div className="w-10 h-10 rounded-2xl bg-frosted_mint/50 border border-celadon/50 flex items-center justify-center flex-shrink-0">
-                {item.icon}
-              </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-pine_teal/70 block">
-                  {item.label}
-                </span>
-                <span className="font-serif text-sm md:text-base font-bold text-evergreen block leading-tight">
-                  {item.value}
-                </span>
-                <span className="text-[11px] text-sea_green font-medium">
-                  {item.sub}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= 3. FOUR PILLARS / HIGHLIGHTS ================= */}
+      {/* ================= 2. FOUR PILLARS / HIGHLIGHTS ================= */}
       <section className="px-4 md:px-8 py-8 max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {highlights.map((item, idx) => (
@@ -210,79 +158,39 @@ export default function RegisterPage() {
         </div>
       </section>
 
-      {/* ================= 4. UPCOMING FELLOWSHIP TEMPLATE / BLUEPRINT ================= */}
-      <section id="upcoming-details" className="px-4 md:px-8 py-10 max-w-6xl mx-auto relative z-10">
+      {/* ================= 3. POSTER & IMMERSION BLUEPRINT (SIDE-BY-SIDE) ================= */}
+      <section id="poster-details" className="px-4 md:px-8 py-10 max-w-6xl mx-auto relative z-10">
         <div className="bg-white rounded-3xl border-2 border-celadon/60 p-6 sm:p-10 shadow-lg grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left: Modern Upcoming Announcement Card */}
+          {/* Left: Poster Showcase Template with Upcoming Overlays */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-[380px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-b from-[#1b4332] to-[#2d6a4f] text-white p-6 flex flex-col justify-between min-h-[460px] group">
+            <div className="relative w-full max-w-[360px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
+              <Image
+                src="/SRCRegistrationPoster.png"
+                alt="Sahyadri Rural Connect Registration Poster"
+                width={1120}
+                height={1500}
+                className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                priority
+                sizes="(max-width: 768px) 100vw, 400px"
+              />
               
-              {/* Background Glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-mint_leaf/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-              
-              {/* Card Header */}
-              <div className="relative z-10 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase text-frosted_mint">
-                    Cohort 2026
-                  </span>
-                  <span className="text-[11px] font-mono text-frosted_mint/80">
-                    5-Day Fellowship
-                  </span>
-                </div>
-
-                <h3 className="font-serif text-2xl font-bold text-white leading-snug">
-                  Sahyadri Rural Connect
-                </h3>
-
-                <p className="text-xs text-frosted_mint/90 leading-relaxed font-light">
-                  A structured ground-level immersion bridging premier university scholars with the lived reality of rural Bharat.
+              {/* Upcoming Edition Badges */}
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-sea_green text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+                Upcoming Cohort
+              </div>
+              <div className="absolute bottom-3 inset-x-3 bg-black/75 backdrop-blur-md text-white p-2.5 rounded-xl text-center shadow-lg">
+                <p className="text-[11px] font-bold text-frosted_mint uppercase tracking-wider">
+                  Winter 2026 Loading
+                </p>
+                <p className="text-[10px] text-white/80">
+                  Admissions Opening Soon • Express Interest Below
                 </p>
               </div>
-
-              {/* Card Focus Tracks */}
-              <div className="relative z-10 my-6 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 space-y-2.5">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-200 block">
-                  Upcoming Immersion Tracks:
-                </span>
-                <div className="space-y-1.5 text-xs text-white/90">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>Tribal Ecology & Forest Rights (PESA)</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>Agrarian FPOs & Regenerative Agriculture</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>Decentralized Solar & Clean Tech</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>Rural Infrastructure & Digital Access</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Footer CTA */}
-              <div className="relative z-10 pt-2 border-t border-white/20 flex items-center justify-between">
-                <span className="text-[11px] font-medium text-frosted_mint">
-                  Early Expression Open
-                </span>
-                <Link
-                  href="/register/form"
-                  className="px-4 py-2 rounded-full bg-white text-evergreen font-bold text-xs shadow-md hover:bg-frosted_mint hover:scale-105 transition-all"
-                >
-                  Join Cohort
-                </Link>
-              </div>
-
             </div>
 
             <p className="text-[11px] text-pine_teal/70 font-medium text-center mt-3">
-              Official Sahyadri Rural Connect Fellowship Template
+              Sahyadri Rural Connect • Upcoming Winter School Announcement
             </p>
           </div>
 
@@ -291,7 +199,7 @@ export default function RegisterPage() {
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
                 <Sparkles size={13} />
-                <span>Next Edition Preview</span>
+                <span>Upcoming Fellowship Preview</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen leading-snug">
                 Step Out of the Classroom. <br />
@@ -300,10 +208,10 @@ export default function RegisterPage() {
             </div>
 
             <p className="text-pine_teal text-sm sm:text-base leading-relaxed">
-              India&apos;s true developmental stories, agrarian resilience, and tribal heritage cannot be mastered inside lecture halls or online papers alone. <strong>Sahyadri Rural Connect</strong> provides a structured, intellectually rigorous, and culturally grounded immersion for the next generation of researchers, leaders, and policymakers.
+              India&apos;s true developmental stories, agrarian resilience, and tribal heritage cannot be mastered inside lecture halls or online papers alone. <strong>Sahyadri Rural Connect</strong> is preparing its next flagship winter immersion for students, researchers, and aspiring change leaders.
             </p>
 
-            {/* Feature Checklist */}
+            {/* Upcoming Feature Checklist */}
             <div className="grid sm:grid-cols-2 gap-3 pt-1">
               <div className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
@@ -351,7 +259,7 @@ export default function RegisterPage() {
         </div>
       </section>
 
-      {/* ================= 5. ACCORDION FAQS ================= */}
+      {/* ================= 4. ACCORDION FAQS ================= */}
       <section className="px-4 md:px-8 pb-16 max-w-4xl mx-auto">
         <div className="text-center mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
