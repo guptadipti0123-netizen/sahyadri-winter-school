@@ -4,13 +4,6 @@ import Image from "next/image"
 import {
    Calendar, MapPin, Play, ChevronLeft, ChevronRight, BookOpen, Mic, Sun, ArrowRight, Target, Pause, Volume2, VolumeX,
 } from "lucide-react"
-import { Noto_Sans } from 'next/font/google'
-
-const noto_Sans = Noto_Sans({
-   subsets: ['Cyrillic'],
-   weight: ['400', '700', '800', '900'], // Load the weights you need
-   display: 'swap',
-})
 
 // --- WINTER CAMP DEC 2025 DATA ---
 const campDetails = {
@@ -333,7 +326,7 @@ export default function Camp2Page() {
                      <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
                      <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">{campDetails.edition}</p>
                   </div>
-                  <h1 className={`${noto_Sans.className} font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md`}>{campDetails.title}</h1>
+                  <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">{campDetails.title}</h1>
                   <div className="flex flex-col gap-2 text-sm md:text-lg font-light">
                      <div className="flex items-center gap-2"><Calendar className="w-4 h-4 md:w-5 md:h-5" /><span>{campDetails.dates}</span></div>
                      <div className="flex items-center gap-2"><MapPin className="w-4 h-4 md:w-5 md:h-5" /><span>{campDetails.location}</span></div>

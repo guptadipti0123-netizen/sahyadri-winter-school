@@ -3,13 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { Users, Handshake, Compass, TrendingUp, CloudUpload } from "lucide-react"; // Changed icon
 import './volunteers.css';
-import { Noto_Sans } from 'next/font/google'
-
-const noto_Sans = Noto_Sans({
-  subsets: ['Cyrillic'],
-  weight: ['400', '700', '800', '900'], // Load the weights you need
-  display: 'swap',
-})
 
 const leftRoles = [
   {
@@ -132,7 +125,7 @@ export default function VolunteerPage() {
             </p>
           </div>
 
-          <h1 className={`${noto_Sans.className} font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md`}>
+          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
             Volunteer Opportunities
           </h1>
 

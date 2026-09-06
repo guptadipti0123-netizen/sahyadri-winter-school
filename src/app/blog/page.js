@@ -4,13 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { blogsData } from "@/data/blogsData"
 import { BookOpen, Calendar, Clock, ArrowRight, Sparkles, Filter, Search } from "lucide-react"
-import { Noto_Sans } from 'next/font/google'
-
-const noto_Sans = Noto_Sans({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '600', '700', '800', '900'],
-  display: 'swap',
-})
 
 export default function BlogHubPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -49,7 +42,7 @@ export default function BlogHubPage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 text-center relative z-10 space-y-4">
-          <h1 className={`${noto_Sans.className} font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-tight drop-shadow-sm`}>
+          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-tight drop-shadow-sm">
             Stories from <span className="text-sea_green italic">Real Bharat</span>
           </h1>
 

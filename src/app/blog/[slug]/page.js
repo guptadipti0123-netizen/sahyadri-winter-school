@@ -4,13 +4,6 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { blogsData } from "@/data/blogsData"
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Sparkles, BookOpen, Quote, CheckCircle2 } from "lucide-react"
-import { Noto_Sans } from 'next/font/google'
-
-const noto_Sans = Noto_Sans({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '600', '700', '800', '900'],
-  display: 'swap',
-})
 
 // Generate static params for all slugs
 export async function generateStaticParams() {
@@ -62,7 +55,7 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           {/* Title */}
-          <h1 className={`${noto_Sans.className} font-serif font-extrabold text-2xl sm:text-4xl md:text-5xl leading-tight text-white drop-shadow-md`}>
+          <h1 className="font-serif font-extrabold text-2xl sm:text-4xl md:text-5xl leading-tight text-white drop-shadow-md">
             {blog.title}
           </h1>
 

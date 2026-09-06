@@ -7,13 +7,6 @@ import {
   Trees, Landmark, ArrowRight, CheckCircle2, Compass, Sun,
   Award, ShieldCheck, HeartHandshake, Eye
 } from "lucide-react"
-import { Noto_Sans } from 'next/font/google'
-
-const noto_Sans = Noto_Sans({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '600', '700', '800', '900'],
-  display: 'swap',
-})
 
 // --- SUMMER SCHOOL MAY 2026 DATA ---
 const campDetails = {
@@ -192,7 +185,7 @@ export default function SummerSchoolJawharPage() {
               </p>
             </div>
 
-            <h1 className={`${noto_Sans.className} font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-[1.15] drop-shadow-sm`}>
+            <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-[1.15] drop-shadow-sm">
               {campDetails.title}
               <span className="block text-2xl sm:text-3xl md:text-4xl text-sea_green font-normal italic mt-1 font-serif">
                 Jawhar, Maharashtra
@@ -220,7 +213,7 @@ export default function SummerSchoolJawharPage() {
                 href="/register/form"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
-                Register for Camp
+                Are you Interested
                 <ArrowRight size={18} />
               </Link>
               <Link
@@ -503,7 +496,7 @@ export default function SummerSchoolJawharPage() {
                 href="/register/form"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-evergreen font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300"
               >
-                Register for May 2026
+                Are you Interested
                 <ArrowRight size={18} />
               </Link>
               <Link

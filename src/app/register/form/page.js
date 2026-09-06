@@ -3,13 +3,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Send, CheckCircle, XCircle, Loader2, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { Noto_Sans } from 'next/font/google';
-
-const noto_Sans = Noto_Sans({
-  subsets: ['Cyrillic'],
-  weight: ['400', '700', '800', '900'],
-  display: 'swap',
-});
 
 // --- FORM FIELD DEFINITIONS (split into two sections) ---
 const personalFields = [
@@ -295,7 +288,7 @@ export default function RegisterFormPage() {
             </p>
           </div>
 
-          <h1 className={`${noto_Sans.className} font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md`}>
+          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
             Registration Form
           </h1>
 

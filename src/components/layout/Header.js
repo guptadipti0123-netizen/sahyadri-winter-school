@@ -160,7 +160,7 @@ export default function Header() {
             href="/register"
             className="ml-2 px-5 py-2 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 bg-[#2d6a4f] hover:bg-[#1b4332] text-white"
           >
-            Upcoming Camp
+            Winter Camp Loading
           </Link>
         </div>
 
@@ -172,7 +172,7 @@ export default function Header() {
             className="px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-sea_green to-dark_emerald text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 text-center"
             onClick={() => setIsOpen(false)}
           >
-            Upcoming Camp
+            Winter Camp Loading
           </Link>
 
           {/* MOBILE HAMBURGER BUTTON */}
@@ -263,7 +263,7 @@ export default function Header() {
               className="mt-6 w-full text-center py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-sea_green to-dark_emerald shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               onClick={() => setIsOpen(false)}
             >
-              Upcoming Camp
+              Winter Camp Loading
             </Link>
           </div>
         </div>

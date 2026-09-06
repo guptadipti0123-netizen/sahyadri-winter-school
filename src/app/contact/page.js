@@ -2,13 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, Phone, Send, Instagram, XCircle } from 'lucide-react';
-import { Noto_Sans } from 'next/font/google'
-
-const noto_Sans = Noto_Sans({
-  subsets: ['Cyrillic'],
-  weight: ['400', '700', '800', '900'], // Load the weights you need
-  display: 'swap',
-})
 
 const filledBg = (value) =>
   value.trim()
@@ -155,8 +148,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <h1 className={`${noto_Sans.className} font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md`}>
-            Get In Touch
+          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
+            Get in Touch
           </h1>
 
           <p className="text-base md:text-xl italic">

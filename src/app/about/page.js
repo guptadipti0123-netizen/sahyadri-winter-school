@@ -156,7 +156,7 @@ export default function AboutPage() {
                 href="/register"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-evergreen font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300"
               >
-                <span>Explore Upcoming Camp</span>
+                <span>Winter Camp Loading</span>
                 <ArrowRight size={17} />
               </Link>
               <Link

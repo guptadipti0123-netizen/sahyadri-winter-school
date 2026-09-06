@@ -4,13 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Noto_Sans } from 'next/font/google';
-
-const noto_Sans = Noto_Sans({
-  subsets: ['Cyrillic'],
-  weight: ['400', '700', '800', '900'],
-  display: 'swap',
-});
 
 export default function RegisterPage() {
   return (
@@ -31,14 +24,7 @@ export default function RegisterPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          {/* <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">
-              Join Us
-            </p>
-          </div> */}
-
-          <h1 className={`${noto_Sans.className} font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md`}>
+          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
             Winter Camp Loading
           </h1>
 
