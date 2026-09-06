@@ -62,12 +62,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-2 ${isTransparent
-        ? 'bg-transparent' // Transparent on Home Hero
-        : 'bg-white/90 backdrop-blur-md border-b border-celadon/30 shadow-sm' // Glassy elsewhere
-        }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-2.5 bg-white/90 backdrop-blur-md border-b border-[#ebdcc6]/60 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
     >
-      <nav className="w-full mx-auto px-3 md:px-6 relative flex items-center justify-between">
+      <nav className="w-full max-w-7xl mx-auto px-4 md:px-8 relative flex items-center justify-between">
 
         {/* LOGO SECTION */}
         <Link
@@ -75,7 +72,7 @@ export default function Header() {
           className="flex items-center gap-3 group"
           onClick={() => setIsOpen(false)}
         >
-          <div className="relative w-8 h-8 md:w-10 md:h-10 overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+          <div className="relative w-8 h-8 md:w-9 md:h-9 overflow-hidden rounded-lg shadow-sm transition-transform duration-300 group-hover:scale-105 border border-black/5">
             <Image
               src="/logo.jpg"
               alt="Sahyadri Logo"
@@ -83,16 +80,13 @@ export default function Header() {
               className="object-cover"
             />
           </div>
-          <span className={`font-serif font-bold text-base md:text-xl tracking-wide transition-colors ${isTransparent
-            ? 'text-white drop-shadow-md'
-            : 'text-evergreen'
-            }`}>
+          <span className="font-serif font-bold text-base md:text-xl tracking-wide text-evergreen">
             Sahyadri Rural Connect
           </span>
         </Link>
 
         {/* DESKTOP NAV (Hidden below 850px) */}
-        <div className="hidden min-[850px]:flex items-center gap-8">
+        <div className="hidden min-[850px]:flex items-center gap-7">
           {navLinks.map((link) => {
 
             // --- DROPDOWN LOGIC FOR PARENT ITEMS ---
@@ -103,28 +97,29 @@ export default function Header() {
                 <div key={link.name} className="relative group">
                   {/* Parent Trigger */}
                   <button
-                    className={`flex items-center gap-1 text-sm tracking-wide transition-all duration-300 py-1 font-medium ${isTransparent
-                      ? (isChildActive ? 'text-white font-bold' : 'text-white/80 hover:text-white')
-                      : (isChildActive ? 'text-evergreen font-bold' : 'text-pine_teal hover:text-sea_green')
-                      }`}
+                    className={`flex items-center gap-1 text-sm tracking-wide transition-all duration-200 py-1 font-medium ${
+                      isChildActive ? 'text-sea_green font-bold' : 'text-pine_teal hover:text-sea_green'
+                    }`}
                   >
                     {link.name}
                     <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
                   </button>
 
-                  {/* Dropdown Menu (Invisible bridge for hovering) */}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    <div className="bg-white backdrop-blur-md border border-celadon/30 shadow-xl rounded-xl overflow-hidden min-w-[230px] w-max py-1 divide-y divide-gray-100">
+                  {/* Dropdown Menu */}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <div className="bg-white backdrop-blur-md border border-[#ebdcc6] shadow-xl rounded-xl overflow-hidden min-w-[230px] w-max py-1 divide-y divide-gray-100">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`block px-4 py-2.5 hover:bg-frosted_mint/40 transition-colors ${pathname === child.href ? 'bg-frosted_mint/30' : ''
-                            }`}
+                          className={`block px-4 py-2.5 hover:bg-frosted_mint/40 transition-colors ${
+                            pathname === child.href ? 'bg-frosted_mint/30' : ''
+                          }`}
                         >
                           <div className="flex items-center justify-between gap-3">
-                            <span className={`text-sm font-semibold transition-colors ${pathname === child.href ? 'text-sea_green' : 'text-evergreen'
-                              }`}>
+                            <span className={`text-sm font-semibold transition-colors ${
+                              pathname === child.href ? 'text-sea_green' : 'text-evergreen'
+                            }`}>
                               {child.name}
                             </span>
                             <span className="text-[11px] font-semibold text-sea_green bg-frosted_mint/80 border border-celadon/50 px-2 py-0.5 rounded-md">
@@ -148,16 +143,14 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm tracking-wide transition-all duration-300 relative group py-1 ${isActive ? 'font-bold' : 'font-medium'
-                  } ${isTransparent
-                    ? isActive ? 'text-white' : 'text-white/80 hover:text-white'
-                    : isActive ? 'text-evergreen' : 'text-pine_teal hover:text-sea_green'
-                  }`}
+                className={`text-sm tracking-wide transition-all duration-200 relative group py-1 ${
+                  isActive ? 'text-sea_green font-bold' : 'text-pine_teal hover:text-sea_green font-medium'
+                }`}
               >
                 {link.name}
-                <span className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${isTransparent ? 'bg-white' : 'bg-sea_green'
-                  } ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}></span>
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-sea_green transition-all duration-300 ${
+                  isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             )
           })}
@@ -165,10 +158,7 @@ export default function Header() {
           {/* REGISTER CTA BUTTON (Desktop) */}
           <Link
             href="/register"
-            className={`ml-2 px-5 py-2 rounded-full text-sm font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 ${isTransparent
-              ? 'bg-white text-evergreen hover:bg-frosted_mint'
-              : 'bg-gradient-to-r from-sea_green to-dark_emerald text-white hover:from-dark_emerald hover:to-evergreen'
-              }`}
+            className="ml-2 px-5 py-2 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 active:scale-95 bg-[#2d6a4f] hover:bg-[#1b4332] text-white"
           >
             Upcoming Camp
           </Link>
