@@ -18,21 +18,21 @@ const featuredSlides = [
     title: "Understanding Real Bharat: Ground-Level Leadership & Grassroots Realities",
     subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
     image: "/sahyadri-bg-hero6.jpeg", // Panoramic Sahyadri Ghats
-    link: "/about",
-    urlTag: "sahyadriconnect.org/about",
+    link: "/blog/a-day-at-sahyadri-rural-connect",
+    urlTag: "sahyadriconnect.org/blog/a-day-at-sahyadri-rural-connect",
     date: "Dec 2025",
     readTime: "5 Days Immersion",
   },
   {
     id: "jawhar-summer-school",
-    category: "SUMMER SCHOOL 2026",
+    category: "CULTURE & ART",
     title: "Cradle of Warli Art: Previewing Summer School 2026 in Jawhar",
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
     image: "/jawahar-village-tribal-community.jpg", // Jawhar tribal palace & landscape
-    link: "/summer-school",
-    urlTag: "sahyadriconnect.org/summer-school",
+    link: "/blog/cradle-of-warli-art-jawhar-preview",
+    urlTag: "sahyadriconnect.org/blog/cradle-of-warli-art-jawhar-preview",
     date: "May 2026",
-    readTime: "Registrations Open",
+    readTime: "4 min read",
   },
   {
     id: "sustainable-ecology",
@@ -41,7 +41,7 @@ const featuredSlides = [
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
     image: "/camp2/camp2-day3-i1.jpg", // Real field photo: students with organic mentors
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
-    urlTag: "sahyadriconnect.org/blog/sustainable-livelihoods",
+    urlTag: "sahyadriconnect.org/blog/sustainable-livelihoods-and-tribal-wisdom",
     date: "Dec 27, 2025",
     readTime: "5 min read",
   },
@@ -52,22 +52,22 @@ const featuredSlides = [
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
     image: "/camp2/camp2-day2-i2.jpg", // Real photo: fort trek trail
     link: "/blog/maratha-heritage-and-rural-immersion",
-    urlTag: "sahyadriconnect.org/blog/maratha-heritage",
+    urlTag: "sahyadriconnect.org/blog/maratha-heritage-and-rural-immersion",
     date: "Dec 25, 2025",
     readTime: "6 min read",
   },
 ]
 
-// Right Side Latest Articles / Featured Cards — Distinct Unique Camp Photos
+// Right Side Latest Articles — ALL 4 ARE CONSISTENT BLOG ARTICLES
 const sideArticles = [
   {
     id: "art-1",
-    category: "GOVERNANCE & PESA",
-    title: "Summer School 2026: Jawhar Warli Art & Tribal Governance",
+    category: "CULTURE & ART",
+    title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
     date: "May 2026",
-    readTime: "5 Days",
+    readTime: "4 min read",
     image: "/sahyadri-6.jpg", // Real photo: Palghar tribal village community
-    link: "/summer-school",
+    link: "/blog/cradle-of-warli-art-jawhar-preview",
     tagColor: "bg-[#eef2ff] text-[#3730a3] border-[#c7d2fe]",
   },
   {
