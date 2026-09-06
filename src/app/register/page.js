@@ -248,7 +248,7 @@ export default function RegisterPage() {
       </section>
 
       {/* ================= 4. ACCORDION FAQS ================= */}
-      <section className="px-4 md:px-8 py-10 max-w-4xl mx-auto">
+      <section className="px-4 md:px-8 pb-16 max-w-4xl mx-auto">
         <div className="text-center mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
             <HelpCircle size={13} />
@@ -284,41 +284,6 @@ export default function RegisterPage() {
               )}
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ================= 5. FINAL GRAND CTA ================= */}
-      <section className="px-4 md:px-8 pb-16 max-w-5xl mx-auto relative z-10">
-        <div className="bg-gradient-to-br from-evergreen via-dark_emerald to-sea_green text-white rounded-3xl p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden space-y-6">
-          
-          <div className="relative z-10 space-y-4 max-w-2xl mx-auto">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold tracking-widest uppercase text-frosted_mint">
-              Limited to 40 Seats Per Cohort
-            </span>
-
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-sm">
-              Ready to Join the Movement?
-            </h2>
-
-            <p className="text-frosted_mint/90 text-sm sm:text-base leading-relaxed">
-              Express your interest today to receive early access when final registration slots open for the upcoming Sahyadri Winter / Summer School cohort.
-            </p>
-
-            <div className="pt-2">
-              <Link
-                href="/register/form"
-                className="inline-flex items-center gap-3 px-10 py-4.5 rounded-full bg-white text-evergreen font-extrabold text-base shadow-xl hover:shadow-2xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300"
-              >
-                <span>Are you Interested</span>
-                <ArrowRight size={18} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Background Decorative Blurs */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-mint_leaf/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
         </div>
       </section>
 
