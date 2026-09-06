@@ -7,15 +7,7 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ArrowRight, 
-  Clock, 
-  Calendar,
-  Sparkles,
-  BookOpen,
-  Leaf,
-  Landmark,
-  Cpu,
-  Palette,
-  Compass
+  Clock 
 } from "lucide-react"
 import { Lora, Inter, Outfit } from "next/font/google"
 
@@ -43,7 +35,6 @@ const featuredSlides = [
   {
     id: "real-bharat",
     category: "RURAL IMMERSION",
-    categoryIcon: Compass,
     title: "Understanding Real Bharat: Ground-Level Leadership & Grassroots Realities",
     subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
     image: "/sahyadri-bg-hero6.jpeg",
@@ -54,8 +45,7 @@ const featuredSlides = [
   },
   {
     id: "jawhar-summer-school",
-    category: "UPCOMING • SUMMER SCHOOL 2026",
-    categoryIcon: Palette,
+    category: "SUMMER SCHOOL 2026",
     title: "Cradle of Warli Art: Previewing Summer School 2026 in Jawhar",
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
     image: "/jawahar-village-tribal-community.jpg",
@@ -67,7 +57,6 @@ const featuredSlides = [
   {
     id: "sustainable-ecology",
     category: "ECOLOGY & INNOVATION",
-    categoryIcon: Leaf,
     title: "Deep Roots: Tribal Ecology, Organic Agriculture & Solar Innovation",
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
     image: "/camp2/camp2-day3-i2.jpg",
@@ -79,7 +68,6 @@ const featuredSlides = [
   {
     id: "maratha-heritage",
     category: "CULTURE & ECONOMY",
-    categoryIcon: Landmark,
     title: "Echoes of History & Grassroots Enterprise: Fort Trekking & FPOs",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
     image: "/camp2/camp2-day2-i1.jpg",
@@ -95,7 +83,6 @@ const sideArticles = [
   {
     id: "art-1",
     category: "GOVERNANCE & PESA",
-    categoryIcon: Landmark,
     title: "Summer School 2026: Jawhar Warli Art & Tribal Governance",
     date: "May 2026",
     readTime: "5 Days",
@@ -106,7 +93,6 @@ const sideArticles = [
   {
     id: "art-2",
     category: "ECOLOGY & TECH",
-    categoryIcon: Leaf,
     title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
     date: "Dec 27, 2025",
     readTime: "5 min read",
@@ -117,7 +103,6 @@ const sideArticles = [
   {
     id: "art-3",
     category: "CULTURE & HISTORY",
-    categoryIcon: Compass,
     title: "Echoes of History: Maratha Heritage & Farmer Collectives",
     date: "Dec 25, 2025",
     readTime: "6 min read",
@@ -128,7 +113,6 @@ const sideArticles = [
   {
     id: "art-4",
     category: "FIELD STORIES",
-    categoryIcon: BookOpen,
     title: "A Day at Sahyadri Rural Connect: Arrivals & Ground Notes",
     date: "Dec 24, 2025",
     readTime: "5 min read",
@@ -166,7 +150,6 @@ export default function Hero() {
   }, [isPaused, nextSlide])
 
   const activeSlide = featuredSlides[current]
-  const ActiveCategoryIcon = activeSlide.categoryIcon
 
   return (
     <section 
@@ -203,19 +186,18 @@ export default function Hero() {
                       className="object-cover object-center"
                     />
 
-                    {/* Clean and Light Gradient (No heavy pitch black) */}
+                    {/* Clean and Light Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                   </div>
                 )
               })}
 
-              {/* Top Bar: Category Pill Badge */}
+              {/* Top Bar: Category Pill Badge (Clean text, no icons) */}
               <div className="relative z-20 p-5 sm:p-7 flex items-center justify-between">
                 <Link
                   href={activeSlide.link}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fef3c7]/95 hover:bg-[#fef3c7] text-[#78350f] text-xs sm:text-sm font-semibold tracking-wide shadow-sm border border-[#fde68a] backdrop-blur-sm transition-all hover:scale-105"
+                  className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#fef3c7]/95 hover:bg-[#fef3c7] text-[#78350f] text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-sm border border-[#fde68a] backdrop-blur-sm transition-all hover:scale-105"
                 >
-                  <ActiveCategoryIcon size={14} className="text-[#b45309]" />
                   <span>{activeSlide.category}</span>
                 </Link>
 
@@ -312,11 +294,10 @@ export default function Hero() {
           {/* ========================================================= */}
           <div className="lg:col-span-5 xl:col-span-4 flex flex-col">
             
-            {/* Section Heading */}
+            {/* Section Heading (Clean text, no icons) */}
             <div className="flex items-center justify-between mb-4 px-1">
-              <h2 className={`${outfit.className} text-xs md:text-sm font-bold tracking-widest text-[#4a3b2c] uppercase flex items-center gap-2`}>
-                <Sparkles size={14} className="text-[#c27803]" />
-                LATEST ARTICLES & EDITIONS
+              <h2 className={`${outfit.className} text-xs md:text-sm font-bold tracking-widest text-[#4a3b2c] uppercase`}>
+                LATEST ARTICLES
               </h2>
               <Link 
                 href="/blog" 
@@ -329,7 +310,6 @@ export default function Hero() {
             {/* Vertical Stack of Clean White Cards */}
             <div className="flex flex-col gap-3.5">
               {sideArticles.map((item) => {
-                const ItemIcon = item.categoryIcon
                 return (
                   <Link
                     key={item.id}
@@ -348,10 +328,9 @@ export default function Hero() {
 
                     {/* Card Text Content */}
                     <div className="flex-1 min-w-0 flex flex-col justify-center">
-                      {/* Category Badge */}
+                      {/* Category Badge (Clean text, no icons) */}
                       <div className="mb-1.5 flex items-center">
-                        <span className={`inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md border ${item.tagColor} tracking-wide uppercase`}>
-                          <ItemIcon size={11} />
+                        <span className={`inline-block text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-md border ${item.tagColor} tracking-wider uppercase`}>
                           {item.category}
                         </span>
                       </div>
