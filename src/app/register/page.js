@@ -279,20 +279,6 @@ export default function RegisterPage() {
                   </p>
                 </div>
 
-                {/* Card CTA Footer */}
-                <div className="pt-2 flex items-center justify-between border-t border-[#ebdcc6]/70">
-                  <span className="text-[11px] font-bold text-[#5c4033] uppercase tracking-wider">
-                    Early Expression Open
-                  </span>
-                  <Link
-                    href="/register/form"
-                    className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-sea_green text-white text-xs font-bold shadow-xs hover:bg-dark_emerald hover:scale-105 active:scale-95 transition-all"
-                  >
-                    <span>Express Interest</span>
-                    <ArrowRight size={13} />
-                  </Link>
-                </div>
-
               </div>
 
             </div>
