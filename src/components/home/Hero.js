@@ -15,7 +15,7 @@ const featuredSlides = [
   {
     id: "real-bharat",
     category: "RURAL IMMERSION",
-    title: "First Footprints: Ground-Level Immersion & Village Dialogue in Kothimbe",
+    title: "Understanding Real Bharat: Ground-Level Leadership & Grassroots Realities",
     subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
     image: "/sahyadri-bg-hero6.jpeg", // Panoramic Sahyadri Ghats
     link: "/blog/a-day-at-sahyadri-rural-connect",
@@ -37,7 +37,7 @@ const featuredSlides = [
   {
     id: "jawhar-summer-school",
     category: "CULTURE & ART",
-    title: "Sacred Groves & Warli Canvas: Previewing Summer School 2026 in Jawhar",
+    title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
     image: "/jawahar-village-tribal-community.jpg", // Jawhar tribal palace & landscape
     link: "/blog/cradle-of-warli-art-jawhar-preview",
@@ -48,7 +48,7 @@ const featuredSlides = [
   {
     id: "sustainable-ecology",
     category: "ECOLOGY & INNOVATION",
-    title: "Roots & Rays: Indigenous Ethnobotany, Clean Energy & Regenerative Farming",
+    title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
     image: "/camp2/camp2-day3-i1.jpg", // Real field photo: students with organic mentors
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
@@ -59,7 +59,7 @@ const featuredSlides = [
   {
     id: "maratha-heritage",
     category: "CULTURE & ECONOMY",
-    title: "Forts, Foothills & Farmer Collectives: Maratha Heritage Meets Agrarian Enterprise",
+    title: "Echoes of History & Grassroots Enterprise: Fort Trekking & FPOs",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
     image: "/camp2/camp2-day2-i2.jpg", // Real photo: fort trek trail
     link: "/blog/maratha-heritage-and-rural-immersion",
@@ -74,7 +74,7 @@ const sideArticles = [
   {
     id: "art-1",
     category: "CULTURE & ART",
-    title: "Sacred Groves & Warli Canvas: Previewing Jawhar Summer School",
+    title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
     date: "May 2026",
     readTime: "4 min read",
     image: "/sahyadri-6.jpg", // Real photo: Palghar tribal village community
@@ -94,7 +94,7 @@ const sideArticles = [
   {
     id: "art-3",
     category: "ECOLOGY & TECH",
-    title: "Roots & Rays: Indigenous Ethnobotany & Regenerative Farming",
+    title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
     date: "Dec 27, 2025",
     readTime: "5 min read",
     image: "/camp2/camp2-day3-i2.jpg", // Real photo: organic farm & forest walk
@@ -104,7 +104,7 @@ const sideArticles = [
   {
     id: "art-4",
     category: "CULTURE & HISTORY",
-    title: "Forts, Foothills & Farmer Collectives: Maratha Heritage & FPOs",
+    title: "Echoes of History & Grassroots Enterprise",
     date: "Dec 25, 2025",
     readTime: "6 min read",
     image: "/camp2/camp2-day2-i3.png", // Real photo: historical fort summit
