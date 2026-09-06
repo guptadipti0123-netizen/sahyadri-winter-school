@@ -3,18 +3,11 @@ import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
-  Sparkles, ArrowRight, Target, Sun, Compass, HeartHandshake,
-  MapPin, Mail, Phone, Calendar, CheckCircle2, Users, Trees,
-  BookOpen, Landmark, ArrowUpRight
+  ArrowRight, ArrowUpRight, MapPin, Mail, CheckCircle2,
+  Calendar, Users, BookOpen, Landmark, Trees, Lightbulb,
+  ShieldCheck, HeartHandshake
 } from "lucide-react"
-import { Noto_Sans } from 'next/font/google'
 import MentorsSection from "@/components/home/MentorsSection"
-
-const noto_Sans = Noto_Sans({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '600', '700', '800', '900'],
-  display: 'swap',
-})
 
 export default function AboutPage() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
@@ -46,7 +39,7 @@ export default function AboutPage() {
       tag: "Upcoming Summer School",
       caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
       image: "/jawahar-village-tribal-community.jpg",
-      href: "/camp-3",
+      href: "/summer-school",
       duration: "Summer 2026"
     }
   ]
@@ -60,66 +53,84 @@ export default function AboutPage() {
 
   const timelineMilestones = [
     {
-      date: "May 2026",
-      title: "Upcoming Summer School — Jawhar",
+      year: "2026",
       edition: "Upcoming Edition",
+      badge: "MAY 2026 • UPCOMING",
+      title: "Summer School: Forest Ecology & Tribal Governance",
       location: "Jawhar, Palghar District",
-      desc: "Expanding to the cradle of Warli art and forest ecology. Exploring tribal self-governance under PESA, non-timber produce, and decentralized rural livelihoods.",
-      href: "/camp-3"
+      theme: "Warli Cultural Heritage, PESA 1996 & Non-Timber Produce",
+      desc: "Expanding our immersive curriculum to Jawhar, the historic cultural cradle of the Warli community. The cohort will engage deeply with tribal self-governance under the PESA Act 1996, indigenous artisans, non-timber forest produce (NTFP) economies, and watershed preservation.",
+      image: "/jawahar-village-tribal-community.jpg",
+      tags: ["PESA Act 1996", "Warli Art Heritage", "Forest Livelihoods", "Gram Sabha Immersion"],
+      href: "/summer-school",
+      ctaText: "Explore Summer School",
+      highlight: "Upcoming Cohort"
     },
     {
-      date: "Dec 2025",
-      title: "2nd Edition Winter Camp — Karjat",
+      year: "2025",
       edition: "2nd Edition",
-      location: "Kothimbe, Karjat",
-      desc: "Deepening field immersion. Highlights included Maratha heritage fort trekking, Farmer Producer Organisation (FPO) visits, solar initiatives, and policy case studies.",
-      href: "/camp-2"
+      badge: "DEC 2025 • 2ND EDITION",
+      title: "Winter Camp: Watersheds, Fort Heritage & Rural Enterprise",
+      location: "Kothimbe & Sugave, Karjat",
+      theme: "Maratha Water Architecture, Solar Initiatives & FPOs",
+      desc: "A transformative 5-day immersion bringing together scholars and young professionals. Highlights included an arduous dawn trek to Kothaligad (Peth) Fort analyzing historic water harvesting, field visits to Farmer Producer Organisations (FPOs), solar micro-grids, and decentralized governance debates.",
+      image: "/camp2/camp2-day2-i1.jpg",
+      tags: ["Kothaligad Trek", "Farmer Producer Orgs", "Solar Micro-Grids", "Policy Case Studies"],
+      href: "/camp-2",
+      ctaText: "View 2nd Edition Archive",
+      highlight: "40+ Fellows Graduated"
     },
     {
-      date: "Jan 2025",
-      title: "Inaugural Winter Camp — Palghar",
+      year: "2025",
       edition: "1st Edition",
-      location: "Palghar, Maharashtra",
-      desc: "Where the journey began. 40 selected students from premier institutions like IIT Bombay, TISS, and ILS engaged in tribal education, community dialogues, and rural immersion.",
-      href: "/camp-1"
+      badge: "JAN 2025 • INAUGURAL",
+      title: "Inaugural Winter Camp: Tribal Education & Grassroots Realities",
+      location: "Manor & Vikramgad, Palghar",
+      theme: "Ashramshala Systems, Grassroots Sensitization & Rural Dialogues",
+      desc: "Where the movement began. 40 selected students from premier institutions like IIT Bombay, TISS Mumbai, and ILS Pune spent 5 days living with local tribal communities, auditing Zilla Parishad schools, and engaging in grassroots dialogues that redefined development beyond classroom textbooks.",
+      image: "/sahyadri-1.jpg",
+      tags: ["Inaugural Cohort", "Tribal Ashramshalas", "Zilla Parishad Fieldwork", "TISS & IIT Fellows"],
+      href: "/camp-1",
+      ctaText: "View 1st Edition Archive",
+      highlight: "Foundation Milestone"
     }
   ]
 
-  const visionPillars = [
+  const coreObjectives = [
     {
-      title: "Mission",
-      tag: "Our Purpose",
-      desc: "To inspire, equip, and empower future leaders from diverse disciplines to make meaningful differences in communities through immersive rural development experiences.",
-      icon: <Target className="w-6 h-6 text-sea_green" />,
-      accentColor: "from-sea_green/10 to-transparent",
-      borderColor: "border-sea_green/40 hover:border-sea_green"
+      num: "01",
+      badge: "SENSITIZATION",
+      title: "Empathy & Cultural Respect",
+      desc: "Fostering deep respect for rural communities by breaking paternalistic development stereotypes through genuine peer-to-peer dialogues and lived experience."
     },
     {
-      title: "Vision",
-      tag: "Our Future",
-      desc: "Creating a generation of socially conscious leaders who understand the complexities of rural India and are equipped with the skills to drive inclusive development.",
-      icon: <Sun className="w-6 h-6 text-amber-600" />,
-      accentColor: "from-amber-500/10 to-transparent",
-      borderColor: "border-amber-400/40 hover:border-amber-500"
+      num: "02",
+      badge: "COLLABORATION",
+      title: "Interdisciplinary Synergy",
+      desc: "Uniting engineers, lawyers, social scientists, and designers in joint field teams to examine complex rural problems from multifaceted perspectives."
     },
     {
-      title: "Objective",
-      tag: "Our Goal",
-      desc: "To engage bright minds in social sensitization, learn alongside communities, and nurture future social leaders and entrepreneurs for India.",
-      icon: <Compass className="w-6 h-6 text-teal-700" />,
-      accentColor: "from-teal-600/10 to-transparent",
-      borderColor: "border-teal-500/40 hover:border-teal-600"
+      num: "03",
+      badge: "APPLICATION",
+      title: "Grassroots Policy & Enterprise",
+      desc: "Equipping fellows to convert raw field insights into actionable research papers, public policy recommendations, and sustainable social enterprise models."
+    },
+    {
+      num: "04",
+      badge: "CONTINUITY",
+      title: "Enduring Community Linkages",
+      desc: "Ensuring host villages and tribal hamlets receive ongoing research support, youth educational workshops, and institutional linkages year-round."
     }
   ]
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
+    <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#fbf8f1]">
 
       {/* ================= 1. EDITORIAL HERO SECTION (Vritant Style) ================= */}
-      <section className="relative pt-28 md:pt-36 pb-14 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
+      <section className="relative pt-28 md:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
         
         {/* Background Atmosphere */}
-        <div className="absolute inset-0 bg-black/30 mix-blend-multiply pointer-events-none" />
+        <div className="absolute inset-0 bg-black/25 mix-blend-multiply pointer-events-none" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-mint_leaf/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-celadon/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
@@ -127,7 +138,11 @@ export default function AboutPage() {
           
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <h1 className={`${noto_Sans.className} font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-white drop-shadow-md`}>
+            <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-frosted_mint text-xs font-bold tracking-wider uppercase">
+              ABOUT SAHYADRI RURAL CONNECT
+            </span>
+
+            <h1 className="font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-white drop-shadow-md">
               Where Ground-Level Immersion Becomes{" "}
               <span className="italic text-frosted_mint font-serif">Meaningful Leadership.</span>
             </h1>
@@ -232,12 +247,12 @@ export default function AboutPage() {
       </section>
 
       {/* ================= 2. NARRATIVE FRAME: UNDERSTANDING REAL BHARAT ================= */}
-      <section id="story" className="py-14 md:py-20 px-6 max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-12 gap-10 items-center">
+      <section id="story" className="py-16 md:py-24 px-6 max-w-6xl mx-auto relative z-10">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
           
           {/* Left Visual */}
           <div className="md:col-span-5 relative">
-            <div className="relative h-[320px] sm:h-[420px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="relative h-[340px] sm:h-[440px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
                 src="/jawahar-village-tribal-community.jpg"
                 alt="Tribal Community & Village Immersion"
@@ -245,17 +260,23 @@ export default function AboutPage() {
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="absolute -bottom-5 -right-3 bg-white p-4 rounded-2xl shadow-xl border border-celadon/50 max-w-[200px]">
-              <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">Cohort Reflection</span>
-              <p className="text-xs font-semibold text-evergreen mt-0.5">
-                Connecting urban aspirations with rural realities.
+            <div className="absolute -bottom-5 -right-3 bg-white p-5 rounded-2xl shadow-xl border border-[#ebdcc6] max-w-[220px]">
+              <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
+                COHORT REFLECTION
+              </span>
+              <p className="text-xs font-serif font-bold text-evergreen mt-1 leading-snug">
+                Connecting urban aspirations with rural realities and ancient ecological wisdom.
               </p>
             </div>
           </div>
 
           {/* Right Narrative */}
           <div className="md:col-span-7 space-y-6">
-            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
+              THE INSPIRATION
+            </span>
+
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
               Understanding <span className="text-sea_green italic">Real Bharat</span>
             </h2>
 
@@ -263,7 +284,7 @@ export default function AboutPage() {
               <p>
                 Founded by a collective of educators, researchers, and grassroots social practitioners, <strong>Sahyadri Rural Connect</strong> was born out of a simple observation: there is a profound gap between theoretical classroom discussions and the ground-level complexities of rural India.
               </p>
-              <blockquote className="pl-5 border-l-3 border-sea_green text-evergreen font-serif italic text-base md:text-lg leading-relaxed bg-frosted_mint/40 p-4 rounded-r-2xl">
+              <blockquote className="pl-5 border-l-4 border-sea_green text-evergreen font-serif italic text-base md:text-lg leading-relaxed bg-white/80 p-5 rounded-r-2xl border border-y-0 border-r-0 shadow-sm">
                 &quot;Rural India is not a problem statement waiting for an outside solution, but a living civilisational ecosystem with its own wisdom, resilience, and forms of knowledge.&quot;
               </blockquote>
               <p>
@@ -275,123 +296,279 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= 3. OUR STORY TIMELINE (Vritant Style) ================= */}
-      <section className="py-14 px-4 md:px-8 bg-white border-y border-celadon/40 relative">
-        <div className="max-w-5xl mx-auto">
+      {/* ================= 3. OUR STORY TIMELINE / THE JOURNEY SO FAR ================= */}
+      <section className="py-20 px-4 md:px-8 bg-[#faf7f2] border-y border-[#ebdcc6] relative">
+        <div className="max-w-6xl mx-auto">
           
-          <div className="text-center mb-12 space-y-2">
-            <h2 className="font-serif text-2xl md:text-4xl font-bold text-evergreen">
-              The Journey So Far
+          {/* Section Heading */}
+          <div className="text-center mb-16 space-y-3">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
+              OUR CHRONICLE &amp; FIELD ARCHIVES
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-evergreen tracking-tight">
+              The Journey <span className="text-sea_green italic">So Far</span>
             </h2>
-            <p className="text-pine_teal/80 text-sm md:text-base max-w-xl mx-auto">
-              From our first rural cohort in Palghar to upcoming summer schools across the Sahyadris.
+            <p className="text-pine_teal/80 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+              From our inaugural grassroots cohort in Palghar to multi-season field fellowships across Maharashtra&apos;s Western Ghats.
             </p>
           </div>
 
-          <div className="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-celadon before:-translate-x-1/2">
-            {timelineMilestones.map((item, idx) => (
-              <div
-                key={idx}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-6 ${
-                  idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-sea_green flex items-center justify-center shadow-md z-10">
-                  <div className="w-2.5 h-2.5 rounded-full bg-evergreen" />
-                </div>
-
-                {/* Content Box */}
-                <div className="ml-10 md:ml-0 md:w-1/2 px-2 md:px-8">
-                  <div className="bg-frosted_mint/30 border border-celadon/60 p-6 rounded-3xl hover:border-sea_green hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-center justify-between gap-3 mb-2">
-                      <span className="text-xs font-bold text-sea_green uppercase tracking-wider">
-                        {item.date} • {item.edition}
-                      </span>
-                      <span className="text-[11px] font-medium text-pine_teal/70 flex items-center gap-1">
-                        <MapPin size={12} />
-                        {item.location}
-                      </span>
-                    </div>
-
-                    <h3 className="font-serif text-lg md:text-xl font-bold text-evergreen mb-2">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-pine_teal/80 leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
-
-                    <Link
-                      href={item.href}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-sea_green hover:text-dark_emerald group"
-                    >
-                      <span>Explore Camp Archive</span>
-                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+          {/* Timeline Cards Container */}
+          <div className="space-y-12 relative before:hidden lg:before:block lg:before:absolute lg:before:inset-y-0 lg:before:left-1/2 lg:before:w-0.5 lg:before:bg-[#d8c3a5] lg:before:-translate-x-1/2">
+            {timelineMilestones.map((item, idx) => {
+              const isEven = idx % 2 === 0
+              return (
+                <div
+                  key={idx}
+                  className={`relative flex flex-col lg:flex-row items-center gap-8 ${
+                    isEven ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Central Spine Node / Year Marker for Desktop */}
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white border-4 border-sea_green items-center justify-center shadow-md z-10 text-xs font-bold text-evergreen font-serif">
+                    {item.year}
                   </div>
+
+                  {/* Spacer for 2-column alternating alignment */}
+                  <div className="hidden lg:block lg:w-1/2" />
+
+                  {/* Card Content (Occupies half width on desktop) */}
+                  <div className="w-full lg:w-1/2 px-0 lg:px-6">
+                    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#ebdcc6] shadow-sm hover:shadow-xl hover:border-sea_green/60 transition-all duration-300 group flex flex-col justify-between">
+                      
+                      {/* Card Image */}
+                      <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden mb-6 border border-[#ebdcc6]/60">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        
+                        {/* Overlay Badges */}
+                        <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
+                          <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-evergreen text-[11px] font-bold tracking-wider uppercase shadow-xs">
+                            {item.badge}
+                          </span>
+                          <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-frosted_mint text-[10px] font-medium border border-white/20">
+                            {item.highlight}
+                          </span>
+                        </div>
+
+                        {/* Location Tag */}
+                        <div className="absolute bottom-3 left-3.5 flex items-center gap-1.5 text-white text-xs font-semibold drop-shadow-md">
+                          <MapPin size={13} className="text-amber-300" />
+                          <span>{item.location}</span>
+                        </div>
+                      </div>
+
+                      {/* Card Body */}
+                      <div className="space-y-3">
+                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+
+                        <p className="text-xs sm:text-sm font-semibold text-sea_green">
+                          {item.theme}
+                        </p>
+
+                        <p className="text-xs sm:text-sm text-pine_teal/85 leading-relaxed">
+                          {item.desc}
+                        </p>
+
+                        {/* Tag Pills (No icons inside tags) */}
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          {item.tags.map((tag, tagIdx) => (
+                            <span
+                              key={tagIdx}
+                              className="px-2.5 py-1 rounded-lg bg-[#fbf8f1] border border-[#ebdcc6] text-[11px] font-medium text-evergreen"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* CTA Link */}
+                        <div className="pt-4 border-t border-[#ebdcc6]/60 flex items-center justify-between">
+                          <Link
+                            href={item.href}
+                            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-sea_green hover:text-dark_emerald group/link"
+                          >
+                            <span>{item.ctaText}</span>
+                            <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                          </Link>
+                          <span className="text-[11px] font-serif italic text-pine_teal/60">
+                            Edition {item.edition}
+                          </span>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
         </div>
       </section>
 
-      {/* ================= 4. MISSION, VISION & OBJECTIVE ================= */}
-      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12 space-y-2">
-          <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-            Mission, Vision &amp; <span className="text-sea_green italic">Objective</span>
+      {/* ================= 4. MISSION, VISION & GUIDING OBJECTIVES ================= */}
+      <section className="py-20 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
+        
+        {/* Section Heading */}
+        <div className="text-center mb-16 space-y-3">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
+            OUR CORE PURPOSE
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-evergreen tracking-tight">
+            Mission, Vision &amp; <span className="text-sea_green italic">Objectives</span>
           </h2>
-          <p className="text-pine_teal/80 text-sm md:text-base font-medium max-w-xl mx-auto">
-            The guiding principles shaping our experiential curriculum and grassroots community partnerships.
+          <p className="text-pine_teal/80 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+            The foundational philosophy shaping our experiential pedagogy, community partnerships, and fellows.
           </p>
         </div>
 
-        {/* 3 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {visionPillars.map((pillar, idx) => (
+        {/* Featured Dual Spotlight: Mission & Vision */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          
+          {/* Mission Card */}
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-sea_green/30 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-sea_green/10 via-frosted_mint/20 to-transparent rounded-bl-full pointer-events-none" />
+            <div className="absolute top-6 right-8 font-serif font-extrabold text-6xl sm:text-7xl text-sea_green/10 select-none pointer-events-none">
+              01
+            </div>
+
+            <div className="relative z-10 space-y-5">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold tracking-wider uppercase">
+                OUR MISSION
+              </span>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-evergreen leading-snug">
+                To bridge academic theory and rural reality through lived, ground-level immersion.
+              </h3>
+
+              <p className="text-xs sm:text-sm text-pine_teal/90 leading-relaxed font-normal">
+                We empower students, scholars, and emerging leaders to step outside classroom walls, engage directly with grassroots communities, understand ground-level socio-economic structures, and co-create contextually grounded solutions.
+              </p>
+
+              <div className="pt-2 space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-sea_green flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-pine_teal leading-snug">
+                    <strong>Lived Grassroots Immersion:</strong> Living inside tribal ashramshalas, village hamlets, and farm collectives.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-sea_green flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-pine_teal leading-snug">
+                    <strong>Practitioner Mentorship:</strong> Direct dialogues with seasoned IAS veterans, grassroots innovators, and social reformers.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-sea_green flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-pine_teal leading-snug">
+                    <strong>Sensitization over Solutionism:</strong> Listening first to indigenous wisdom rather than imposing external assumptions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Vision Card */}
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-amber-500/30 hover:border-amber-500 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between group">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-amber-500/10 via-amber-100/30 to-transparent rounded-bl-full pointer-events-none" />
+            <div className="absolute top-6 right-8 font-serif font-extrabold text-6xl sm:text-7xl text-amber-600/10 select-none pointer-events-none">
+              02
+            </div>
+
+            <div className="relative z-10 space-y-5">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold tracking-wider uppercase">
+                OUR VISION
+              </span>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-evergreen leading-snug">
+                A generation of leaders who view rural India as a living civilisational strength.
+              </h3>
+
+              <p className="text-xs sm:text-sm text-pine_teal/90 leading-relaxed font-normal">
+                We envision an India where future policymakers, engineers, legal scholars, journalists, and entrepreneurs possess firsthand wisdom of grassroots Bharat—catalyzing inclusive, ecologically sustainable, and culturally respectful national development.
+              </p>
+
+              <div className="pt-2 space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-pine_teal leading-snug">
+                    <strong>Mainstreaming Rural Wisdom:</strong> Integrating indigenous knowledge into modern technological and policy paradigms.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-pine_teal leading-snug">
+                    <strong>Self-Reliant Communities:</strong> Championing decentralized, sustainable village leadership under community ownership.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-pine_teal leading-snug">
+                    <strong>Nationwide Changemaker Network:</strong> Building a dynamic fellowship of interdisciplinary leaders committed to Bharat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* 4 Guiding Objectives Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {coreObjectives.map((obj, idx) => (
             <div
               key={idx}
-              className={`bg-white rounded-3xl p-7 border-2 ${pillar.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden`}
+              className="bg-white rounded-2xl p-6 border border-[#ebdcc6] hover:border-sea_green hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
-              <div className={`absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br ${pillar.accentColor} rounded-full blur-2xl pointer-events-none`} />
-              
-              <div className="relative z-10">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[11px] font-bold text-sea_green uppercase tracking-wider px-3 py-1 rounded-full bg-frosted_mint/40 border border-celadon/50">
-                    {pillar.tag}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-serif font-extrabold text-sea_green">
+                    {obj.num}
                   </span>
-                  <div className="w-12 h-12 rounded-2xl bg-frosted_mint/50 border border-celadon/40 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
-                    {pillar.icon}
-                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#fbf8f1] border border-[#ebdcc6] text-[10px] font-bold text-evergreen tracking-wider uppercase">
+                    {obj.badge}
+                  </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-evergreen mb-3">
-                  {pillar.title}
-                </h3>
+                <h4 className="font-serif text-lg font-bold text-evergreen mb-2">
+                  {obj.title}
+                </h4>
 
-                <p className="text-xs sm:text-sm text-pine_teal/85 leading-relaxed">
-                  {pillar.desc}
+                <p className="text-xs text-pine_teal/80 leading-relaxed">
+                  {obj.desc}
                 </p>
               </div>
             </div>
           ))}
         </div>
+
       </section>
 
       {/* ================= 5. MENTORS & ADVISORY ================= */}
       <MentorsSection />
 
       {/* ================= 6. START A CONVERSATION / CONTACT (Vritant Split Style) ================= */}
-      <section id="contact-section" className="py-16 px-4 md:px-8 bg-white border-t border-celadon/40 relative">
+      <section id="contact-section" className="py-20 px-4 md:px-8 bg-white border-t border-[#ebdcc6] relative">
         <div className="max-w-6xl mx-auto">
           
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Info Column */}
             <div className="lg:col-span-5 space-y-6">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
+                GET IN TOUCH
+              </span>
+
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-evergreen">
                 Let&apos;s Start a <span className="italic text-sea_green">Conversation</span>
               </h2>
@@ -401,21 +578,21 @@ export default function AboutPage() {
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-frosted_mint/30 border border-celadon/40">
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-[#faf7f2] border border-[#ebdcc6]">
                   <Mail className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-xs font-bold text-evergreen block">Email Us</span>
-                    <a href="mailto:sahyadriruralconnect@gmail.com" className="text-xs text-pine_teal hover:text-sea_green">
+                    <a href="mailto:sahyadriruralconnect@gmail.com" className="text-xs text-pine_teal hover:text-sea_green font-medium">
                       sahyadriruralconnect@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-frosted_mint/30 border border-celadon/40">
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-[#faf7f2] border border-[#ebdcc6]">
                   <MapPin className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-xs font-bold text-evergreen block">Locations</span>
-                    <span className="text-xs text-pine_teal">
+                    <span className="text-xs font-bold text-evergreen block">Field Locations</span>
+                    <span className="text-xs text-pine_teal font-medium">
                       Palghar • Karjat • Jawhar (Maharashtra)
                     </span>
                   </div>
@@ -424,7 +601,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Contact Form Card */}
-            <div className="lg:col-span-7 bg-frosted_mint/20 border-2 border-celadon/60 p-6 md:p-10 rounded-3xl shadow-sm">
+            <div className="lg:col-span-7 bg-[#faf7f2] border-2 border-[#ebdcc6] p-6 md:p-10 rounded-3xl shadow-sm">
               <h3 className="font-serif text-xl font-bold text-evergreen mb-4">
                 Send a Message
               </h3>
@@ -448,7 +625,7 @@ export default function AboutPage() {
                         placeholder="Your Name"
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-celadon/60 text-xs text-evergreen focus:outline-none focus:border-sea_green"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#ebdcc6] text-xs text-evergreen focus:outline-none focus:border-sea_green"
                       />
                     </div>
                     <div>
@@ -461,7 +638,7 @@ export default function AboutPage() {
                         placeholder="your@email.com"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-celadon/60 text-xs text-evergreen focus:outline-none focus:border-sea_green"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#ebdcc6] text-xs text-evergreen focus:outline-none focus:border-sea_green"
                       />
                     </div>
                   </div>
@@ -476,7 +653,7 @@ export default function AboutPage() {
                       placeholder="e.g. Student Cohort Application / Partnership"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-celadon/60 text-xs text-evergreen focus:outline-none focus:border-sea_green"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#ebdcc6] text-xs text-evergreen focus:outline-none focus:border-sea_green"
                     />
                   </div>
 
@@ -490,7 +667,7 @@ export default function AboutPage() {
                       placeholder="Tell us about yourself or your query..."
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-celadon/60 text-xs text-evergreen focus:outline-none focus:border-sea_green resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#ebdcc6] text-xs text-evergreen focus:outline-none focus:border-sea_green resize-none"
                     />
                   </div>
 
