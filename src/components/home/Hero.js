@@ -9,35 +9,15 @@ import {
   ArrowRight, 
   Clock 
 } from "lucide-react"
-import { Lora, Inter, Outfit } from "next/font/google"
 
-const lora = Lora({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-})
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-})
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  display: "swap",
-})
-
-// Main Featured Slides (Left Big Carousel)
+// Main Featured Slides (Left Big Carousel) — All Unique Real Images
 const featuredSlides = [
   {
     id: "real-bharat",
     category: "RURAL IMMERSION",
     title: "Understanding Real Bharat: Ground-Level Leadership & Grassroots Realities",
     subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
-    image: "/sahyadri-bg-hero6.jpeg",
+    image: "/sahyadri-bg-hero6.jpeg", // Panoramic Sahyadri Ghats
     link: "/about",
     urlTag: "sahyadriconnect.org/about",
     date: "Dec 2025",
@@ -48,7 +28,7 @@ const featuredSlides = [
     category: "SUMMER SCHOOL 2026",
     title: "Cradle of Warli Art: Previewing Summer School 2026 in Jawhar",
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
-    image: "/jawahar-village-tribal-community.jpg",
+    image: "/jawahar-village-tribal-community.jpg", // Jawhar tribal palace & landscape
     link: "/summer-school",
     urlTag: "sahyadriconnect.org/summer-school",
     date: "May 2026",
@@ -59,7 +39,7 @@ const featuredSlides = [
     category: "ECOLOGY & INNOVATION",
     title: "Deep Roots: Tribal Ecology, Organic Agriculture & Solar Innovation",
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
-    image: "/camp2/camp2-day3-i2.jpg",
+    image: "/camp2/camp2-day3-i1.jpg", // Real field photo: students with organic mentors
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
     urlTag: "sahyadriconnect.org/blog/sustainable-livelihoods",
     date: "Dec 27, 2025",
@@ -70,7 +50,7 @@ const featuredSlides = [
     category: "CULTURE & ECONOMY",
     title: "Echoes of History & Grassroots Enterprise: Fort Trekking & FPOs",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
-    image: "/camp2/camp2-day2-i1.jpg",
+    image: "/camp2/camp2-day2-i2.jpg", // Real photo: fort trek trail
     link: "/blog/maratha-heritage-and-rural-immersion",
     urlTag: "sahyadriconnect.org/blog/maratha-heritage",
     date: "Dec 25, 2025",
@@ -78,7 +58,7 @@ const featuredSlides = [
   },
 ]
 
-// Right Side Latest Articles / Featured Cards (Clickable Links)
+// Right Side Latest Articles / Featured Cards — Distinct Unique Camp Photos
 const sideArticles = [
   {
     id: "art-1",
@@ -86,7 +66,7 @@ const sideArticles = [
     title: "Summer School 2026: Jawhar Warli Art & Tribal Governance",
     date: "May 2026",
     readTime: "5 Days",
-    image: "/jawahar-village-tribal-community.jpg",
+    image: "/sahyadri-6.jpg", // Real photo: Palghar tribal village community
     link: "/summer-school",
     tagColor: "bg-[#eef2ff] text-[#3730a3] border-[#c7d2fe]",
   },
@@ -96,7 +76,7 @@ const sideArticles = [
     title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
     date: "Dec 27, 2025",
     readTime: "5 min read",
-    image: "/camp2/camp2-day3-i2.jpg",
+    image: "/camp2/camp2-day4-i1.jpg", // Real photo: solar tech & tribal hamlet
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
     tagColor: "bg-[#ecfdf5] text-[#065f46] border-[#a7f3d0]",
   },
@@ -106,7 +86,7 @@ const sideArticles = [
     title: "Echoes of History: Maratha Heritage & Farmer Collectives",
     date: "Dec 25, 2025",
     readTime: "6 min read",
-    image: "/camp2/camp2-day2-i1.jpg",
+    image: "/camp2/camp2-day2-i3.png", // Real photo: historical fort summit
     link: "/blog/maratha-heritage-and-rural-immersion",
     tagColor: "bg-[#fef3c7] text-[#92400e] border-[#fde68a]",
   },
@@ -116,7 +96,7 @@ const sideArticles = [
     title: "A Day at Sahyadri Rural Connect: Arrivals & Ground Notes",
     date: "Dec 24, 2025",
     readTime: "5 min read",
-    image: "/camp2/camp2-day1-i1.jpg",
+    image: "/camp2/camp2-day1-i4.jpg", // Real photo: inaugural session & students
     link: "/blog/a-day-at-sahyadri-rural-connect",
     tagColor: "bg-[#f5f3ff] text-[#5b21b6] border-[#ddd6fe]",
   },
@@ -153,7 +133,7 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative w-full bg-[#fbf8f1] pt-20 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8"
+      className="relative w-full bg-[#fbf8f1] pt-20 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8 font-sans"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -242,7 +222,7 @@ export default function Hero() {
                 >
                   <h1 
                     key={`title-${activeSlide.id}`}
-                    className={`${lora.className} text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] font-medium text-white leading-[1.22] tracking-tight drop-shadow-md mb-3 group-hover/title:text-[#d8f3dc] transition-colors`}
+                    className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] font-medium text-white leading-[1.22] tracking-tight drop-shadow-md mb-3 group-hover/title:text-[#d8f3dc] transition-colors"
                   >
                     {activeSlide.title}
                   </h1>
@@ -251,7 +231,7 @@ export default function Hero() {
                 {/* Subtitle */}
                 <p 
                   key={`sub-${activeSlide.id}`}
-                  className={`${inter.className} text-gray-200 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mb-5 line-clamp-2 drop-shadow`}
+                  className="text-gray-200 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mb-5 line-clamp-2 drop-shadow"
                 >
                   {activeSlide.subtitle}
                 </p>
@@ -296,7 +276,7 @@ export default function Hero() {
             
             {/* Section Heading (Clean text, no icons) */}
             <div className="flex items-center justify-between mb-4 px-1">
-              <h2 className={`${outfit.className} text-xs md:text-sm font-bold tracking-widest text-[#4a3b2c] uppercase`}>
+              <h2 className="text-xs md:text-sm font-bold tracking-widest text-[#4a3b2c] uppercase">
                 LATEST ARTICLES
               </h2>
               <Link 
@@ -307,7 +287,7 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Vertical Stack of Clean White Cards */}
+            {/* Vertical Stack of Clean White Cards with Unique Real Photos */}
             <div className="flex flex-col gap-3.5">
               {sideArticles.map((item) => {
                 return (
@@ -316,7 +296,7 @@ export default function Hero() {
                     href={item.link}
                     className="group bg-white hover:bg-[#fefdfb] rounded-2xl p-3 sm:p-3.5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] border border-[#ebdcc6]/70 hover:border-[#2d6a4f]/40 transition-all duration-300 flex items-center gap-3.5 sm:gap-4 hover:-translate-y-0.5"
                   >
-                    {/* Square Thumbnail */}
+                    {/* Square Thumbnail with Unique Image */}
                     <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-black/5 bg-gray-100">
                       <Image
                         src={item.image}
@@ -336,7 +316,7 @@ export default function Hero() {
                       </div>
 
                       {/* Title */}
-                      <h3 className={`${lora.className} text-xs sm:text-sm font-semibold text-[#1c1917] leading-snug line-clamp-2 group-hover:text-[#2d6a4f] transition-colors`}>
+                      <h3 className="font-serif text-xs sm:text-sm font-semibold text-[#1c1917] leading-snug line-clamp-2 group-hover:text-[#2d6a4f] transition-colors">
                         {item.title}
                       </h3>
 
