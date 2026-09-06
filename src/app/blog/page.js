@@ -1,27 +1,13 @@
-"use client"
-import React, { useState } from "react"
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { blogsData } from "@/data/blogsData"
-import { BookOpen, Calendar, Clock, ArrowRight, Sparkles, Filter, Search } from "lucide-react"
+import { Calendar, Clock, ArrowRight } from "lucide-react"
 
 export default function BlogHubPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All")
-  const [searchQuery, setSearchQuery] = useState("")
-
-  const categories = ["All", "Field Stories", "Culture & Economy", "Ecology & Innovation", "Tech & Infrastructure", "Culture & Art"]
-
-  const filteredBlogs = blogsData.filter((blog) => {
-    const matchesCategory = selectedCategory === "All" || blog.category === selectedCategory
-    const matchesSearch =
-      blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      blog.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      blog.category.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesCategory && matchesSearch
-  })
-
-  // Hero Featured Blog (e.g. Day 1)
+  // Hero Featured Blog (First blog)
   const heroBlog = blogsData[0]
+  const allBlogs = blogsData
 
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
@@ -53,7 +39,7 @@ export default function BlogHubPage() {
       </section>
 
       {/* ================= 2. FEATURED HERO BLOG ================= */}
-      <section className="px-4 md:px-8 pb-10 max-w-6xl mx-auto relative z-10">
+      <section className="px-4 md:px-8 pb-12 max-w-6xl mx-auto relative z-10">
         <div className="bg-white rounded-3xl border-2 border-celadon/60 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 grid lg:grid-cols-12 gap-0">
           
           {/* Image */}
@@ -117,114 +103,63 @@ export default function BlogHubPage() {
         </div>
       </section>
 
-      {/* ================= 3. FILTER & SEARCH BAR ================= */}
-      <section className="px-4 md:px-8 pb-6 max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white/80 backdrop-blur-md p-4 rounded-2xl border border-celadon/50 shadow-xs">
-          
-          {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 ${
-                  selectedCategory === cat
-                    ? "bg-sea_green text-white shadow-xs"
-                    : "bg-frosted_mint/40 text-pine_teal hover:bg-frosted_mint/80"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Input */}
-          <div className="relative w-full md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-pine_teal/60" />
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3.5 py-1.5 text-xs rounded-xl bg-white border border-celadon/60 focus:outline-none focus:border-sea_green text-evergreen placeholder:text-pine_teal/50"
-            />
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= 4. ARTICLES GRID ================= */}
+      {/* ================= 3. ALL ARTICLES GRID ================= */}
       <section className="px-4 md:px-8 pb-16 max-w-6xl mx-auto">
-        {filteredBlogs.length === 0 ? (
-          <div className="text-center py-16 bg-white rounded-3xl border border-celadon/40 p-8">
-            <p className="text-pine_teal font-medium text-base">No stories match your filter.</p>
-            <button
-              onClick={() => {
-                setSelectedCategory("All")
-                setSearchQuery("")
-              }}
-              className="mt-3 px-4 py-2 bg-sea_green text-white text-xs font-bold rounded-full"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {allBlogs.map((blog) => (
+            <Link
+              key={blog.slug}
+              href={`/blog/${blog.slug}`}
+              className="group bg-white rounded-3xl overflow-hidden border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
-              Reset Filters
-            </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredBlogs.map((blog) => (
-              <Link
-                key={blog.slug}
-                href={`/blog/${blog.slug}`}
-                className="group bg-white rounded-3xl overflow-hidden border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  {/* Image */}
-                  <div className="relative h-48 w-full bg-gray-100 overflow-hidden">
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                      {blog.category}
-                    </div>
-                  </div>
-
-                  {/* Body */}
-                  <div className="p-5 space-y-2.5">
-                    <div className="flex items-center gap-3 text-[11px] text-pine_teal/70 font-medium">
-                      <span className="flex items-center gap-1">
-                        <Calendar size={12} />
-                        {blog.date}
-                      </span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1">
-                        <Clock size={12} />
-                        {blog.readTime}
-                      </span>
-                    </div>
-
-                    <h3 className="font-serif text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
-                      {blog.title}
-                    </h3>
-
-                    <p className="text-xs text-pine_teal/80 leading-relaxed line-clamp-3">
-                      {blog.excerpt}
-                    </p>
+              <div>
+                {/* Image */}
+                <div className="relative h-48 w-full bg-gray-100 overflow-hidden">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
+                    {blog.category}
                   </div>
                 </div>
 
-                <div className="p-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
-                  <span className="text-[11px] text-pine_teal/60 font-medium">{blog.edition}</span>
-                  <div className="flex items-center gap-1 text-xs font-bold text-sea_green group-hover:text-dark_emerald">
-                    <span>Read</span>
-                    <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                {/* Body */}
+                <div className="p-5 space-y-2.5">
+                  <div className="flex items-center gap-3 text-[11px] text-pine_teal/70 font-medium">
+                    <span className="flex items-center gap-1">
+                      <Calendar size={12} />
+                      {blog.date}
+                    </span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Clock size={12} />
+                      {blog.readTime}
+                    </span>
                   </div>
+
+                  <h3 className="font-serif text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
+                    {blog.title}
+                  </h3>
+
+                  <p className="text-xs text-pine_teal/80 leading-relaxed line-clamp-3">
+                    {blog.excerpt}
+                  </p>
                 </div>
-              </Link>
-            ))}
-          </div>
-        )}
+              </div>
+
+              <div className="p-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
+                <span className="text-[11px] text-pine_teal/60 font-medium">{blog.edition}</span>
+                <div className="flex items-center gap-1 text-xs font-bold text-sea_green group-hover:text-dark_emerald">
+                  <span>Read</span>
+                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
     </main>
