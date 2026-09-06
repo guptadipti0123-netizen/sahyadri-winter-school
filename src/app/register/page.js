@@ -6,19 +6,14 @@ import Link from 'next/link';
 import {
   ArrowRight,
   Sparkles,
-  Calendar,
-  MapPin,
   CheckCircle2,
   Users,
   Compass,
   TreePine,
-  ShieldCheck,
   Award,
   ChevronDown,
   ChevronUp,
-  HeartHandshake,
   BookOpen,
-  Coffee,
   HelpCircle
 } from 'lucide-react';
 
@@ -54,60 +49,6 @@ export default function RegisterPage() {
       desc: 'Official certificate of completion with real interdisciplinary policy project credits.',
       bg: 'bg-lime-50/80 border-lime-200/80'
     },
-  ];
-
-  const journeySteps = [
-    {
-      day: 'Day 01',
-      title: 'Arrival & Ground-Level Context',
-      desc: 'Settle into Kothimbe village, unpack civilisational frameworks, and engage with senior administrative mentors.',
-      tag: 'Orientation'
-    },
-    {
-      day: 'Day 02',
-      title: 'Forts, Watersheds & Farmer FPOs',
-      desc: 'Early morning trek to Kothaligad, studying historical water engineering and visiting local Farmer Producer Organisations.',
-      tag: 'Agrarian Economics'
-    },
-    {
-      day: 'Day 03',
-      title: 'Tribal Ethnobotany & Clean Tech',
-      desc: 'Forest trails with indigenous naturalists, traditional cooking with wild edibles (Raan-Bhaajya), and solar tech masterclasses.',
-      tag: 'Ecology & Solar'
-    },
-    {
-      day: 'Day 04',
-      title: 'Digital Divide & Village Governance',
-      desc: 'Examining last-mile PMGSY roads, Common Service Centers (CSCs), and grassroots PESA panchayat autonomy.',
-      tag: 'Tech & Policy'
-    },
-    {
-      day: 'Day 05',
-      title: 'Action Blueprints & Valedictory',
-      desc: 'Interdisciplinary teams present actionable policy proposals to grassroots practitioners and receive fellowship awards.',
-      tag: 'Synthesis'
-    }
-  ];
-
-  const eligibilityPersonas = [
-    {
-      title: 'Students & Scholars',
-      subtitle: 'UG, PG & PhD Candidates',
-      desc: 'From disciplines like Law, Public Policy, Engineering, Economics, Social Work, and Development Studies wanting real-world exposure.',
-      badge: 'Academic'
-    },
-    {
-      title: 'Aspiring Changemakers',
-      subtitle: 'UPSC/MPSC & Policy Aspirants',
-      desc: 'Candidates seeking unmediated, first-hand understanding of rural administration, grassroots bottlenecks, and state execution.',
-      badge: 'Public Service'
-    },
-    {
-      title: 'Young Professionals',
-      subtitle: 'NGO Workers & Social Founders',
-      desc: 'Founders and professionals eager to study decentralized solar, regenerative agriculture, and community self-reliance models.',
-      badge: 'Social Impact'
-    }
   ];
 
   const faqs = [
@@ -306,154 +247,8 @@ export default function RegisterPage() {
         </div>
       </section>
 
-      {/* ================= 4. WHAT HAPPENS: 5-DAY TIMELINE ================= */}
-      <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-        <div className="text-center mb-10 space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
-            <Calendar size={13} />
-            <span>Indicative Blueprint</span>
-          </div>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen">
-            5 Days of Immersive Discovery
-          </h2>
-          <p className="text-pine_teal/80 text-xs sm:text-sm max-w-xl mx-auto">
-            A balanced synthesis of outdoor exploration, deep community dialogues, and peer policy discussions.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {journeySteps.map((step, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-6 border border-celadon/50 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-sea_green/10 text-sea_green text-xs font-bold font-mono">
-                    {step.day}
-                  </span>
-                  <span className="text-[11px] font-semibold text-pine_teal/70 uppercase tracking-wider">
-                    {step.tag}
-                  </span>
-                </div>
-
-                <h3 className="font-serif text-lg font-bold text-evergreen leading-snug">
-                  {step.title}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-pine_teal/85 leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-
-          {/* 6th Card: Valedictory Card */}
-          <div className="bg-gradient-to-br from-evergreen to-dark_emerald text-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
-            <div className="space-y-3">
-              <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-frosted_mint text-xs font-bold tracking-wider uppercase">
-                Lifelong Network
-              </span>
-              <h3 className="font-serif text-lg font-bold leading-snug">
-                Beyond the Camp: Internships & Field Fellowships
-              </h3>
-              <p className="text-xs sm:text-sm text-frosted_mint/85 leading-relaxed">
-                Camp alumni gain ongoing access to research opportunities, NGO field placements, and policy workshops across Maharashtra.
-              </p>
-            </div>
-
-            <Link
-              href="/register/form"
-              className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white hover:underline"
-            >
-              <span>Submit Your Expression</span>
-              <ArrowRight size={13} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= 5. WHO SHOULD APPLY / PERSONAS ================= */}
-      <section className="px-4 md:px-8 py-10 max-w-6xl mx-auto bg-frosted_mint/40 rounded-3xl mb-12">
-        <div className="text-center mb-8 space-y-2">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-evergreen">
-            Who Is This Immersion For?
-          </h2>
-          <p className="text-pine_teal/80 text-xs sm:text-sm max-w-lg mx-auto">
-            We value intellectual diversity, grassroots curiosity, and multidimensional thinking.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {eligibilityPersonas.map((persona, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-6 border border-celadon/50 shadow-xs flex flex-col justify-between"
-            >
-              <div className="space-y-2.5">
-                <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider bg-frosted_mint/60 px-2.5 py-1 rounded-full w-fit block">
-                  {persona.badge}
-                </span>
-                <h3 className="font-serif text-lg font-bold text-evergreen">
-                  {persona.title}
-                </h3>
-                <p className="text-xs font-semibold text-pine_teal/75">
-                  {persona.subtitle}
-                </p>
-                <p className="text-xs text-pine_teal/85 leading-relaxed">
-                  {persona.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= 6. LOGISTICS & SAFETY ================= */}
-      <section className="px-4 md:px-8 py-8 max-w-6xl mx-auto">
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-celadon/50 shadow-sm grid md:grid-cols-3 gap-6 text-center">
-          
-          <div className="space-y-2 p-4">
-            <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center mx-auto mb-3">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif font-bold text-evergreen text-base">
-              24/7 Ground Safety
-            </h4>
-            <p className="text-xs text-pine_teal/80 leading-relaxed">
-              Experienced mentors, first-aid kits, dedicated camp leads, and established local community relations.
-            </p>
-          </div>
-
-          <div className="space-y-2 p-4 border-y md:border-y-0 md:border-x border-gray-100">
-            <div className="w-12 h-12 rounded-full bg-teal-50 text-sea_green flex items-center justify-center mx-auto mb-3">
-              <Coffee className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif font-bold text-evergreen text-base">
-              Wholesome Village Food & Stay
-            </h4>
-            <p className="text-xs text-pine_teal/80 leading-relaxed">
-              Clean community accommodation with hygienic, freshly-prepared authentic rural Maharashtrian cuisine.
-            </p>
-          </div>
-
-          <div className="space-y-2 p-4">
-            <div className="w-12 h-12 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center mx-auto mb-3">
-              <HeartHandshake className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif font-bold text-evergreen text-base">
-              Peer Learning Culture
-            </h4>
-            <p className="text-xs text-pine_teal/80 leading-relaxed">
-              Collaborate cross-disciplinarily with fellows passionate about public policy, climate, law, and economics.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= 7. ACCORDION FAQS ================= */}
-      <section className="px-4 md:px-8 py-12 max-w-4xl mx-auto">
+      {/* ================= 4. ACCORDION FAQS ================= */}
+      <section className="px-4 md:px-8 py-10 max-w-4xl mx-auto">
         <div className="text-center mb-8 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
             <HelpCircle size={13} />
@@ -492,7 +287,7 @@ export default function RegisterPage() {
         </div>
       </section>
 
-      {/* ================= 8. FINAL GRAND CTA ================= */}
+      {/* ================= 5. FINAL GRAND CTA ================= */}
       <section className="px-4 md:px-8 pb-16 max-w-5xl mx-auto relative z-10">
         <div className="bg-gradient-to-br from-evergreen via-dark_emerald to-sea_green text-white rounded-3xl p-8 sm:p-14 text-center shadow-2xl relative overflow-hidden space-y-6">
           
