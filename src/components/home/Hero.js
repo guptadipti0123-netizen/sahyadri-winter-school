@@ -59,7 +59,7 @@ const featuredSlides = [
   {
     id: "maratha-heritage",
     category: "CULTURE & ECONOMY",
-    title: "Echoes of History & Grassroots Enterprise: Fort Trekking & FPOs",
+    title: "Grassroots Enterprise & Maratha Heritage: Fort Trails to Farmer Collectives",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
     image: "/camp2/camp2-day2-i1.jpg", // Real photo: fort trek trail & grassroots enterprise
     link: "/blog/maratha-heritage-and-rural-immersion",
@@ -104,7 +104,7 @@ const sideArticles = [
   {
     id: "art-4",
     category: "CULTURE & HISTORY",
-    title: "Echoes of History & Grassroots Enterprise",
+    title: "Grassroots Enterprise & Maratha Heritage: Fort Trails to Farmer Collectives",
     date: "Dec 25, 2025",
     readTime: "6 min read",
     image: "/camp2/camp2-day2-i1.jpg", // Matches blog header

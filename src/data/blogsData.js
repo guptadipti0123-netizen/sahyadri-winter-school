@@ -81,7 +81,7 @@ export const blogsData = [
   },
   {
     slug: "maratha-heritage-and-rural-immersion",
-    title: "Echoes of History & Grassroots Enterprise",
+    title: "Grassroots Enterprise & Maratha Heritage: Fort Trails to Farmer Collectives",
     subtitle: "Day 2 — Fort Trekking, Maratha Samrajya & FPO Visit",
     date: "Dec 25, 2025",
     edition: "Winter School 2025",
