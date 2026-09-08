@@ -179,66 +179,70 @@ export const blogsData = [
     ]
   },
   {
-    slug: "rural-connectivity-and-digital-divide",
-    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
-    subtitle: "Telecom Infrastructure, Optical Fiber & Last-Mile Road Access in Sahyadri Villages",
-    date: "Dec 28, 2025",
-    edition: "Winter School 2025",
-    author: "Sahyadri Rural Connect Editorial",
-    authorRole: "Field Notes & Analysis",
-    readTime: "5 min read",
-    category: "Tech & Infrastructure",
-    image: "/camp2/camp2-day4-i1.jpg",
-    excerpt: "From rugged hill roads under PMGSY to optical fiber rollouts and solar-powered Common Service Centers, understanding how last-mile physical and digital connectivity unlocks healthcare, education, and rural livelihoods.",
+    slug: "our-story-stepping-outside-the-classroom",
+    title: "Our Story: Bringing the Classroom Closer to the Ground",
+    subtitle: "There is a difference between knowing about a problem and knowing what it feels like on the ground.",
+    date: "Jan 2026",
+    edition: "Foundational Story",
+    author: "Sahyadri Rural Connect Team",
+    authorRole: "Founders' Note & Journey",
+    readTime: "4 min read",
+    category: "Our Story",
+    image: "/sahyadri-2.jpeg",
+    heroImage: "/sahyadri-2.jpeg",
+    excerpt: "There is a difference between knowing about a problem and knowing what it feels like on the ground. Sahyadri Rural Connect was born from the desire to bridge that gap.",
     content: [
       {
         type: "paragraph",
-        text: "In the steep valleys and scattered padas (tribal hamlets) of the Sahyadri range, connectivity has always been physical first and digital second. During our field immersion, cohort participants investigated how geography defines access — where a missing all-weather bridge or an absent telecom tower can mean the difference between life and death during the monsoon."
-      },
-      {
-        type: "heading",
-        text: "Physical Roads: The Foundation of Rural Mobility"
+        text: "There is a difference between knowing about a problem and knowing what it feels like on the ground."
       },
       {
         type: "paragraph",
-        text: "Visiting interior tribal hamlets in Karjat and Murbad highlighted the transformative power of the Pradhan Mantri Gram Sadak Yojana (PMGSY). All-weather bitumen roads do far more than transport vehicles: they enable secondary school attendance for adolescent girls, allow emergency 108 ambulances to reach remote padas, and drastically lower the transport costs of perishable farm produce."
+        text: "In college, we learn about the challenges our country faces. We study development, public policy, government schemes, livelihoods, and the technological solutions designed to address them. But much of this learning happens within classrooms, textbooks, case studies, and statistics."
       },
       {
         type: "heading",
-        text: "The Digital Frontier: BharatNet, Optical Fiber & Solar Telecom Towers"
+        text: "Stepping Outside the Classroom"
       },
       {
         type: "paragraph",
-        text: "While metro cities celebrate high-speed 5G, rural hamlets often battle intermittent signals and frequent grid outages. The cohort examined decentralized solutions: solar-hybrid BTS towers, line-of-sight wireless relays, and the BharatNet optical fiber backbone reaching Gram Panchayats."
+        text: "At some point, we began to wonder: What happens when we step outside the classroom?"
+      },
+      {
+        type: "paragraph",
+        text: "We realised there was a gap between understanding a problem academically and experiencing how it actually unfolds on the ground. The realities of rural India are often more complex than what a textbook, a policy document, or a set of statistics can capture."
       },
       {
         type: "quote",
-        text: "Connectivity in rural Bharat is not merely about bandwidth; it is the fundamental bridge to Direct Benefit Transfers (DBT), Aadhaar-enabled banking, tele-medicine consultations, and digital education."
-      },
-      {
-        type: "heading",
-        text: "Grassroots Digital Enablers: Common Service Centers (CSCs)"
+        text: "Sahyadri Rural Connect was born from the desire to bridge that gap."
       },
       {
         type: "paragraph",
-        text: "At the local Gram Panchayat level, Village Level Entrepreneurs (VLEs) operating Common Service Centers act as the human interface of Digital India. From filing crop insurance claims to biometric pension payouts and student scholarship applications, CSCs ensure that digital tools translate into accessible public services."
+        text: "Through our rural immersion camps, we aim to give students a first hand experience of rural India. We create spaces where participants can step beyond observation and engage directly with communities, understand their everyday realities, explore livelihoods, and learn from experiences that cannot be fully captured in a classroom."
+      },
+      {
+        type: "paragraph",
+        text: "For us, rural immersion is not about simply visiting a village. It is about learning with communities, questioning what we think we know, and exploring the stories that lie beyond the statistics."
+      },
+      {
+        type: "quote",
+        text: "Sahyadri is an attempt to bring the classroom closer to the ground, and the ground closer to the classroom."
+      },
+      {
+        type: "heading",
+        text: "Our Journey"
       },
       {
         type: "list",
         items: [
-          "Solar-Hybrid Power: Grid instability is the leading cause of rural network downtime; solar-backed battery systems ensure uninterrupted 24/7 connectivity.",
-          "Last-Mile Road Corridors: Connecting tribal hamlets with block headquarters reduces maternal mortality and enhances daily market access for smallholders.",
-          "Digital Literacy & Security: Equipping village youth and women self-help groups with digital transaction security to prevent financial fraud.",
-          "Tele-Medicine & Remote Clinics: High-speed video consultations connecting primary health sub-centres with tertiary hospital specialists in Mumbai and Pune."
+          "January 2025 | Winter School, Palghar: Our journey began with our first rural immersion camp in Palghar, bringing students together to step outside the classroom and experience rural realities first hand.",
+          "December 2025 | Winter School, Karjat: Building on our first experience, our second camp took us to Karjat, deepening our engagement with communities and strengthening our approach to experiential learning.",
+          "May 2026 | Summer School, Jawhar: Our third camp brought us to Jawhar in the summer, continuing our journey of learning, questioning, and connecting with rural communities."
         ]
       },
       {
-        type: "heading",
-        text: "Student Action Blueprints"
-      },
-      {
         type: "paragraph",
-        text: "Synthesizing their field observations, student teams drafted actionable blueprints for community-managed Wi-Fi mesh networks and micro-logistics hubs that empower tribal youth to run decentralized delivery and service points across Sahyadri hill villages."
+        text: "And this is only the beginning."
       }
     ]
   },

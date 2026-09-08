@@ -57,9 +57,9 @@ export default function AboutPage() {
       year: "2026",
       edition: "Summer '26",
       badge: "Summer Edition",
-      title: "Summer School: Forest Ecology & PESA",
+      title: "Summer School, Jawhar",
       location: "Jawhar, Palghar",
-      desc: "Immersive field study on PESA Act 1996 tribal governance, Warli heritage, and forest economies.",
+      desc: "Our third camp brought us to Jawhar in the summer, continuing our journey of learning, questioning, and connecting with rural communities.",
       href: "/summer-school",
       ctaText: "Explore Summer School"
     },
@@ -68,9 +68,9 @@ export default function AboutPage() {
       year: "2025",
       edition: "2nd Edition",
       badge: "2nd Edition",
-      title: "Winter Camp: Watersheds & Fort Heritage",
+      title: "Winter School, Karjat",
       location: "Karjat, Raigad",
-      desc: "Field immersion on Kothaligad Maratha water harvesting, solar micro-grids, and rural enterprises.",
+      desc: "Building on our first experience, our second camp took us to Karjat, deepening our engagement with communities and strengthening our approach to experiential learning.",
       href: "/camp-2",
       ctaText: "View 2nd Edition"
     },
@@ -79,9 +79,9 @@ export default function AboutPage() {
       year: "2025",
       edition: "1st Edition",
       badge: "Inaugural",
-      title: "Inaugural Camp: Tribal Education",
+      title: "Winter School, Palghar",
       location: "Vikramgad, Palghar",
-      desc: "40 fellows auditing tribal Ashramshala schools, ZP education, and grassroots community realities.",
+      desc: "Our journey began with our first rural immersion camp in Palghar, bringing students together to step outside the classroom and experience rural realities first hand.",
       href: "/camp-1",
       ctaText: "View 1st Edition"
     }
@@ -237,22 +237,22 @@ export default function AboutPage() {
           {/* Right Narrative */}
           <div className="md:col-span-7 space-y-4 sm:space-y-6">
             <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
-              THE INSPIRATION
+              OUR STORY
             </span>
 
             <h2 className="font-serif text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
-              Understanding <span className="text-sea_green italic">Real Bharat</span>
+              Beyond the Classroom, <span className="text-sea_green italic">Onto the Ground</span>
             </h2>
 
             <div className="space-y-3.5 sm:space-y-4 text-pine_teal text-xs sm:text-base leading-relaxed">
               <p>
-                Founded by a collective of educators, researchers, and grassroots social practitioners, <strong>Sahyadri Rural Connect</strong> was born out of a simple observation: there is a profound gap between theoretical classroom discussions and the ground-level complexities of rural India.
+                There is a difference between knowing about a problem and knowing what it feels like on the ground. In college, we learn about public policy, schemes, livelihoods, and development. But much of this learning happens within classrooms, textbooks, and statistics.
               </p>
               <blockquote className="pl-4 sm:pl-5 border-l-4 border-sea_green text-evergreen font-serif italic text-sm sm:text-base md:text-lg leading-relaxed bg-white/80 p-4 sm:p-5 rounded-r-2xl border border-y-0 border-r-0 shadow-sm">
-                &quot;Rural India is not a problem statement waiting for an outside solution, but a living civilisational ecosystem with its own wisdom, resilience, and forms of knowledge.&quot;
+                &quot;For us, rural immersion is not about simply visiting a village. It is about learning with communities, questioning what we think we know, and exploring the stories that lie beyond the statistics.&quot;
               </blockquote>
               <p>
-                Our 5-day immersive programs take students, young professionals, and scholars away from lecture halls into tribal villages, watershed hillsides, and community assemblies.
+                <strong>Sahyadri Rural Connect</strong> was born from the desire to bridge that gap — bringing the classroom closer to the ground, and the ground closer to the classroom.
               </p>
             </div>
           </div>
