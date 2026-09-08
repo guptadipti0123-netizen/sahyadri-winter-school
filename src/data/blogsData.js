@@ -10,6 +10,7 @@ export const blogsData = [
     readTime: "5 min read",
     category: "Field Stories",
     image: "/camp2/camp2-day1-i1.jpg",
+    heroImage: "/camp2/camp2-day1-i4.jpg",
     excerpt: "There is a particular kind of quiet that settles over Kothimbe in late December. The second edition of Sahyadri Rural Connect began with a folding table, a stack of registration forms, and a slow trickle of students stepping off buses.",
     content: [
       {

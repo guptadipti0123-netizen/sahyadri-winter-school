@@ -45,7 +45,7 @@ export default function BlogHubPage() {
           {/* Image */}
           <div className="lg:col-span-6 relative h-64 lg:h-auto min-h-[300px] bg-gray-100">
             <Image
-              src={heroBlog.image}
+              src={heroBlog.heroImage || heroBlog.image}
               alt={heroBlog.title}
               fill
               className="object-cover"
