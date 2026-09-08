@@ -140,13 +140,15 @@ export default function RegisterPage() {
               key={idx}
               className={`p-5 rounded-2xl border ${item.bg} bg-white shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between`}
             >
-              <div className="space-y-2.5">
-                <div className="w-11 h-11 rounded-xl bg-white border border-celadon/50 flex items-center justify-center shadow-xs">
-                  {item.icon}
+              <div>
+                <div className="flex items-center gap-3 mb-2.5">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-celadon/50 flex items-center justify-center shadow-xs shrink-0">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-serif text-sm sm:text-base font-bold text-evergreen leading-snug">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="font-serif text-base font-bold text-evergreen">
-                  {item.title}
-                </h3>
                 <p className="text-xs text-pine_teal/85 leading-relaxed">
                   {item.desc}
                 </p>

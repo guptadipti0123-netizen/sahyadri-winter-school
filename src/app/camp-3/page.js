@@ -352,15 +352,17 @@ export default function SummerSchoolJawharPage() {
             {themes.map((item, idx) => (
               <div
                 key={idx}
-                className={`p-6 rounded-3xl border ${item.bg} bg-white shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between`}
+                className={`p-5 sm:p-6 rounded-3xl border ${item.bg} bg-white shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between`}
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-celadon/40 flex items-center justify-center shadow-xs mb-4">
-                    {item.icon}
+                  <div className="flex items-center gap-3.5 sm:gap-4 mb-3 sm:mb-3.5">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white border border-celadon/40 flex items-center justify-center shadow-xs shrink-0">
+                      {item.icon}
+                    </div>
+                    <h3 className="font-serif text-base sm:text-lg md:text-xl font-bold text-evergreen leading-snug">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-evergreen mb-2">
-                    {item.title}
-                  </h3>
                   <p className="text-pine_teal/80 text-xs sm:text-sm leading-relaxed">
                     {item.desc}
                   </p>
