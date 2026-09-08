@@ -180,10 +180,10 @@ export default function Header() {
             })}
           </div>
 
-          {/* ================= 2. CENTER: BRAND LOGO (Centered Vritant style) ================= */}
+          {/* ================= 2. BRAND LOGO (Responsive Text) ================= */}
           <Link
             href="/"
-            className="flex items-center gap-2 sm:gap-2.5 group select-none shrink-0"
+            className="flex items-center gap-2 sm:gap-2.5 group select-none min-w-0"
           >
             <div className="relative w-7 h-7 sm:w-8 sm:h-8 overflow-hidden rounded-full shadow-xs border border-black/10 transition-transform duration-300 group-hover:scale-105 shrink-0">
               <Image
@@ -194,13 +194,13 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="font-serif font-bold text-base sm:text-lg lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap">
+            <span className="font-serif font-bold text-sm sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap truncate max-w-[160px] xs:max-w-[220px] sm:max-w-none">
               Sahyadri Rural Connect
             </span>
           </Link>
 
-          {/* ================= 3. RIGHT: SEARCH, MOON, CTA BUTTON ================= */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* ================= 3. RIGHT: SEARCH, MOON, CTA BUTTON & HAMBURGER ================= */}
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             
             {/* Search Icon Button */}
             <button
@@ -220,18 +220,18 @@ export default function Header() {
               {darkMode ? <Sun size={16} className="text-amber-500" /> : <Moon size={16} />}
             </button>
 
-            {/* Forest Green Pill CTA Button (Vritant Style) */}
+            {/* Forest Green Pill CTA Button (Desktop only, so it never causes mobile overflow) */}
             <Link
               href="/register"
-              className="bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-bold text-[11px] sm:text-xs tracking-wider uppercase px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full flex items-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+              className="hidden min-[960px]:inline-flex bg-[#2d6a4f] hover:bg-[#1b4332] text-white font-bold text-[11px] sm:text-xs tracking-wider uppercase px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full items-center gap-1.5 shadow-sm transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
             >
               <span>Winter Camp Loading</span>
-              <ChevronDown size={13} className="text-white/80 hidden sm:inline" />
+              <ChevronDown size={13} className="text-white/80" />
             </Link>
 
             {/* Mobile Hamburger Toggle (Visible below 960px) */}
             <button
-              className="min-[960px]:hidden p-1.5 text-[#1c1917] hover:bg-gray-100 rounded-full transition-colors"
+              className="min-[960px]:hidden p-1.5 sm:p-2 text-[#1c1917] hover:bg-gray-100 rounded-full transition-colors flex items-center justify-center shrink-0"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -244,18 +244,18 @@ export default function Header() {
 
         {/* ================= MOBILE MENU DRAWER ================= */}
         {isOpen && (
-          <div className="pointer-events-auto mt-2 w-full bg-white/98 backdrop-blur-2xl border border-[#ebdcc6] rounded-3xl p-5 shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 min-[960px]:hidden">
+          <div className="pointer-events-auto mt-2 w-full max-h-[80vh] overflow-y-auto bg-white/98 backdrop-blur-2xl border border-[#ebdcc6] rounded-3xl p-5 shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 min-[960px]:hidden">
             <div className="flex flex-col divide-y divide-gray-100 text-sm">
               <Link
                 href="/"
-                className="py-3 font-medium text-gray-800 hover:text-[#2d6a4f]"
+                className={`py-3 font-medium transition-colors ${pathname === '/' ? 'text-[#2d6a4f] font-bold' : 'text-gray-800 hover:text-[#2d6a4f]'}`}
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="py-3 font-medium text-gray-800 hover:text-[#2d6a4f]"
+                className={`py-3 font-medium transition-colors ${pathname === '/about' ? 'text-[#2d6a4f] font-bold' : 'text-gray-800 hover:text-[#2d6a4f]'}`}
                 onClick={() => setIsOpen(false)}
               >
                 About
@@ -265,23 +265,23 @@ export default function Header() {
               <div className="py-2">
                 <button
                   onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
-                  className="w-full flex items-center justify-between py-2 font-medium text-gray-800"
+                  className="w-full flex items-center justify-between py-2 font-medium text-gray-800 cursor-pointer"
                 >
-                  <span>Camps</span>
+                  <span className={pathname.startsWith('/camp') || pathname === '/summer-school' ? 'text-[#2d6a4f] font-bold' : ''}>Camps</span>
                   <ChevronRight size={16} className={`transition-transform duration-200 ${mobileSubMenuOpen ? 'rotate-90' : ''}`} />
                 </button>
                 {mobileSubMenuOpen && (
-                  <div className="pl-3 pr-1 py-2 space-y-2 bg-[#fbf8f1] rounded-xl my-1 border border-[#ebdcc6]/60">
+                  <div className="pl-3 pr-2 py-2 space-y-2 bg-[#fbf8f1] rounded-2xl my-1 border border-[#ebdcc6]/60">
                     {campsList.map((c) => (
                       <Link
                         key={c.href}
                         href={c.href}
-                        className="block py-1.5 text-xs font-semibold text-gray-700 hover:text-[#2d6a4f]"
+                        className={`block p-2 rounded-xl text-xs font-semibold transition-colors ${pathname === c.href ? 'bg-white text-[#2d6a4f] shadow-xs' : 'text-gray-700 hover:text-[#2d6a4f]'}`}
                         onClick={() => setIsOpen(false)}
                       >
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between gap-1">
                           <span>{c.name} ({c.place})</span>
-                          <span className="text-[10px] text-[#2d6a4f] bg-white px-2 py-0.5 rounded-md border border-[#ebdcc6]">{c.date}</span>
+                          <span className="text-[10px] font-bold text-[#2d6a4f] bg-emerald-50 px-2 py-0.5 rounded-md border border-[#a7f3d0]">{c.date}</span>
                         </div>
                       </Link>
                     ))}
@@ -291,21 +291,21 @@ export default function Header() {
 
               <Link
                 href="/blog"
-                className="py-3 font-medium text-gray-800 hover:text-[#2d6a4f]"
+                className={`py-3 font-medium transition-colors ${pathname.startsWith('/blog') ? 'text-[#2d6a4f] font-bold' : 'text-gray-800 hover:text-[#2d6a4f]'}`}
                 onClick={() => setIsOpen(false)}
               >
                 Blog
               </Link>
               <Link
                 href="/career"
-                className="py-3 font-medium text-gray-800 hover:text-[#2d6a4f]"
+                className={`py-3 font-medium transition-colors ${pathname === '/career' ? 'text-[#2d6a4f] font-bold' : 'text-gray-800 hover:text-[#2d6a4f]'}`}
                 onClick={() => setIsOpen(false)}
               >
                 Career
               </Link>
               <Link
                 href="/contact"
-                className="py-3 font-medium text-gray-800 hover:text-[#2d6a4f]"
+                className={`py-3 font-medium transition-colors ${pathname === '/contact' ? 'text-[#2d6a4f] font-bold' : 'text-gray-800 hover:text-[#2d6a4f]'}`}
                 onClick={() => setIsOpen(false)}
               >
                 Contact
@@ -315,10 +315,11 @@ export default function Header() {
               <div className="pt-4">
                 <Link
                   href="/register"
-                  className="w-full block text-center py-3 rounded-full bg-[#2d6a4f] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:bg-[#1b4332]"
+                  className="w-full flex items-center justify-center gap-2 text-center py-3.5 rounded-full bg-[#2d6a4f] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:bg-[#1b4332] active:scale-98 transition-all"
                   onClick={() => setIsOpen(false)}
                 >
-                  Winter Camp Loading
+                  <span>Winter Camp Loading</span>
+                  <ArrowRight size={14} />
                 </Link>
               </div>
             </div>

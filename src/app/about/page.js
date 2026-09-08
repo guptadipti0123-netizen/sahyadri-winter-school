@@ -91,41 +91,41 @@ export default function AboutPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#fbf8f1]">
 
       {/* ================= 1. EDITORIAL HERO SECTION (Vritant Style) ================= */}
-      <section className="relative pt-28 md:pt-36 pb-16 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
+      <section className="relative pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
         
         {/* Background Atmosphere */}
         <div className="absolute inset-0 bg-black/25 mix-blend-multiply pointer-events-none" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-mint_leaf/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-celadon/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-10 items-center">
+        <div className="max-w-6xl mx-auto px-1 sm:px-4 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
             <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-frosted_mint text-xs font-bold tracking-wider uppercase">
               ABOUT SAHYADRI RURAL CONNECT
             </span>
 
-            <h1 className="font-serif font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-white drop-shadow-md">
+            <h1 className="font-serif font-extrabold text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.18] text-white drop-shadow-md">
               Where Ground-Level Immersion Becomes{" "}
               <span className="italic text-frosted_mint font-serif">Meaningful Leadership.</span>
             </h1>
 
-            <p className="text-sm md:text-lg text-frosted_mint/90 leading-relaxed max-w-xl font-normal">
+            <p className="text-xs sm:text-base md:text-lg text-frosted_mint/90 leading-relaxed max-w-xl font-normal">
               Sahyadri Rural Connect is an experiential education and rural immersion initiative dedicated to bridging classroom knowledge with grassroots realities, indigenous culture, and sustainable social impact.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-3 pt-2">
               <Link
                 href="/register"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-evergreen font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-102 active:scale-95 transition-all duration-300"
               >
                 <span>Winter Camp Loading</span>
-                <ArrowRight size={17} />
+                <ArrowRight size={16} />
               </Link>
               <Link
                 href="#story"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-transparent border border-white/40 text-white font-semibold text-sm md:text-base hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-transparent border border-white/40 text-white font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all duration-300"
               >
                 <span>Our Story</span>
               </Link>
@@ -134,15 +134,15 @@ export default function AboutPage() {
           </div>
 
           {/* Right Column: Camp Link Card with Instagram Captions & Background Images */}
-          <div className="lg:col-span-5 flex flex-col items-center">
+          <div className="lg:col-span-5 flex flex-col items-center w-full">
             
             {/* Camp Selector Tabs */}
-            <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 mb-3 max-w-full overflow-x-auto">
+            <div className="flex items-center justify-center gap-1.5 p-1 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 mb-3 max-w-full overflow-x-auto">
               {heroCamps.map((camp, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveCampIdx(idx)}
-                  className={`px-3 py-1 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                  className={`px-3 py-1 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     activeCampIdx === idx
                       ? "bg-white text-evergreen shadow-sm font-bold scale-102"
                       : "text-white/80 hover:text-white hover:bg-white/10"
@@ -154,8 +154,8 @@ export default function AboutPage() {
             </div>
 
             {/* Feature Card with Background Image, Instagram Caption & Camp Link */}
-            <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-evergreen/80 group">
-              <div className="relative h-[340px] sm:h-[380px] w-full">
+            <div className="relative w-full max-w-[420px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-evergreen/80 group mx-auto">
+              <div className="relative h-[320px] xs:h-[350px] sm:h-[380px] w-full">
                 <Image
                   src={heroCamps[activeCampIdx].image}
                   alt={heroCamps[activeCampIdx].title}
@@ -168,8 +168,8 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30" />
                 
                 {/* Top Badges */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[11px] font-bold tracking-wider uppercase">
+                <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
                     <MapPin size={11} className="text-frosted_mint" />
                     {heroCamps[activeCampIdx].badge}
                   </span>
@@ -179,24 +179,24 @@ export default function AboutPage() {
                 </div>
 
                 {/* Bottom Content & Instagram Caption */}
-                <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 space-y-2.5 z-10 text-left">
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight drop-shadow-md">
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 space-y-2 sm:space-y-2.5 z-10 text-left">
+                  <h3 className="font-serif text-lg sm:text-2xl font-bold text-white leading-tight drop-shadow-md">
                     {heroCamps[activeCampIdx].title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-frosted_mint/95 leading-relaxed font-light line-clamp-3 bg-black/40 backdrop-blur-sm p-3 rounded-2xl border border-white/15">
+                  <p className="text-xs sm:text-sm text-frosted_mint/95 leading-relaxed font-light line-clamp-2 sm:line-clamp-3 bg-black/40 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/15">
                     &quot;{heroCamps[activeCampIdx].caption}&quot;
                   </p>
 
                   <div className="flex items-center justify-between pt-1">
                     <Link
                       href={heroCamps[activeCampIdx].href}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all group/btn"
+                      className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all group/btn"
                     >
                       <span>Explore Camp Page</span>
                       <ArrowRight size={13} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
-                    <span className="text-[11px] font-medium text-white/75 bg-white/10 px-2.5 py-1 rounded-full border border-white/15">
+                    <span className="text-[10px] sm:text-[11px] font-medium text-white/75 bg-white/10 px-2.5 py-1 rounded-full border border-white/15">
                       {heroCamps[activeCampIdx].duration}
                     </span>
                   </div>
@@ -211,12 +211,12 @@ export default function AboutPage() {
       </section>
 
       {/* ================= 2. NARRATIVE FRAME: UNDERSTANDING REAL BHARAT ================= */}
-      <section id="story" className="py-16 md:py-24 px-6 max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+      <section id="story" className="py-12 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto relative z-10">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-14 items-center">
           
           {/* Left Visual */}
           <div className="md:col-span-5 relative">
-            <div className="relative h-[340px] sm:h-[440px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="relative h-[280px] xs:h-[340px] sm:h-[440px] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
                 src="/jawahar-village-tribal-community.jpg"
                 alt="Tribal Community & Village Immersion"
@@ -224,7 +224,7 @@ export default function AboutPage() {
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="absolute -bottom-5 -right-3 bg-white p-5 rounded-2xl shadow-xl border border-[#ebdcc6] max-w-[220px]">
+            <div className="relative sm:absolute sm:-bottom-5 sm:-right-3 mt-4 sm:mt-0 bg-white p-4 sm:p-5 rounded-2xl shadow-xl border border-[#ebdcc6] max-w-full sm:max-w-[220px]">
               <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
                 COHORT REFLECTION
               </span>
@@ -235,20 +235,20 @@ export default function AboutPage() {
           </div>
 
           {/* Right Narrative */}
-          <div className="md:col-span-7 space-y-6">
+          <div className="md:col-span-7 space-y-4 sm:space-y-6">
             <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
               THE INSPIRATION
             </span>
 
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
+            <h2 className="font-serif text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
               Understanding <span className="text-sea_green italic">Real Bharat</span>
             </h2>
 
-            <div className="space-y-4 text-pine_teal text-sm md:text-base leading-relaxed">
+            <div className="space-y-3.5 sm:space-y-4 text-pine_teal text-xs sm:text-base leading-relaxed">
               <p>
                 Founded by a collective of educators, researchers, and grassroots social practitioners, <strong>Sahyadri Rural Connect</strong> was born out of a simple observation: there is a profound gap between theoretical classroom discussions and the ground-level complexities of rural India.
               </p>
-              <blockquote className="pl-5 border-l-4 border-sea_green text-evergreen font-serif italic text-base md:text-lg leading-relaxed bg-white/80 p-5 rounded-r-2xl border border-y-0 border-r-0 shadow-sm">
+              <blockquote className="pl-4 sm:pl-5 border-l-4 border-sea_green text-evergreen font-serif italic text-sm sm:text-base md:text-lg leading-relaxed bg-white/80 p-4 sm:p-5 rounded-r-2xl border border-y-0 border-r-0 shadow-sm">
                 &quot;Rural India is not a problem statement waiting for an outside solution, but a living civilisational ecosystem with its own wisdom, resilience, and forms of knowledge.&quot;
               </blockquote>
               <p>
@@ -261,32 +261,32 @@ export default function AboutPage() {
       </section>
 
       {/* ================= 3. OUR STORY TIMELINE / THE JOURNEY SO FAR ================= */}
-      <section className="py-14 sm:py-20 px-4 md:px-8 bg-[#faf7f2] border-y border-[#ebdcc6] relative">
+      <section className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#faf7f2] border-y border-[#ebdcc6] relative">
         <div className="max-w-3xl mx-auto">
           
           {/* Section Heading */}
-          <div className="text-center mb-12 space-y-2.5">
+          <div className="text-center mb-10 sm:mb-12 space-y-2">
             <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
               OUR CHRONICLE
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen tracking-tight">
               The Journey <span className="text-sea_green italic">So Far</span>
             </h2>
-            <p className="text-pine_teal/80 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+            <p className="text-pine_teal/80 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-2">
               From our inaugural cohort in Palghar to multi-season field fellowships across Maharashtra&apos;s Western Ghats.
             </p>
           </div>
 
           {/* Pure Editorial Timeline (Vritant Style) */}
-          <div className="relative pl-2 sm:pl-0">
+          <div className="relative pl-1 sm:pl-0">
             {timelineMilestones.map((item, idx) => {
               const isLast = idx === timelineMilestones.length - 1
               return (
                 <div key={idx} className="relative flex items-start group">
                   
                   {/* Left Column: Date / Year (Serif Italic) */}
-                  <div className="w-20 sm:w-28 text-right pr-4 sm:pr-6 shrink-0 pt-0.5">
-                    <span className="font-serif italic text-sm sm:text-base font-semibold text-pine_teal/75 group-hover:text-sea_green transition-colors">
+                  <div className="w-14 xs:w-18 sm:w-28 text-right pr-2.5 sm:pr-6 shrink-0 pt-0.5">
+                    <span className="font-serif italic text-xs xs:text-sm sm:text-base font-semibold text-pine_teal/75 group-hover:text-sea_green transition-colors">
                       {item.date}
                     </span>
                   </div>
@@ -303,26 +303,26 @@ export default function AboutPage() {
                   </div>
 
                   {/* Right Column: Content */}
-                  <div className={`pl-4 sm:pl-6 flex-1 ${!isLast ? "pb-10 sm:pb-12" : "pb-2"}`}>
+                  <div className={`pl-3 sm:pl-6 flex-1 ${!isLast ? "pb-8 sm:pb-12" : "pb-2"}`}>
                     
                     {/* Top Badges / Meta */}
-                    <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                      <span className="px-2 py-0.5 rounded-full bg-[#fef3c7] text-[#92400e] text-[10px] font-bold uppercase tracking-wider border border-[#fde68a]">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 flex-wrap">
+                      <span className="px-2 py-0.5 rounded-full bg-[#fef3c7] text-[#92400e] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider border border-[#fde68a]">
                         {item.badge}
                       </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-pine_teal/70">
+                      <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-pine_teal/70">
                         <MapPin size={11} className="text-sea_green shrink-0" />
                         <span>{item.location}</span>
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-serif text-base sm:text-xl font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug mb-1.5">
+                    <h3 className="font-serif text-sm xs:text-base sm:text-xl font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug mb-1">
                       {item.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-sm text-pine_teal/80 leading-relaxed max-w-xl mb-3">
+                    <p className="text-xs sm:text-sm text-pine_teal/80 leading-relaxed max-w-xl mb-2.5">
                       {item.desc}
                     </p>
 
@@ -348,39 +348,39 @@ export default function AboutPage() {
       </section>
 
       {/* ================= 4. VISION, MISSION & OBJECTIVES (Compact Reference Style) ================= */}
-      <section className="py-14 sm:py-18 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
+      <section className="py-12 sm:py-18 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto relative z-10">
         
         {/* Section Heading */}
-        <div className="text-center mb-10 space-y-2.5">
+        <div className="text-center mb-8 sm:mb-10 space-y-2">
           <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
             GUIDING PRINCIPLES
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen tracking-tight">
             Vision, Mission &amp; <span className="text-sea_green italic">Objectives</span>
           </h2>
-          <p className="text-pine_teal/80 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-pine_teal/80 text-xs sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed px-2">
             The foundational philosophy shaping our experiential pedagogy, community partnerships, and fellows.
           </p>
         </div>
 
         {/* 3 Compact Modern Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           
           {/* Card 1: OUR MISSION */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#ebdcc6] shadow-[3px_4px_0px_#2f6f55] hover:shadow-[5px_6px_0px_#1e3d34] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
+          <div className="bg-white rounded-2xl p-4.5 sm:p-6 border border-[#ebdcc6] shadow-[2px_3px_0px_#2f6f55] sm:shadow-[3px_4px_0px_#2f6f55] hover:shadow-[5px_6px_0px_#1e3d34] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
             <div>
               {/* Header: Icon Next to Title */}
-              <div className="flex items-center gap-3 pb-3 mb-3.5 border-b border-[#ebdcc6]/60">
-                <div className="w-9 h-9 rounded-xl bg-sea_green/10 text-sea_green flex items-center justify-center shrink-0 border border-sea_green/20 group-hover:bg-sea_green group-hover:text-white transition-colors">
+              <div className="flex items-center gap-3 pb-3 mb-3 border-b border-[#ebdcc6]/60">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-sea_green/10 text-sea_green flex items-center justify-center shrink-0 border border-sea_green/20 group-hover:bg-sea_green group-hover:text-white transition-colors">
                   <Compass size={18} />
                 </div>
-                <h3 className="font-extrabold text-sm sm:text-base tracking-wider uppercase text-evergreen font-sans">
+                <h3 className="font-extrabold text-xs sm:text-sm md:text-base tracking-wider uppercase text-evergreen font-sans">
                   OUR MISSION
                 </h3>
               </div>
 
               {/* Bullet Points */}
-              <ul className="space-y-2.5 text-sm sm:text-[14.5px] text-pine_teal leading-relaxed">
+              <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm md:text-[14.5px] text-pine_teal leading-relaxed">
                 <li className="flex items-start gap-2.5">
                   <span className="w-2 h-2 rounded-full bg-sea_green shrink-0 mt-1.5" />
                   <span>Lived grassroots immersion in tribal ashramshalas &amp; farm collectives</span>
@@ -398,20 +398,20 @@ export default function AboutPage() {
           </div>
 
           {/* Card 2: OUR VISION */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#ebdcc6] shadow-[3px_4px_0px_#2f6f55] hover:shadow-[5px_6px_0px_#1e3d34] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
+          <div className="bg-white rounded-2xl p-4.5 sm:p-6 border border-[#ebdcc6] shadow-[2px_3px_0px_#2f6f55] sm:shadow-[3px_4px_0px_#2f6f55] hover:shadow-[5px_6px_0px_#1e3d34] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
             <div>
               {/* Header: Icon Next to Title */}
-              <div className="flex items-center gap-3 pb-3 mb-3.5 border-b border-[#ebdcc6]/60">
-                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
+              <div className="flex items-center gap-3 pb-3 mb-3 border-b border-[#ebdcc6]/60">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
                   <Eye size={18} />
                 </div>
-                <h3 className="font-extrabold text-sm sm:text-base tracking-wider uppercase text-evergreen font-sans">
+                <h3 className="font-extrabold text-xs sm:text-sm md:text-base tracking-wider uppercase text-evergreen font-sans">
                   OUR VISION
                 </h3>
               </div>
 
               {/* Bullet Points */}
-              <ul className="space-y-2.5 text-sm sm:text-[14.5px] text-pine_teal leading-relaxed">
+              <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm md:text-[14.5px] text-pine_teal leading-relaxed">
                 <li className="flex items-start gap-2.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0 mt-1.5" />
                   <span>A generation of leaders viewing rural India as civilisational strength</span>
@@ -429,20 +429,20 @@ export default function AboutPage() {
           </div>
 
           {/* Card 3: OBJECTIVES */}
-          <div className="bg-white rounded-2xl p-5 sm:p-6 border border-[#ebdcc6] shadow-[3px_4px_0px_#2f6f55] hover:shadow-[5px_6px_0px_#1e3d34] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
+          <div className="bg-white rounded-2xl p-4.5 sm:p-6 border border-[#ebdcc6] shadow-[2px_3px_0px_#2f6f55] sm:shadow-[3px_4px_0px_#2f6f55] hover:shadow-[5px_6px_0px_#1e3d34] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
             <div>
               {/* Header: Icon Next to Title */}
-              <div className="flex items-center gap-3 pb-3 mb-3.5 border-b border-[#ebdcc6]/60">
-                <div className="w-9 h-9 rounded-xl bg-amber-50 text-[#92400e] flex items-center justify-center shrink-0 border border-amber-200 group-hover:bg-[#92400e] group-hover:text-white transition-colors">
+              <div className="flex items-center gap-3 pb-3 mb-3 border-b border-[#ebdcc6]/60">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-50 text-[#92400e] flex items-center justify-center shrink-0 border border-amber-200 group-hover:bg-[#92400e] group-hover:text-white transition-colors">
                   <Target size={18} />
                 </div>
-                <h3 className="font-extrabold text-sm sm:text-base tracking-wider uppercase text-evergreen font-sans">
+                <h3 className="font-extrabold text-xs sm:text-sm md:text-base tracking-wider uppercase text-evergreen font-sans">
                   OBJECTIVES
                 </h3>
               </div>
 
               {/* Bullet Points */}
-              <ul className="space-y-2.5 text-sm sm:text-[14.5px] text-pine_teal leading-relaxed">
+              <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm md:text-[14.5px] text-pine_teal leading-relaxed">
                 <li className="flex items-start gap-2.5">
                   <span className="w-2 h-2 rounded-full bg-amber-600 shrink-0 mt-1.5" />
                   <span><strong>Empathy:</strong> Breaking paternalistic development stereotypes</span>
@@ -471,41 +471,41 @@ export default function AboutPage() {
       <MentorsSection />
 
       {/* ================= 6. START A CONVERSATION / CONTACT (Vritant Split Style) ================= */}
-      <section id="contact-section" className="py-20 px-4 md:px-8 bg-white border-t border-[#ebdcc6] relative">
+      <section id="contact-section" className="py-14 sm:py-20 px-4 sm:px-6 md:px-8 bg-white border-t border-[#ebdcc6] relative">
         <div className="max-w-6xl mx-auto">
           
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 md:gap-12 items-center">
             
             {/* Left Info Column */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-5 space-y-4 sm:space-y-6">
               <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
                 GET IN TOUCH
               </span>
 
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-evergreen">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen">
                 Let&apos;s Start a <span className="italic text-sea_green">Conversation</span>
               </h2>
 
-              <p className="text-pine_teal text-sm md:text-base leading-relaxed">
+              <p className="text-pine_teal text-xs sm:text-sm md:text-base leading-relaxed">
                 Reach out for institutional partnerships, student cohort applications, volunteer opportunities, or questions about our upcoming camps.
               </p>
 
-              <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-[#faf7f2] border border-[#ebdcc6]">
+              <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
+                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#faf7f2] border border-[#ebdcc6]">
                   <Mail className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-xs font-bold text-evergreen block">Email Us</span>
-                    <a href="mailto:sahyadriruralconnect@gmail.com" className="text-xs text-pine_teal hover:text-sea_green font-medium">
+                    <a href="mailto:sahyadriruralconnect@gmail.com" className="text-xs text-pine_teal hover:text-sea_green font-medium truncate block">
                       sahyadriruralconnect@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-[#faf7f2] border border-[#ebdcc6]">
+                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#faf7f2] border border-[#ebdcc6]">
                   <MapPin className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-xs font-bold text-evergreen block">Field Locations</span>
-                    <span className="text-xs text-pine_teal font-medium">
+                    <span className="text-xs text-pine_teal font-medium block">
                       Palghar • Karjat • Jawhar (Maharashtra)
                     </span>
                   </div>
@@ -514,8 +514,8 @@ export default function AboutPage() {
             </div>
 
             {/* Right Contact Form Card */}
-            <div className="lg:col-span-7 bg-[#faf7f2] border-2 border-[#ebdcc6] p-6 md:p-10 rounded-3xl shadow-sm">
-              <h3 className="font-serif text-xl font-bold text-evergreen mb-4">
+            <div className="lg:col-span-7 bg-[#faf7f2] border-2 border-[#ebdcc6] p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-sm">
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-evergreen mb-3.5 sm:mb-4">
                 Send a Message
               </h3>
 
