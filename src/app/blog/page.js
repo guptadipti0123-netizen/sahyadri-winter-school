@@ -86,15 +86,15 @@ export default function BlogHubPage() {
               </p>
             </div>
 
-            <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+            <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <span className="text-xs font-medium text-pine_teal/70">
                 By {heroBlog.author}
               </span>
               <Link
                 href={`/blog/${heroBlog.slug}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white text-xs md:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white text-xs md:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all whitespace-nowrap shrink-0 w-fit"
               >
-                Read Full Story
+                <span>Read Full Story</span>
                 <ArrowRight size={15} />
               </Link>
             </div>
