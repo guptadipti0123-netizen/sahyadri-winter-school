@@ -153,8 +153,6 @@ const galleryImages = [
 ]
 
 export default function SummerSchoolJawharPage() {
-  const [activeDay, setActiveDay] = useState(0)
-
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
 
@@ -389,53 +387,44 @@ export default function SummerSchoolJawharPage() {
           </p>
         </div>
 
-        {/* DAY SELECTOR BUTTONS */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
-          {itinerary.map((day, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveDay(idx)}
-              className={`px-4 py-2 rounded-xl text-xs md:text-sm font-bold transition-all duration-200 ${
-                activeDay === idx
-                  ? "bg-sea_green text-white shadow-md scale-105"
-                  : "bg-white text-pine_teal border border-celadon/50 hover:bg-frosted_mint/50"
-              }`}
-            >
-              {day.day}
-            </button>
-          ))}
-        </div>
-
-        {/* ACTIVE DAY CARD */}
-        <div className="bg-white border-2 border-celadon/60 rounded-3xl p-6 md:p-8 shadow-sm transition-all duration-300">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-celadon/30 pb-4 mb-5">
-            <div>
-              <span className="text-xs font-bold uppercase text-sea_green tracking-wider">
-                {itinerary[activeDay].day} Focus
-              </span>
-              <h3 className="font-serif text-xl md:text-2xl font-bold text-evergreen">
-                {itinerary[activeDay].theme}
-              </h3>
-            </div>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${itinerary[activeDay].color}`}>
-              {itinerary[activeDay].icon}
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-evergreen/80 uppercase tracking-wider">
-              Key Sessions & Field Engagements:
-            </h4>
-            <ul className="space-y-2.5">
-              {itinerary[activeDay].activities.map((act, actIdx) => (
-                <li key={actIdx} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-sea_green mt-1.5 flex-shrink-0" />
-                  <span className="text-sm font-medium text-pine_teal">
-                    {act}
-                  </span>
-                </li>
-              ))}
-            </ul>
+        {/* 5-DAY HORIZONTAL TRACK */}
+        <div className="relative group/track">
+          <div className="flex items-stretch gap-4 overflow-x-auto pb-4 md:pb-6 pt-2 px-2 snap-x snap-mandatory hide-scrollbar">
+            {itinerary.map((item, index) => (
+              <div key={index} className="flex items-center shrink-0">
+                <div className="w-[280px] sm:w-[320px] bg-white rounded-3xl p-5 sm:p-6 border-2 border-celadon/50 shadow-md hover:shadow-xl transition-all duration-300 snap-center relative z-10 overflow-hidden flex flex-col h-full group hover:-translate-y-1">
+                  <div className={`absolute top-0 left-0 w-full h-1.5 ${item.accent}`} />
+                  <div className="flex justify-between items-start mb-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${item.color} shadow-xs`}>
+                      {item.icon}
+                    </div>
+                    <div className="text-right">
+                      <span className="block text-xs font-bold uppercase tracking-widest text-sea_green">
+                        {item.day}
+                      </span>
+                    </div>
+                  </div>
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-evergreen leading-tight mb-3 min-h-[2.75rem]">
+                    {item.theme}
+                  </h3>
+                  <ul className="space-y-2 flex-grow">
+                    {item.activities.map((act, i) => (
+                      <li key={i} className="text-xs sm:text-sm text-pine_teal flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-sea_green" />
+                        <span className="leading-snug">{act}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {index !== itinerary.length - 1 && (
+                  <div className="hidden xl:flex w-6 shrink-0 items-center justify-center relative z-0 mx-0.5">
+                    <div className="w-6 h-6 rounded-full bg-white border border-celadon/50 flex items-center justify-center shadow-xs">
+                      <ArrowRight size={11} className="text-sea_green" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
