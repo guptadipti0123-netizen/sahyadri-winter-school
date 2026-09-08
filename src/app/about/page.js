@@ -123,12 +123,6 @@ export default function AboutPage() {
                 <span>Winter Camp Loading</span>
                 <ArrowRight size={15} />
               </Link>
-              <Link
-                href="#story"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-transparent border border-white/40 text-white font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
-              >
-                <span>Our Story</span>
-              </Link>
             </div>
 
           </div>
@@ -236,10 +230,6 @@ export default function AboutPage() {
 
           {/* Right Narrative */}
           <div className="md:col-span-7 space-y-4 sm:space-y-6">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
-              OUR STORY
-            </span>
-
             <h2 className="font-serif text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
               Beyond the Classroom, <span className="text-sea_green italic">Onto the Ground</span>
             </h2>
