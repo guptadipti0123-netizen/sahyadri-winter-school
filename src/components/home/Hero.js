@@ -83,12 +83,12 @@ const sideArticles = [
   },
   {
     id: "art-2",
-    category: "OUR STORY",
-    title: "Our Story: Bringing the Classroom Closer to the Ground",
-    date: "Jan 2026",
-    readTime: "4 min read",
-    image: "/sahyadri-2.jpeg",
-    link: "/blog/our-story-stepping-outside-the-classroom",
+    category: "TECH & CONNECTIVITY",
+    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
+    date: "Dec 28, 2025",
+    readTime: "5 min read",
+    image: "/camp2/camp2-day4-i1.jpg",
+    link: "/blog/rural-connectivity-and-digital-divide",
     tagColor: "bg-[#ecfdf5] text-[#065f46] border-[#a7f3d0]",
   },
   {
