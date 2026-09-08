@@ -160,16 +160,20 @@ export default function CareerPage() {
                 We currently don&apos;t have any specific job openings available. However, we are always looking for talented individuals who are passionate about rural development.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/contact">
-                <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-evergreen text-white rounded-xl font-medium hover:bg-sea_green transition-colors shadow-lg shadow-evergreen/20 text-sm md:text-base">
-                  <Mail size={18} /> Contact Us
-                </button>
-                </a>
-                <Link href="/volunteers">
-                  <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-white text-evergreen border border-evergreen/20 rounded-xl font-medium hover:bg-frosted_mint transition-colors text-sm md:text-base">
-                    <Sprout size={18} /> Volunteer With Us
-                  </button>
+              <div className="flex flex-row items-center gap-2.5 sm:gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 bg-evergreen text-white rounded-full font-bold hover:bg-sea_green transition-all shadow-md text-xs sm:text-sm md:text-base whitespace-nowrap active:scale-95"
+                >
+                  <Mail size={16} />
+                  <span>Contact Us</span>
+                </Link>
+                <Link
+                  href="/volunteers"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 bg-white text-evergreen border border-evergreen/20 rounded-full font-semibold hover:bg-frosted_mint transition-all text-xs sm:text-sm md:text-base whitespace-nowrap active:scale-95 shadow-xs"
+                >
+                  <Sprout size={16} />
+                  <span>Volunteer With Us</span>
                 </Link>
               </div>
             </div>
