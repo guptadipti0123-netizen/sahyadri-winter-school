@@ -155,7 +155,7 @@ export default function AboutPage() {
 
             {/* Feature Card with Background Image, Instagram Caption & Camp Link */}
             <div className="relative w-full max-w-[420px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-evergreen/80 group mx-auto">
-              <div className="relative h-[320px] xs:h-[350px] sm:h-[380px] w-full">
+              <div className="relative h-[390px] xs:h-[420px] sm:h-[440px] w-full">
                 <Image
                   src={heroCamps[activeCampIdx].image}
                   alt={heroCamps[activeCampIdx].title}
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 />
                 
                 {/* Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30" />
                 
                 {/* Top Badges */}
                 <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
@@ -179,12 +179,12 @@ export default function AboutPage() {
                 </div>
 
                 {/* Bottom Content & Instagram Caption */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 space-y-2 sm:space-y-2.5 z-10 text-left">
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 space-y-2 sm:space-y-2.5 z-10 text-left">
                   <h3 className="font-serif text-lg sm:text-2xl font-bold text-white leading-tight drop-shadow-md">
                     {heroCamps[activeCampIdx].title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-frosted_mint/95 leading-relaxed font-light line-clamp-2 sm:line-clamp-3 bg-black/40 backdrop-blur-sm p-2.5 sm:p-3 rounded-2xl border border-white/15">
+                  <p className="text-xs sm:text-sm text-frosted_mint/95 leading-relaxed font-light bg-black/50 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-white/15">
                     &quot;{heroCamps[activeCampIdx].caption}&quot;
                   </p>
 
