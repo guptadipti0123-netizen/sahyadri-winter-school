@@ -43,15 +43,11 @@ export default function BlogHubPage() {
         <div className="bg-white rounded-3xl border-2 border-celadon/60 p-6 sm:p-10 md:p-12 shadow-lg space-y-8 relative overflow-hidden">
           
           {/* Header */}
-          <div className="space-y-3 border-b border-celadon/30 pb-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
-              <Sparkles size={13} />
-              <span>Our Story</span>
-            </div>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen leading-tight">
-              Bringing the Classroom Closer to the Ground
+          <div className="space-y-2.5 border-b border-celadon/30 pb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-evergreen tracking-tight">
+              Our Story
             </h2>
-            <p className="font-serif italic text-base sm:text-lg text-sea_green font-medium">
+            <p className="font-serif italic text-base sm:text-lg md:text-xl text-sea_green font-medium">
               &quot;There is a difference between knowing about a problem and knowing what it feels like on the ground.&quot;
             </p>
           </div>
