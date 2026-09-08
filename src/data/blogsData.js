@@ -244,15 +244,15 @@ export const blogsData = [
   {
     slug: "cradle-of-warli-art-jawhar-preview",
     title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
-    subtitle: "Upcoming Edition — May 2026, Jawhar, Palghar",
+    subtitle: "Summer Edition — May 2026, Jawhar, Palghar",
     date: "May 2026",
     edition: "Summer School 2026",
     author: "Sahyadri Rural Connect Editorial",
-    authorRole: "Upcoming Cohort Preview",
+    authorRole: "Summer Cohort Preview",
     readTime: "4 min read",
     category: "Culture & Art",
     image: "/jawahar-village-tribal-community.jpg",
-    excerpt: "Jawhar, known for its mist-clad plateaus, ancient tribal palaces, and world-renowned Warli paintings, will host our upcoming May 2026 Summer School edition.",
+    excerpt: "Jawhar, known for its mist-clad plateaus, ancient tribal palaces, and world-renowned Warli paintings, will host our May 2026 Summer School edition.",
     content: [
       {
         type: "paragraph",

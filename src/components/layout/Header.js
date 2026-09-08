@@ -39,7 +39,7 @@ export default function Header() {
       name: 'Summer School',
       place: 'Jawhar, Palghar',
       date: 'May 2026',
-      badge: 'Upcoming',
+      badge: "Summer '26",
       href: '/camp-3'
     },
     {

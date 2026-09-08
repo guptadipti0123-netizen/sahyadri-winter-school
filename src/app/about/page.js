@@ -36,7 +36,7 @@ export default function AboutPage() {
     {
       badge: "Jawhar • May 2026",
       title: "Forest Ecology & Livelihoods",
-      tag: "Upcoming Summer School",
+      tag: "Summer Edition",
       caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
       image: "/jawahar-village-tribal-community.jpg",
       href: "/summer-school",
@@ -55,8 +55,8 @@ export default function AboutPage() {
     {
       date: "May '26",
       year: "2026",
-      edition: "Upcoming",
-      badge: "Upcoming",
+      edition: "Summer '26",
+      badge: "Summer Edition",
       title: "Summer School: Forest Ecology & PESA",
       location: "Jawhar, Palghar",
       desc: "Immersive field study on PESA Act 1996 tribal governance, Warli heritage, and forest economies.",
@@ -115,17 +115,17 @@ export default function AboutPage() {
               Sahyadri Rural Connect is an experiential education and rural immersion initiative dedicated to bridging classroom knowledge with grassroots realities, indigenous culture, and sustainable social impact.
             </p>
 
-            <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-3 pt-2">
+            <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-2">
               <Link
                 href="/register"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-102 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-102 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
                 <span>Winter Camp Loading</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </Link>
               <Link
                 href="#story"
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-transparent border border-white/40 text-white font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-transparent border border-white/40 text-white font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
               >
                 <span>Our Story</span>
               </Link>

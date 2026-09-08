@@ -15,7 +15,7 @@ const campDetails = {
   tagline: "Exploring Tribal Heritage, Ecology & Rural Governance in the Cradle of Warli Art.",
   dates: "May 2026",
   location: "Jawhar, Palghar District, Maharashtra",
-  status: "Upcoming Edition"
+  status: "Summer Edition"
 }
 
 // --- STATS DATA ---
@@ -207,20 +207,20 @@ export default function SummerSchoolJawharPage() {
               &quot;{campDetails.tagline}&quot;
             </p>
 
-            {/* ACTION BUTTONS */}
-            <div className="flex flex-wrap items-center gap-4 pt-3">
+            {/* ACTION BUTTONS (Single row on mobile) */}
+            <div className="flex flex-row items-center gap-2 sm:gap-4 pt-3">
               <Link
                 href="/register/form"
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
-                Are you Interested
-                <ArrowRight size={18} />
+                <span>Are you Interested</span>
+                <ArrowRight size={15} />
               </Link>
               <Link
                 href="#themes"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-sm md:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-xs sm:text-sm md:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300 whitespace-nowrap"
               >
-                Explore Themes
+                <span>Explore Themes</span>
               </Link>
             </div>
           </div>
@@ -491,19 +491,19 @@ export default function SummerSchoolJawharPage() {
               Join students, researchers, and aspiring change leaders for an unforgettable 5-day immersion into culture, ecology, and governance.
             </p>
 
-            <div className="pt-3 flex flex-wrap justify-center gap-4">
+            <div className="pt-3 flex flex-row justify-center items-center gap-2.5 sm:gap-4">
               <Link
                 href="/register/form"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-evergreen font-bold text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-8 py-2.5 sm:py-4 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
-                Are you Interested
-                <ArrowRight size={18} />
+                <span>Are you Interested</span>
+                <ArrowRight size={15} />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-transparent border border-white/40 text-white font-semibold text-sm md:text-base hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-4 rounded-full bg-transparent border border-white/40 text-white font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
               >
-                Contact Us
+                <span>Contact Us</span>
               </Link>
             </div>
           </div>

@@ -95,7 +95,7 @@ export default function RegisterPage() {
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-ping" />
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 -ml-5" />
             <p className="text-xs sm:text-sm font-bold text-evergreen tracking-wider uppercase">
-              Upcoming Edition • Winter Camp Loading
+              Registration Open • Winter Camp Loading
             </p>
           </div>
 
@@ -105,26 +105,26 @@ export default function RegisterPage() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-pine_teal/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-lg md:text-xl text-pine_teal/90 max-w-3xl mx-auto leading-relaxed">
             A transformative 5-day grassroots residential fellowship taking university students and researchers to the heart of rural Maharashtra.
           </p>
 
-          {/* Top CTA Buttons */}
-          <div className="pt-3 flex flex-wrap justify-center items-center gap-4">
+          {/* Top CTA Buttons (Single row on mobile) */}
+          <div className="pt-3 flex flex-row justify-center items-center gap-2 sm:gap-4 w-full">
             <Link
               href="/register/form"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
+              className="group relative inline-flex items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-8 py-2.5 sm:py-4 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
             >
               <span>Are you Interested</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
               <span className="absolute inset-0 rounded-full bg-sea_green/20 blur-xl -z-10 group-hover:bg-sea_green/40 transition-colors" />
             </Link>
 
             <a
               href="#poster-details"
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-sm sm:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-4 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-xs sm:text-sm md:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300 whitespace-nowrap"
             >
-              <BookOpen size={17} />
+              <BookOpen size={14} className="hidden xs:inline" />
               <span>Explore Camp Details</span>
             </a>
           </div>
@@ -175,7 +175,7 @@ export default function RegisterPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#fcf8f0] via-black/20 to-black/40" />
                 
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-sea_green text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
-                  Upcoming Cohort
+                  Winter Cohort
                 </div>
                 
                 <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider">
@@ -293,7 +293,7 @@ export default function RegisterPage() {
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
                 <Sparkles size={13} />
-                <span>Upcoming Fellowship Preview</span>
+                <span>Fellowship Preview</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen leading-snug">
                 Step Out of the Classroom. <br />
