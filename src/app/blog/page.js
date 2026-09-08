@@ -13,7 +13,7 @@ export default function BlogHubPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-10 overflow-hidden">
+      <section className="relative pt-28 md:pt-36 pb-8 overflow-hidden">
         {/* Wave Background */}
         <div className="absolute inset-0 z-0">
           <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
@@ -38,72 +38,7 @@ export default function BlogHubPage() {
         </div>
       </section>
 
-      {/* ================= 2. FEATURED HERO BLOG ================= */}
-      <section className="px-4 md:px-8 pb-12 max-w-6xl mx-auto relative z-10">
-        <div className="bg-white rounded-3xl border-2 border-celadon/60 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 grid lg:grid-cols-12 gap-0">
-          
-          {/* Image */}
-          <div className="lg:col-span-6 relative h-64 lg:h-auto min-h-[300px] bg-gray-100">
-            <Image
-              src={heroBlog.heroImage || heroBlog.image}
-              alt={heroBlog.title}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute top-4 left-4 px-3 py-1 bg-sea_green text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-sm">
-              Featured Story
-            </div>
-          </div>
-
-          {/* Text Content */}
-          <div className="lg:col-span-6 p-6 md:p-10 flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-xs text-pine_teal/80 font-semibold">
-                <span className="text-sea_green font-bold uppercase">{heroBlog.category}</span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Calendar size={13} />
-                  {heroBlog.date}
-                </span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Clock size={13} />
-                  {heroBlog.readTime}
-                </span>
-              </div>
-
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-evergreen hover:text-sea_green transition-colors leading-snug">
-                <Link href={`/blog/${heroBlog.slug}`}>{heroBlog.title}</Link>
-              </h2>
-
-              <p className="text-xs font-semibold text-pine_teal/70 italic">
-                {heroBlog.subtitle}
-              </p>
-
-              <p className="text-pine_teal text-sm leading-relaxed line-clamp-3">
-                {heroBlog.excerpt}
-              </p>
-            </div>
-
-            <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span className="text-xs font-medium text-pine_teal/70">
-                By {heroBlog.author}
-              </span>
-              <Link
-                href={`/blog/${heroBlog.slug}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white text-xs md:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all whitespace-nowrap shrink-0 w-fit"
-              >
-                <span>Read Full Story</span>
-                <ArrowRight size={15} />
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ================= 3. OUR STORY SECTION ================= */}
+      {/* ================= 2. OUR STORY SECTION (FIRST) ================= */}
       <section className="px-4 md:px-8 pb-14 max-w-6xl mx-auto relative z-10">
         <div className="bg-white rounded-3xl border-2 border-celadon/60 p-6 sm:p-10 md:p-12 shadow-lg space-y-8 relative overflow-hidden">
           
@@ -223,17 +158,87 @@ export default function BlogHubPage() {
         </div>
       </section>
 
-      {/* ================= 4. ALL ARTICLES GRID ================= */}
-      <section className="px-4 md:px-8 pb-16 max-w-6xl mx-auto">
-        <div className="mb-8 space-y-2">
+      {/* ================= 3. FIELD STORIES & ARTICLES (ALL CARDS TOGETHER) ================= */}
+      <section className="px-4 md:px-8 pb-16 max-w-6xl mx-auto relative z-10 space-y-8">
+        
+        {/* Section Header */}
+        <div className="space-y-1">
+          <span className="text-xs font-bold uppercase tracking-widest text-sea_green">
+            FIELD DISPATCHES
+          </span>
           <h3 className="font-serif text-2xl md:text-3xl font-bold text-evergreen">
-            Field Reports & Articles
+            Stories & Cohort Notes
           </h3>
           <p className="text-xs sm:text-sm text-pine_teal/80 font-medium">
             Read detailed journals, case studies, and field observations written across our cohorts.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Featured Story Card */}
+        <div className="bg-white rounded-3xl border-2 border-celadon/60 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 grid lg:grid-cols-12 gap-0">
+          
+          {/* Image */}
+          <div className="lg:col-span-6 relative h-64 lg:h-auto min-h-[300px] bg-gray-100">
+            <Image
+              src={heroBlog.heroImage || heroBlog.image}
+              alt={heroBlog.title}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute top-4 left-4 px-3 py-1 bg-sea_green text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-sm">
+              Featured Story
+            </div>
+          </div>
+
+          {/* Text Content */}
+          <div className="lg:col-span-6 p-6 md:p-10 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-xs text-pine_teal/80 font-semibold">
+                <span className="text-sea_green font-bold uppercase">{heroBlog.category}</span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <Calendar size={13} />
+                  {heroBlog.date}
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <Clock size={13} />
+                  {heroBlog.readTime}
+                </span>
+              </div>
+
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-evergreen hover:text-sea_green transition-colors leading-snug">
+                <Link href={`/blog/${heroBlog.slug}`}>{heroBlog.title}</Link>
+              </h2>
+
+              <p className="text-xs font-semibold text-pine_teal/70 italic">
+                {heroBlog.subtitle}
+              </p>
+
+              <p className="text-pine_teal text-sm leading-relaxed line-clamp-3">
+                {heroBlog.excerpt}
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <span className="text-xs font-medium text-pine_teal/70">
+                By {heroBlog.author}
+              </span>
+              <Link
+                href={`/blog/${heroBlog.slug}`}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white text-xs md:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all whitespace-nowrap shrink-0 w-fit"
+              >
+                <span>Read Full Story</span>
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+
+        </div>
+
+        {/* All Articles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
           {allBlogs.map((blog) => (
             <Link
               key={blog.slug}
@@ -288,6 +293,7 @@ export default function BlogHubPage() {
             </Link>
           ))}
         </div>
+
       </section>
 
     </main>
