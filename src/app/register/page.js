@@ -291,12 +291,8 @@ export default function RegisterPage() {
           </div>
 
           {/* Right: Detailed Narrative & Features */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
-                <Sparkles size={13} />
-                <span>Fellowship Preview</span>
-              </div>
+          <div className="lg:col-span-7 space-y-5">
+            <div>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen leading-snug">
                 Step Out of the Classroom. <br />
                 <span className="text-sea_green italic font-normal">Step into Real Bharat.</span>
