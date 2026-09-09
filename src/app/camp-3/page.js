@@ -208,17 +208,17 @@ export default function SummerSchoolJawharPage() {
             {/* ACTION BUTTONS (Single row on mobile) */}
             <div className="flex flex-row items-center gap-2 sm:gap-4 pt-3">
               <Link
-                href="/register/form"
+                href="#themes"
                 className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
-                <span>Register for Summer School</span>
+                <span>Explore Themes</span>
                 <ArrowRight size={15} />
               </Link>
               <Link
-                href="#themes"
+                href="#gallery"
                 className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-xs sm:text-sm md:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300 whitespace-nowrap"
               >
-                <span>Explore Themes</span>
+                <span>Visual Archive</span>
               </Link>
             </div>
           </div>
@@ -431,14 +431,14 @@ export default function SummerSchoolJawharPage() {
       </section>
 
       {/* ================= 6. GLIMPSES GALLERY ================= */}
-      <section className="py-12 px-4 md:px-8 bg-frosted_mint/30">
+      <section id="gallery" className="py-12 px-4 md:px-8 bg-frosted_mint/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 space-y-2">
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-evergreen">
-              Glimpses of Jawhar & Sahyadri
+              Glimpses of Jawhar &amp; Sahyadri
             </h2>
             <p className="text-pine_teal/80 text-sm md:text-base">
-              The landscapes, art, and vibrant village life awaiting the cohort.
+              The landscapes, art, and vibrant village life from our field immersions.
             </p>
           </div>
 
@@ -465,29 +465,29 @@ export default function SummerSchoolJawharPage() {
         </div>
       </section>
 
-      {/* ================= 7. CTA / REGISTRATION ================= */}
+      {/* ================= 7. CTA / READ STORIES ================= */}
       <section className="py-16 px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-evergreen via-sea_green to-dark_emerald text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
           
           <div className="relative z-10 space-y-5">
             <span className="inline-block px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold tracking-widest uppercase text-frosted_mint">
-              May 2026 Cohort
+              Summer Edition Archive
             </span>
 
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
-              Ready to Experience Grassroots India in Jawhar?
+              Explore More Cohorts &amp; Field Stories
             </h2>
 
             <p className="text-white/85 text-sm md:text-base max-w-xl mx-auto">
-              Join students, researchers, and aspiring change leaders for an unforgettable 5-day immersion into culture, ecology, and governance.
+              Discover field diaries, participant observations, and grassroots insights from across our rural immersion programs.
             </p>
 
             <div className="pt-3 flex flex-row justify-center items-center gap-2.5 sm:gap-4">
               <Link
-                href="/register/form"
+                href="/blog"
                 className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-8 py-2.5 sm:py-4 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
-                <span>Register for Camp</span>
+                <span>Read Field Stories</span>
                 <ArrowRight size={15} />
               </Link>
               <Link
