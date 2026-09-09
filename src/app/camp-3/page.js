@@ -144,7 +144,7 @@ const itinerary = [
 
 // --- PHOTO GALLERY SAMPLES ---
 const galleryImages = [
-  { src: "/jawahar-village-tribal-community.jpg", caption: "Scenic landscapes and tribal hamlets of Jawhar" },
+  { src: "/floating3.jpeg", caption: "Scenic landscapes and tribal hamlets of Jawhar" },
   { src: "/grassland-hero1.jpg", caption: "Sahyadri hills & forest ecosystems" },
   { src: "/sahyadri-1.jpg", caption: "Field learning and grassroots conversations" },
   { src: "/sahyadri-2.jpeg", caption: "Cohort reflections and team engagement" },
@@ -228,7 +228,7 @@ export default function SummerSchoolJawharPage() {
             <div className="relative w-full max-w-[380px] bg-white p-4 pb-14 shadow-2xl rounded-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-celadon/40">
               <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden bg-gray-100">
                 <Image
-                  src="/jawahar-village-tribal-community.jpg"
+                  src="/floating7.jpeg"
                   alt="Summer School Jawhar Tribal Community"
                   fill
                   className="object-cover"

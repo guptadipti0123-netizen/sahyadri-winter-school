@@ -38,7 +38,7 @@ export default function AboutPage() {
       title: "Forest Ecology & Livelihoods",
       tag: "Summer Edition",
       caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
-      image: "/jawahar-village-tribal-community.jpg",
+      image: "/floating7.jpeg",
       href: "/summer-school",
       duration: "Summer 2026"
     }
@@ -208,12 +208,7 @@ export default function AboutPage() {
       <section id="story" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16 space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
-            <Sparkles size={13} className="text-amber-600" />
-            THE ORIGIN &amp; PURPOSE
-          </span>
-          
+        <div className="text-center mb-10 sm:mb-14 space-y-3">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-evergreen tracking-tight">
             Our Story
           </h2>
@@ -231,7 +226,7 @@ export default function AboutPage() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group bg-evergreen/10">
               <div className="relative h-[320px] xs:h-[380px] sm:h-[440px] w-full">
                 <Image
-                  src="/jawahar-village-tribal-community.jpg"
+                  src="/rural_immersion_real.jpg"
                   alt="Students and village community immersion"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -352,9 +347,6 @@ export default function AboutPage() {
           
           {/* Section Heading */}
           <div className="text-center mb-10 sm:mb-12 space-y-2">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
-              OUR CHRONICLE
-            </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen tracking-tight">
               The Journey <span className="text-sea_green italic">So Far</span>
             </h2>

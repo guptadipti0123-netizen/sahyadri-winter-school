@@ -39,7 +39,7 @@ const featuredSlides = [
     category: "CULTURE & ART",
     title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
-    image: "/jawahar-village-tribal-community.jpg", // Jawhar tribal palace & landscape
+    image: "/floating7.jpeg", // Jawhar tribal palace & landscape
     link: "/blog/cradle-of-warli-art-jawhar-preview",
     urlTag: "sahyadriconnect.org/blog/cradle-of-warli-art-jawhar-preview",
     date: "May 2026",
@@ -77,7 +77,7 @@ const sideArticles = [
     title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
     date: "May 2026",
     readTime: "4 min read",
-    image: "/jawahar-village-tribal-community.jpg", // Matches blog header
+    image: "/floating7.jpeg", // Matches blog header
     link: "/blog/cradle-of-warli-art-jawhar-preview",
     tagColor: "bg-[#eef2ff] text-[#3730a3] border-[#c7d2fe]",
   },

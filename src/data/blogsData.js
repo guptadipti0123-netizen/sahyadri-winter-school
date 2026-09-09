@@ -252,7 +252,7 @@ export const blogsData = [
     authorRole: "Summer Cohort Preview",
     readTime: "4 min read",
     category: "Culture & Art",
-    image: "/jawahar-village-tribal-community.jpg",
+    image: "/floating7.jpeg",
     excerpt: "Jawhar, known for its mist-clad plateaus, ancient tribal palaces, and world-renowned Warli paintings, will host our May 2026 Summer School edition.",
     content: [
       {
