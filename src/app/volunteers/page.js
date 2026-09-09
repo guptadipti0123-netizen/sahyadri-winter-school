@@ -118,18 +118,18 @@ export default function VolunteerPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
+            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
               Join Our Mission
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
+          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
             Volunteer Opportunities
           </h1>
 
-          <p className="text-base md:text-xl italic">
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
             Make a difference by volunteering with Sahyadri Rural Connect.
           </p>
         </div>
@@ -149,11 +149,11 @@ export default function VolunteerPage() {
         >
           {/* --- LEFT SECTION --- */}
           <div>
-            <h2 className="text-2xl sm:text-4xl font-bold mb-3 text-left">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-3 text-left leading-tight">
               Why Volunteer With Us?
             </h2>
 
-            <p className="max-w-xl text-gray-600 mb-6 text-sm sm:text-base lg:text-lg text-left mx-auto lg:mx-0">
+            <p className="max-w-xl text-gray-600 mb-6 text-sm sm:text-base lg:text-lg text-left mx-auto lg:mx-0 font-normal leading-relaxed">
               Volunteering with Sahyadri Rural Connect offers a unique opportunity to contribute
               to rural development while gaining valuable experience.
             </p>
@@ -220,7 +220,7 @@ export default function VolunteerPage() {
 
           {/* --- RIGHT SECTION --- */}
           <div>
-            <h2 className="text-2xl sm:text-4xl font-bold mb-6 text-left">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-6 text-left leading-tight">
               Current Volunteer Roles
             </h2>
 
@@ -234,8 +234,8 @@ export default function VolunteerPage() {
                   md:transition-all md:duration-300
                   md:hover:shadow-lg"
                 >
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">{role.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm sm:text-base">{role.description}</p>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-evergreen mb-2">{role.title}</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base leading-relaxed font-normal">{role.description}</p>
                   <div className="flex flex-nowrap gap-1 sm:gap-2 overflow-hidden">
                     {role.tags.map((tag, j) => (
                       <span
@@ -268,8 +268,8 @@ export default function VolunteerPage() {
       {/* ================= CTA SECTION ================= */}
       <section className="pb-12 flex justify-center px-2 md:px-6">
         <div className="ctaContent max-w-[560px] w-full text-center">
-          <h2 className="text-2xl sm:text-4xl font-bold mb-3 text-center">Ready to Volunteer?</h2>
-          <p className="ctaDescription text-gray-600 mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-3 text-center leading-tight">Ready to Volunteer?</h2>
+          <p className="ctaDescription text-gray-600 mb-6 text-sm sm:text-base font-normal">
             Upload your resume to get started. We’ll review your application and get in touch.
           </p>
           

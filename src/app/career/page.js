@@ -69,18 +69,18 @@ export default function CareerPage() {
         </div>
 
          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
+            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
               Join Our Mission
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
+          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
             Career Opportunities
           </h1>
 
-          <p className="text-base md:text-xl italic">
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
             Build a career with purpose. Join a team that is redefining rural development.
           </p>
         </div>
@@ -118,10 +118,10 @@ export default function CareerPage() {
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="font-serif text-base md:text-2xl font-bold text-gray-900 mb-1 md:mb-4 group-hover:text-evergreen transition-colors">
+                  <h3 className="font-serif text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 group-hover:text-evergreen transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed md:px-2">
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed md:px-2 font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -149,14 +149,14 @@ export default function CareerPage() {
             <div className="p-8 md:p-16 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
                  <div className="p-2 bg-frosted_mint rounded-lg text-sea_green"><Sparkles size={20} /></div>
-                 <span className="text-sm font-bold uppercase tracking-wider text-sea_green">Get Involved</span>
+                 <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-sea_green">Get Involved</span>
               </div>
               
-              <h2 className="font-serif text-xl md:text-4xl font-bold text-gray-800 mb-4">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-4 leading-tight">
                 Be the part of Change
               </h2>
               
-              <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">
+              <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base font-normal">
                 We currently don&apos;t have any specific job openings available. However, we are always looking for talented individuals who are passionate about rural development.
               </p>
 

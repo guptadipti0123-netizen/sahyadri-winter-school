@@ -141,19 +141,19 @@ export default function ContactPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
+            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
               Contact Us
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
+          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
             Get in Touch
           </h1>
 
-          <p className="text-base md:text-xl italic">
-            Have questions or want to collaborate with us? We’d love to hear from you.
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
+            Have questions or want to collaborate with us? We&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -171,26 +171,28 @@ export default function ContactPage() {
           <div className="h-full bg-white rounded-3xl md:rounded-r-none p-8 md:p-12 shadow-xl flex flex-col justify-center relative border border-gray-100">
             <div className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-white rotate-45 z-50" />
             <div className="relative z-10">
-              <h2 className="text-2xl sm:text-4xl font-bold mb-3 text-left">Let&apos;s get in touch</h2>
-              <p className="text-gray-500 mb-10 leading-relaxed text-sm md:text-base">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-3 text-left leading-tight">
+                Let&apos;s get in touch
+              </h2>
+              <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base font-normal">
                 Have questions or want to learn more about our programs? We&apos;d love to hear from you.
               </p>
-              <div className="space-y-8 mb-10">
+              <div className="space-y-6 mb-8">
                 <div className="flex gap-4 items-start">
-                  <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center flex-shrink-0 shadow-xs">
                     <MapPin className="w-5 h-5 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-gray-500 tracking-wide mb-1">ADDRESS</p>
+                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-1">ADDRESS</p>
                     <p className="text-gray-900 font-medium text-sm md:text-base">Mumbai, Maharashtra 400076</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center flex-shrink-0 shadow-xs">
                     <Mail className="w-5 h-5 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-gray-500 tracking-wide mb-1">EMAIL</p>
+                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-1">EMAIL</p>
                     <p className="text-gray-900 font-medium text-sm md:text-base">info@sahyadriruralconnect.org</p>
                   </div>
                 </div>

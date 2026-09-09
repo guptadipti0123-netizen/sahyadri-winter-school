@@ -140,17 +140,17 @@ export default function Camp1Page() {
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-evergreen space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-              <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">{campDetails.edition}</p>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
+              <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">{campDetails.edition}</p>
             </div>
-            <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">{campDetails.title}</h1>
-            <div className="flex flex-col gap-2 text-sm md:text-lg font-light">
-              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 md:w-5 md:h-5" /><span>{campDetails.dates}</span></div>
-              <div className="flex items-center gap-2"><MapPin className="w-4 h-4 md:w-5 md:h-5" /><span>{campDetails.location}</span></div>
+            <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">{campDetails.title}</h1>
+            <div className="flex flex-col gap-2 text-sm md:text-base font-medium text-pine_teal/90">
+              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-sea_green" /><span>{campDetails.dates}</span></div>
+              <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-sea_green" /><span>{campDetails.location}</span></div>
             </div>
 
-            <p className="text-base md:text-xl italic border-l-2 border-evergreen/70 pl-4 ml-2">&quot;{campDetails.tagline}&quot;</p>
+            <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 border-l-2 border-sea_green pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
 
           </div>
           <div className="relative z-10 flex justify-center">

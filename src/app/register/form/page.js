@@ -281,18 +281,18 @@ export default function RegisterFormPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-evergreen/50 backdrop-blur-md mb-4 md:mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-evergreen animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
+            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
               Registration
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-6xl mb-3 text-evergreen leading-tight drop-shadow-md">
+          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
             Registration Form
           </h1>
 
-          <p className="text-base md:text-xl italic text-pine_teal/80">
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
             Fill in the form below to apply for Sahyadri Rural Connect.
           </p>
         </div>
