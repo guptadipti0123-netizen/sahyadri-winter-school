@@ -19,20 +19,18 @@ const featuredSlides = [
     subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
     image: "/sahyadri-bg-hero6.jpeg", // Panoramic Sahyadri Ghats
     link: "/blog/a-day-at-sahyadri-rural-connect",
-    urlTag: "sahyadriconnect.org/blog/a-day-at-sahyadri-rural-connect",
     date: "Dec 2025",
     readTime: "5 Days Immersion",
   },
   {
-    id: "our-story",
-    category: "OUR STORY",
-    title: "Our Story: Bringing the Classroom Closer to the Ground",
-    subtitle: "There is a difference between knowing about a problem and knowing what it feels like on the ground.",
-    image: "/sahyadri-2.jpeg",
-    link: "/blog/our-story-stepping-outside-the-classroom",
-    urlTag: "sahyadriconnect.org/blog/our-story-stepping-outside-the-classroom",
-    date: "Jan 2026",
-    readTime: "4 min read",
+    id: "rural-connectivity",
+    category: "TECH & INFRASTRUCTURE",
+    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
+    subtitle: "Examining last-mile PMGSY road networks, BharatNet optical fiber, and solar telecom towers across Sahyadri villages.",
+    image: "/camp2/camp2-day4-i1.jpg", // Real field photo: solar telecom & rural infrastructure
+    link: "/blog/rural-connectivity-and-digital-divide",
+    date: "Dec 28, 2025",
+    readTime: "5 min read",
   },
   {
     id: "jawhar-summer-school",
@@ -41,7 +39,6 @@ const featuredSlides = [
     subtitle: "Explore sacred forest groves, indigenous art traditions, and self-governance models under PESA in Palghar district.",
     image: "/floating7.jpeg", // Jawhar tribal palace & landscape
     link: "/blog/cradle-of-warli-art-jawhar-preview",
-    urlTag: "sahyadriconnect.org/blog/cradle-of-warli-art-jawhar-preview",
     date: "May 2026",
     readTime: "4 min read",
   },
@@ -52,7 +49,6 @@ const featuredSlides = [
     subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
     image: "/camp2/camp2-day3-i2.jpg", // Real field photo: organic farm & forest walk
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
-    urlTag: "sahyadriconnect.org/blog/sustainable-livelihoods-and-tribal-wisdom",
     date: "Dec 27, 2025",
     readTime: "5 min read",
   },
@@ -63,7 +59,6 @@ const featuredSlides = [
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
     image: "/camp2/camp2-day2-i1.jpg", // Real photo: fort trek trail & grassroots enterprise
     link: "/blog/maratha-heritage-and-rural-immersion",
-    urlTag: "sahyadriconnect.org/blog/maratha-heritage-and-rural-immersion",
     date: "Dec 25, 2025",
     readTime: "6 min read",
   },
@@ -223,7 +218,7 @@ export default function Hero() {
                 {/* Title Linking to page */}
                 <Link 
                   href={activeSlide.link}
-                  className="group/title block"
+                  className="group/title block relative z-30 cursor-pointer pointer-events-auto"
                 >
                   <h1 
                     key={`title-${activeSlide.id}`}
@@ -242,11 +237,11 @@ export default function Hero() {
                 </p>
 
                 {/* Footer CTA Button & Indicators Row */}
-                <div className="flex items-center justify-between gap-4 pt-3 border-t border-white/20">
+                <div className="relative z-30 flex items-center justify-between gap-4 pt-3 border-t border-white/20">
                   <div className="flex items-center gap-3">
                     <Link
                       href={activeSlide.link}
-                      className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 group/btn"
+                      className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto group/btn"
                     >
                       <span>Read Full Story</span>
                       <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform text-sea_green" />
@@ -261,7 +256,11 @@ export default function Hero() {
                     {featuredSlides.map((_, idx) => (
                       <button
                         key={idx}
-                        onClick={() => setCurrent(idx)}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          setCurrent(idx)
+                        }}
                         aria-label={`Go to slide ${idx + 1}`}
                         className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                           idx === current 
