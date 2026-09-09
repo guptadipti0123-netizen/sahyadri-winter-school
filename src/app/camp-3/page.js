@@ -465,46 +465,6 @@ export default function SummerSchoolJawharPage() {
         </div>
       </section>
 
-      {/* ================= 7. CTA / READ STORIES ================= */}
-      <section className="py-16 px-4 md:px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-evergreen via-sea_green to-dark_emerald text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
-          
-          <div className="relative z-10 space-y-5">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold tracking-widest uppercase text-frosted_mint">
-              Summer Edition Archive
-            </span>
-
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
-              Explore More Cohorts &amp; Field Stories
-            </h2>
-
-            <p className="text-white/85 text-sm md:text-base max-w-xl mx-auto">
-              Discover field diaries, participant observations, and grassroots insights from across our rural immersion programs.
-            </p>
-
-            <div className="pt-3 flex flex-row justify-center items-center gap-2.5 sm:gap-4">
-              <Link
-                href="/blog"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-8 py-2.5 sm:py-4 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
-              >
-                <span>Read Field Stories</span>
-                <ArrowRight size={15} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-4 rounded-full bg-transparent border border-white/40 text-white font-semibold text-xs sm:text-sm md:text-base hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
-              >
-                <span>Contact Us</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Decorative background blur */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-mint_leaf/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-        </div>
-      </section>
-
     </main>
   )
 }
