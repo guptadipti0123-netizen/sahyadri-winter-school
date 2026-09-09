@@ -84,7 +84,7 @@ export default function Header() {
               
               // Dropdown for Camps
               if (link.isDropdown) {
-                const isChildActive = link.children.some(child => pathname === child.href)
+                const isChildActive = link.children.some(child => pathname === child.href) || pathname === '/camps'
                 return (
                   <div 
                     key={link.name} 
@@ -93,9 +93,12 @@ export default function Header() {
                     onMouseLeave={() => setCampsDropdownOpen(false)}
                   >
                     <button
+                      type="button"
+                      onClick={() => setCampsDropdownOpen((prev) => !prev)}
                       className={`flex items-center gap-1 text-[13px] xl:text-[14px] font-medium transition-colors py-1 cursor-pointer ${
                         isChildActive ? 'text-[#2d6a4f] font-bold' : 'text-[#292524] hover:text-[#2d6a4f]'
                       }`}
+                      aria-expanded={campsDropdownOpen}
                     >
                       <span>{link.name}</span>
                       <ChevronDown 
@@ -106,15 +109,16 @@ export default function Header() {
 
                     {/* Dropdown Floating Menu */}
                     <div 
-                      className={`absolute top-full left-0 pt-3 transition-all duration-200 ${
+                      className={`absolute top-full left-0 pt-3 transition-all duration-200 z-50 ${
                         campsDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1 pointer-events-none'
                       }`}
                     >
-                      <div className="bg-white/98 backdrop-blur-xl border border-[#ebdcc6] shadow-xl rounded-2xl overflow-hidden min-w-[250px] py-1.5 divide-y divide-gray-100">
+                      <div className="bg-white/98 backdrop-blur-xl border border-[#ebdcc6] shadow-xl rounded-2xl overflow-hidden min-w-[270px] py-1.5 divide-y divide-gray-100">
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
+                            onClick={() => setCampsDropdownOpen(false)}
                             className={`block px-4 py-2.5 hover:bg-[#fbf8f1] transition-colors ${
                               pathname === child.href ? 'bg-[#fbf8f1] text-[#2d6a4f]' : ''
                             }`}
@@ -133,6 +137,15 @@ export default function Header() {
                             </div>
                           </Link>
                         ))}
+                        
+                        {/* All Camps Link */}
+                        <Link
+                          href="/camps"
+                          onClick={() => setCampsDropdownOpen(false)}
+                          className="block px-4 py-2 text-center text-xs font-bold text-[#2d6a4f] bg-[#fbf8f1] hover:bg-[#ecfdf5] transition-colors"
+                        >
+                          View All Camps &amp; Directory →
+                        </Link>
                       </div>
                     </div>
 
@@ -252,6 +265,13 @@ export default function Header() {
                         </div>
                       </Link>
                     ))}
+                    <Link
+                      href="/camps"
+                      className={`block p-2 rounded-xl text-xs font-bold transition-colors text-center ${pathname === '/camps' ? 'bg-white text-[#2d6a4f] shadow-xs' : 'text-[#2d6a4f] bg-white/80 hover:bg-white'}`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      View All Camps Directory →
+                    </Link>
                   </div>
                 )}
               </div>

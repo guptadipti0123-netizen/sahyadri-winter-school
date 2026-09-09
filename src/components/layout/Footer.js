@@ -12,6 +12,7 @@ export default function Footer() {
   ]
 
   const campsLinks = [
+    { name: 'All Camps Directory', href: '/camps' },
     { name: 'Summer School (Jawhar) • May 2026', href: '/camp-3' },
     { name: 'Winter School (Karjat) • Dec 2025', href: '/camp-2' },
     { name: 'Winter School (Palghar) • Jan 2025', href: '/camp-1' },
