@@ -238,18 +238,13 @@ export default function Hero() {
 
                 {/* Footer CTA Button & Indicators Row */}
                 <div className="relative z-30 flex items-center justify-between gap-4 pt-3 border-t border-white/20">
-                  <div className="flex items-center gap-3">
-                    <Link
-                      href={activeSlide.link}
-                      className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto group/btn"
-                    >
-                      <span>Read Full Story</span>
-                      <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform text-sea_green" />
-                    </Link>
-                    <span className="text-[11px] sm:text-xs text-white/80 font-medium hidden sm:inline-block">
-                      {activeSlide.readTime}
-                    </span>
-                  </div>
+                  <Link
+                    href={activeSlide.link}
+                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto group/btn"
+                  >
+                    <span>Read Full Story</span>
+                    <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform text-sea_green" />
+                  </Link>
 
                   {/* Slide Indicators */}
                   <div className="flex items-center gap-1.5">
