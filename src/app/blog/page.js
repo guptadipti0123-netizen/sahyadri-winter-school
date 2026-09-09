@@ -28,9 +28,12 @@ export default function BlogHubPage() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 text-center relative z-10 space-y-4">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-frosted_mint text-xs font-bold tracking-widest uppercase">
-            DISPATCHES FROM THE GROUND
-          </span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-celadon shadow-sm backdrop-blur-md">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
+              Dispatches from the Ground
+            </p>
+          </div>
           <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-tight drop-shadow-sm">
             Stories from <span className="text-sea_green italic">Real Bharat</span>
           </h1>
