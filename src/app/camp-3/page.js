@@ -211,7 +211,7 @@ export default function SummerSchoolJawharPage() {
                 href="/register/form"
                 className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
-                <span>Are you Interested</span>
+                <span>Register for Summer School</span>
                 <ArrowRight size={15} />
               </Link>
               <Link
@@ -225,8 +225,8 @@ export default function SummerSchoolJawharPage() {
 
           {/* RIGHT: POLAROID / FEATURE CARD */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[380px] bg-white p-4 pb-14 shadow-2xl rounded-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-celadon/40">
-              <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden bg-gray-100">
+            <div className="w-full max-w-[380px] bg-white p-4 shadow-2xl rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-celadon/40 flex flex-col gap-4">
+              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-gray-100 shrink-0">
                 <Image
                   src="/floating7.jpeg"
                   alt="Summer School Jawhar Tribal Community"
@@ -238,11 +238,11 @@ export default function SummerSchoolJawharPage() {
                   Jawhar Hub
                 </div>
               </div>
-              <div className="absolute bottom-4 left-0 w-full text-center px-4">
-                <span className="font-serif text-evergreen font-bold text-base md:text-lg block">
+              <div className="text-center px-3 pt-1 pb-2">
+                <span className="font-serif text-evergreen font-bold text-base md:text-lg block leading-snug">
                   Cradle of Warli Art & Tribal Heritage
                 </span>
-                <span className="text-xs text-pine_teal/80 font-medium">
+                <span className="text-xs text-pine_teal/80 font-medium block mt-1.5">
                   Jawhar, Palghar District (May 2026)
                 </span>
               </div>
@@ -487,7 +487,7 @@ export default function SummerSchoolJawharPage() {
                 href="/register/form"
                 className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-8 py-2.5 sm:py-4 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
-                <span>Are you Interested</span>
+                <span>Register for Camp</span>
                 <ArrowRight size={15} />
               </Link>
               <Link

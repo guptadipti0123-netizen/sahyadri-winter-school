@@ -53,8 +53,8 @@ export default function RegisterPage() {
 
   const faqs = [
     {
-      q: 'What does "Are you Interested" mean?',
-      a: 'By clicking "Are you Interested" and submitting your details, you register an early expression of interest for the upcoming winter camp. When admissions officially open, priority notifications and application guidelines will be sent directly to your email.'
+      q: 'How does camp registration work?',
+      a: 'By submitting the registration form, you register your application for the upcoming fellowship camp. When admissions officially open, official selection guidelines, schedule details, and confirmation will be sent directly to your registered email.'
     },
     {
       q: 'Is prior rural or trekking experience mandatory?',
@@ -115,7 +115,7 @@ export default function RegisterPage() {
               href="/register/form"
               className="group relative inline-flex items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-8 py-2.5 sm:py-4 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
             >
-              <span>Are you Interested</span>
+              <span>Register for Camp</span>
               <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
               <span className="absolute inset-0 rounded-full bg-sea_green/20 blur-xl -z-10 group-hover:bg-sea_green/40 transition-colors" />
             </Link>
@@ -337,12 +337,12 @@ export default function RegisterPage() {
                 href="/register/form"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
               >
-                <span>Are you Interested</span>
+                <span>Register for Fellowship</span>
                 <ArrowRight size={16} />
               </Link>
 
               <span className="text-xs text-pine_teal/75 font-medium">
-                *Early expression of interest takes 2 minutes to fill.
+                *Registration form takes only 2 minutes to fill.
               </span>
             </div>
 
