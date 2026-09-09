@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, Phone, Send, Instagram, XCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Instagram, XCircle, ArrowUpRight } from 'lucide-react';
 
 const filledBg = (value) =>
   value.trim()
@@ -195,16 +195,27 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <div>
-                <p className="text-sm font-bold text-gray-500 tracking-wide mb-4 uppercase">Follow Us</p>
-                <div className="flex gap-3">
+              <div className="pt-2">
+                <p className="text-xs font-bold text-gray-400 tracking-wider uppercase mb-3">
+                  Follow Our Field Stories
+                </p>
+                <div className="flex flex-col sm:flex-row gap-2.5">
                   <a
                     href="https://www.instagram.com/sahyadriwinterschool"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-sea_green text-white flex items-center justify-center hover:scale-110 transition-transform"
+                    className="flex-1 inline-flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-rose-50/80 via-pink-50/40 to-amber-50/50 border border-rose-200/70 hover:border-rose-300 hover:shadow-md transition-all group/ig"
                   >
-                    <Instagram className="w-5 h-5" />
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
+                        <Instagram size={18} />
+                      </div>
+                      <div className="text-left">
+                        <span className="text-[10px] font-bold text-rose-700 uppercase tracking-wider block">Instagram</span>
+                        <span className="text-xs sm:text-sm font-bold text-gray-900 group-hover/ig:text-rose-700 transition-colors">@sahyadriwinterschool</span>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={16} className="text-gray-400 group-hover/ig:text-rose-600 group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
                   </a>
                 </div>
               </div>
