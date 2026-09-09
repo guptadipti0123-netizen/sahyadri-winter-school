@@ -5,7 +5,7 @@ import Link from "next/link"
 import {
   ArrowRight, ArrowUpRight, MapPin, Mail, CheckCircle2,
   Calendar, Users, BookOpen, Landmark, Trees, Lightbulb,
-  ShieldCheck, HeartHandshake, Compass, Eye, Target
+  ShieldCheck, HeartHandshake, Compass, Eye, Target, Sparkles, Quote
 } from "lucide-react"
 import MentorsSection from "@/components/home/MentorsSection"
 
@@ -204,50 +204,146 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= 2. NARRATIVE FRAME: UNDERSTANDING REAL BHARAT ================= */}
-      <section id="story" className="py-12 sm:py-20 px-4 sm:px-6 max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-12 gap-8 md:gap-14 items-center">
+      {/* ================= 2. OUR STORY SECTION ================= */}
+      <section id="story" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16 space-y-3">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#fef3c7] text-[#92400e] text-xs font-bold tracking-wider uppercase border border-[#fde68a]">
+            <Sparkles size={13} className="text-amber-600" />
+            THE ORIGIN &amp; PURPOSE
+          </span>
           
-          {/* Left Visual */}
-          <div className="md:col-span-5 relative">
-            <div className="relative h-[280px] xs:h-[340px] sm:h-[440px] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-              <Image
-                src="/jawahar-village-tribal-community.jpg"
-                alt="Tribal Community & Village Immersion"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-evergreen tracking-tight">
+            Our Story
+          </h2>
+
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-sea_green font-medium max-w-2xl mx-auto leading-relaxed">
+            &quot;There is a difference between knowing about a problem and knowing what it feels like on the ground.&quot;
+          </p>
+        </div>
+
+        {/* Main 2-Column Content Layout */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          
+          {/* Left Column: Visual Story Card & Photo with Floating Overlay */}
+          <div className="lg:col-span-5 space-y-5">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group bg-evergreen/10">
+              <div className="relative h-[320px] xs:h-[380px] sm:h-[440px] w-full">
+                <Image
+                  src="/jawahar-village-tribal-community.jpg"
+                  alt="Students and village community immersion"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                
+                {/* Floating Top Tag */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-evergreen font-bold text-xs uppercase tracking-wider shadow-md">
+                    🌱 Rural Immersion Fieldwork
+                  </span>
+                </div>
+
+                {/* Bottom Overlay Info */}
+                <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-[#ebdcc6] shadow-lg text-left">
+                  <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
+                    GROUND REALITIES
+                  </span>
+                  <p className="text-xs sm:text-sm font-serif font-bold text-evergreen mt-0.5 leading-snug">
+                    Learning with communities, questioning assumptions, and exploring stories beyond statistics.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="relative sm:absolute sm:-bottom-5 sm:-right-3 mt-4 sm:mt-0 bg-white p-4 sm:p-5 rounded-2xl shadow-xl border border-[#ebdcc6] max-w-full sm:max-w-[220px]">
-              <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
-                COHORT REFLECTION
-              </span>
-              <p className="text-xs font-serif font-bold text-evergreen mt-1 leading-snug">
-                Connecting urban aspirations with rural realities and ancient ecological wisdom.
+
+            {/* Pull Quote Card */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#faf7f2] border-2 border-[#ebdcc6] shadow-xs relative">
+              <Quote className="w-8 h-8 text-sea_green/30 absolute top-4 right-4" />
+              <p className="font-serif italic text-xs sm:text-sm md:text-[14.5px] text-evergreen leading-relaxed pr-6">
+                &quot;For us, rural immersion is not about simply visiting a village. It is about learning with communities, questioning what we think we know, and exploring the stories that lie beyond the statistics.&quot;
               </p>
             </div>
           </div>
 
-          {/* Right Narrative */}
-          <div className="md:col-span-7 space-y-4 sm:space-y-6">
-            <h2 className="font-serif text-2xl xs:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen leading-tight">
-              Beyond the Classroom, <span className="text-sea_green italic">Onto the Ground</span>
-            </h2>
+          {/* Right Column: Full Narrative Flow */}
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
+            
+            <p className="text-sm sm:text-base text-pine_teal leading-relaxed">
+              In college, we learn about the challenges our country faces. We study development, public policy, government schemes, livelihoods, and the technological solutions designed to address them. But much of this learning happens within classrooms, textbooks, case studies, and statistics.
+            </p>
 
-            <div className="space-y-3.5 sm:space-y-4 text-pine_teal text-xs sm:text-base leading-relaxed">
-              <p>
-                There is a difference between knowing about a problem and knowing what it feels like on the ground. In college, we learn about public policy, schemes, livelihoods, and development. But much of this learning happens within classrooms, textbooks, and statistics.
-              </p>
-              <blockquote className="pl-4 sm:pl-5 border-l-4 border-sea_green text-evergreen font-serif italic text-sm sm:text-base md:text-lg leading-relaxed bg-white/80 p-4 sm:p-5 rounded-r-2xl border border-y-0 border-r-0 shadow-sm">
-                &quot;For us, rural immersion is not about simply visiting a village. It is about learning with communities, questioning what we think we know, and exploring the stories that lie beyond the statistics.&quot;
-              </blockquote>
-              <p>
-                <strong>Sahyadri Rural Connect</strong> was born from the desire to bridge that gap — bringing the classroom closer to the ground, and the ground closer to the classroom.
+            {/* Featured Highlight Box */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-[#f2f9f5] to-[#e8f5ee] border-2 border-sea_green/30 space-y-2.5 shadow-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-sea_green animate-pulse" />
+                <h3 className="font-serif font-bold text-evergreen text-base sm:text-lg">
+                  What happens when we step outside the classroom?
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-pine_teal/90 leading-relaxed">
+                We realised there was a gap between understanding a problem academically and experiencing how it actually unfolds on the ground. The realities of rural India are often more complex than what a textbook, a policy document, or a set of statistics can capture.
               </p>
             </div>
+
+            <p className="text-sm sm:text-base text-pine_teal leading-relaxed">
+              <strong className="text-evergreen font-bold">Sahyadri Rural Connect</strong> was born from the desire to bridge that gap. Through our rural immersion camps, we aim to give students a firsthand experience of rural India. We create spaces where participants can step beyond observation and engage directly with communities, understand their everyday realities, explore livelihoods, and learn from experiences that cannot be fully captured in a classroom.
+            </p>
+
+            {/* Impact Banner Callout */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-sea_green/30 shadow-xs flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl bg-sea_green/10 text-sea_green flex items-center justify-center shrink-0 border border-sea_green/20">
+                <Compass size={20} />
+              </div>
+              <p className="font-serif font-bold text-xs sm:text-sm md:text-base text-evergreen leading-snug">
+                Sahyadri is an attempt to bring the classroom closer to the ground, and the ground closer to the classroom.
+              </p>
+            </div>
+
+            {/* 3 Value Pillars Mini-Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+              <div className="p-3.5 rounded-xl bg-[#faf7f2] border border-[#ebdcc6] space-y-1">
+                <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
+                  EXPERIENCE
+                </span>
+                <h4 className="text-xs sm:text-sm font-bold text-evergreen">
+                  Lived Immersion
+                </h4>
+                <p className="text-[11px] text-pine_teal/80 leading-snug">
+                  Staying in tribal hamlets &amp; farms.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-[#faf7f2] border border-[#ebdcc6] space-y-1">
+                <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
+                  DIALOGUE
+                </span>
+                <h4 className="text-xs sm:text-sm font-bold text-evergreen">
+                  Beyond Statistics
+                </h4>
+                <p className="text-[11px] text-pine_teal/80 leading-snug">
+                  Unpacking ground complexity with elders.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-[#faf7f2] border border-[#ebdcc6] space-y-1">
+                <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider block">
+                  FELLOWSHIP
+                </span>
+                <h4 className="text-xs sm:text-sm font-bold text-evergreen">
+                  Interdisciplinary
+                </h4>
+                <p className="text-[11px] text-pine_teal/80 leading-snug">
+                  IIT, IIM, TISS &amp; Law scholars.
+                </p>
+              </div>
+            </div>
+
           </div>
 
         </div>
+
       </section>
 
       {/* ================= 3. OUR STORY TIMELINE / THE JOURNEY SO FAR ================= */}

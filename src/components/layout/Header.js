@@ -3,9 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, ChevronRight, Search, Moon, Sun, ArrowRight, BookOpen, MapPin } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight, Moon, Sun, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { blogsData } from '@/data/blogsData'
 
 export default function Header() {
   const pathname = usePathname()
@@ -13,8 +12,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [campsDropdownOpen, setCampsDropdownOpen] = useState(false)
   const [mobileSubMenuOpen, setMobileSubMenuOpen] = useState(false)
-  const [searchOpen, setSearchOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
   const [darkMode, setDarkMode] = useState(false)
 
   // Scroll effect
@@ -29,7 +26,6 @@ export default function Header() {
   // Close menus on route change
   useEffect(() => {
     setIsOpen(false)
-    setSearchOpen(false)
     setCampsDropdownOpen(false)
   }, [pathname])
 
@@ -70,26 +66,6 @@ export default function Header() {
     { name: 'Blog', href: '/blog' },
     { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
-  ]
-
-  // Filtered search results
-  const searchResults = searchQuery.trim() === '' ? [] : [
-    ...campsList.filter(c => 
-      c.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      c.place.toLowerCase().includes(searchQuery.toLowerCase())
-    ).map(c => ({
-      title: `${c.name} — ${c.place} (${c.date})`,
-      category: 'Camp Immersion',
-      href: c.href
-    })),
-    ...blogsData.filter(b => 
-      b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      b.category.toLowerCase().includes(searchQuery.toLowerCase())
-    ).map(b => ({
-      title: b.title,
-      category: b.category,
-      href: `/blog/${b.slug}`
-    }))
   ]
 
   return (
@@ -199,18 +175,9 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* ================= 3. RIGHT: SEARCH, MOON, CTA BUTTON & HAMBURGER ================= */}
+          {/* ================= 3. RIGHT: MOON, CTA BUTTON & HAMBURGER ================= */}
           <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             
-            {/* Search Icon Button */}
-            <button
-              onClick={() => setSearchOpen(true)}
-              aria-label="Search"
-              className="p-1.5 sm:p-2 rounded-full text-gray-600 hover:text-black hover:bg-gray-100/80 transition-all cursor-pointer"
-            >
-              <Search size={16} />
-            </button>
-
             {/* Moon / Theme Toggle (Aesthetic) */}
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -326,65 +293,6 @@ export default function Header() {
           </div>
         )}
       </header>
-
-      {/* ================= SEARCH MODAL POPUP ================= */}
-      {searchOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 sm:pt-28 px-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-xl bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-[#ebdcc6] relative">
-            
-            {/* Header / Input */}
-            <div className="flex items-center justify-between gap-3 pb-3 border-b border-gray-100">
-              <div className="flex items-center gap-2.5 flex-1">
-                <Search size={18} className="text-[#2d6a4f]" />
-                <input
-                  type="text"
-                  autoFocus
-                  placeholder="Search articles, summer school, camps..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full text-sm text-[#1c1917] outline-none placeholder:text-gray-400 font-sans"
-                />
-              </div>
-              <button
-                onClick={() => setSearchOpen(false)}
-                className="p-1.5 rounded-full hover:bg-gray-100 text-gray-500"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            {/* Results */}
-            <div className="mt-4 max-h-[320px] overflow-y-auto space-y-2">
-              {searchQuery.trim() === '' ? (
-                <p className="text-xs text-gray-400 text-center py-6">
-                  Type something to search field stories, camps, or themes...
-                </p>
-              ) : searchResults.length === 0 ? (
-                <p className="text-xs text-gray-500 text-center py-6">
-                  No matching results found for &quot;{searchQuery}&quot;
-                </p>
-              ) : (
-                searchResults.map((res, i) => (
-                  <Link
-                    key={i}
-                    href={res.href}
-                    onClick={() => setSearchOpen(false)}
-                    className="block p-3 rounded-xl hover:bg-[#fbf8f1] border border-transparent hover:border-[#ebdcc6] transition-colors group"
-                  >
-                    <span className="text-[10px] font-bold text-[#2d6a4f] uppercase tracking-wider block mb-0.5">
-                      {res.category}
-                    </span>
-                    <h4 className="text-xs sm:text-sm font-semibold text-[#1c1917] group-hover:text-[#2d6a4f] transition-colors">
-                      {res.title}
-                    </h4>
-                  </Link>
-                ))
-              )}
-            </div>
-
-          </div>
-        </div>
-      )}
     </>
   )
 }
