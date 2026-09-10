@@ -162,7 +162,7 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CARDS CONTAINER */}
-      <div className="relative w-full max-w-5xl mx-auto h-auto lg:h-[560px] perspective z-20 px-4 mb-12 flex flex-col lg:block gap-6 sm:gap-8 lg:gap-0">
+      <div className="relative w-full max-w-5xl mx-auto h-auto lg:h-[490px] perspective z-20 px-4 mb-10 sm:mb-12 flex flex-col lg:block gap-5 sm:gap-6 lg:gap-0">
 
         {/* Left Card - Contact Info */}
         <div
@@ -171,56 +171,56 @@ export default function ContactPage() {
             transform: isSeparated && canSeparate ? 'translateX(-120px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-r-none p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl flex flex-col justify-center relative border border-gray-100">
+          <div className="h-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-r-none p-5 sm:p-7 md:p-8 lg:p-9 shadow-xl flex flex-col justify-center relative border border-gray-100">
             <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-white rotate-45 z-50" />
             <div className="relative z-10">
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-3 text-left leading-tight">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-evergreen mb-2 text-left leading-tight">
                 Let&apos;s get in touch
               </h2>
-              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm md:text-base font-normal">
+              <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm font-normal">
                 Have questions or want to learn more about our programs? We&apos;d love to hear from you.
               </p>
-              <div className="space-y-5 sm:space-y-6 mb-6 sm:mb-8">
-                <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
-                    <MapPin className="w-5 h-5 text-sea_green" />
+              <div className="space-y-3.5 sm:space-y-4 mb-4 sm:mb-6">
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
+                    <MapPin className="w-4 h-4 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-0.5">ADDRESS</p>
-                    <p className="text-gray-900 font-medium text-sm md:text-base">Mumbai, Maharashtra 400076</p>
+                    <p className="text-[10px] font-bold text-sea_green tracking-wider uppercase mb-0.5">ADDRESS</p>
+                    <p className="text-gray-900 font-medium text-xs sm:text-sm">Mumbai, Maharashtra 400076</p>
                   </div>
                 </div>
-                <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
-                    <Mail className="w-5 h-5 text-sea_green" />
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
+                    <Mail className="w-4 h-4 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-0.5">EMAIL</p>
-                    <p className="text-gray-900 font-medium text-sm md:text-base break-all">info@sahyadriruralconnect.org</p>
+                    <p className="text-[10px] font-bold text-sea_green tracking-wider uppercase mb-0.5">EMAIL</p>
+                    <p className="text-gray-900 font-medium text-xs sm:text-sm break-all">info@sahyadriruralconnect.org</p>
                   </div>
                 </div>
               </div>
-              <div className="pt-2">
-                <p className="text-xs font-bold text-gray-400 tracking-wider uppercase mb-3">
+              <div className="pt-1">
+                <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-2">
                   Follow Our Field Stories
                 </p>
-                <div className="flex flex-col sm:flex-row gap-2.5">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <a
                     href="https://www.instagram.com/sahyadriwinterschool"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-rose-50/80 via-pink-50/40 to-amber-50/50 border border-rose-200/70 hover:border-rose-300 hover:shadow-md transition-all group/ig"
+                    className="flex-1 inline-flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-rose-50/80 via-pink-50/40 to-amber-50/50 border border-rose-200/70 hover:border-rose-300 hover:shadow-md transition-all group/ig"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
-                        <Instagram size={18} />
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
+                        <Instagram size={15} />
                       </div>
                       <div className="text-left">
-                        <span className="text-[10px] font-bold text-rose-700 uppercase tracking-wider block">Instagram</span>
-                        <span className="text-xs sm:text-sm font-bold text-gray-900 group-hover/ig:text-rose-700 transition-colors">@sahyadriwinterschool</span>
+                        <span className="text-[9px] font-bold text-rose-700 uppercase tracking-wider block">Instagram</span>
+                        <span className="text-xs font-bold text-gray-900 group-hover/ig:text-rose-700 transition-colors">@sahyadriwinterschool</span>
                       </div>
                     </div>
-                    <ArrowUpRight size={16} className="text-gray-400 group-hover/ig:text-rose-600 group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
+                    <ArrowUpRight size={14} className="text-gray-400 group-hover/ig:text-rose-600 group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
                   </a>
                 </div>
               </div>
@@ -235,29 +235,29 @@ export default function ContactPage() {
             transform: isSeparated && canSeparate ? 'translateX(120px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-sea_green rounded-2xl sm:rounded-3xl lg:rounded-l-none p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl relative flex flex-col justify-center">
+          <div className="h-full bg-sea_green rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 md:p-8 lg:p-9 shadow-2xl relative flex flex-col justify-center">
             <div className="hidden lg:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-sea_green rotate-45 z-50" />
             <div className="relative z-10">
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold text-white mb-1.5">Email</label>
+                  <label className="block text-xs font-bold text-white mb-1">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border text-sm sm:text-base
+                    className={`w-full px-3.5 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm
   ${emailError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.email)}
   focus:outline-none focus:border-white transition-all duration-300
 `}
 
                   />
-                  {emailError && <p className="mt-1 text-xs sm:text-sm text-red-200 font-medium">{emailError}</p>}
+                  {emailError && <p className="mt-1 text-xs text-red-200 font-medium">{emailError}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold text-white mb-1.5">Phone</label>
+                  <label className="block text-xs font-bold text-white mb-1">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -265,46 +265,46 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="9876543210"
                     required
-                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border text-sm sm:text-base
+                    className={`w-full px-3.5 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm
   ${phoneError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.phone)}
   focus:outline-none focus:border-white transition-all duration-300
 `}
 
                   />
-                  {phoneError && <p className="mt-1 text-xs sm:text-sm text-red-200 font-medium">{phoneError}</p>}
+                  {phoneError && <p className="mt-1 text-xs text-red-200 font-medium">{phoneError}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold text-white mb-1.5">Message</label>
+                  <label className="block text-xs font-bold text-white mb-1">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={3}
+                    rows={2}
                     placeholder="Your message..."
-                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border text-sm sm:text-base
+                    className={`w-full px-3.5 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm min-h-[58px] sm:min-h-[72px]
   ${messageError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.message)}
   focus:outline-none focus:border-white transition-all duration-300 resize-none
 `}
 
                   />
-                  {messageError && <p className="mt-1 text-xs sm:text-sm text-red-200 font-medium">{messageError}</p>}
+                  {messageError && <p className="mt-1 text-xs text-red-200 font-medium">{messageError}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-3 py-3 px-6 rounded-full bg-white text-green-800 font-bold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300"
+                  className="w-full mt-2 py-2.5 sm:py-3 px-5 rounded-full bg-white text-green-800 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-green-600/30 border-t-green-600 rounded-full animate-spin" />
-                      Sending...
+                      <div className="w-4 h-4 border-2 border-green-600/30 border-t-green-600 rounded-full animate-spin" />
+                      <span>Sending...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                      Send Message
+                      <Send className="w-4 h-4" />
+                      <span>Send Message</span>
                     </>
                   )}
                 </button>

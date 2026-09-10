@@ -27,7 +27,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="relative text-frosted_mint pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden">
+    <footer className="relative text-frosted_mint pt-8 sm:pt-14 pb-5 sm:pb-8 overflow-hidden">
 
       {/* --- BACKGROUND IMAGE SETUP (Fixed on desktop, standard cover on mobile for smooth scrolling) --- */}
       <div
@@ -41,28 +41,28 @@ export default function Footer() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 relative z-10">
 
         {/* Main Responsive Grid: 2 columns side-by-side on mobile, 12-col layout on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-4 sm:gap-x-6 gap-y-6 sm:gap-y-8 mb-6 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-3.5 sm:gap-x-6 gap-y-4 sm:gap-y-8 mb-5 sm:mb-10">
 
           {/* 1. Brand Column (Full width on mobile, 3 cols on desktop) */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-3 space-y-2 sm:space-y-4">
-            <h2 className="font-serif text-lg sm:text-2xl text-white tracking-wide drop-shadow-md">Sahyadri Rural Connect</h2>
-            <p className="text-white/80 text-xs sm:text-sm leading-relaxed max-w-sm font-medium">
+          <div className="col-span-2 md:col-span-4 lg:col-span-3 space-y-1.5 sm:space-y-3 pb-1 sm:pb-0">
+            <h2 className="font-serif text-base sm:text-2xl text-white tracking-wide drop-shadow-md font-bold">Sahyadri Rural Connect</h2>
+            <p className="text-white/80 text-[11px] sm:text-sm leading-relaxed max-w-sm font-normal">
               Empowering students to understand and contribute to rural development through experiential learning and community partnerships.
             </p>
           </div>
 
           {/* 2. Quick Links (Left Col on mobile, 2 cols on desktop) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
-            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Quick Links</h4>
-            <ul className="space-y-1.5 sm:space-y-2.5">
+            <h4 className="text-white font-bold mb-1.5 sm:mb-3 uppercase tracking-wider text-[10px] sm:text-xs border-b border-white/20 pb-0.5 sm:pb-1 inline-block">Quick Links</h4>
+            <ul className="space-y-1 sm:space-y-2">
               {quickLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
+                    className="text-white/80 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-mint_leaf shrink-0 hidden sm:inline-block" />
@@ -74,13 +74,13 @@ export default function Footer() {
 
           {/* 3. Opportunities (Right Col on mobile - side-by-side with Quick Links!) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
-            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Opportunities</h4>
-            <ul className="space-y-1.5 sm:space-y-2.5">
+            <h4 className="text-white font-bold mb-1.5 sm:mb-3 uppercase tracking-wider text-[10px] sm:text-xs border-b border-white/20 pb-0.5 sm:pb-1 inline-block">Opportunities</h4>
+            <ul className="space-y-1 sm:space-y-2">
               {opportunitiesLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
+                    className="text-white/80 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-mint_leaf shrink-0 hidden sm:inline-block" />
@@ -92,13 +92,13 @@ export default function Footer() {
 
           {/* 4. Our Camps (Left Col on mobile - side-by-side with Connect!) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-3">
-            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Our Camps</h4>
-            <ul className="space-y-1.5 sm:space-y-2.5">
+            <h4 className="text-white font-bold mb-1.5 sm:mb-3 uppercase tracking-wider text-[10px] sm:text-xs border-b border-white/20 pb-0.5 sm:pb-1 inline-block">Our Camps</h4>
+            <ul className="space-y-1 sm:space-y-2">
               {campsLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
+                    className="text-white/80 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-mint_leaf shrink-0 hidden sm:inline-block" />
@@ -110,20 +110,20 @@ export default function Footer() {
 
           {/* 5. Connect (Right Col on mobile - side-by-side with Our Camps!) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
-            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Connect</h4>
-            <div className="space-y-2 sm:space-y-3.5">
-              <a href="mailto:info@sahyadriruralconnect.org" className="flex items-start gap-1.5 text-white/75 hover:text-white transition-colors text-[11px] sm:text-sm group font-medium">
-                <Mail size={13} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
+            <h4 className="text-white font-bold mb-1.5 sm:mb-3 uppercase tracking-wider text-[10px] sm:text-xs border-b border-white/20 pb-0.5 sm:pb-1 inline-block">Connect</h4>
+            <div className="space-y-1.5 sm:space-y-2.5">
+              <a href="mailto:info@sahyadriruralconnect.org" className="flex items-start gap-1 text-white/80 hover:text-white transition-colors text-[10.5px] sm:text-sm group font-medium">
+                <Mail size={12} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
                 <span className="break-all">info@sahyadriruralconnect.org</span>
               </a>
 
-              <div className="flex items-start gap-1.5 text-white/75 hover:text-white transition-colors text-[11px] sm:text-sm group font-medium">
-                <MapPin size={13} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
+              <div className="flex items-start gap-1 text-white/80 hover:text-white transition-colors text-[10.5px] sm:text-sm group font-medium">
+                <MapPin size={12} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
                 <span>Mumbai, Maharashtra</span>
               </div>
 
-              <a href="https://www.instagram.com/sahyadriwinterschool" target="_blank" rel="noopener noreferrer" className="flex items-start gap-1.5 text-white/75 hover:text-white transition-colors text-[11px] sm:text-sm group font-medium">
-                <Instagram size={13} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
+              <a href="https://www.instagram.com/sahyadriwinterschool" target="_blank" rel="noopener noreferrer" className="flex items-start gap-1 text-white/80 hover:text-white transition-colors text-[10.5px] sm:text-sm group font-medium">
+                <Instagram size={12} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
                 <span>Follow Instagram</span>
               </a>
             </div>
@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-5 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/60 font-medium">
+        <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-white/60 font-medium">
           <p>© 2025 Sahyadri Rural Connect. All rights reserved.</p>
         </div>
       </div>
