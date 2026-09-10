@@ -172,7 +172,7 @@ export default function Header() {
           {/* ================= 2. BRAND LOGO (Responsive Text) ================= */}
           <Link
             href="/"
-            className="flex items-center gap-2 sm:gap-2.5 group select-none min-w-0"
+            className="flex items-center gap-2 sm:gap-2.5 group select-none shrink-0"
           >
             <div className="relative w-7 h-7 sm:w-8 sm:h-8 overflow-hidden rounded-full shadow-xs border border-black/10 transition-transform duration-300 group-hover:scale-105 shrink-0">
               <Image
@@ -183,7 +183,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="font-serif font-bold text-xs xs:text-sm sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap truncate max-w-[185px] xs:max-w-none">
+            <span className="font-serif font-bold text-[13px] sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap">
               Sahyadri Rural Connect
             </span>
           </Link>
