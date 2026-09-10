@@ -73,7 +73,7 @@ export default function RegisterPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
 
-      {/* ================= 1. HERO SECTION ================= */}
+      {/* ================= 1. HERO & TEMPLATE SHOWCASE AT START ================= */}
       <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden">
         {/* Wave Background */}
         <div className="absolute inset-0 z-0">
@@ -88,7 +88,7 @@ export default function RegisterPage() {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-5">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5">
           
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/95 border border-celadon shadow-sm backdrop-blur-md">
@@ -109,31 +109,229 @@ export default function RegisterPage() {
             A transformative 5-day grassroots residential fellowship taking university students and researchers to the heart of rural Maharashtra.
           </p>
 
-          {/* Top CTA Buttons (Single row on mobile) */}
-          <div className="pt-3 flex flex-row justify-center items-center gap-2 sm:gap-4 w-full">
+          {/* ================= PRIMARY TEMPLATE POSTER (FRONT & CENTER AT START) ================= */}
+          <div className="pt-4 pb-2 flex flex-col items-center justify-center">
+            <div className="relative w-full max-w-[340px] xs:max-w-[370px] sm:max-w-[400px] md:max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-[#fcf8f0] text-[#2d241e] font-sans group transition-all duration-300 hover:shadow-[0_20px_50px_rgba(45,106,79,0.2)]">
+              
+              {/* Top Banner Image */}
+              <div className="relative h-44 sm:h-48 w-full bg-[#1b4332] overflow-hidden">
+                <Image
+                  src="/sahyadri-bg-hero6.jpeg"
+                  alt="Sahyadri Rural Immersion"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#fcf8f0] via-black/20 to-black/40" />
+                
+                <div className="absolute top-3 left-3 px-2.5 sm:px-3 py-1 rounded-full bg-sea_green text-white text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider shadow-md">
+                  Winter Cohort
+                </div>
+                
+                <div className="absolute top-3 right-3 px-2.5 sm:px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9.5px] sm:text-[10px] font-bold tracking-wider">
+                  3rd Edition
+                </div>
+
+                <div className="absolute bottom-2 inset-x-4 text-center">
+                  <span className="text-[9.5px] sm:text-[10px] font-extrabold tracking-widest uppercase text-emerald-900 drop-shadow-xs">
+                    Sahyadri Rural Connect
+                  </span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-black text-evergreen leading-tight">
+                    Winter School 2026
+                  </h3>
+                </div>
+              </div>
+
+              {/* Middle Section: Dates & Location */}
+              <div className="p-4 sm:p-5 pt-3 space-y-3.5 sm:space-y-4">
+                
+                <div className="text-center space-y-0.5 border-b border-[#ebdcc6] pb-2.5 sm:pb-3">
+                  <h4 className="font-serif text-base sm:text-lg font-extrabold text-[#7c2d12]">
+                    Winter 2026 • Dates Announcing Soon
+                  </h4>
+                  <p className="text-xs font-semibold text-[#5c4033]">
+                    Sahyadri Foothills & Rural Hamlets (Maharashtra)
+                  </p>
+                </div>
+
+                {/* 3 Pillars Grid */}
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5 text-center">
+                  
+                  {/* Column 1 */}
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="bg-[#faeed6]/90 p-2 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[66px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        📍
+                      </div>
+                      <span className="text-[10.5px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
+                        Sahyadri, Maha
+                      </span>
+                    </div>
+
+                    <div className="bg-[#faeed6]/90 p-2 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[66px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#c25e1a] text-white flex items-center justify-center mb-1 text-xs">
+                        🏛️
+                      </div>
+                      <span className="text-[10.5px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
+                        NGOs Impact
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Column 2 */}
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="bg-[#faeed6]/90 p-2 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[66px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        ⛰️
+                      </div>
+                      <span className="text-[10.5px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
+                        5 Days
+                      </span>
+                    </div>
+
+                    <div className="bg-[#faeed6]/90 p-2 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[66px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        🎖️
+                      </div>
+                      <span className="text-[10.5px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
+                        Expert Sessions
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Column 3 */}
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="bg-[#faeed6]/90 p-2 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[66px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        🌾
+                      </div>
+                      <span className="text-[10.5px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
+                        Rural Immersion
+                      </span>
+                    </div>
+
+                    <div className="bg-[#faeed6]/90 p-2 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[66px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                        🌿
+                      </div>
+                      <span className="text-[10.5px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
+                        Delving into Culture
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Bottom Highlight: Premier Institutes Banner */}
+                <div className="bg-[#faeed6] border border-[#ebdcc6] rounded-xl p-2.5 sm:p-3 text-center shadow-xs">
+                  <p className="text-[11px] sm:text-xs font-extrabold text-[#7c2d12] leading-snug font-serif">
+                    40 participants from Premier Institutes like IIT, IIM, TISS, IIPS, IGIDR, ILS etc.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <p className="text-xs text-pine_teal/75 font-medium text-center mt-3">
+              Sahyadri Rural Connect • Winter 2026 Fellowship Notice
+            </p>
+          </div>
+
+          {/* Top CTA Buttons */}
+          <div className="pt-2 flex flex-row justify-center items-center gap-3 sm:gap-4 w-full">
             <Link
               href="/register/form"
-              className="group relative inline-flex items-center justify-center gap-1.5 sm:gap-3 px-3.5 sm:px-8 py-2.5 sm:py-4 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
+              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-xs sm:text-sm md:text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
             >
               <span>Register for Camp</span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
               <span className="absolute inset-0 rounded-full bg-sea_green/20 blur-xl -z-10 group-hover:bg-sea_green/40 transition-colors" />
             </Link>
 
             <a
-              href="#poster-details"
-              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-4 rounded-full bg-white/90 text-evergreen border border-celadon font-semibold text-xs sm:text-sm md:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300 whitespace-nowrap"
+              href="#camp-narrative"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-5 sm:px-6 py-3 sm:py-4 rounded-full bg-white text-evergreen border border-celadon font-semibold text-xs sm:text-sm md:text-base shadow-sm hover:bg-frosted_mint/40 transition-all duration-300 whitespace-nowrap"
             >
-              <BookOpen size={14} className="hidden xs:inline" />
-              <span>Explore Camp Details</span>
+              <BookOpen size={15} />
+              <span>Explore Full Curriculum</span>
             </a>
           </div>
 
         </div>
       </section>
 
-      {/* ================= 2. FOUR PILLARS / HIGHLIGHTS ================= */}
-      <section className="px-4 md:px-8 py-8 max-w-6xl mx-auto relative z-10">
+      {/* ================= 2. DETAILED NARRATIVE & CURRICULUM ================= */}
+      <section id="camp-narrative" className="px-4 md:px-8 py-10 max-w-6xl mx-auto relative z-10">
+        <div className="bg-white rounded-3xl border-2 border-celadon/60 p-6 sm:p-10 shadow-lg space-y-6">
+          
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-frosted_mint text-sea_green text-xs font-bold uppercase tracking-wider mb-3">
+              <span>Why This Fellowship Matters</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen leading-snug">
+              Step Out of the Classroom. <br />
+              <span className="text-sea_green italic font-normal">Step into Real Bharat.</span>
+            </h2>
+          </div>
+
+          <p className="text-pine_teal text-sm sm:text-base leading-relaxed max-w-4xl">
+            India&apos;s true developmental stories, agrarian resilience, and tribal heritage cannot be mastered inside lecture halls or online papers alone. <strong>Sahyadri Rural Connect</strong> is preparing its next flagship winter immersion for students, researchers, and aspiring change leaders.
+          </p>
+
+          {/* Upcoming Feature Checklist */}
+          <div className="grid sm:grid-cols-2 gap-3.5 pt-2">
+            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-frosted_mint/30 border border-celadon/40">
+              <CheckCircle2 className="w-5 h-5 text-sea_green shrink-0 mt-0.5" />
+              <span className="text-xs sm:text-sm font-medium text-evergreen">
+                Hands-on organic farming &amp; living soil preparation
+              </span>
+            </div>
+            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-frosted_mint/30 border border-celadon/40">
+              <CheckCircle2 className="w-5 h-5 text-sea_green shrink-0 mt-0.5" />
+              <span className="text-xs sm:text-sm font-medium text-evergreen">
+                Ethnobotany forest walks &amp; wild edible cuisine
+              </span>
+            </div>
+            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-frosted_mint/30 border border-celadon/40">
+              <CheckCircle2 className="w-5 h-5 text-sea_green shrink-0 mt-0.5" />
+              <span className="text-xs sm:text-sm font-medium text-evergreen">
+                Dialogues with Gram Panchayats, Tribal Elders &amp; FPOs
+              </span>
+            </div>
+            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-frosted_mint/30 border border-celadon/40">
+              <CheckCircle2 className="w-5 h-5 text-sea_green shrink-0 mt-0.5" />
+              <span className="text-xs sm:text-sm font-medium text-evergreen">
+                Decentralized solar micro-grids &amp; rural telemetry
+              </span>
+            </div>
+          </div>
+
+          {/* Direct Register Callout */}
+          <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-gray-100">
+            <Link
+              href="/register/form"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all w-fit"
+            >
+              <span>Register for Fellowship</span>
+              <ArrowRight size={16} />
+            </Link>
+
+            <span className="text-xs text-pine_teal/75 font-medium">
+              *Takes only 2 minutes to fill your registration details.
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= 3. FOUR PILLARS / HIGHLIGHTS ================= */}
+      <section className="px-4 md:px-8 py-6 max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-6">
+          <h3 className="font-serif text-xl sm:text-2xl font-bold text-evergreen">
+            Fellowship Pillars
+          </h3>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {highlights.map((item, idx) => (
             <div
@@ -155,199 +353,6 @@ export default function RegisterPage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ================= 3. POSTER & IMMERSION BLUEPRINT (SIDE-BY-SIDE) ================= */}
-      <section id="poster-details" className="px-4 md:px-8 py-10 max-w-6xl mx-auto relative z-10">
-        <div className="bg-white rounded-3xl border-2 border-celadon/60 p-6 sm:p-10 shadow-lg grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          {/* Left: Recreated Visual Card Template with Updated Winter 2026 Details */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-[340px] xs:max-w-[360px] sm:max-w-[380px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-[#fcf8f0] text-[#2d241e] font-sans group">
-              
-              {/* Top Banner Image */}
-              <div className="relative h-40 sm:h-44 w-full bg-[#1b4332] overflow-hidden">
-                <Image
-                  src="/sahyadri-bg-hero6.jpeg"
-                  alt="Sahyadri Rural Immersion"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#fcf8f0] via-black/20 to-black/40" />
-                
-                <div className="absolute top-3 left-3 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-sea_green text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-md">
-                  Winter Cohort
-                </div>
-                
-                <div className="absolute top-3 right-3 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider">
-                  3rd Edition
-                </div>
-
-                <div className="absolute bottom-2 inset-x-4 text-center">
-                  <span className="text-[9px] sm:text-[10px] font-extrabold tracking-widest uppercase text-emerald-900 drop-shadow-xs">
-                    Sahyadri Rural Connect
-                  </span>
-                  <h3 className="font-serif text-lg sm:text-2xl font-black text-evergreen leading-tight">
-                    Winter School 2026
-                  </h3>
-                </div>
-              </div>
-
-              {/* Middle Section: Dates & Location (Matching the template structure) */}
-              <div className="p-4 sm:p-5 pt-3 space-y-3 sm:space-y-4">
-                
-                <div className="text-center space-y-0.5 border-b border-[#ebdcc6] pb-2.5 sm:pb-3">
-                  <h4 className="font-serif text-sm sm:text-lg font-extrabold text-[#7c2d12]">
-                    Winter 2026 • Dates Announcing Soon
-                  </h4>
-                  <p className="text-[11px] sm:text-xs font-semibold text-[#5c4033]">
-                    Sahyadri Foothills & Rural Hamlets (Maharashtra)
-                  </p>
-                </div>
-
-                {/* 3 Pillars Grid (Matching the Screenshot's 3-column Box Layout) */}
-                <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center">
-                  
-                  {/* Column 1 */}
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
-                        📍
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
-                        Sahyadri, Maha
-                      </span>
-                    </div>
-
-                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#c25e1a] text-white flex items-center justify-center mb-1 text-xs">
-                        🏛️
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
-                        NGOs Impact
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Column 2 */}
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
-                        ⛰️
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
-                        5 Days
-                      </span>
-                    </div>
-
-                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
-                        🎖️
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
-                        Expert Sessions
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Column 3 */}
-                  <div className="space-y-1.5 sm:space-y-2">
-                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
-                        🌾
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
-                        Rural Immersion
-                      </span>
-                    </div>
-
-                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
-                        🌿
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
-                        Delving into Culture
-                      </span>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Bottom Highlight: Premier Institutes Banner (Matching Screenshot) */}
-                <div className="bg-[#faeed6] border border-[#ebdcc6] rounded-xl p-2.5 sm:p-3 text-center shadow-xs">
-                  <p className="text-[11px] sm:text-xs font-extrabold text-[#7c2d12] leading-snug font-serif">
-                    40 participants from Premier Institutes like IIT, IIM, TISS, IIPS, IGIDR, ILS etc.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-            <p className="text-[11px] text-pine_teal/70 font-medium text-center mt-3">
-              Sahyadri Rural Connect • Winter 2026 Fellowship Notice
-            </p>
-          </div>
-
-          {/* Right: Detailed Narrative & Features */}
-          <div className="lg:col-span-7 space-y-5">
-            <div>
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen leading-snug">
-                Step Out of the Classroom. <br />
-                <span className="text-sea_green italic font-normal">Step into Real Bharat.</span>
-              </h2>
-            </div>
-
-            <p className="text-pine_teal text-sm sm:text-base leading-relaxed">
-              India&apos;s true developmental stories, agrarian resilience, and tribal heritage cannot be mastered inside lecture halls or online papers alone. <strong>Sahyadri Rural Connect</strong> is preparing its next flagship winter immersion for students, researchers, and aspiring change leaders.
-            </p>
-
-            {/* Upcoming Feature Checklist */}
-            <div className="grid sm:grid-cols-2 gap-3 pt-1">
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-evergreen">
-                  Hands-on organic farming & living soil prep
-                </span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-evergreen">
-                  Ethnobotany walks & wild edible cuisine
-                </span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-evergreen">
-                  Dialogues with Gram Panchayats & FPOs
-                </span>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-sea_green flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-evergreen">
-                  Decentralized solar micro-grids & telemetry
-                </span>
-              </div>
-            </div>
-
-            {/* Direct Register Callout */}
-            <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 border-t border-gray-100">
-              <Link
-                href="/register/form"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
-              >
-                <span>Register for Fellowship</span>
-                <ArrowRight size={16} />
-              </Link>
-
-              <span className="text-xs text-pine_teal/75 font-medium">
-                *Registration form takes only 2 minutes to fill.
-              </span>
-            </div>
-
-          </div>
-
         </div>
       </section>
 
