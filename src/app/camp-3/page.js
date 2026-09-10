@@ -144,12 +144,12 @@ const itinerary = [
 
 // --- PHOTO GALLERY SAMPLES ---
 const galleryImages = [
-  { src: "/floating3.jpeg", caption: "Scenic landscapes and tribal hamlets of Jawhar" },
-  { src: "/grassland-hero1.jpg", caption: "Sahyadri hills & forest ecosystems" },
-  { src: "/sahyadri-1.jpg", caption: "Field learning and grassroots conversations" },
-  { src: "/sahyadri-2.jpeg", caption: "Cohort reflections and team engagement" },
-  { src: "/floating4.jpeg", caption: "Local community and youth interactions" },
-  { src: "/sahyadri-bg-hero.jpeg", caption: "Experiential outdoor study sessions" }
+  { src: "/jawahar-village-tribal-community.jpg", caption: "Jawhar tribal community and indigenous heritage" },
+  { src: "/floating7.jpeg", caption: "Scenic landscapes and palace heritage of Jawhar" },
+  { src: "/rural_immersion_real.jpg", caption: "Field learning and grassroots conversations" },
+  { src: "/sahyadri-bg-hero6.jpeg", caption: "Sahyadri Western Ghats and forest trails" },
+  { src: "/hiware-bazar-sustainable-village.jpg", caption: "Sustainable village governance and community models" },
+  { src: "/bhilar-village-books-strawberry.jpg", caption: "Experiential outdoor study & rural enterprise" }
 ]
 
 export default function SummerSchoolJawharPage() {
