@@ -36,7 +36,7 @@ export default function BlogSection() {
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-bold text-evergreen hover:text-sea_green transition-colors group w-fit"
           >
-            <span>View All Articles</span>
+            <span>View All Stories</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

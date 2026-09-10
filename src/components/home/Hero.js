@@ -280,7 +280,7 @@ export default function Hero() {
             {/* Section Heading (Clean text, no icons) */}
             <div className="flex items-center justify-between mb-4 px-1">
               <h2 className="text-xs md:text-sm font-bold tracking-widest text-[#4a3b2c] uppercase">
-                LATEST ARTICLES
+                FIELD STORIES
               </h2>
               <Link 
                 href="/blog" 

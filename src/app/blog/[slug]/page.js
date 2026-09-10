@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }) {
                   </div>
 
                   <div className="mt-4 pt-2 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-sea_green">
-                    <span>Read Article</span>
+                    <span>Read Story</span>
                     <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
