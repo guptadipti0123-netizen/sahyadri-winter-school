@@ -287,10 +287,6 @@ export default function RegisterPage() {
       {/* ================= 2. FOUR PILLARS / HIGHLIGHTS ================= */}
       <section className="px-4 sm:px-6 lg:px-8 py-8 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-celadon shadow-2xs text-sea_green text-[11px] font-bold uppercase tracking-wider mb-2">
-            <Sparkles size={13} />
-            <span>Fellowship Highlights</span>
-          </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-evergreen">
             Why Join the Winter Cohort?
           </h2>
