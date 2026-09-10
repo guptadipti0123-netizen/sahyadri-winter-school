@@ -273,9 +273,9 @@ export default function Hero() {
           </div>
 
           {/* ========================================================= */}
-          {/* RIGHT COLUMN: "LATEST ARTICLES" Side Stack (5 cols / ~40%) */}
+          {/* RIGHT COLUMN: "FIELD STORIES" Side Stack (Desktop Only) */}
           {/* ========================================================= */}
-          <div className="lg:col-span-5 xl:col-span-4 flex flex-col">
+          <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col">
             
             {/* Section Heading (Clean text, no icons) */}
             <div className="flex items-center justify-between mb-4 px-1">
