@@ -130,78 +130,78 @@ export default function ContactPage() {
     <main className="min-h-screen bg-frosted_mint/20 font-sans overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-6 md:pb-12 overflow-hidden">
+      <section className="relative pt-20 md:pt-24 pb-2 md:pb-3 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
+          <svg viewBox="0 0 1440 800" className="absolute -top-[480px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
             <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
           </svg>
-          <svg viewBox="0 0 1440 700" className="absolute -top-[300px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
+          <svg viewBox="0 0 1440 700" className="absolute -top-[360px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
             <path fill="#40916C" fillOpacity="0.8" d="M0,460 C220,540 420,360 660,440 C900,500 1120,580 1320,500 C1400,460 1440,440 1440,420 L1440,0 L0,0 Z" />
           </svg>
-          <svg viewBox="0 0 1440 600" className="absolute -top-[180px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
+          <svg viewBox="0 0 1440 600" className="absolute -top-[240px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
             <path fill="#d8f3dc" fillOpacity="0.65" d="M0,380 C260,430 460,320 700,380 C940,420 1140,470 1340,410 C1400,380 1440,360 1440,340 L1440,0 L0,0 Z" />
           </svg>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-evergreen/30 backdrop-blur-md mb-2 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-sea_green animate-pulse" />
+            <p className="text-[10px] sm:text-xs font-bold text-evergreen tracking-wider uppercase">
               Contact Us
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
+          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-4xl mb-1 text-evergreen leading-tight drop-shadow-sm">
             Get in Touch
           </h1>
 
-          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-serif italic text-xs sm:text-sm md:text-base text-pine_teal/85 max-w-xl mx-auto leading-snug">
             Have questions or want to collaborate with us? We&apos;d love to hear from you.
           </p>
         </div>
       </section>
 
       {/* 2. CARDS CONTAINER */}
-      <div className="relative w-full max-w-5xl mx-auto h-auto lg:h-[490px] perspective z-20 px-4 mb-10 sm:mb-12 flex flex-col lg:block gap-5 sm:gap-6 lg:gap-0">
+      <div className="relative w-full max-w-4xl mx-auto h-auto lg:h-[410px] perspective z-20 px-4 mb-8 sm:mb-10 flex flex-col lg:block gap-4 lg:gap-0">
 
         {/* Left Card - Contact Info */}
         <div
-          className="relative lg:absolute left-0 lg:left-4 top-0 w-full lg:w-1/2 h-auto lg:h-full z-30 transition-all duration-700 ease-in-out"
+          className="relative lg:absolute left-0 lg:left-3 top-0 w-full lg:w-1/2 h-auto lg:h-full z-30 transition-all duration-700 ease-in-out"
           style={{
-            transform: isSeparated && canSeparate ? 'translateX(-120px)' : 'translateX(0)',
+            transform: isSeparated && canSeparate ? 'translateX(-100px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-r-none p-5 sm:p-7 md:p-8 lg:p-9 shadow-xl flex flex-col justify-center relative border border-gray-100">
+          <div className="h-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-r-none p-4 sm:p-6 lg:p-6 shadow-xl flex flex-col justify-center relative border border-gray-100">
             <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-white rotate-45 z-50" />
             <div className="relative z-10">
-              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-evergreen mb-2 text-left leading-tight">
+              <h2 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-evergreen mb-1 text-left leading-tight">
                 Let&apos;s get in touch
               </h2>
-              <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm font-normal">
+              <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-[11px] sm:text-xs font-normal">
                 Have questions or want to learn more about our programs? We&apos;d love to hear from you.
               </p>
-              <div className="space-y-3.5 sm:space-y-4 mb-4 sm:mb-6">
-                <div className="flex gap-3 items-start">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
-                    <MapPin className="w-4 h-4 text-sea_green" />
+              <div className="space-y-2.5 sm:space-y-3 mb-3 sm:mb-4">
+                <div className="flex gap-2.5 items-start">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
+                    <MapPin className="w-3.5 h-3.5 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-sea_green tracking-wider uppercase mb-0.5">ADDRESS</p>
-                    <p className="text-gray-900 font-medium text-xs sm:text-sm">Mumbai, Maharashtra 400076</p>
+                    <p className="text-[9px] font-bold text-sea_green tracking-wider uppercase mb-0.5">ADDRESS</p>
+                    <p className="text-gray-900 font-medium text-[11px] sm:text-xs">Mumbai, Maharashtra 400076</p>
                   </div>
                 </div>
-                <div className="flex gap-3 items-start">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
-                    <Mail className="w-4 h-4 text-sea_green" />
+                <div className="flex gap-2.5 items-start">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
+                    <Mail className="w-3.5 h-3.5 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold text-sea_green tracking-wider uppercase mb-0.5">EMAIL</p>
-                    <p className="text-gray-900 font-medium text-xs sm:text-sm break-all">info@sahyadriruralconnect.org</p>
+                    <p className="text-[9px] font-bold text-sea_green tracking-wider uppercase mb-0.5">EMAIL</p>
+                    <p className="text-gray-900 font-medium text-[11px] sm:text-xs break-all">info@sahyadriruralconnect.org</p>
                   </div>
                 </div>
               </div>
-              <div className="pt-1">
-                <p className="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-2">
+              <div className="pt-0.5">
+                <p className="text-[9px] font-bold text-gray-400 tracking-wider uppercase mb-1.5">
                   Follow Our Field Stories
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2">
@@ -209,18 +209,18 @@ export default function ContactPage() {
                     href="https://www.instagram.com/sahyadriwinterschool"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-rose-50/80 via-pink-50/40 to-amber-50/50 border border-rose-200/70 hover:border-rose-300 hover:shadow-md transition-all group/ig"
+                    className="flex-1 inline-flex items-center justify-between p-2 rounded-xl bg-gradient-to-r from-rose-50/80 via-pink-50/40 to-amber-50/50 border border-rose-200/70 hover:border-rose-300 hover:shadow-md transition-all group/ig"
                   >
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
-                        <Instagram size={15} />
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
+                        <Instagram size={13} />
                       </div>
                       <div className="text-left">
-                        <span className="text-[9px] font-bold text-rose-700 uppercase tracking-wider block">Instagram</span>
-                        <span className="text-xs font-bold text-gray-900 group-hover/ig:text-rose-700 transition-colors">@sahyadriwinterschool</span>
+                        <span className="text-[8.5px] font-bold text-rose-700 uppercase tracking-wider block">Instagram</span>
+                        <span className="text-[11px] font-bold text-gray-900 group-hover/ig:text-rose-700 transition-colors">@sahyadriwinterschool</span>
                       </div>
                     </div>
-                    <ArrowUpRight size={14} className="text-gray-400 group-hover/ig:text-rose-600 group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
+                    <ArrowUpRight size={13} className="text-gray-400 group-hover/ig:text-rose-600 group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
                   </a>
                 </div>
               </div>
@@ -230,34 +230,34 @@ export default function ContactPage() {
 
         {/* Right Card - Contact Form */}
         <div
-          className="relative lg:absolute right-0 lg:right-4 top-0 w-full lg:w-1/2 h-auto lg:h-full z-40 transition-all duration-700 ease-in-out"
+          className="relative lg:absolute right-0 lg:right-3 top-0 w-full lg:w-1/2 h-auto lg:h-full z-40 transition-all duration-700 ease-in-out"
           style={{
-            transform: isSeparated && canSeparate ? 'translateX(120px)' : 'translateX(0)',
+            transform: isSeparated && canSeparate ? 'translateX(100px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-sea_green rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 md:p-8 lg:p-9 shadow-2xl relative flex flex-col justify-center">
+          <div className="h-full bg-sea_green rounded-2xl sm:rounded-3xl lg:rounded-l-none p-4 sm:p-6 lg:p-6 shadow-2xl relative flex flex-col justify-center">
             <div className="hidden lg:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-sea_green rotate-45 z-50" />
             <div className="relative z-10">
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
+              <form onSubmit={handleSubmit} className="space-y-2.5">
                 <div>
-                  <label className="block text-xs font-bold text-white mb-1">Email</label>
+                  <label className="block text-[11px] sm:text-xs font-bold text-white mb-0.5">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className={`w-full px-3.5 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs sm:text-[13px]
   ${emailError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.email)}
   focus:outline-none focus:border-white transition-all duration-300
 `}
 
                   />
-                  {emailError && <p className="mt-1 text-xs text-red-200 font-medium">{emailError}</p>}
+                  {emailError && <p className="mt-0.5 text-[10px] text-red-200 font-medium">{emailError}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-white mb-1">Phone</label>
+                  <label className="block text-[11px] sm:text-xs font-bold text-white mb-0.5">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -265,45 +265,45 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="9876543210"
                     required
-                    className={`w-full px-3.5 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs sm:text-[13px]
   ${phoneError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.phone)}
   focus:outline-none focus:border-white transition-all duration-300
 `}
 
                   />
-                  {phoneError && <p className="mt-1 text-xs text-red-200 font-medium">{phoneError}</p>}
+                  {phoneError && <p className="mt-0.5 text-[10px] text-red-200 font-medium">{phoneError}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-white mb-1">Message</label>
+                  <label className="block text-[11px] sm:text-xs font-bold text-white mb-0.5">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={2}
                     placeholder="Your message..."
-                    className={`w-full px-3.5 py-2 sm:py-2.5 rounded-lg border text-xs sm:text-sm min-h-[58px] sm:min-h-[72px]
+                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs sm:text-[13px] min-h-[50px] sm:min-h-[56px]
   ${messageError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.message)}
   focus:outline-none focus:border-white transition-all duration-300 resize-none
 `}
 
                   />
-                  {messageError && <p className="mt-1 text-xs text-red-200 font-medium">{messageError}</p>}
+                  {messageError && <p className="mt-0.5 text-[10px] text-red-200 font-medium">{messageError}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-2 py-2.5 sm:py-3 px-5 rounded-full bg-white text-green-800 font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
+                  className="w-full mt-1.5 py-2 sm:py-2.5 px-4 rounded-full bg-white text-green-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-green-600/30 border-t-green-600 rounded-full animate-spin" />
+                      <div className="w-3.5 h-3.5 border-2 border-green-600/30 border-t-green-600 rounded-full animate-spin" />
                       <span>Sending...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
+                      <Send className="w-3.5 h-3.5" />
                       <span>Send Message</span>
                     </>
                   )}
