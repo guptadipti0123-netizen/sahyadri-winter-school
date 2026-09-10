@@ -83,9 +83,10 @@ export default function TestimonialsSection() {
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
           className="
-            flex overflow-x-auto gap-4 snap-x snap-mandatory pb-6 -mx-4 px-4 
-            md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:pb-0 md:mx-0 md:px-3
+            flex overflow-x-auto gap-4 snap-x snap-mandatory pb-6 -mx-3 px-3 
+            md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:pb-0 md:mx-0 md:px-0
             [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']
+            touch-pan-x
           "
         >
           {testimonials.map((testimonial, index) => (
@@ -93,7 +94,7 @@ export default function TestimonialsSection() {
               key={index} 
               className="
                 group relative flex-shrink-0 snap-center
-                w-[90vw] md:w-auto h-auto
+                w-[85vw] max-w-[340px] sm:w-[340px] md:w-auto md:max-w-none h-auto
               "
             >
               
@@ -101,40 +102,40 @@ export default function TestimonialsSection() {
               <div className="absolute inset-0 bg-celadon/25 border border-celadon/30 rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg transform rotate-2 scale-[1.02] group-hover:rotate-3 group-hover:bg-mint_leaf/30 transition-all duration-500 ease-out"></div>
 
               {/* 2. MAIN CARD (The Paper Leaf) with Green Border */}
-              <div className="relative h-full bg-white border-2 border-celadon/60 group-hover:border-mint_leaf rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg p-6 flex flex-col shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 ease-out min-h-[260px]">
+              <div className="relative h-full bg-white border-2 border-celadon/60 group-hover:border-mint_leaf rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-lg rounded-br-lg p-5 sm:p-6 flex flex-col shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 ease-out min-h-[250px]">
                 
                 {/* Decorative Leaf Icon */}
                 <div className="absolute top-0 left-0 p-3">
-                   <Leaf size={20} className="text-mint_leaf/60 transform -rotate-45" />
+                   <Leaf size={18} className="text-mint_leaf/60 transform -rotate-45" />
                 </div>
 
                 {/* Quote Icon */}
-                <div className="mb-4 flex justify-end">
-                   <div className="w-8 h-8 rounded-full bg-frosted_mint/40 border border-celadon/40 flex items-center justify-center text-sea_green">
-                      <Quote size={14} fill="currentColor" />
+                <div className="mb-3 sm:mb-4 flex justify-end">
+                   <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-frosted_mint/40 border border-celadon/40 flex items-center justify-center text-sea_green">
+                      <Quote size={13} fill="currentColor" />
                    </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-grow">
-                  <p className="font-serif text-pine_teal text-sm lg:text-[15px] leading-relaxed italic relative z-10">
+                  <p className="font-serif text-pine_teal text-xs sm:text-sm lg:text-[14.5px] leading-relaxed italic relative z-10">
                     &quot;{testimonial.text}&quot;
                   </p>
                 </div>
 
                 {/* Divider */}
-                <div className="w-10 h-0.5 bg-gradient-to-r from-sea_green to-transparent my-5"></div>
+                <div className="w-10 h-0.5 bg-gradient-to-r from-sea_green to-transparent my-4"></div>
 
                 {/* Footer / Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full border border-celadon/60 bg-frosted_mint/40 flex items-center justify-center text-dark_emerald flex-shrink-0">
-                    <User size={16} />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-celadon/60 bg-frosted_mint/40 flex items-center justify-center text-dark_emerald flex-shrink-0">
+                    <User size={15} />
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-evergreen uppercase tracking-wide">
                       Participant
                     </h4>
-                    <p className="text-xs font-semibold text-pine_teal/80 leading-tight">
+                    <p className="text-[11px] sm:text-xs font-semibold text-pine_teal/80 leading-tight">
                       {testimonial.role}
                     </p>
                   </div>

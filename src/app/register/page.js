@@ -164,10 +164,10 @@ export default function RegisterPage() {
           
           {/* Left: Recreated Visual Card Template with Updated Winter 2026 Details */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-[380px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-[#fcf8f0] text-[#2d241e] font-sans group">
+            <div className="relative w-full max-w-[340px] xs:max-w-[360px] sm:max-w-[380px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-[#fcf8f0] text-[#2d241e] font-sans group">
               
               {/* Top Banner Image */}
-              <div className="relative h-44 w-full bg-[#1b4332] overflow-hidden">
+              <div className="relative h-40 sm:h-44 w-full bg-[#1b4332] overflow-hidden">
                 <Image
                   src="/sahyadri-bg-hero6.jpeg"
                   alt="Sahyadri Rural Immersion"
@@ -176,97 +176,97 @@ export default function RegisterPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#fcf8f0] via-black/20 to-black/40" />
                 
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-sea_green text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+                <div className="absolute top-3 left-3 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-sea_green text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-md">
                   Winter Cohort
                 </div>
                 
-                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider">
+                <div className="absolute top-3 right-3 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider">
                   3rd Edition
                 </div>
 
                 <div className="absolute bottom-2 inset-x-4 text-center">
-                  <span className="text-[10px] font-extrabold tracking-widest uppercase text-emerald-900 drop-shadow-xs">
+                  <span className="text-[9px] sm:text-[10px] font-extrabold tracking-widest uppercase text-emerald-900 drop-shadow-xs">
                     Sahyadri Rural Connect
                   </span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-black text-evergreen leading-tight">
+                  <h3 className="font-serif text-lg sm:text-2xl font-black text-evergreen leading-tight">
                     Winter School 2026
                   </h3>
                 </div>
               </div>
 
               {/* Middle Section: Dates & Location (Matching the template structure) */}
-              <div className="p-5 pt-3 space-y-4">
+              <div className="p-4 sm:p-5 pt-3 space-y-3 sm:space-y-4">
                 
-                <div className="text-center space-y-0.5 border-b border-[#ebdcc6] pb-3">
-                  <h4 className="font-serif text-base sm:text-lg font-extrabold text-[#7c2d12]">
+                <div className="text-center space-y-0.5 border-b border-[#ebdcc6] pb-2.5 sm:pb-3">
+                  <h4 className="font-serif text-sm sm:text-lg font-extrabold text-[#7c2d12]">
                     Winter 2026 • Dates Announcing Soon
                   </h4>
-                  <p className="text-xs font-semibold text-[#5c4033]">
+                  <p className="text-[11px] sm:text-xs font-semibold text-[#5c4033]">
                     Sahyadri Foothills & Rural Hamlets (Maharashtra)
                   </p>
                 </div>
 
                 {/* 3 Pillars Grid (Matching the Screenshot's 3-column Box Layout) */}
-                <div className="grid grid-cols-3 gap-2 text-center">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center">
                   
                   {/* Column 1 */}
-                  <div className="space-y-2">
-                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
-                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
                         📍
                       </div>
-                      <span className="text-[11px] font-bold text-[#2d241e] leading-tight">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
                         Sahyadri, Maha
                       </span>
                     </div>
 
-                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
-                      <div className="w-7 h-7 rounded-full bg-[#c25e1a] text-white flex items-center justify-center mb-1 text-xs">
+                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#c25e1a] text-white flex items-center justify-center mb-1 text-xs">
                         🏛️
                       </div>
-                      <span className="text-[11px] font-bold text-[#c25e1a] leading-tight">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
                         NGOs Impact
                       </span>
                     </div>
                   </div>
 
                   {/* Column 2 */}
-                  <div className="space-y-2">
-                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
-                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
                         ⛰️
                       </div>
-                      <span className="text-[11px] font-bold text-[#2d241e] leading-tight">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
                         5 Days
                       </span>
                     </div>
 
-                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
-                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
                         🎖️
                       </div>
-                      <span className="text-[11px] font-bold text-[#c25e1a] leading-tight">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
                         Expert Sessions
                       </span>
                     </div>
                   </div>
 
                   {/* Column 3 */}
-                  <div className="space-y-2">
-                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
-                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
                         🌾
                       </div>
-                      <span className="text-[11px] font-bold text-[#2d241e] leading-tight">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#2d241e] leading-tight">
                         Rural Immersion
                       </span>
                     </div>
 
-                    <div className="bg-[#faeed6]/90 p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[72px]">
-                      <div className="w-7 h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
+                    <div className="bg-[#faeed6]/90 p-1.5 sm:p-2.5 rounded-xl border border-[#ebdcc6] flex flex-col items-center justify-center min-h-[64px] sm:min-h-[72px]">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#4a3525] text-white flex items-center justify-center mb-1 text-xs">
                         🌿
                       </div>
-                      <span className="text-[11px] font-bold text-[#c25e1a] leading-tight">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-[#c25e1a] leading-tight">
                         Delving into Culture
                       </span>
                     </div>
@@ -275,8 +275,8 @@ export default function RegisterPage() {
                 </div>
 
                 {/* Bottom Highlight: Premier Institutes Banner (Matching Screenshot) */}
-                <div className="bg-[#faeed6] border border-[#ebdcc6] rounded-xl p-3 text-center shadow-xs">
-                  <p className="text-xs font-extrabold text-[#7c2d12] leading-snug font-serif">
+                <div className="bg-[#faeed6] border border-[#ebdcc6] rounded-xl p-2.5 sm:p-3 text-center shadow-xs">
+                  <p className="text-[11px] sm:text-xs font-extrabold text-[#7c2d12] leading-snug font-serif">
                     40 participants from Premier Institutes like IIT, IIM, TISS, IIPS, IGIDR, ILS etc.
                   </p>
                 </div>

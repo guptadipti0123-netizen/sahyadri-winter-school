@@ -267,7 +267,7 @@ export default function RegisterFormPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-25 md:pt-30 pb-6 md:pb-12 overflow-hidden">
+      <section className="relative pt-28 md:pt-36 pb-6 md:pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
             <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
@@ -280,7 +280,7 @@ export default function RegisterFormPage() {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
             <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
@@ -362,14 +362,14 @@ export default function RegisterFormPage() {
             Back to Details
           </Link>
 
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-10">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 p-4 sm:p-6 md:p-10">
 
             {/* Form Header */}
-            <div className="mb-8 pb-6 border-b border-gray-100">
-              <h2 className="font-serif text-xl md:text-3xl font-bold text-evergreen mb-2">
+            <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-100">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-evergreen mb-2">
                 Camp Registration
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs sm:text-sm text-gray-500">
                 Fields marked with <span className="text-red-400 font-semibold">*</span> are required. Please fill in accurate details.
               </p>
             </div>

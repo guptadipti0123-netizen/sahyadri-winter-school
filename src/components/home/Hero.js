@@ -136,17 +136,17 @@ export default function Hero() {
   const activeSlide = featuredSlides[current]
 
   return (
-    <section className="relative w-full bg-[#fbf8f1] pt-24 sm:pt-28 md:pt-32 pb-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="relative w-full bg-[#fbf8f1] pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-12 px-3 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
         
-        {/* --- MAIN 2-COLUMN GRID (Matching Vritant Reference Screenshot) --- */}
+        {/* --- MAIN 2-COLUMN GRID --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* ========================================================= */}
           {/* LEFT COLUMN: Featured Hero Slider Card (7 cols / ~60%) */}
           {/* ========================================================= */}
           <div className="lg:col-span-7 xl:col-span-8">
-            <div className="relative w-full h-[460px] sm:h-[520px] md:h-[580px] lg:h-[600px] rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#ebdcc6] group flex flex-col justify-between select-none">
+            <div className="relative w-full h-[470px] xs:h-[500px] sm:h-[540px] md:h-[580px] lg:h-[600px] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#ebdcc6] group flex flex-col justify-between select-none">
               
               {/* Background Slides */}
               {featuredSlides.map((slide, index) => {
@@ -167,22 +167,22 @@ export default function Hero() {
                     />
 
                     {/* Clean and Light Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   </div>
                 )
               })}
 
-              {/* Top Bar: Category Pill Badge (Clean text, no icons) */}
-              <div className="relative z-20 p-5 sm:p-7 flex items-center justify-between">
+              {/* Top Bar: Category Pill Badge */}
+              <div className="relative z-20 p-4 sm:p-7 flex items-center justify-between">
                 <Link
                   href={activeSlide.link}
-                  className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#fef3c7]/95 hover:bg-[#fef3c7] text-[#78350f] text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-sm border border-[#fde68a] backdrop-blur-sm transition-all hover:scale-105"
+                  className="inline-flex items-center px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#fef3c7]/95 hover:bg-[#fef3c7] text-[#78350f] text-[11px] sm:text-sm font-semibold tracking-wider uppercase shadow-sm border border-[#fde68a] backdrop-blur-sm transition-all hover:scale-105"
                 >
                   <span>{activeSlide.category}</span>
                 </Link>
 
                 {/* Slide Counter */}
-                <div className="px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/90 text-xs font-mono border border-white/20">
+                <div className="px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/90 text-[11px] sm:text-xs font-mono border border-white/20">
                   0{current + 1} / 0{slideCount}
                 </div>
               </div>
@@ -195,9 +195,9 @@ export default function Hero() {
                   prevSlide()
                 }}
                 aria-label="Previous Slide"
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 active:scale-95 text-white/90 hover:text-white border border-white/30 backdrop-blur-md flex items-center justify-center transition-all shadow-lg cursor-pointer"
+                className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 active:scale-95 text-white/90 hover:text-white border border-white/30 backdrop-blur-md flex items-center justify-center transition-all shadow-lg cursor-pointer"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
               <button
@@ -207,13 +207,13 @@ export default function Hero() {
                   nextSlide()
                 }}
                 aria-label="Next Slide"
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 active:scale-95 text-white/90 hover:text-white border border-white/30 backdrop-blur-md flex items-center justify-center transition-all shadow-lg cursor-pointer"
+                className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/75 active:scale-95 text-white/90 hover:text-white border border-white/30 backdrop-blur-md flex items-center justify-center transition-all shadow-lg cursor-pointer"
               >
-                <ChevronRight size={20} />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
-              {/* Bottom Content Area (Clickable to open page) */}
-              <div className="relative z-20 p-5 sm:p-8 md:p-10 pt-12 flex flex-col justify-end">
+              {/* Bottom Content Area */}
+              <div className="relative z-20 p-4 sm:p-8 md:p-10 pt-8 flex flex-col justify-end">
                 
                 {/* Title Linking to page */}
                 <Link 
@@ -222,7 +222,7 @@ export default function Hero() {
                 >
                   <h1 
                     key={`title-${activeSlide.id}`}
-                    className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] font-medium text-white leading-[1.22] tracking-tight drop-shadow-md mb-3 group-hover/title:text-[#d8f3dc] transition-colors"
+                    className="font-serif text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px] font-medium text-white leading-[1.22] tracking-tight drop-shadow-md mb-2 sm:mb-3 group-hover/title:text-[#d8f3dc] transition-colors line-clamp-3 sm:line-clamp-none"
                   >
                     {activeSlide.title}
                   </h1>
@@ -231,19 +231,19 @@ export default function Hero() {
                 {/* Subtitle */}
                 <p 
                   key={`sub-${activeSlide.id}`}
-                  className="text-gray-200 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mb-5 line-clamp-2 drop-shadow"
+                  className="text-gray-200 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mb-3 sm:mb-5 line-clamp-2 drop-shadow"
                 >
                   {activeSlide.subtitle}
                 </p>
 
                 {/* Footer CTA Button & Indicators Row */}
-                <div className="relative z-30 flex items-center justify-between gap-4 pt-3 border-t border-white/20">
+                <div className="relative z-30 flex items-center justify-between gap-3 pt-2.5 sm:pt-3 border-t border-white/20">
                   <Link
                     href={activeSlide.link}
-                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto group/btn"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto group/btn"
                   >
                     <span>Read Full Story</span>
-                    <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform text-sea_green" />
+                    <ArrowRight size={13} className="group-hover/btn:translate-x-1 transition-transform text-sea_green" />
                   </Link>
 
                   {/* Slide Indicators */}
@@ -259,7 +259,7 @@ export default function Hero() {
                         aria-label={`Go to slide ${idx + 1}`}
                         className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                           idx === current 
-                            ? "w-6 bg-white" 
+                            ? "w-5 sm:w-6 bg-white" 
                             : "w-1.5 bg-white/40 hover:bg-white/70"
                         }`}
                       />

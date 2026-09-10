@@ -90,8 +90,8 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#fbf8f1]">
 
-      {/* ================= 1. EDITORIAL HERO SECTION (Vritant Style) ================= */}
-      <section className="relative pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
+      {/* ================= 1. EDITORIAL HERO SECTION ================= */}
+      <section className="relative pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 px-3 sm:px-6 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
         
         {/* Background Atmosphere */}
         <div className="absolute inset-0 bg-black/25 mix-blend-multiply pointer-events-none" />
@@ -101,8 +101,8 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-1 sm:px-4 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-frosted_mint text-xs font-bold tracking-wider uppercase">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-frosted_mint text-[11px] sm:text-xs font-bold tracking-wider uppercase">
               ABOUT SAHYADRI RURAL CONNECT
             </span>
 
@@ -115,7 +115,7 @@ export default function AboutPage() {
               Sahyadri Rural Connect is an experiential education and rural immersion initiative dedicated to bridging classroom knowledge with grassroots realities, indigenous culture, and sustainable social impact.
             </p>
 
-            <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-2">
+            <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
               <Link
                 href="/register"
                 className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-frosted_mint hover:scale-102 active:scale-95 transition-all duration-300 whitespace-nowrap"
@@ -148,8 +148,8 @@ export default function AboutPage() {
             </div>
 
             {/* Feature Card with Background Image, Instagram Caption & Camp Link */}
-            <div className="relative w-full max-w-[420px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-evergreen/80 group mx-auto">
-              <div className="relative h-[390px] xs:h-[420px] sm:h-[440px] w-full">
+            <div className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-evergreen/80 group mx-auto">
+              <div className="relative h-[380px] xs:h-[410px] sm:h-[440px] w-full">
                 <Image
                   src={heroCamps[activeCampIdx].image}
                   alt={heroCamps[activeCampIdx].title}
@@ -173,24 +173,24 @@ export default function AboutPage() {
                 </div>
 
                 {/* Bottom Content & Instagram Caption */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 space-y-2 sm:space-y-2.5 z-10 text-left">
-                  <h3 className="font-serif text-lg sm:text-2xl font-bold text-white leading-tight drop-shadow-md">
+                <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-5 space-y-2 sm:space-y-2.5 z-10 text-left">
+                  <h3 className="font-serif text-base sm:text-xl md:text-2xl font-bold text-white leading-tight drop-shadow-md">
                     {heroCamps[activeCampIdx].title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-frosted_mint/95 leading-relaxed font-light bg-black/50 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-white/15">
+                  <p className="text-[11px] sm:text-xs md:text-sm text-frosted_mint/95 leading-relaxed font-light bg-black/50 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-white/15 line-clamp-3 sm:line-clamp-none">
                     &quot;{heroCamps[activeCampIdx].caption}&quot;
                   </p>
 
                   <div className="flex items-center justify-between pt-1">
                     <Link
                       href={heroCamps[activeCampIdx].href}
-                      className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all group/btn"
+                      className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white text-evergreen hover:bg-frosted_mint text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all group/btn"
                     >
                       <span>Explore Camp Page</span>
                       <ArrowRight size={13} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
-                    <span className="text-[10px] sm:text-[11px] font-medium text-white/75 bg-white/10 px-2.5 py-1 rounded-full border border-white/15">
+                    <span className="text-[10px] sm:text-[11px] font-medium text-white/75 bg-white/10 px-2 py-0.5 rounded-full border border-white/15">
                       {heroCamps[activeCampIdx].duration}
                     </span>
                   </div>

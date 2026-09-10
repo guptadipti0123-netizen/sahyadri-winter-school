@@ -64,7 +64,7 @@ export default function ProfessionalCampCollage() {
   ]
 
   return (
-    <section className="py-12 px-4 md:px-8 bg-gradient-to-b from-frosted_mint/30 via-white to-frosted_mint/30 relative overflow-hidden">
+    <section className="py-10 md:py-16 px-3 sm:px-6 md:px-8 bg-gradient-to-b from-frosted_mint/30 via-white to-frosted_mint/30 relative overflow-hidden">
       {/* Decorative Orbs */}
       <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-celadon/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-mint_leaf/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -72,27 +72,26 @@ export default function ProfessionalCampCollage() {
       <div className="max-w-4xl mx-auto relative z-10">
         
         {/* HEADER */}
-        <div className="text-center mb-8 space-y-3 md:space-y-4">
+        <div className="text-center mb-6 md:mb-8 space-y-2 md:space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white border border-celadon shadow-sm text-sea_green text-[10px] font-bold tracking-widest uppercase mb-1">
             <Camera size={12} className="md:w-3.5 md:h-3.5" />
             <span>Visual Chronicle</span>
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
             Gallery of <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Impact</span>
           </h2>
-          <p className="text-pine_teal/80 text-base md:text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-pine_teal/80 text-sm md:text-base lg:text-lg font-medium max-w-2xl mx-auto">
             &quot;Every photograph captures a story of resilience, learning, and the bonds formed in the heart of nature.&quot;
           </p>
         </div>
 
         {/* BENTO GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] md:auto-rows-[150px] gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[130px] sm:auto-rows-[140px] md:auto-rows-[150px] gap-2.5 sm:gap-3 md:gap-4">
           
           {memories.map((item) => (
             <div 
               key={item.id}
-              // Added item.visibility to control show/hide on mobile
-              className={`relative group rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer border-2 border-dark_emerald shadow-sm ${item.span} ${item.visibility}`}
+              className={`relative group rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer border-2 border-dark_emerald shadow-sm ${item.span} ${item.visibility}`}
             >
               {/* 1. IMAGE LAYER */}
               <div className="absolute inset-0 w-full h-full">

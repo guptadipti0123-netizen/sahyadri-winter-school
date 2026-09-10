@@ -123,8 +123,8 @@ export default function Camp1Page() {
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
 
-      {/* ================= 1. HERO SECTION (Unchanged) ================= */}
-      <section className="relative pt-25 md:pt-30">
+      {/* ================= 1. HERO SECTION ================= */}
+      <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden">
         {/* --- WAVE BACKGROUND --- */}
         <div className="absolute inset-0 z-0">
           <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
@@ -138,8 +138,8 @@ export default function Camp1Page() {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-evergreen space-y-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="text-evergreen space-y-4 sm:space-y-6 relative z-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
               <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">{campDetails.edition}</p>
@@ -154,33 +154,33 @@ export default function Camp1Page() {
 
           </div>
           <div className="relative z-10 flex justify-center">
-            <div className="relative w-[300px] h-[280px] md:w-[450px] md:h-[400px] bg-white p-3 pb-12 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 rounded-sm">
+            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[440px] h-[270px] xs:h-[300px] md:h-[380px] bg-white p-3 pb-10 sm:pb-12 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-sm">
               <div className="relative w-full h-full overflow-hidden bg-gray-200">
                 <Image src="/grassland-hero1.jpg" alt="Winter Camp Jan 2025 Memories" fill className="object-cover" />
               </div>
-              <div className="absolute bottom-4 left-0 w-full text-center">
-                <span className="font-serif text-evergreen/90 text-lg font-bold">Where It Began</span>
+              <div className="absolute bottom-3 sm:bottom-4 left-0 w-full text-center">
+                <span className="font-serif text-evergreen/90 text-base sm:text-lg font-bold">Where It Began</span>
               </div>
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-32 h-12 bg-white/30 backdrop-blur-sm transform -rotate-2 shadow-sm border border-white/40"></div>
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-10 sm:h-12 bg-white/30 backdrop-blur-sm transform -rotate-2 shadow-sm border border-white/40"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ================= 2. CAMP GALLERY ================= */}
-      <section className="py-12 px-4 md:px-6 bg-frosted_mint/50 relative">
+      <section className="py-12 px-3 sm:px-6 bg-frosted_mint/50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
-          <div className="text-center mb-8 space-y-3 md:space-y-4">
+          <div className="text-center mb-8 space-y-2.5 sm:space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white border border-celadon shadow-sm text-sea_green text-[10px] font-bold tracking-widest uppercase mb-1">
               <Camera size={12} className="md:w-3.5 md:h-3.5" />
               <span>Visual Archive</span>
             </div>
-            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-evergreen">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
               Moments from the <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Start</span>
             </h2>
-            <p className="text-pine_teal/80 text-base md:text-lg font-medium max-w-2xl mx-auto">
+            <p className="text-pine_teal/80 text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto">
               &quot;Capturing the spirit of our very first rural connect cohort.&quot;
             </p>
           </div>
@@ -209,30 +209,30 @@ export default function Camp1Page() {
           {/* --- LAYOUT 2: MOBILE & TABLET (2 Cols) --- */}
           {/* WRAPPER: Handles Touch Events */}
           <div
-            className="relative lg:hidden group/mobile-gallery"
+            className="relative lg:hidden group/mobile-gallery px-1"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* UPDATED BUTTON STYLES: Glassmorphic & Inset */}
+            {/* BUTTON STYLES: Inset safely */}
             <button
               onClick={() => handleManualChange('prev')}
-              className="absolute -left-2 top-1/2 -translate-y-full z-20 p-2 bg-black/20 backdrop-blur-md rounded-full border border-white/30 text-white shadow-lg active:scale-95 transition-all hover:bg-black/40"
+              className="absolute left-1 top-1/2 -translate-y-full z-20 p-2 bg-black/30 backdrop-blur-md rounded-full border border-white/30 text-white shadow-lg active:scale-95 transition-all hover:bg-black/50"
               aria-label="Previous Photos"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={18} />
             </button>
 
             <button
               onClick={() => handleManualChange('next')}
-              className="absolute -right-2 top-1/2 -translate-y-full z-20 p-2 bg-black/20 backdrop-blur-md rounded-full border border-white/30 text-white shadow-lg active:scale-95 transition-all hover:bg-black/40"
+              className="absolute right-1 top-1/2 -translate-y-full z-20 p-2 bg-black/30 backdrop-blur-md rounded-full border border-white/30 text-white shadow-lg active:scale-95 transition-all hover:bg-black/50"
               aria-label="Next Photos"
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={18} />
             </button>
 
             {/* Grid Content */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               {sliderChunks.slice(0, 4).map((chunk, i) => (
                 <AutoSlideBlock
                   key={i}
@@ -243,7 +243,7 @@ export default function Camp1Page() {
             </div>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-2 mt-5 sm:mt-6">
               {[0, 1, 2, 3].map((idx) => (
                 <button
                   key={idx}
@@ -254,6 +254,7 @@ export default function Camp1Page() {
                   }}
                   className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? "w-6 bg-sea_green" : "w-2 bg-sea_green/30"
                     }`}
+                  aria-label={`Slide ${idx + 1}`}
                 />
               ))}
             </div>

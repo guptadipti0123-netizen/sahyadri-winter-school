@@ -29,14 +29,11 @@ export default function Footer() {
   return (
     <footer className="relative text-frosted_mint pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden">
 
-      {/* --- FIXED BACKGROUND IMAGE SETUP --- */}
+      {/* --- BACKGROUND IMAGE SETUP (Fixed on desktop, standard cover on mobile for smooth scrolling) --- */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage: "url('/Sahyadri-footer-2.jpg')",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          backgroundSize: "cover"
         }}
       >
         {/* Dark Overlay */}
@@ -44,13 +41,13 @@ export default function Footer() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Main Responsive Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-x-6 gap-y-8 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-x-6 gap-y-8 mb-8 sm:mb-12">
 
           {/* 1. Brand Column */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-3 space-y-3 sm:space-y-4">
+          <div className="col-span-1 sm:col-span-2 md:col-span-4 lg:col-span-3 space-y-3 sm:space-y-4">
             <h2 className="font-serif text-xl sm:text-2xl text-white tracking-wide drop-shadow-md">Sahyadri Rural Connect</h2>
             <p className="text-white/80 text-xs sm:text-sm leading-relaxed max-w-sm font-medium">
               Empowering students to understand and contribute to rural development through experiential learning and community partnerships.
@@ -75,7 +72,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 3. Opportunities (Immediately beside Quick Links) */}
+          {/* 3. Opportunities */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Opportunities</h4>
             <ul className="space-y-2 sm:space-y-2.5">
@@ -94,7 +91,7 @@ export default function Footer() {
           </div>
 
           {/* 4. Our Camps */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-3">
+          <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3">
             <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Our Camps</h4>
             <ul className="space-y-2 sm:space-y-2.5">
               {campsLinks.map((item) => (
@@ -112,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* 5. Connect */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+          <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2">
             <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Connect</h4>
             <div className="space-y-2.5 sm:space-y-3.5">
               <a href="mailto:info@sahyadriruralconnect.org" className="flex items-start gap-2 text-white/75 hover:text-white transition-colors text-xs sm:text-sm group font-medium">

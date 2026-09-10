@@ -71,9 +71,9 @@ export default function Header() {
   return (
     <>
       {/* ================= FLOATING VRITANT-STYLE CAPSULE NAVBAR ================= */}
-      <header className="fixed top-3 sm:top-4 inset-x-0 z-50 px-3 sm:px-6 max-w-7xl mx-auto pointer-events-none">
+      <header className="fixed top-2.5 sm:top-4 inset-x-0 z-50 px-2.5 sm:px-6 max-w-7xl mx-auto pointer-events-none">
         <nav 
-          className={`pointer-events-auto bg-white/95 backdrop-blur-md border border-[#ebdcc6]/80 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300 ${
+          className={`pointer-events-auto bg-white/95 backdrop-blur-md border border-[#ebdcc6]/80 rounded-full px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300 ${
             scrolled ? 'shadow-[0_8px_30px_rgba(0,0,0,0.08)] bg-white' : 'shadow-[0_4px_20px_rgba(0,0,0,0.04)]'
           }`}
         >
@@ -183,13 +183,13 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="font-serif font-bold text-sm sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap truncate max-w-[160px] xs:max-w-[220px] sm:max-w-none">
+            <span className="font-serif font-bold text-xs sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap truncate max-w-[155px] sm:max-w-none">
               Sahyadri Rural Connect
             </span>
           </Link>
 
           {/* ================= 3. RIGHT: MOON, CTA BUTTON & HAMBURGER ================= */}
-          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-3 shrink-0">
             
             {/* Moon / Theme Toggle (Aesthetic) */}
             <button
@@ -211,7 +211,7 @@ export default function Header() {
 
             {/* Mobile Hamburger Toggle (Visible below 960px) */}
             <button
-              className="min-[960px]:hidden p-1.5 sm:p-2 text-[#1c1917] hover:bg-gray-100 rounded-full transition-colors flex items-center justify-center shrink-0"
+              className="min-[960px]:hidden p-1.5 text-[#1c1917] hover:bg-gray-100 rounded-full transition-colors flex items-center justify-center shrink-0 touch-manipulation"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -224,7 +224,7 @@ export default function Header() {
 
         {/* ================= MOBILE MENU DRAWER ================= */}
         {isOpen && (
-          <div className="pointer-events-auto mt-2 w-full max-h-[80vh] overflow-y-auto bg-white/98 backdrop-blur-2xl border border-[#ebdcc6] rounded-3xl p-5 shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 min-[960px]:hidden">
+          <div className="pointer-events-auto mt-2 w-full max-h-[82vh] overflow-y-auto bg-white/98 backdrop-blur-2xl border border-[#ebdcc6] rounded-3xl p-4 sm:p-5 shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 min-[960px]:hidden">
             <div className="flex flex-col divide-y divide-gray-100 text-sm">
               <Link
                 href="/"

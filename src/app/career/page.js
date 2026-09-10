@@ -53,7 +53,7 @@ export default function CareerPage() {
     <main className="min-h-screen bg-frosted_mint/20 font-sans selection:bg-sea_green selection:text-white overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-25 md:pt-30">
+      <section className="relative pt-28 md:pt-36 pb-6 sm:pb-10">
         
         {/* --- WAVE BACKGROUND --- */}
         <div className="absolute inset-0 z-0">
@@ -68,7 +68,7 @@ export default function CareerPage() {
           </svg>
         </div>
 
-         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
             <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
@@ -87,10 +87,10 @@ export default function CareerPage() {
       </section>
 
       {/* ================= VALUES SECTION ================= */}
-      <section className="pb-8 pt-5 md:pt-50 md:pb-12 px-4 md:px-6 relative">
+      <section className="pb-8 pt-4 sm:pt-8 md:pt-12 md:pb-12 px-4 md:px-6 relative">
         <div className="max-w-6xl mx-auto">
           
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-8 md:-mt-24 relative z-20">
+          <div className="flex flex-col gap-4 sm:gap-6 md:grid md:grid-cols-3 md:gap-6 lg:gap-8 relative z-20">
             
             {benefits.map((item, index) => (
               <div 
@@ -98,12 +98,12 @@ export default function CareerPage() {
                 className={`
                   group relative bg-white transition-all duration-500 ease-out shadow-sm hover:shadow-lg
                   /* MOBILE STYLES */
-                  flex flex-row items-center text-left p-5 gap-5 rounded-2xl border border-gray-100
-                  /* DESKTOP STYLES */
-                  md:flex-col md:items-center md:text-center md:p-8 md:shadow-xl 
-                  md:hover:shadow-2xl md:hover:-translate-y-3 
-                  md:border-[3px] md:${item.border} md:${item.shape}
-                  ${index === 1 ? 'md:-translate-y-11 md:hover:-translate-y-14 md:z-10' : 'md:z-0'}
+                  flex flex-row items-center text-left p-4 sm:p-5 gap-4 sm:gap-5 rounded-2xl border border-gray-100
+                  /* TABLET & DESKTOP STYLES */
+                  md:flex-col md:items-center md:text-center md:p-6 lg:p-8 md:shadow-xl 
+                  md:hover:shadow-2xl md:hover:-translate-y-2 lg:hover:-translate-y-3 
+                  md:border-[2px] lg:border-[3px] md:${item.border} md:rounded-2xl lg:${item.shape}
+                  ${index === 1 ? 'lg:-translate-y-4 lg:hover:-translate-y-6 md:z-10' : 'md:z-0'}
                 `}
               >
                 <div className={`hidden md:block absolute inset-0 rounded-[inherit] opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${item.bg.replace('50', '200')}`} />
@@ -111,17 +111,17 @@ export default function CareerPage() {
                 <div className={`
                   shrink-0 flex items-center justify-center relative z-10
                   w-12 h-12 rounded-xl ${item.bg} ${item.text}
-                  md:w-20 md:h-20 md:rounded-full md:shadow-sm md:border md:border-white 
+                  md:w-16 md:h-16 lg:w-20 lg:h-20 md:rounded-full md:shadow-sm md:border md:border-white 
                   md:transition-transform md:duration-500 md:group-hover:scale-110 md:group-hover:rotate-6
                 `}>
-                  <div className="scale-75 md:scale-100">{item.icon}</div>
+                  <div className="scale-75 md:scale-90 lg:scale-100">{item.icon}</div>
                 </div>
 
-                <div className="relative z-10">
-                  <h3 className="font-serif text-lg md:text-2xl font-bold text-gray-900 mb-1 md:mb-3 group-hover:text-evergreen transition-colors">
+                <div className="relative z-10 flex-1">
+                  <h3 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-evergreen transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed md:px-2 font-normal">
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed md:px-1 font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -137,16 +137,16 @@ export default function CareerPage() {
       </section>
 
       {/* ================= CURRENT STATUS SECTION ================= */}
-      <section className="pb-12 px-6 relative">
-        <div className="relative overflow-hidden bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl border-2 border-emerald-100 max-w-6xl mx-auto">
+      <section className="pb-12 px-4 sm:px-6 relative">
+        <div className="relative overflow-hidden bg-white rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-xl border-2 border-emerald-100 max-w-6xl mx-auto">
           
           <div className="absolute inset-0 opacity-70" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-frosted_mint/30 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-frosted_mint/30 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
             
             {/* Left: Text Content */}
-            <div className="p-8 md:p-16 flex flex-col justify-center">
+            <div className="p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-frosted_mint border border-celadon mb-4 w-fit shadow-xs">
                 <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-sea_green">Get Involved</span>
               </div>
@@ -155,21 +155,21 @@ export default function CareerPage() {
                 Be the part of Change
               </h2>
               
-              <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base font-normal">
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm md:text-base font-normal">
                 We currently don&apos;t have any specific job openings available. However, we are always looking for talented individuals who are passionate about rural development.
               </p>
 
-              <div className="flex flex-row items-center gap-2.5 sm:gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 bg-evergreen text-white rounded-full font-bold hover:bg-sea_green transition-all shadow-md text-xs sm:text-sm md:text-base whitespace-nowrap active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-evergreen text-white rounded-full font-bold hover:bg-sea_green transition-all shadow-md text-sm md:text-base active:scale-95 text-center"
                 >
                   <Mail size={16} />
                   <span>Contact Us</span>
                 </Link>
                 <Link
                   href="/volunteers"
-                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 bg-white text-evergreen border border-evergreen/20 rounded-full font-semibold hover:bg-frosted_mint transition-all text-xs sm:text-sm md:text-base whitespace-nowrap active:scale-95 shadow-xs"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-white text-evergreen border border-evergreen/20 rounded-full font-semibold hover:bg-frosted_mint transition-all text-sm md:text-base active:scale-95 shadow-xs text-center"
                 >
                   <Sprout size={16} />
                   <span>Volunteer With Us</span>
@@ -178,20 +178,19 @@ export default function CareerPage() {
             </div>
 
             {/* Right: Visual Area */}
-            <div className="bg-frosted_mint/30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] p-10 md:p-16 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
+            <div className="bg-frosted_mint/30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] p-8 sm:p-10 md:p-16 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
                <div className="text-center space-y-6">
-                  <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto">
+                  <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto">
                      <div className="absolute inset-0 bg-sea_green/20 rounded-full blur-xl animate-pulse" />
-                     <div className="relative bg-white p-8 rounded-full shadow-sm border border-white/50 flex items-center justify-center h-full w-full">
-                        {/* FIX: Used Tailwind classes for responsive sizing instead of unsupported props */}
-                        <Users className="w-[50px] h-[50px] md:w-16 md:h-16 text-pine_teal/50" />
+                     <div className="relative bg-white p-6 sm:p-8 rounded-full shadow-sm border border-white/50 flex items-center justify-center h-full w-full">
+                        <Users className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-pine_teal/50" />
                      </div>
-                     <div className="absolute -top-2 -right-2 bg-white px-3 py-1.5 rounded-lg shadow-md border border-gray-100 text-[10px] font-bold text-evergreen animate-bounce">Join the Tribe</div>
-                     <div className = "absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-lg shadow-md border border-gray-100 text-[10px] font-bold text-sea_green animate-bounce delay-700" > Make Impact </div> 
+                     <div className="absolute -top-2 -right-2 bg-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg shadow-md border border-gray-100 text-[10px] sm:text-xs font-bold text-evergreen animate-bounce">Join the Tribe</div>
+                     <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-md border border-gray-100 text-[10px] sm:text-xs font-bold text-sea_green animate-bounce delay-700">Make Impact</div> 
                   </div>
                   <div>
                      <h3 className="font-bold text-pine_teal text-base md:text-lg">Stay Connected</h3>
-                     <p className="text-sm text-gray-500 mt-1">Follow us for updates.</p>
+                     <p className="text-xs sm:text-sm text-gray-500 mt-1">Follow us for updates.</p>
                   </div>
                </div>
             </div>

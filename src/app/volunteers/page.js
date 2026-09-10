@@ -102,7 +102,7 @@ export default function VolunteerPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-25 md:pt-30">
+      <section className="relative pt-28 md:pt-36">
 
         {/* --- WAVE BACKGROUND --- */}
         <div className="absolute inset-0 z-0">
@@ -117,7 +117,7 @@ export default function VolunteerPage() {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
             <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
@@ -137,12 +137,12 @@ export default function VolunteerPage() {
 
 
       {/* ================= MAIN CONTENT CARD ================= */}
-      <section className="px-2 sm:px-6 pt-6 md:pt-12 pb-6 md:pb-12 relative z-10">
+      <section className="px-3 sm:px-6 pt-6 md:pt-12 pb-6 md:pb-12 relative z-10">
         <div
           className="
-            max-w-[1400px] mx-auto bg-white rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)]
-            p-4 sm:p-5 sm:p-10 
-            grid gap-8 lg:gap-10
+            max-w-[1400px] mx-auto bg-white rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-[0_30px_60px_rgba(0,0,0,0.08)]
+            p-4 sm:p-6 md:p-8 lg:p-10 
+            grid gap-6 sm:gap-8 lg:gap-10
             grid-cols-1
             lg:grid-cols-[1fr_120px_1fr]
           "
@@ -158,40 +158,34 @@ export default function VolunteerPage() {
               to rural development while gaining valuable experience.
             </p>
 
-            <div className="grid grid-cols-2 gap-6 place-items-center">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 w-full">
               {leftRoles.map((role, i) => (
                 <div
                   key={i}
                   className="
                   flex flex-col items-center justify-start
-                  p-3 md:p-4
-                  w-[170px] h-[170px]
-                  md:w-[230px] md:h-[200px]
-                  rounded-[28px]
+                  p-3 sm:p-4 md:p-5
+                  w-full min-h-[145px] sm:min-h-[170px] md:min-h-[200px]
+                  rounded-2xl md:rounded-[28px]
                   bg-[#d8f3dc]
                   text-center
-                  shadow-md
-                  transition-none
-                  md:transition-all md:duration-300
+                  shadow-sm hover:shadow-md
+                  transition-all duration-300
                   md:hover:shadow-xl"
                   onMouseEnter={() => setActiveIndex(i)}
                   onMouseLeave={() => setActiveIndex(null)}
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/60 flex items-center justify-center text-sea_green mb-2 md:mb-4">
-                    <role.icon size={22} />
-                </div>
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-xl bg-white/60 flex items-center justify-center text-sea_green mb-2 md:mb-4 shrink-0">
+                    <role.icon size={20} className="sm:w-[22px] sm:h-[22px]" />
+                  </div>
 
+                  <h4 className="font-bold text-xs sm:text-sm md:text-base mb-1 md:mb-2 text-gray-800 leading-tight">
+                    {role.title}
+                  </h4>
 
-                <h4 className="font-bold text-sm md:text-base mb-1 md:mb-2 text-gray-800">
-                  {role.title}
-                </h4>
-
-
-                <p className="text-xs md:text-sm text-gray-600 px-3 md:px-6 leading-snug md:leading-relaxed">
-                  {role.description}
-                </p>
-
-
+                  <p className="text-[11px] sm:text-xs md:text-sm text-gray-600 px-1 sm:px-2 md:px-4 leading-tight sm:leading-snug md:leading-relaxed">
+                    {role.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -220,7 +214,7 @@ export default function VolunteerPage() {
 
           {/* --- RIGHT SECTION --- */}
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-6 text-left leading-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-4 sm:mb-6 text-left leading-tight">
               Current Volunteer Roles
             </h2>
 
@@ -229,28 +223,26 @@ export default function VolunteerPage() {
                 <div
                   key={i}
                   className="roleCardDetail
-                  w-full
-                  transition-none
-                  md:transition-all md:duration-300
-                  md:hover:shadow-lg"
+                  w-full p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-[24px] bg-[#d8f3dc]/70 border border-emerald-100/60
+                  transition-all duration-300
+                  hover:shadow-lg"
                 >
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-evergreen mb-2">{role.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm sm:text-base leading-relaxed font-normal">{role.description}</p>
-                  <div className="flex flex-nowrap gap-1 sm:gap-2 overflow-hidden">
+                  <h3 className="font-serif text-base sm:text-lg md:text-xl font-bold text-evergreen mb-2">{role.title}</h3>
+                  <p className="text-gray-600 mb-4 text-xs sm:text-sm md:text-base leading-relaxed font-normal">{role.description}</p>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {role.tags.map((tag, j) => (
                       <span
                         key={j}
                         className="
-                          flex items-center justify-center
-                          w-24 h-8 px-1
+                          inline-flex items-center justify-center
+                          px-2.5 py-1
                           text-[10px] sm:text-xs
-                          bg-gray-100 text-gray-600
-                          rounded-md
+                          bg-white/80 text-evergreen border border-emerald-200/50
+                          rounded-lg
                           font-medium
                           whitespace-nowrap
-                          transition-none
-                          md:transition-all md:duration-200
-                          md:hover:bg-sea_green md:hover:text-white
+                          transition-all duration-200
+                          hover:bg-sea_green hover:text-white
                         "
                       >
                         {tag}
@@ -266,22 +258,21 @@ export default function VolunteerPage() {
       </section>
 
       {/* ================= CTA SECTION ================= */}
-      <section className="pb-12 flex justify-center px-2 md:px-6">
-        <div className="ctaContent max-w-[560px] w-full text-center">
+      <section className="pb-12 flex justify-center px-4 md:px-6">
+        <div className="ctaContent max-w-[560px] w-full text-center p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl">
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-3 text-center leading-tight">Ready to Volunteer?</h2>
-          <p className="ctaDescription text-gray-600 mb-6 text-sm sm:text-base font-normal">
+          <p className="ctaDescription text-gray-600 mb-6 text-xs sm:text-sm md:text-base font-normal">
             Upload your resume to get started. We’ll review your application and get in touch.
           </p>
           
           {/* Updated Icon to CloudUpload */}
           <button
             onClick={() => setShowModal(true)}
-            className="ctaButton w-full sm:w-auto bg-evergreen text-white px-8 py-4 rounded-xl hover:bg-sea_green transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 font-bold"
+            className="ctaButton w-full sm:w-auto bg-evergreen text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-sea_green transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2.5 sm:gap-3 font-bold text-sm sm:text-base mx-auto active:scale-95"
           >
             <CloudUpload size={20} />
             Upload Your Resume
           </button>
-
 
         </div>
       </section>

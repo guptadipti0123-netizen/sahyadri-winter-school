@@ -182,7 +182,7 @@ export default function SpeakersSection() {
   );
 
   return (
-    <section className="pb-6 md:px-8 bg-frosted_mint/20 relative overflow-hidden">
+    <section className="pb-8 pt-4 md:px-8 bg-frosted_mint/20 relative overflow-hidden">
       
       {/* Background Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--color-frosted_mint),_transparent_70%)] opacity-50 -z-10" />
@@ -190,23 +190,23 @@ export default function SpeakersSection() {
       <div className="max-w-full mx-auto relative z-10">
         
         {/* HEADER */}
-        <div className="text-center mb-6 md:mb-10 px-4 mt-6">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
+        <div className="text-center mb-6 md:mb-10 px-4 mt-4 sm:mt-6">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
             Voices of <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Change</span>
           </h2>
-          <p className="mt-4 text-pine_teal/80 text-base md:text-lg font-medium max-w-2xl mx-auto text-center">
-                  &quot;Learn from distinguished professionals with decades of experience in governance, social development, and education.&quot;
+          <p className="mt-3 sm:mt-4 text-pine_teal/80 text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto text-center">
+            &quot;Learn from distinguished professionals with decades of experience in governance, social development, and education.&quot;
           </p>
-          
         </div>
 
         {/* --- SLIDER CONTAINER --- */}
         <div className="relative w-full group/slider">
           
-          {/* MAIN SCROLL AREA - Applied Logic from Code 1 */}
+          {/* MAIN SCROLL AREA */}
           <div 
              ref={sliderRef}
-             className="flex overflow-x-auto hide-scrollbar pb-8 md:pb-0"
+             className="flex overflow-x-auto hide-scrollbar pb-6 md:pb-0 touch-pan-x select-none"
+             style={{ WebkitOverflowScrolling: "touch" }}
              onMouseEnter={() => (isPaused.current = true)}
              onMouseLeave={() => (isPaused.current = false)}
              onTouchStart={() => (isPaused.current = true)}
@@ -214,14 +214,14 @@ export default function SpeakersSection() {
           >
             
             {/* Set 1 */}
-            <div className="flex gap-4 md:gap-8 px-2 md:px-4 shrink-0">
+            <div className="flex gap-3 sm:gap-4 md:gap-8 px-2 md:px-4 shrink-0">
               {speakers.map((speaker, index) => (
                 <SpeakerCard key={`a-${index}`} speaker={speaker} />
               ))}
             </div>
 
             {/* Set 2 (Clone for infinite loop) */}
-            <div className="flex gap-4 md:gap-8 px-2 md:px-4 shrink-0">
+            <div className="flex gap-3 sm:gap-4 md:gap-8 px-2 md:px-4 shrink-0">
               {speakers.map((speaker, index) => (
                 <SpeakerCard key={`b-${index}`} speaker={speaker} />
               ))}
@@ -230,8 +230,8 @@ export default function SpeakersSection() {
         </div>
 
         {/* Scroll Hint */}
-        <div className="text-center mt-4 md:mt-8">
-           <span className="text-[10px] font-bold text-pine_teal/30 uppercase tracking-widest animate-pulse border border-pine_teal/10 px-3 py-1 rounded-full">
+        <div className="text-center mt-3 md:mt-8">
+           <span className="text-[10px] font-bold text-pine_teal/40 uppercase tracking-widest animate-pulse border border-pine_teal/10 px-3 py-1 rounded-full">
               Swipe to explore
            </span>
         </div>

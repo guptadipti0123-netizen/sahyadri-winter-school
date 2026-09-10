@@ -56,7 +56,7 @@ export default function MentorsSection() {
   ]
 
   return (
-    <section className="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-b from-frosted_mint/40 via-white to-frosted_mint/20 relative overflow-hidden">
+    <section className="py-10 md:py-16 px-3 sm:px-6 md:px-8 bg-gradient-to-b from-frosted_mint/40 via-white to-frosted_mint/20 relative overflow-hidden">
       {/* Background Blurs */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-sea_green/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-mint_leaf/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
@@ -64,27 +64,27 @@ export default function MentorsSection() {
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* SECTION HEADER */}
-        <div className="text-center mb-10 space-y-2.5">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
+        <div className="text-center mb-8 sm:mb-10 space-y-2">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
             Our <span className="italic text-sea_green">Mentors</span> & Advisory
           </h2>
-          <p className="text-pine_teal/80 text-sm md:text-base font-medium max-w-2xl mx-auto">
+          <p className="text-pine_teal/80 text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
             Distinguished academicians, practitioners, and leaders mentoring our student cohorts.
           </p>
         </div>
 
-        {/* MENTORS GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* MENTORS GRID (2 COLUMNS ON MOBILE, 4 COLUMNS ON DESKTOP) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 xs:gap-3 sm:gap-5">
           {mentors.map((mentor, index) => (
             <div
               key={index}
-              className="group relative bg-white border-2 border-celadon/50 hover:border-sea_green rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group relative bg-white border border-celadon/60 hover:border-sea_green rounded-2xl sm:rounded-3xl p-3 xs:p-3.5 sm:p-5 md:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Top Badge & Avatar */}
-                <div className="flex items-center justify-between gap-3 mb-4">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-2 sm:mb-3.5">
                   {/* Avatar */}
-                  <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-celadon/60 shadow-md group-hover:scale-105 transition-transform duration-300 flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-evergreen to-sea_green text-white">
+                  <div className="relative w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-celadon/60 shadow-xs group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0 bg-gradient-to-br from-evergreen to-sea_green text-white">
                     {mentor.image ? (
                       <Image
                         src={mentor.image}
@@ -93,35 +93,35 @@ export default function MentorsSection() {
                         className="object-cover"
                       />
                     ) : (
-                      <div className="flex items-center justify-center w-full h-full text-lg font-serif font-bold text-white tracking-wider">
+                      <div className="flex items-center justify-center w-full h-full text-xs xs:text-sm sm:text-lg font-serif font-bold text-white tracking-wider">
                         {mentor.initials}
                       </div>
                     )}
                   </div>
 
                   {/* Institution Tag */}
-                  <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${mentor.accent} tracking-wide text-right`}>
+                  <span className={`text-[8.5px] xs:text-[9.5px] sm:text-[10px] font-bold px-2 py-0.5 sm:py-1 rounded-full border ${mentor.accent} tracking-wide self-start xs:self-auto truncate max-w-full xs:max-w-[110px] sm:max-w-none`}>
                     {mentor.tag}
                   </span>
                 </div>
 
                 {/* Name & Role */}
-                <h3 className="font-serif text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
+                <h3 className="font-serif text-xs xs:text-sm sm:text-base md:text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-tight line-clamp-1 sm:line-clamp-none">
                   {mentor.name}
                 </h3>
                 
-                <p className="text-xs font-semibold text-sea_green mt-0.5 mb-2.5">
+                <p className="text-[10px] xs:text-xs font-semibold text-sea_green mt-0.5 mb-1 sm:mb-2 line-clamp-1">
                   {mentor.affiliation}
                 </p>
 
-                <p className="text-xs text-pine_teal/80 leading-relaxed line-clamp-4">
+                <p className="text-[10px] xs:text-[11px] sm:text-xs text-pine_teal/80 leading-snug sm:leading-relaxed line-clamp-3 sm:line-clamp-4">
                   {mentor.description}
                 </p>
               </div>
 
               {/* Bottom Role indicator */}
-              <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-2 text-[11px] font-medium text-pine_teal/70">
-                <UserCheck size={14} className="text-sea_green flex-shrink-0" />
+              <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 flex items-center gap-1.5 sm:gap-2 text-[9.5px] xs:text-[10.5px] sm:text-[11px] font-medium text-pine_teal/70">
+                <UserCheck size={13} className="text-sea_green shrink-0" />
                 <span className="truncate">{mentor.role}</span>
               </div>
             </div>

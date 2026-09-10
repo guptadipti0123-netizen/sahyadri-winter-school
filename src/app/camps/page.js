@@ -97,8 +97,8 @@ export default function CampsHubPage() {
       <section className="px-4 md:px-8 py-10 max-w-6xl mx-auto relative z-10 space-y-8">
         
         {/* UPCOMING FELLOWSHIP HIGHLIGHT CARD */}
-        <div className="bg-gradient-to-br from-evergreen via-sea_green to-dark_emerald text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border-2 border-white/20">
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="bg-gradient-to-br from-evergreen via-sea_green to-dark_emerald text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-xl relative overflow-hidden border-2 border-white/20">
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
             <div className="space-y-3 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-frosted_mint text-xs font-bold uppercase tracking-wider">
                 <span className="w-2 h-2 rounded-full bg-mint_leaf animate-ping" />
@@ -114,7 +114,7 @@ export default function CampsHubPage() {
             <div className="shrink-0 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/register"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm shadow-lg hover:bg-frosted_mint transition-all hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-evergreen font-bold text-xs sm:text-sm shadow-lg hover:bg-frosted_mint transition-all hover:scale-105 active:scale-95"
               >
                 <span>Register for Camp</span>
                 <ArrowRight size={14} />
@@ -124,7 +124,7 @@ export default function CampsHubPage() {
         </div>
 
         {/* PAST CAMPS GRID */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {camps.map((camp) => (
             <div
               key={camp.id}

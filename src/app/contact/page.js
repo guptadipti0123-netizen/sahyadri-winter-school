@@ -19,10 +19,13 @@ export default function ContactPage() {
   const [phoneError, setPhoneError] = useState('');
   const [messageError, setMessageError] = useState('');
 
-  const [isMobile, setIsMobile] = useState(true);
+  const [canSeparate, setCanSeparate] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+      setCanSeparate(window.innerWidth >= 1200);
+    };
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -127,7 +130,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-frosted_mint/20 font-sans overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-25 md:pt-30 pb-6 md:pb-12 overflow-hidden">
+      <section className="relative pt-28 md:pt-36 pb-6 md:pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
             <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
@@ -140,7 +143,7 @@ export default function ContactPage() {
           </svg>
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
             <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
@@ -159,41 +162,41 @@ export default function ContactPage() {
       </section>
 
       {/* 2. CARDS CONTAINER */}
-      <div className="relative w-full max-w-5xl mx-auto h-auto md:h-[540px] perspective z-20 px-4 mb-12 flex flex-col md:block gap-8 md:gap-0">
+      <div className="relative w-full max-w-5xl mx-auto h-auto lg:h-[560px] perspective z-20 px-4 mb-12 flex flex-col lg:block gap-6 sm:gap-8 lg:gap-0">
 
         {/* Left Card - Contact Info */}
         <div
-          className="relative md:absolute left-0 md:left-4 top-0 w-full md:w-1/2 h-auto md:h-full z-30 transition-all duration-700 ease-in-out"
+          className="relative lg:absolute left-0 lg:left-4 top-0 w-full lg:w-1/2 h-auto lg:h-full z-30 transition-all duration-700 ease-in-out"
           style={{
-            transform: isSeparated && !isMobile ? 'translateX(-180px)' : 'translateX(0)',
+            transform: isSeparated && canSeparate ? 'translateX(-120px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-white rounded-3xl md:rounded-r-none p-8 md:p-12 shadow-xl flex flex-col justify-center relative border border-gray-100">
-            <div className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-white rotate-45 z-50" />
+          <div className="h-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-r-none p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl flex flex-col justify-center relative border border-gray-100">
+            <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-white rotate-45 z-50" />
             <div className="relative z-10">
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-3 text-left leading-tight">
                 Let&apos;s get in touch
               </h2>
-              <p className="text-gray-600 mb-8 leading-relaxed text-sm md:text-base font-normal">
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm md:text-base font-normal">
                 Have questions or want to learn more about our programs? We&apos;d love to hear from you.
               </p>
-              <div className="space-y-6 mb-8">
+              <div className="space-y-5 sm:space-y-6 mb-6 sm:mb-8">
                 <div className="flex gap-4 items-start">
-                  <div className="w-11 h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
                     <MapPin className="w-5 h-5 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-1">ADDRESS</p>
+                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-0.5">ADDRESS</p>
                     <p className="text-gray-900 font-medium text-sm md:text-base">Mumbai, Maharashtra 400076</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <div className="w-11 h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
                     <Mail className="w-5 h-5 text-sea_green" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-1">EMAIL</p>
-                    <p className="text-gray-900 font-medium text-sm md:text-base">info@sahyadriruralconnect.org</p>
+                    <p className="text-xs font-bold text-sea_green tracking-wider uppercase mb-0.5">EMAIL</p>
+                    <p className="text-gray-900 font-medium text-sm md:text-base break-all">info@sahyadriruralconnect.org</p>
                   </div>
                 </div>
               </div>
@@ -227,34 +230,34 @@ export default function ContactPage() {
 
         {/* Right Card - Contact Form */}
         <div
-          className="relative md:absolute right-0 md:right-4 top-0 w-full md:w-1/2 h-auto md:h-full z-40 transition-all duration-700 ease-in-out"
+          className="relative lg:absolute right-0 lg:right-4 top-0 w-full lg:w-1/2 h-auto lg:h-full z-40 transition-all duration-700 ease-in-out"
           style={{
-            transform: isSeparated && !isMobile ? 'translateX(180px)' : 'translateX(0)',
+            transform: isSeparated && canSeparate ? 'translateX(120px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-sea_green rounded-3xl md:rounded-l-none p-8 md:p-12 shadow-2xl relative flex flex-col justify-center">
-            <div className="hidden md:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-sea_green rotate-45 z-50" />
+          <div className="h-full bg-sea_green rounded-2xl sm:rounded-3xl lg:rounded-l-none p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl relative flex flex-col justify-center">
+            <div className="hidden lg:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-sea_green rotate-45 z-50" />
             <div className="relative z-10">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-bold text-white mb-2">Email</label>
+                  <label className="block text-xs sm:text-sm font-bold text-white mb-1.5">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className={`w-full px-5 py-4 rounded-xl border
+                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border text-sm sm:text-base
   ${emailError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.email)}
   focus:outline-none focus:border-white transition-all duration-300
 `}
 
                   />
-                  {emailError && <p className="mt-1 text-sm text-red-200 font-medium">{emailError}</p>}
+                  {emailError && <p className="mt-1 text-xs sm:text-sm text-red-200 font-medium">{emailError}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-white mb-2">Phone</label>
+                  <label className="block text-xs sm:text-sm font-bold text-white mb-1.5">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -262,36 +265,36 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="9876543210"
                     required
-                    className={`w-full px-5 py-4 rounded-xl border
-  ${messageError ? 'border-red-400' : 'border-green-400/30'}
-  ${filledBg(formData.message)}
-  focus:outline-none focus:border-white transition-all duration-300 resize-none
+                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border text-sm sm:text-base
+  ${phoneError ? 'border-red-400' : 'border-green-400/30'}
+  ${filledBg(formData.phone)}
+  focus:outline-none focus:border-white transition-all duration-300
 `}
 
                   />
-                  {phoneError && <p className="mt-1 text-sm text-red-200 font-medium">{phoneError}</p>}
+                  {phoneError && <p className="mt-1 text-xs sm:text-sm text-red-200 font-medium">{phoneError}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-white mb-2">Message</label>
+                  <label className="block text-xs sm:text-sm font-bold text-white mb-1.5">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={4}
+                    rows={3}
                     placeholder="Your message..."
-                    className={`w-full px-5 py-4 rounded-xl border
+                    className={`w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border text-sm sm:text-base
   ${messageError ? 'border-red-400' : 'border-green-400/30'}
   ${filledBg(formData.message)}
   focus:outline-none focus:border-white transition-all duration-300 resize-none
 `}
 
                   />
-                  {messageError && <p className="mt-1 text-sm text-red-200 font-medium">{messageError}</p>}
+                  {messageError && <p className="mt-1 text-xs sm:text-sm text-red-200 font-medium">{messageError}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-4 py-3 px-6 rounded-full bg-white text-green-700 font-bold text-base md:text-lg flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300"
+                  className="w-full mt-3 py-3 px-6 rounded-full bg-white text-green-800 font-bold text-sm sm:text-base md:text-lg flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300"
                 >
                   {isSubmitting ? (
                     <>
@@ -300,7 +303,7 @@ export default function ContactPage() {
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                       Send Message
                     </>
                   )}
