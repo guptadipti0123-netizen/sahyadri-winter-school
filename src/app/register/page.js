@@ -172,12 +172,9 @@ export default function RegisterPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#fdfaf3] via-black/25 to-black/50" />
 
-                  {/* Top Badges */}
+                  {/* Top Badge */}
                   <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-sea_green text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
                     Winter Cohort
-                  </div>
-                  <div className="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider">
-                    3rd Edition
                   </div>
 
                   {/* Title on Banner */}
