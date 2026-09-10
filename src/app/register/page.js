@@ -88,75 +88,11 @@ export default function RegisterPage() {
       <section className="relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* DESKTOP SPLIT GRID (lg: 2-Cols) | MOBILE COMPACT FLOW */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+          {/* DESKTOP SPLIT GRID (lg: 2-Cols) | MOBILE FLOW: Template on Top (order-1), Content on Bottom (order-2) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
 
-            {/* --- LEFT / HERO NARRATIVE COLUMN --- */}
-            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5">
-
-              {/* Status Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-celadon shadow-xs backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                <span className="text-[11px] sm:text-xs font-bold text-evergreen tracking-wider uppercase">
-                  Winter Camp 2026 • Registration Open
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="font-extrabold font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-evergreen leading-[1.15] tracking-tight">
-                Sahyadri Winter School <br className="hidden sm:inline" />
-                <span className="text-sea_green italic font-normal">2026 Cohort</span>
-              </h1>
-
-              {/* Description */}
-              <p className="text-sm sm:text-base lg:text-lg text-pine_teal/90 max-w-xl leading-relaxed font-normal">
-                A transformative 5-day grassroots residential fellowship taking university students and researchers to the heart of rural Maharashtra. Experience living soil, tribal self-governance, and sustainable village ecosystems.
-              </p>
-
-              {/* Value / Trust Tags */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#ebdcc6] text-[#2d6a4f] text-xs font-semibold shadow-xs">
-                  <Users className="w-3.5 h-3.5 text-sea_green" />
-                  <span>40-Fellow Cohort</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#ebdcc6] text-[#2d6a4f] text-xs font-semibold shadow-xs">
-                  <MapPin className="w-3.5 h-3.5 text-amber-700" />
-                  <span>Sahyadri Rural Hamlets</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#ebdcc6] text-[#2d6a4f] text-xs font-semibold shadow-xs">
-                  <GraduationCap className="w-3.5 h-3.5 text-evergreen" />
-                  <span>IIT, TISS, IIM Scholars</span>
-                </span>
-              </div>
-
-              {/* Primary Action CTAs (Hidden on mobile here, shown right below poster on mobile) */}
-              <div className="hidden lg:flex flex-row items-center gap-3.5 pt-3">
-                <Link
-                  href="/register/form"
-                  className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-sea_green via-[#2d6a4f] to-dark_emerald text-white font-bold text-base shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-center"
-                >
-                  <span>Register for Camp</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  <span className="absolute inset-0 rounded-full bg-sea_green/20 blur-xl -z-10 group-hover:bg-sea_green/40 transition-colors" />
-                </Link>
-
-                <a
-                  href="#camp-curriculum"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-evergreen border border-celadon font-semibold text-sm shadow-xs hover:bg-frosted_mint/50 transition-all duration-300"
-                >
-                  <BookOpen size={16} />
-                  <span>Explore Curriculum</span>
-                </a>
-              </div>
-
-              <p className="hidden lg:block text-xs text-pine_teal/75 font-medium">
-                *Early registration helps with cohort shortlisting &amp; field logistics.
-              </p>
-
-            </div>
-
-            {/* --- RIGHT / POSTER TEMPLATE SHOWCASE CARD --- */}
-            <div className="lg:col-span-5 flex flex-col items-center justify-center w-full">
+            {/* ================= 1. POSTER TEMPLATE CARD (Top on Mobile, Right on Desktop) ================= */}
+            <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-center w-full">
 
               {/* THE POSTER TEMPLATE CARD */}
               <div className="relative w-full max-w-[360px] xs:max-w-[380px] sm:max-w-[400px] rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(27,67,50,0.16)] border-[3px] border-white bg-[#fdfaf3] text-[#2d241e] font-sans group transition-all duration-500 hover:shadow-[0_28px_60px_rgba(45,106,79,0.24)]">
@@ -277,28 +213,69 @@ export default function RegisterPage() {
 
               </div>
 
-              {/* Mobile CTA Buttons (Directly below Poster Card on mobile) */}
-              <div className="flex lg:hidden flex-col items-stretch gap-2.5 w-full max-w-[360px] xs:max-w-[380px] sm:max-w-[400px] pt-4">
+            </div>
+
+            {/* ================= 2. HERO NARRATIVE CONTENT (Bottom on Mobile, Left on Desktop) ================= */}
+            <div className="order-2 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-5">
+
+              {/* Status Pill Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-celadon shadow-xs backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                <span className="text-[11px] sm:text-xs font-bold text-evergreen tracking-wider uppercase">
+                  Winter Camp 2026 • Registration Open
+                </span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="font-extrabold font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-evergreen leading-[1.15] tracking-tight">
+                Sahyadri Winter School <br className="hidden sm:inline" />
+                <span className="text-sea_green italic font-normal">2026 Cohort</span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-sm sm:text-base lg:text-lg text-pine_teal/90 max-w-xl leading-relaxed font-normal">
+                A transformative 5-day grassroots residential fellowship taking university students and researchers to the heart of rural Maharashtra. Experience living soil, tribal self-governance, and sustainable village ecosystems.
+              </p>
+
+              {/* Value / Trust Tags */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#ebdcc6] text-[#2d6a4f] text-xs font-semibold shadow-xs">
+                  <Users className="w-3.5 h-3.5 text-sea_green" />
+                  <span>40-Fellow Cohort</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#ebdcc6] text-[#2d6a4f] text-xs font-semibold shadow-xs">
+                  <MapPin className="w-3.5 h-3.5 text-amber-700" />
+                  <span>Sahyadri Rural Hamlets</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#ebdcc6] text-[#2d6a4f] text-xs font-semibold shadow-xs">
+                  <GraduationCap className="w-3.5 h-3.5 text-evergreen" />
+                  <span>IIT, TISS, IIM Scholars</span>
+                </span>
+              </div>
+
+              {/* Primary Action CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 pt-2 sm:pt-3 w-full sm:w-auto">
                 <Link
                   href="/register/form"
-                  className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-sea_green via-[#2d6a4f] to-dark_emerald text-white font-bold text-sm shadow-lg active:scale-95 transition-all text-center"
+                  className="group relative inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-3.5 rounded-full bg-gradient-to-r from-sea_green via-[#2d6a4f] to-dark_emerald text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-center"
                 >
                   <span>Register for Winter Camp</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="absolute inset-0 rounded-full bg-sea_green/20 blur-xl -z-10 group-hover:bg-sea_green/40 transition-colors" />
                 </Link>
 
                 <a
                   href="#camp-curriculum"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl bg-white text-evergreen border border-celadon font-semibold text-xs shadow-2xs active:bg-frosted_mint/40 transition-all text-center"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-full bg-white text-evergreen border border-celadon font-semibold text-xs sm:text-sm shadow-xs hover:bg-frosted_mint/50 transition-all duration-300 text-center"
                 >
-                  <BookOpen size={14} />
-                  <span>Explore Camp Blueprint</span>
+                  <BookOpen size={16} />
+                  <span>Explore Curriculum</span>
                 </a>
-
-                <p className="text-[11px] text-pine_teal/75 font-medium text-center">
-                  *Quick 2-minute registration application.
-                </p>
               </div>
+
+              <p className="text-xs text-pine_teal/75 font-medium">
+                *Early registration helps with cohort shortlisting &amp; field logistics.
+              </p>
 
             </div>
 
