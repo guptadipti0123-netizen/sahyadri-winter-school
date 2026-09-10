@@ -133,10 +133,34 @@ export default function Hero() {
     }
   }, [slideCount])
 
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX
+  }
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return
+    const distance = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 45
+    if (distance > minSwipeDistance) {
+      nextSlide()
+    } else if (distance < -minSwipeDistance) {
+      prevSlide()
+    }
+    touchStartX.current = 0
+    touchEndX.current = 0
+  }
+
   const activeSlide = featuredSlides[current]
 
   return (
-    <section className="relative w-full bg-[#fbf8f1] pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-12 px-3 sm:px-6 lg:px-8 font-sans">
+    <section className="relative w-full bg-[#fbf8f1] pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12 px-3 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
         
         {/* --- MAIN 2-COLUMN GRID --- */}
@@ -146,7 +170,12 @@ export default function Hero() {
           {/* LEFT COLUMN: Featured Hero Slider Card (7 cols / ~60%) */}
           {/* ========================================================= */}
           <div className="lg:col-span-7 xl:col-span-8">
-            <div className="relative w-full h-[470px] xs:h-[500px] sm:h-[540px] md:h-[580px] lg:h-[600px] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#ebdcc6] group flex flex-col justify-between select-none">
+            <div 
+              className="relative w-full h-[460px] xs:h-[490px] sm:h-[540px] md:h-[580px] lg:h-[600px] rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#ebdcc6] group flex flex-col justify-between select-none touch-pan-y"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               
               {/* Background Slides */}
               {featuredSlides.map((slide, index) => {

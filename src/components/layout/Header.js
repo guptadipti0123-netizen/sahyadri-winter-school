@@ -183,7 +183,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="font-serif font-bold text-xs sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap truncate max-w-[155px] sm:max-w-none">
+            <span className="font-serif font-bold text-xs xs:text-sm sm:text-base lg:text-xl text-[#1c1917] tracking-tight group-hover:text-[#2d6a4f] transition-colors whitespace-nowrap truncate max-w-[185px] xs:max-w-none">
               Sahyadri Rural Connect
             </span>
           </Link>

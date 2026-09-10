@@ -6,9 +6,16 @@ import Footer from "@/components/layout/Footer"
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora' })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#1b4332',
+}
+
 export const metadata = {
   title: 'Sahyadri Rural Connect',
-  description: 'Understanding Real Bharat',
+  description: 'Understanding Real Bharat - Experiential Learning & Rural Immersion Fellowship',
   icons: {
     icon: [
       { url: '/logo.jpg?v=3', type: 'image/jpeg' },

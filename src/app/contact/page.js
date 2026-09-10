@@ -18,7 +18,7 @@ export default function ContactPage() {
   const [emailError, setEmailError] = useState('');
   const [phoneError, setPhoneError] = useState('');
   const [messageError, setMessageError] = useState('');
-
+  const [isMobile, setIsMobile] = useState(false);
   const [canSeparate, setCanSeparate] = useState(false);
 
   useEffect(() => {

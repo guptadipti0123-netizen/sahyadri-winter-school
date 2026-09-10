@@ -55,7 +55,7 @@ const coreThemes = [
 // --- Institutes  ---
 const institutes = [
   "IIT Bombay", "TISS Mumbai", "IIM Bangalore", 
-  "ILS Law College", "Fergusson Col    lege", "IIPS Mumbai",
+  "ILS Law College", "Fergusson College", "IIPS Mumbai",
   "IGIDR", "SRTMU Nanded", "DES Navalmal Firodia Law", "IGNOU"
 ]
 
