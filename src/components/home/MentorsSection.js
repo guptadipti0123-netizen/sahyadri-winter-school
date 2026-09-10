@@ -74,17 +74,17 @@ export default function MentorsSection() {
         </div>
 
         {/* MENTORS GRID (2 COLUMNS ON MOBILE, 4 COLUMNS ON DESKTOP) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 xs:gap-3 sm:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
           {mentors.map((mentor, index) => (
             <div
               key={index}
-              className="group relative bg-white border border-celadon/60 hover:border-sea_green rounded-2xl sm:rounded-3xl p-3 xs:p-3.5 sm:p-5 md:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group relative bg-white border border-celadon/60 hover:border-sea_green rounded-2xl sm:rounded-3xl p-3.5 xs:p-4.5 sm:p-5 md:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Top Badge & Avatar */}
-                <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-2 sm:mb-3.5">
+                <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-2.5 sm:mb-4">
                   {/* Avatar */}
-                  <div className="relative w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-celadon/60 shadow-xs group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0 bg-gradient-to-br from-evergreen to-sea_green text-white">
+                  <div className="relative w-12 h-12 xs:w-13 xs:h-13 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-celadon/60 shadow-xs group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0 bg-gradient-to-br from-evergreen to-sea_green text-white">
                     {mentor.image ? (
                       <Image
                         src={mentor.image}
@@ -93,35 +93,35 @@ export default function MentorsSection() {
                         className="object-cover"
                       />
                     ) : (
-                      <div className="flex items-center justify-center w-full h-full text-xs xs:text-sm sm:text-lg font-serif font-bold text-white tracking-wider">
+                      <div className="flex items-center justify-center w-full h-full text-sm xs:text-base sm:text-xl font-serif font-bold text-white tracking-wider">
                         {mentor.initials}
                       </div>
                     )}
                   </div>
 
                   {/* Institution Tag */}
-                  <span className={`text-[8.5px] xs:text-[9.5px] sm:text-[10px] font-bold px-2 py-0.5 sm:py-1 rounded-full border ${mentor.accent} tracking-wide self-start xs:self-auto truncate max-w-full xs:max-w-[110px] sm:max-w-none`}>
+                  <span className={`text-[9.5px] xs:text-[10.5px] sm:text-xs font-bold px-2.5 py-0.5 sm:py-1 rounded-full border ${mentor.accent} tracking-wide self-start xs:self-auto truncate max-w-full xs:max-w-[120px] sm:max-w-none`}>
                     {mentor.tag}
                   </span>
                 </div>
 
                 {/* Name & Role */}
-                <h3 className="font-serif text-xs xs:text-sm sm:text-base md:text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-tight line-clamp-1 sm:line-clamp-none">
+                <h3 className="font-serif text-sm xs:text-base sm:text-lg md:text-xl font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
                   {mentor.name}
                 </h3>
                 
-                <p className="text-[10px] xs:text-xs font-semibold text-sea_green mt-0.5 mb-1 sm:mb-2 line-clamp-1">
+                <p className="text-xs xs:text-sm font-semibold text-sea_green mt-0.5 mb-1.5 sm:mb-2">
                   {mentor.affiliation}
                 </p>
 
-                <p className="text-[10px] xs:text-[11px] sm:text-xs text-pine_teal/80 leading-snug sm:leading-relaxed line-clamp-3 sm:line-clamp-4">
+                <p className="text-xs xs:text-[13px] sm:text-sm text-pine_teal/85 leading-relaxed">
                   {mentor.description}
                 </p>
               </div>
 
               {/* Bottom Role indicator */}
-              <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 flex items-center gap-1.5 sm:gap-2 text-[9.5px] xs:text-[10.5px] sm:text-[11px] font-medium text-pine_teal/70">
-                <UserCheck size={13} className="text-sea_green shrink-0" />
+              <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-gray-100 flex items-center gap-1.5 sm:gap-2 text-[10.5px] xs:text-[11.5px] sm:text-xs font-medium text-pine_teal/75">
+                <UserCheck size={14} className="text-sea_green shrink-0" />
                 <span className="truncate">{mentor.role}</span>
               </div>
             </div>
