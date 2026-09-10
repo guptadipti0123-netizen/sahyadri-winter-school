@@ -43,26 +43,26 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-        {/* Main Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-x-6 gap-y-8 mb-8 sm:mb-12">
+        {/* Main Responsive Grid: 2 columns side-by-side on mobile, 12-col layout on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-4 sm:gap-x-6 gap-y-6 sm:gap-y-8 mb-6 sm:mb-12">
 
-          {/* 1. Brand Column */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-4 lg:col-span-3 space-y-3 sm:space-y-4">
-            <h2 className="font-serif text-xl sm:text-2xl text-white tracking-wide drop-shadow-md">Sahyadri Rural Connect</h2>
+          {/* 1. Brand Column (Full width on mobile, 3 cols on desktop) */}
+          <div className="col-span-2 md:col-span-4 lg:col-span-3 space-y-2 sm:space-y-4">
+            <h2 className="font-serif text-lg sm:text-2xl text-white tracking-wide drop-shadow-md">Sahyadri Rural Connect</h2>
             <p className="text-white/80 text-xs sm:text-sm leading-relaxed max-w-sm font-medium">
               Empowering students to understand and contribute to rural development through experiential learning and community partnerships.
             </p>
           </div>
 
-          {/* 2. Quick Links */}
+          {/* 2. Quick Links (Left Col on mobile, 2 cols on desktop) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
-            <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Quick Links</h4>
-            <ul className="space-y-2 sm:space-y-2.5">
+            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Quick Links</h4>
+            <ul className="space-y-1.5 sm:space-y-2.5">
               {quickLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-xs sm:text-sm font-medium"
+                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-mint_leaf shrink-0 hidden sm:inline-block" />
@@ -72,15 +72,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 3. Opportunities */}
+          {/* 3. Opportunities (Right Col on mobile - side-by-side with Quick Links!) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
-            <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Opportunities</h4>
-            <ul className="space-y-2 sm:space-y-2.5">
+            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Opportunities</h4>
+            <ul className="space-y-1.5 sm:space-y-2.5">
               {opportunitiesLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-xs sm:text-sm font-medium"
+                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-mint_leaf shrink-0 hidden sm:inline-block" />
@@ -90,15 +90,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 4. Our Camps */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3">
-            <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Our Camps</h4>
-            <ul className="space-y-2 sm:space-y-2.5">
+          {/* 4. Our Camps (Left Col on mobile - side-by-side with Connect!) */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-3">
+            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Our Camps</h4>
+            <ul className="space-y-1.5 sm:space-y-2.5">
               {campsLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-xs sm:text-sm font-medium"
+                    className="text-white/75 hover:text-white transition-colors flex items-center gap-1 group w-fit text-[11px] sm:text-sm font-medium"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-mint_leaf shrink-0 hidden sm:inline-block" />
@@ -108,22 +108,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 5. Connect */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-2">
-            <h4 className="text-white font-bold mb-3 sm:mb-4 uppercase tracking-wider text-xs border-b border-white/20 pb-1.5 sm:pb-2 inline-block">Connect</h4>
-            <div className="space-y-2.5 sm:space-y-3.5">
-              <a href="mailto:info@sahyadriruralconnect.org" className="flex items-start gap-2 text-white/75 hover:text-white transition-colors text-xs sm:text-sm group font-medium">
-                <Mail size={14} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
+          {/* 5. Connect (Right Col on mobile - side-by-side with Our Camps!) */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <h4 className="text-white font-bold mb-2 sm:mb-4 uppercase tracking-wider text-[11px] sm:text-xs border-b border-white/20 pb-1 sm:pb-2 inline-block">Connect</h4>
+            <div className="space-y-2 sm:space-y-3.5">
+              <a href="mailto:info@sahyadriruralconnect.org" className="flex items-start gap-1.5 text-white/75 hover:text-white transition-colors text-[11px] sm:text-sm group font-medium">
+                <Mail size={13} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
                 <span className="break-all">info@sahyadriruralconnect.org</span>
               </a>
 
-              <div className="flex items-start gap-2 text-white/75 hover:text-white transition-colors text-xs sm:text-sm group font-medium">
-                <MapPin size={14} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
+              <div className="flex items-start gap-1.5 text-white/75 hover:text-white transition-colors text-[11px] sm:text-sm group font-medium">
+                <MapPin size={13} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
                 <span>Mumbai, Maharashtra</span>
               </div>
 
-              <a href="https://www.instagram.com/sahyadriwinterschool" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-white/75 hover:text-white transition-colors text-xs sm:text-sm group font-medium">
-                <Instagram size={14} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
+              <a href="https://www.instagram.com/sahyadriwinterschool" target="_blank" rel="noopener noreferrer" className="flex items-start gap-1.5 text-white/75 hover:text-white transition-colors text-[11px] sm:text-sm group font-medium">
+                <Instagram size={13} className="mt-0.5 group-hover:text-mint_leaf transition-colors shrink-0" />
                 <span>Follow Instagram</span>
               </a>
             </div>
