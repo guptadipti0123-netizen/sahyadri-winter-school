@@ -202,8 +202,8 @@ export default function SpeakersSection() {
                       </p>
                     </div>
 
-                    {/* Portrait Photo of Faculty */}
-                    <div className="relative w-[82%] h-[86%] z-10 flex items-end justify-center">
+                    {/* Portrait Photo of Faculty (Proportionate & Scaled with Breathing Room) */}
+                    <div className="relative w-[68%] sm:w-[65%] h-[75%] sm:h-[72%] z-10 flex items-end justify-center pb-0.5">
                       {speaker.image ? (
                         <div className="relative w-full h-full">
                           <Image
@@ -211,12 +211,12 @@ export default function SpeakersSection() {
                             alt={speaker.name}
                             fill
                             className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-104 transition-transform duration-500"
-                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                            sizes="(max-width: 640px) 40vw, (max-width: 1024px) 35vw, 20vw"
                           />
                         </div>
                       ) : (
-                        <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-4 sm:mb-6 border border-gray-300">
-                          <User size={24} />
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-3 sm:mb-4 border border-gray-300">
+                          <User size={22} />
                         </div>
                       )}
                     </div>
