@@ -16,6 +16,15 @@ export default function AboutPage() {
 
   const heroCamps = [
     {
+      badge: "Jawhar • May 2026",
+      title: "Forest Ecology & Livelihoods",
+      tag: "Summer Edition",
+      caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
+      image: "/floating7.jpeg",
+      href: "/camp-3",
+      duration: "Summer 2026"
+    },
+    {
       badge: "Karjat • Dec 2025",
       title: "Access True Expertise",
       tag: "2nd Edition Camp",
@@ -29,18 +38,9 @@ export default function AboutPage() {
       title: "Where The Journey Began",
       tag: "1st Edition Camp",
       caption: "40 students, tribal hamlets, and immersive grassroots dialogue. Real learning happens outside the four walls of a classroom.",
-      image: "/floating1.jpeg",
+      image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
       href: "/camp-1",
       duration: "Tribal Education"
-    },
-    {
-      badge: "Jawhar • May 2026",
-      title: "Forest Ecology & Livelihoods",
-      tag: "Summer Edition",
-      caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
-      image: "/floating7.jpeg",
-      href: "/summer-school",
-      duration: "Summer 2026"
     }
   ]
 
@@ -58,9 +58,9 @@ export default function AboutPage() {
       edition: "Summer '26",
       badge: "Summer Edition",
       title: "Summer School, Jawhar",
-      location: "Jawhar, Palghar",
+      location: "Jawhar, Maharashtra",
       desc: "Our third camp brought us to Jawhar in the summer, continuing our journey of learning, questioning, and connecting with rural communities.",
-      href: "/summer-school",
+      href: "/camp-3",
       ctaText: "Explore Summer School"
     },
     {
@@ -80,7 +80,7 @@ export default function AboutPage() {
       edition: "1st Edition",
       badge: "Inaugural",
       title: "Winter School, Palghar",
-      location: "Vikramgad, Palghar",
+      location: "Palghar, Maharashtra",
       desc: "Our journey began with our first rural immersion camp in Palghar, bringing students together to step outside the classroom and experience rural realities first hand.",
       href: "/camp-1",
       ctaText: "View 1st Edition"

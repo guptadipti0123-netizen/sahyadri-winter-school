@@ -10,8 +10,8 @@ export default function CampsHubPage() {
     {
       id: "camp-3",
       title: "Sahyadri Summer School",
-      edition: "May 2026 • Summer Edition",
-      location: "Jawhar, Palghar District, Maharashtra",
+      edition: "Summer School (Jawhar - May 2026)",
+      location: "Jawhar, Maharashtra",
       dates: "May 2026",
       status: "Archive / Completed",
       statusBadge: "bg-amber-100 text-amber-800 border-amber-300",
@@ -23,7 +23,7 @@ export default function CampsHubPage() {
     {
       id: "camp-2",
       title: "Sahyadri Winter School",
-      edition: "December 2025 • 2nd Edition",
+      edition: "Winter School (Karjat - December 2025)",
       location: "Kothimbe, Karjat, Maharashtra",
       dates: "Dec 24th - 28th, 2025",
       status: "Archive / Completed",
@@ -36,7 +36,7 @@ export default function CampsHubPage() {
     {
       id: "camp-1",
       title: "Sahyadri Winter School",
-      edition: "January 2025 • Inaugural Cohort",
+      edition: "Winter School (Palghar - January 2025)",
       location: "Palghar, Maharashtra",
       dates: "Jan 09th - 12th, 2025",
       status: "Archive / Completed",

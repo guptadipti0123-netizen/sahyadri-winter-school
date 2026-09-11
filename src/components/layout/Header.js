@@ -29,11 +29,11 @@ export default function Header() {
     setCampsDropdownOpen(false)
   }, [pathname])
 
-  // Camps list
+  // Camps list in chronological order
   const campsList = [
     {
       name: 'Summer School',
-      place: 'Jawhar, Palghar',
+      place: 'Jawhar',
       date: 'May 2026',
       badge: "Summer '26",
       href: '/camp-3'
