@@ -245,118 +245,48 @@ export default function Camp1Page() {
             </p>
           </div>
 
-          {/* --- DESKTOP VIEW: BENTO / EDITORIAL GRID --- */}
-          <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-5 auto-rows-[240px]">
+          {/* --- RESPONSIVE PHOTO GALLERY GRID (ALL 16 PHOTOS VISIBLE ON MOBILE & DESKTOP) --- */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[260px] sm:auto-rows-[280px]">
             {palgharPhotos.map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => setSelectedPhoto(item)}
-                className={`relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer bg-evergreen/10 border-2 border-white ${item.span}`}
+                className={`relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer bg-evergreen/10 border-2 border-white ${
+                  idx === 0 ? "sm:col-span-2 sm:row-span-2 auto-rows-[340px] sm:min-h-[420px]" : ""
+                }`}
               >
                 <Image
                   src={item.src}
                   alt={item.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
 
                 {/* Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
-                {/* Top Tag */}
-                <div className="absolute top-3.5 left-3.5 z-10">
-                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/50 text-frosted_mint backdrop-blur-md border border-white/20">
+                {/* Top Tag Badge */}
+                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/60 text-frosted_mint backdrop-blur-md border border-white/20">
                     {item.tag}
+                  </span>
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/20 text-white backdrop-blur-md border border-white/10">
+                    #{idx + 1}
                   </span>
                 </div>
 
                 {/* Bottom Details */}
                 <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-white transform transition-transform duration-300">
-                  <h3 className="font-serif font-bold text-sm sm:text-lg lg:text-xl leading-tight text-white mb-1 drop-shadow-sm">
+                  <h3 className="font-serif font-bold text-sm sm:text-base lg:text-lg leading-snug text-white mb-1 drop-shadow-sm">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-frosted_mint/90 line-clamp-2 leading-relaxed font-light">
+                  <p className="text-xs text-frosted_mint/90 line-clamp-2 leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* --- MOBILE VIEW: INTERACTIVE SLIDER CARDS --- */}
-          <div 
-            className="md:hidden relative px-1"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {/* Nav Arrows */}
-            <button
-              onClick={handlePrev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center border border-white/30 active:scale-95 transition-transform shadow-md"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={handleNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center border border-white/30 active:scale-95 transition-transform shadow-md"
-              aria-label="Next image"
-            >
-              <ChevronRight size={18} />
-            </button>
-
-            {/* Current Active Slide Card */}
-            <div 
-              className="relative w-full h-[320px] rounded-2xl overflow-hidden shadow-xl border-2 border-white bg-evergreen/10 cursor-pointer"
-              onClick={() => setSelectedPhoto(palgharPhotos[activeSlide])}
-            >
-              <Image
-                src={palgharPhotos[activeSlide].src}
-                alt={palgharPhotos[activeSlide].title}
-                fill
-                className="object-cover"
-                sizes="100vw"
-                priority
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
-
-              {/* Tag */}
-              <div className="absolute top-3 left-3 z-10">
-                <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-black/60 text-frosted_mint backdrop-blur-md border border-white/20">
-                  {palgharPhotos[activeSlide].tag}
-                </span>
-              </div>
-
-              {/* Text */}
-              <div className="absolute bottom-0 inset-x-0 p-4 text-white z-10">
-                <h3 className="font-serif font-bold text-base leading-snug mb-1">
-                  {palgharPhotos[activeSlide].title}
-                </h3>
-                <p className="text-xs text-frosted_mint/90 line-clamp-2 leading-relaxed font-light">
-                  {palgharPhotos[activeSlide].desc}
-                </p>
-              </div>
-            </div>
-
-            {/* Dots */}
-            <div className="flex justify-center items-center gap-1.5 mt-4">
-              {palgharPhotos.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => {
-                    if (timerRef.current) clearInterval(timerRef.current);
-                    setActiveSlide(i);
-                  }}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    activeSlide === i ? "w-6 bg-sea_green" : "w-2 bg-sea_green/30"
-                  }`}
-                  aria-label={`Slide ${i + 1}`}
-                />
-              ))}
-            </div>
           </div>
 
         </div>

@@ -42,7 +42,7 @@ export default function CampsHubPage() {
       status: "Archive / Completed",
       statusBadge: "bg-teal-100 text-teal-800 border-teal-300",
       description: "The beginning of our grassroots journey into rural Bharat. Connecting university scholars with rural livelihoods and community wisdom.",
-      image: "/grassland-hero1.jpg",
+      image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
       href: "/camp-1",
       highlights: ["Inaugural Cohort", "Grassroots Connect", "Visual Photo Archive", "Community Bonding"]
     }
