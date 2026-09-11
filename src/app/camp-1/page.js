@@ -109,6 +109,20 @@ const palgharPhotos = [
     desc: "Learning about seasonal agricultural cycles, fruit orchards, and local livelihoods.",
     tag: "Rural Livelihoods",
     span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-village-temple-community-assembly.jpg",
+    title: "Village Temple Community Assembly",
+    desc: "Engaging with village elders, temple trusts, and grassroots community leaders.",
+    tag: "Cultural Assembly",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-heritage-stone-wada-dusk.png",
+    title: "Traditional Stone Wada Architecture",
+    desc: "Exploring indigenous basalt stone craftsmanship and rural heritage architecture at dusk.",
+    tag: "Heritage Architecture",
+    span: "lg:col-span-1 lg:row-span-1"
   }
 ]
 
