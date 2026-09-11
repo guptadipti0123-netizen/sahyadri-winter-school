@@ -1,131 +1,201 @@
 "use client"
-import React from "react"
+import React, { useState, useRef, useEffect } from "react"
 import Image from "next/image"
-import { Sparkles, GraduationCap, Building2, Lightbulb, Sprout, Award, UserCheck } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function MentorsSection() {
   const mentors = [
     {
-      name: "Omkar Desai",
-      affiliation: "IIT Bombay",
+      name: "Dr. Omkar Desai",
       role: "Grassroots Tech & Innovation Mentor",
-      description: "Mentoring student cohorts in appropriate grassroots technology, rural engineering solutions, and interdisciplinary problem-solving.",
-      tag: "IIT BOMBAY",
-      icon: <GraduationCap size={18} className="text-white" />,
-      color: "from-blue-600 to-indigo-800",
-      accent: "bg-blue-50 text-blue-800 border-blue-200",
+      affiliation: "IIT Bombay",
       image: null,
-      initials: "OD"
+      initials: "OD",
+      circleBg: "bg-[#426a8f]",
+      barColor: "bg-[#b84a2b]"
     },
     {
-      name: "Rakesh Arrawatia",
-      affiliation: "IRMA - SEED",
+      name: "Dr. Rakesh Arrawatia",
       role: "Rural Management & Economics Mentor",
-      description: "Expert in rural management, cooperative governance, and developmental economics, guiding students on sustainable rural enterprise models.",
-      tag: "IRMA - SEED",
-      icon: <Building2 size={18} className="text-white" />,
-      color: "from-emerald-600 to-teal-800",
-      accent: "bg-emerald-50 text-emerald-800 border-emerald-200",
+      affiliation: "IRMA - SEED",
       image: null,
-      initials: "RA"
+      initials: "RA",
+      circleBg: "bg-[#3d6e85]",
+      barColor: "bg-[#b84a2b]"
     },
     {
       name: "Virendra Champanerkar",
-      affiliation: "Pragati Pratishthan",
       role: "CEO & Tribal Empowerment Mentor",
-      description: "Over two decades leading ground-level tribal upliftment, solar water lifting, watershed development, and rural schooling programs in Maharashtra.",
-      tag: "PRAGATI PRATISHTHAN",
-      icon: <Sprout size={18} className="text-white" />,
-      color: "from-amber-600 to-orange-800",
-      accent: "bg-amber-50 text-amber-800 border-amber-200",
+      affiliation: "Pragati Pratishthan",
       image: "/Virendra Champanerkar.png",
-      initials: "VC"
+      initials: "VC",
+      circleBg: "bg-[#4a729e]",
+      barColor: "bg-[#b84a2b]"
     },
     {
       name: "Chirag Rawat",
-      affiliation: "Entrepreneur",
       role: "Social Enterprise & Clean Tech Mentor",
-      description: "Pioneering decentralized solar initiatives, sustainable livelihood ecosystems, and community-led green technology for rural clusters.",
-      tag: "ENTREPRENEUR",
-      icon: <Lightbulb size={18} className="text-white" />,
-      color: "from-teal-600 to-emerald-800",
-      accent: "bg-teal-50 text-teal-800 border-teal-200",
+      affiliation: "Entrepreneur",
       image: null,
-      initials: "CR"
+      initials: "CR",
+      circleBg: "bg-[#39637c]",
+      barColor: "bg-[#b84a2b]"
     }
   ]
 
-  return (
-    <section className="py-10 md:py-16 px-3 sm:px-6 md:px-8 bg-gradient-to-b from-frosted_mint/40 via-white to-frosted_mint/20 relative overflow-hidden">
-      {/* Background Blurs */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-sea_green/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-mint_leaf/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+  const [activePage, setActivePage] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
+  const handlePrev = () => {
+    setActivePage((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
+  const handleNext = () => {
+    setActivePage((prev) => (prev < 1 ? prev + 1 : 1));
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 40) handleNext();
+    else if (distance < -40) handlePrev();
+    touchStartX.current = 0;
+    touchEndX.current = 0;
+  };
+
+  return (
+    <section className="py-12 sm:py-16 px-3 sm:px-6 md:px-8 bg-gradient-to-b from-[#f8f6f0]/60 via-white to-[#f8f6f0]/40 relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* SECTION HEADER */}
-        <div className="text-center mb-8 sm:mb-10 space-y-2">
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-            Our <span className="italic text-sea_green">Mentors</span> & Advisory
+        <div className="text-center mb-8 sm:mb-12 space-y-2">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#1b4332] tracking-tight">
+            Our <span className="italic text-[#2d6a4f]">Mentors</span> &amp; Advisory
           </h2>
-          <p className="text-pine_teal/80 text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
-            Distinguished academicians, practitioners, and leaders mentoring our student cohorts.
+          <p className="text-[#2d6a4f]/80 text-xs sm:text-sm md:text-base font-medium max-w-xl mx-auto">
+            Distinguished academicians, practitioners, and grassroots leaders guiding our fellows.
           </p>
         </div>
 
-        {/* MENTORS GRID (2 COLUMNS ON MOBILE, 4 COLUMNS ON DESKTOP) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
-          {mentors.map((mentor, index) => (
-            <div
-              key={index}
-              className="group relative bg-white border border-celadon/60 hover:border-sea_green rounded-2xl sm:rounded-3xl p-3.5 xs:p-4.5 sm:p-5 md:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                {/* Top Badge & Avatar */}
-                <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2 mb-2.5 sm:mb-4">
-                  {/* Avatar */}
-                  <div className="relative w-12 h-12 xs:w-13 xs:h-13 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-celadon/60 shadow-xs group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0 bg-gradient-to-br from-evergreen to-sea_green text-white">
+        {/* CAROUSEL WRAPPER WITH SIDE ARROWS */}
+        <div 
+          className="relative px-2 sm:px-8"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Left Arrow Button */}
+          <button
+            onClick={handlePrev}
+            aria-label="Previous Mentors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed hidden sm:flex"
+            disabled={activePage === 0}
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          {/* Right Arrow Button */}
+          <button
+            onClick={handleNext}
+            aria-label="Next Mentors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed hidden sm:flex"
+            disabled={activePage === 1}
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          {/* MENTORS 4-COL GRID */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 items-start">
+            {mentors.map((mentor, index) => (
+              <div
+                key={index}
+                className="group flex flex-col transition-all duration-300"
+              >
+                {/* 1. ARTISTIC CIRCULAR PORTRAIT CONTAINER */}
+                <div className="relative w-36 h-36 xs:w-40 xs:h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 mx-auto mb-3 sm:mb-4 flex items-center justify-center select-none">
+                  
+                  {/* Top-Right 2 Vertical Terracotta Accent Stripes */}
+                  <div className="absolute top-1 sm:top-2 right-4 sm:right-6 md:right-7 flex gap-1.5 z-0 pointer-events-none">
+                    <span className="w-1.5 sm:w-2 h-10 sm:h-14 bg-[#b84a2b] rounded-xs" />
+                    <span className="w-1.5 sm:w-2 h-14 sm:h-18 bg-[#b84a2b] rounded-xs" />
+                  </div>
+
+                  {/* Circular Graphic Disc */}
+                  <div className={`relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full ${mentor.circleBg} overflow-hidden flex items-end justify-center shadow-lg border-2 border-white group-hover:scale-105 transition-transform duration-500 z-10`}>
+                    
+                    {/* Left 3 Horizontal White Stripes */}
+                    <div className="absolute left-2 sm:left-2.5 top-9 sm:top-11 flex flex-col gap-1.5 z-10 pointer-events-none">
+                      <span className="w-7 sm:w-8 md:w-9 h-[2px] sm:h-[2.5px] bg-white/90 rounded-full" />
+                      <span className="w-5 sm:w-6 md:w-7 h-[2px] sm:h-[2.5px] bg-white/90 rounded-full" />
+                      <span className="w-4 sm:w-5 md:w-6 h-[2px] sm:h-[2.5px] bg-white/90 rounded-full" />
+                    </div>
+
+                    {/* Portrait Image or Stylized Monogram */}
                     {mentor.image ? (
-                      <Image
-                        src={mentor.image}
-                        alt={mentor.name}
-                        fill
-                        className="object-cover"
-                      />
+                      <div className="relative w-full h-[94%] z-20">
+                        <Image
+                          src={mentor.image}
+                          alt={mentor.name}
+                          fill
+                          className="object-cover object-top filter contrast-[1.05]"
+                        />
+                      </div>
                     ) : (
-                      <div className="flex items-center justify-center w-full h-full text-sm xs:text-base sm:text-xl font-serif font-bold text-white tracking-wider">
-                        {mentor.initials}
+                      <div className="relative w-full h-full z-20 flex flex-col items-center justify-center bg-gradient-to-t from-black/25 via-transparent to-transparent">
+                        {/* Elegant Initial Monogram */}
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/15 backdrop-blur-xs flex items-center justify-center border border-white/30 shadow-inner">
+                          <span className="font-serif font-bold text-xl sm:text-2xl text-white tracking-widest drop-shadow-sm">
+                            {mentor.initials}
+                          </span>
+                        </div>
                       </div>
                     )}
                   </div>
 
-                  {/* Institution Tag */}
-                  <span className={`text-[9.5px] xs:text-[10.5px] sm:text-xs font-bold px-2.5 py-0.5 sm:py-1 rounded-full border ${mentor.accent} tracking-wide self-start xs:self-auto truncate max-w-full xs:max-w-[120px] sm:max-w-none`}>
-                    {mentor.tag}
-                  </span>
                 </div>
 
-                {/* Name & Role */}
-                <h3 className="font-serif text-sm xs:text-base sm:text-lg md:text-xl font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
-                  {mentor.name}
-                </h3>
-                
-                <p className="text-xs xs:text-sm font-semibold text-sea_green mt-0.5 mb-1.5 sm:mb-2">
-                  {mentor.affiliation}
-                </p>
+                {/* 2. TYPOGRAPHY CONTENT BELOW PORTRAIT */}
+                <div className="text-left px-1 sm:px-2 space-y-0.5 sm:space-y-1">
+                  <h3 className="font-serif font-bold text-sm sm:text-base md:text-[17px] text-[#1c1917] leading-tight group-hover:text-[#2d6a4f] transition-colors">
+                    {mentor.name}
+                  </h3>
+                  
+                  <p className="text-xs sm:text-[13px] text-gray-700 font-medium leading-snug">
+                    {mentor.role}
+                  </p>
 
-                <p className="text-xs xs:text-[13px] sm:text-sm text-pine_teal/85 leading-relaxed">
-                  {mentor.description}
-                </p>
-              </div>
+                  <p className="text-[11px] sm:text-xs text-gray-500 font-normal leading-snug">
+                    {mentor.affiliation}
+                  </p>
+                </div>
 
-              {/* Bottom Role indicator */}
-              <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-gray-100 flex items-center gap-1.5 sm:gap-2 text-[10.5px] xs:text-[11.5px] sm:text-xs font-medium text-pine_teal/75">
-                <UserCheck size={14} className="text-sea_green shrink-0" />
-                <span className="truncate">{mentor.role}</span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* DOTS PAGINATION */}
+          <div className="flex justify-center items-center gap-2 mt-8 sm:mt-10">
+            <button
+              onClick={() => setActivePage(0)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activePage === 0 ? "bg-[#2d6a4f] scale-125" : "bg-gray-300 hover:bg-gray-400"}`}
+              aria-label="Page 1"
+            />
+            <button
+              onClick={() => setActivePage(1)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activePage === 1 ? "bg-[#2d6a4f] scale-125" : "bg-gray-300 hover:bg-gray-400"}`}
+              aria-label="Page 2"
+            />
+          </div>
+
         </div>
 
       </div>
