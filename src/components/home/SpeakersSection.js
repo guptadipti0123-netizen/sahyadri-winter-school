@@ -54,8 +54,7 @@ export default function SpeakersSection() {
 
   useEffect(() => {
     const updateItems = () => {
-      if (window.innerWidth < 640) setItemsPerView(1)
-      else if (window.innerWidth < 1024) setItemsPerView(2)
+      if (window.innerWidth < 1024) setItemsPerView(2)
       else setItemsPerView(4)
     }
     updateItems()
@@ -87,29 +86,29 @@ export default function SpeakersSection() {
   const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return
     const distance = touchStartX.current - touchEndX.current
-    if (distance > 40) handleNext()
-    else if (distance < -40) handlePrev()
+    if (distance > 30) handleNext()
+    else if (distance < -30) handlePrev()
     touchStartX.current = 0
     touchEndX.current = 0
   }
 
   return (
-    <section className="py-14 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#fcfbf7] border-t border-[#ebdcc6]/60 relative overflow-hidden">
+    <section className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#fcfbf7] border-t border-[#ebdcc6]/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* ================= 1. SECTION HEADER (Clean Institutional Typography) ================= */}
-        <div className="text-center mb-10 sm:mb-14 space-y-2">
-          <h2 className="font-sans font-extrabold text-xl xs:text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-wider uppercase">
+        <div className="text-center mb-8 sm:mb-14 space-y-2">
+          <h2 className="font-sans font-extrabold text-lg xs:text-xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-wider uppercase">
             VOICES OF CHANGE: <span className="font-serif italic font-normal text-[#2d6a4f] capitalize">Faculty &amp; Mentors</span>
           </h2>
-          <p className="text-gray-600 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed px-2">
             Learn from distinguished professionals with decades of experience in governance, social development, and education.
           </p>
         </div>
 
         {/* ================= 2. CAROUSEL WRAPPER WITH NAVIGATION ================= */}
         <div 
-          className="relative px-1 sm:px-10"
+          className="relative px-0.5 sm:px-10"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -137,7 +136,7 @@ export default function SpeakersSection() {
           {/* Cards Slider / Grid View */}
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-500 ease-out gap-4 sm:gap-6"
+              className="flex transition-transform duration-500 ease-out gap-3 sm:gap-4 md:gap-6"
               style={{
                 transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`
               }}
@@ -145,37 +144,37 @@ export default function SpeakersSection() {
               {speakers.map((speaker, index) => (
                 <div
                   key={index}
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 flex flex-col group cursor-pointer"
+                  className="w-[calc(50%-6px)] sm:w-[calc(50%-8px)] lg:w-[calc(25%-18px)] flex-shrink-0 flex flex-col group cursor-pointer"
                 >
                   
                   {/* --- TOP: ARTISTIC HERITAGE PARCHMENT CARD --- */}
-                  <div className="relative w-full aspect-[4/4.3] rounded-sm bg-[#f6f2e9] border border-[#e5dec9] overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 flex items-end justify-center select-none">
+                  <div className="relative w-full aspect-[4/4.3] rounded-xs bg-[#f6f2e9] border border-[#e5dec9] overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 flex items-end justify-center select-none">
                     
                     {/* Subtle Ruled Lines Texture */}
                     <div 
                       className="absolute inset-0 pointer-events-none opacity-40"
                       style={{
-                        backgroundImage: "repeating-linear-gradient(to bottom, transparent, transparent 23px, #e2d7c3 24px)"
+                        backgroundImage: "repeating-linear-gradient(to bottom, transparent, transparent 18px, #e2d7c3 19px)"
                       }}
                     />
 
                     {/* Left Vertical Accent Stitch Line */}
-                    <div className="absolute top-0 bottom-0 left-3 w-[2px] bg-[#cbb898] opacity-60 pointer-events-none" />
+                    <div className="absolute top-0 bottom-0 left-2 sm:left-3 w-[1.5px] sm:w-[2px] bg-[#cbb898] opacity-60 pointer-events-none" />
 
                     {/* Left Mandala Watermark Seal */}
-                    <div className="absolute top-12 left-1.5 w-6 h-6 rounded-full border border-[#cbb898] flex items-center justify-center opacity-40 pointer-events-none">
-                      <div className="w-3 h-3 rounded-full border border-[#cbb898]" />
+                    <div className="absolute top-8 sm:top-12 left-1 sm:left-1.5 w-4 h-4 sm:w-6 sm:h-6 rounded-full border border-[#cbb898] flex items-center justify-center opacity-40 pointer-events-none">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full border border-[#cbb898]" />
                     </div>
 
                     {/* Faint Sanskrit Calligraphy Watermark */}
-                    <div className="absolute top-3 left-7 right-3 text-left pointer-events-none select-none opacity-25">
-                      <p className="font-serif text-[10px] leading-[14px] text-[#4a3f35]">
+                    <div className="absolute top-2 sm:top-3 left-4 sm:left-7 right-2 sm:right-3 text-left pointer-events-none select-none opacity-25">
+                      <p className="font-serif text-[8px] sm:text-[10px] leading-[11px] sm:leading-[14px] text-[#4a3f35]">
                         आचार्यात् पादमादत्ते<br />
                         पादं शिष्यः स्वमेधया ।<br />
                         पादं सब्रह्मचारिभ्यः<br />
                         पादं कालक्रमेण च ॥
                       </p>
-                      <p className="text-[8px] leading-[11px] text-[#5c4e43] mt-2 font-serif italic">
+                      <p className="text-[6.5px] sm:text-[8px] leading-[9px] sm:leading-[11px] text-[#5c4e43] mt-1 sm:mt-2 font-serif italic hidden xs:block">
                         From the teacher, one learns a quarter.<br />
                         A quarter from one&apos;s own study.<br />
                         A quarter from peers and companions.<br />
@@ -184,7 +183,7 @@ export default function SpeakersSection() {
                     </div>
 
                     {/* Portrait Photo of Faculty */}
-                    <div className="relative w-[78%] h-[84%] z-10 flex items-end justify-center">
+                    <div className="relative w-[82%] h-[86%] z-10 flex items-end justify-center">
                       {speaker.image ? (
                         <div className="relative w-full h-full">
                           <Image
@@ -192,12 +191,12 @@ export default function SpeakersSection() {
                             alt={speaker.name}
                             fill
                             className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-104 transition-transform duration-500"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                           />
                         </div>
                       ) : (
-                        <div className="w-20 h-20 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-6 border border-gray-300">
-                          <User size={32} />
+                        <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-4 sm:mb-6 border border-gray-300">
+                          <User size={24} />
                         </div>
                       )}
                     </div>
@@ -205,16 +204,16 @@ export default function SpeakersSection() {
                   </div>
 
                   {/* --- BOTTOM: CLEAN EDITORIAL TYPOGRAPHY --- */}
-                  <div className="text-left pt-3.5 pb-1 space-y-1">
-                    <h3 className="font-sans font-bold text-base sm:text-[17px] text-[#1c1917] leading-tight group-hover:text-[#2d6a4f] transition-colors">
+                  <div className="text-left pt-2.5 sm:pt-3.5 pb-1 space-y-0.5 sm:space-y-1">
+                    <h3 className="font-sans font-bold text-xs xs:text-sm sm:text-base md:text-[17px] text-[#1c1917] leading-tight group-hover:text-[#2d6a4f] transition-colors">
                       {speaker.name}
                     </h3>
                     
-                    <p className="text-xs sm:text-[13px] text-gray-700 font-medium leading-snug">
+                    <p className="text-[11px] sm:text-xs md:text-[13px] text-gray-700 font-medium leading-snug">
                       {speaker.title}
                     </p>
 
-                    <p className="text-[11px] sm:text-xs text-gray-500 font-normal leading-snug line-clamp-2">
+                    <p className="text-[10px] sm:text-[11px] md:text-xs text-gray-500 font-normal leading-snug line-clamp-2">
                       {speaker.role}
                     </p>
                   </div>
@@ -225,13 +224,13 @@ export default function SpeakersSection() {
           </div>
 
           {/* ================= 3. PAGINATION DOTS ================= */}
-          <div className="flex justify-center items-center gap-2 mt-8 sm:mt-10">
+          <div className="flex justify-center items-center gap-1.5 sm:gap-2 mt-6 sm:mt-10">
             {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx ? "bg-[#2d6a4f] w-5 sm:w-6" : "bg-gray-300 hover:bg-gray-400"
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentIndex === idx ? "bg-[#2d6a4f] w-5 sm:w-6" : "w-2 sm:w-2.5 bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Slide ${idx + 1}`}
               />
