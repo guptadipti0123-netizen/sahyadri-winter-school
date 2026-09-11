@@ -168,7 +168,7 @@ export default function SpeakersSection() {
                 >
                   
                   {/* --- TOP: ARTISTIC HERITAGE PARCHMENT CARD --- */}
-                  <div className="relative w-full aspect-[4/4.3] rounded-xs bg-[#f6f2e9] border border-[#e5dec9] overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 flex items-end justify-center select-none">
+                  <div className="relative w-full aspect-[4/3.8] rounded-xs bg-[#f6f2e9] border border-[#e5dec9] overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 flex items-end justify-center select-none">
                     
                     {/* Subtle Ruled Lines Texture */}
                     <div 
@@ -182,19 +182,19 @@ export default function SpeakersSection() {
                     <div className="absolute top-0 bottom-0 left-2 sm:left-3 w-[1.5px] sm:w-[2px] bg-[#cbb898] opacity-60 pointer-events-none" />
 
                     {/* Left Mandala Watermark Seal */}
-                    <div className="absolute top-8 sm:top-12 left-1 sm:left-1.5 w-4 h-4 sm:w-6 sm:h-6 rounded-full border border-[#cbb898] flex items-center justify-center opacity-40 pointer-events-none">
+                    <div className="absolute top-6 sm:top-10 left-1 sm:left-1.5 w-4 h-4 sm:w-6 sm:h-6 rounded-full border border-[#cbb898] flex items-center justify-center opacity-40 pointer-events-none">
                       <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full border border-[#cbb898]" />
                     </div>
 
                     {/* Faint Sanskrit Calligraphy Watermark */}
-                    <div className="absolute top-2 sm:top-3 left-4 sm:left-7 right-2 sm:right-3 text-left pointer-events-none select-none opacity-25">
-                      <p className="font-serif text-[8px] sm:text-[10px] leading-[11px] sm:leading-[14px] text-[#4a3f35]">
+                    <div className="absolute top-2 sm:top-3 left-4 sm:left-7 right-2 sm:right-3 text-left pointer-events-none select-none opacity-30">
+                      <p className="font-serif text-[8px] sm:text-[9.5px] leading-[11px] sm:leading-[13px] text-[#4a3f35]">
                         आचार्यात् पादमादत्ते<br />
                         पादं शिष्यः स्वमेधया ।<br />
                         पादं सब्रह्मचारिभ्यः<br />
                         पादं कालक्रमेण च ॥
                       </p>
-                      <p className="text-[6.5px] sm:text-[8px] leading-[9px] sm:leading-[11px] text-[#5c4e43] mt-1 sm:mt-2 font-serif italic hidden xs:block">
+                      <p className="text-[6.5px] sm:text-[7.5px] leading-[9px] sm:leading-[10px] text-[#5c4e43] mt-1 sm:mt-1.5 font-serif italic hidden xs:block">
                         From the teacher, one learns a quarter.<br />
                         A quarter from one&apos;s own study.<br />
                         A quarter from peers and companions.<br />
@@ -202,21 +202,21 @@ export default function SpeakersSection() {
                       </p>
                     </div>
 
-                    {/* Portrait Photo of Faculty (Proportionate & Scaled with Breathing Room) */}
-                    <div className="relative w-[68%] sm:w-[65%] h-[75%] sm:h-[72%] z-10 flex items-end justify-center pb-0.5">
+                    {/* Portrait Photo of Faculty (Compact & Distinctly Sized) */}
+                    <div className="relative w-[48%] sm:w-[45%] h-[58%] sm:h-[55%] z-10 flex items-end justify-center pb-0">
                       {speaker.image ? (
                         <div className="relative w-full h-full">
                           <Image
                             src={speaker.image}
                             alt={speaker.name}
                             fill
-                            className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-104 transition-transform duration-500"
-                            sizes="(max-width: 640px) 40vw, (max-width: 1024px) 35vw, 20vw"
+                            className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
+                            sizes="(max-width: 640px) 30vw, (max-width: 1024px) 25vw, 15vw"
                           />
                         </div>
                       ) : (
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-3 sm:mb-4 border border-gray-300">
-                          <User size={22} />
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-2 sm:mb-3 border border-gray-300">
+                          <User size={18} />
                         </div>
                       )}
                     </div>
