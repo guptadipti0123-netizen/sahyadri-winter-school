@@ -20,6 +20,34 @@ const palgharPhotos = [
     span: "lg:col-span-2 lg:row-span-2"
   },
   {
+    src: "/palghar/palghar-solar-pump-valley-field.jpg",
+    title: "Solar Lift Irrigation Demonstration",
+    desc: "Hands-on field learning about solar-powered lift irrigation in hilly tribal terrain.",
+    tag: "Clean Tech & Irrigation",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-solar-panels-valley-view.jpg",
+    title: "Valley Micro-Grid & Renewable Energy",
+    desc: "Understanding decentralized solar infrastructure supporting rural agricultural clusters.",
+    tag: "Renewable Energy",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-irrigation-filter-demo.jpg",
+    title: "Micro-Irrigation & Water Filtration Tech",
+    desc: "Field demonstration of pressurized drip filtration and efficient water management systems.",
+    tag: "Water Engineering",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-fort-stone-steps-cohort.jpg",
+    title: "Heritage Fort Exploration",
+    desc: "Fellows gathering on historic fort bastions during sunset field excursions.",
+    tag: "Heritage & Trekking",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
     src: "/palghar/palghar-mango-orchard-community.jpg",
     title: "Grassroots Dialogue with Farming Families",
     desc: "Student fellows engaging with local village farmers in Palghar mango orchards.",
