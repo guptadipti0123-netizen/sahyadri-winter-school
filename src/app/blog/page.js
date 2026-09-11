@@ -10,38 +10,39 @@ export default function BlogHubPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#fcfbf7]">
 
-      {/* ================= 1. HERO SECTION WITH GROUP PHOTO BACKGROUND ================= */}
-      <section className="relative pt-36 sm:pt-44 pb-20 sm:pb-28 overflow-hidden flex items-center justify-center min-h-[420px] sm:min-h-[480px]">
-        {/* Background Image */}
+      {/* ================= 1. HERO SECTION WITH NATURAL PHOTO BACKGROUND (NO BLACK SHADE) ================= */}
+      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden flex items-center justify-center min-h-[440px] sm:min-h-[500px]">
+        {/* Natural Background Image (No black shade) */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/camp2/camp2-day1-i4.jpg"
             alt="Sahyadri Rural Connect Cohort at Karjat Camp"
             fill
             priority
-            className="object-cover object-center filter brightness-[0.85] contrast-[1.05]"
+            className="object-cover object-center"
           />
-          {/* Rich Dark Forest & Vignette Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#081c15]/85 via-[#1b4332]/75 to-[#081c15]/90" />
-          <div className="absolute inset-0 bg-black/25" />
+          {/* Subtle soft light gradient for top navbar visibility and bottom transition only */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-[#fcfbf7]/90" />
         </div>
 
-        {/* Hero Content */}
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-4 sm:space-y-5">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 shadow-lg backdrop-blur-md">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <p className="text-xs sm:text-sm font-bold text-white tracking-widest uppercase">
-              Dispatches from the Ground
+        {/* Hero Content inside Frosted Card */}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+          <div className="bg-white/90 sm:bg-white/92 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-white/80 shadow-xl text-center space-y-3 sm:space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 shadow-xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
+              <p className="text-xs sm:text-xs font-bold text-[#1b4332] tracking-wider uppercase">
+                Dispatches from the Ground
+              </p>
+            </div>
+
+            <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl text-[#1c1917] leading-tight">
+              Stories from <span className="text-[#2d6a4f] italic font-normal">Real Bharat</span>
+            </h1>
+
+            <p className="text-xs sm:text-sm md:text-base text-gray-700 max-w-xl mx-auto font-normal leading-relaxed">
+              Deep-dives, field diaries, student presentations, and voices from our grassroots immersion cohorts.
             </p>
           </div>
-
-          <h1 className="font-extrabold font-serif text-3xl sm:text-5xl md:text-6xl text-white leading-tight drop-shadow-md">
-            Stories from <span className="text-[#74c69d] italic font-normal">Real Bharat</span>
-          </h1>
-
-          <p className="text-sm sm:text-base md:text-lg text-emerald-100/90 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-sm">
-            Deep-dives, field diaries, student presentations, and voices from our grassroots immersion cohorts.
-          </p>
         </div>
       </section>
 
