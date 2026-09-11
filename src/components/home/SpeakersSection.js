@@ -51,11 +51,14 @@ export default function SpeakersSection() {
 
   const [itemsPerView, setItemsPerView] = useState(4)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
     const updateItems = () => {
-      if (window.innerWidth < 1024) setItemsPerView(2)
-      else setItemsPerView(4)
+      if (typeof window !== "undefined") {
+        if (window.innerWidth < 1024) setItemsPerView(2)
+        else setItemsPerView(4)
+      }
     }
     updateItems()
     window.addEventListener("resize", updateItems)
@@ -64,18 +67,29 @@ export default function SpeakersSection() {
 
   const maxIndex = Math.max(0, speakers.length - itemsPerView)
 
+  // Auto-scroll automation right-to-left every 3 seconds
+  useEffect(() => {
+    if (isPaused || maxIndex <= 0) return
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+    }, 3000)
+
+    return () => clearInterval(timer)
+  }, [isPaused, maxIndex])
+
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0))
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex))
   }
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : maxIndex))
+    setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0))
   }
 
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
 
   const handleTouchStart = (e) => {
+    setIsPaused(true)
     touchStartX.current = e.targetTouches[0].clientX
   }
 
@@ -84,16 +98,24 @@ export default function SpeakersSection() {
   }
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return
+    if (!touchStartX.current || !touchEndX.current) {
+      setTimeout(() => setIsPaused(false), 2500)
+      return
+    }
     const distance = touchStartX.current - touchEndX.current
     if (distance > 30) handleNext()
     else if (distance < -30) handlePrev()
     touchStartX.current = 0
     touchEndX.current = 0
+    setTimeout(() => setIsPaused(false), 2500)
   }
 
   return (
-    <section className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#fcfbf7] border-t border-[#ebdcc6]/60 relative overflow-hidden">
+    <section 
+      className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#fcfbf7] border-t border-[#ebdcc6]/60 relative overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* ================= 1. SECTION HEADER (Clean Institutional Typography) ================= */}
@@ -106,7 +128,7 @@ export default function SpeakersSection() {
           </p>
         </div>
 
-        {/* ================= 2. CAROUSEL WRAPPER WITH NAVIGATION ================= */}
+        {/* ================= 2. CAROUSEL WRAPPER WITH AUTOMATED SCROLL ================= */}
         <div 
           className="relative px-0.5 sm:px-10"
           onTouchStart={handleTouchStart}
@@ -117,8 +139,7 @@ export default function SpeakersSection() {
           <button
             onClick={handlePrev}
             aria-label="Previous Faculty"
-            disabled={currentIndex === 0}
-            className="absolute left-0 sm:left-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-20 disabled:cursor-not-allowed hidden sm:flex"
+            className="absolute left-0 sm:left-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer hidden sm:flex"
           >
             <ChevronLeft size={20} />
           </button>
@@ -127,8 +148,7 @@ export default function SpeakersSection() {
           <button
             onClick={handleNext}
             aria-label="Next Faculty"
-            disabled={currentIndex >= maxIndex}
-            className="absolute right-0 sm:right-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-20 disabled:cursor-not-allowed hidden sm:flex"
+            className="absolute right-0 sm:right-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer hidden sm:flex"
           >
             <ChevronRight size={20} />
           </button>
@@ -136,7 +156,7 @@ export default function SpeakersSection() {
           {/* Cards Slider / Grid View */}
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-500 ease-out gap-3 sm:gap-4 md:gap-6"
+              className="flex transition-transform duration-700 ease-in-out gap-3 sm:gap-4 md:gap-6"
               style={{
                 transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`
               }}
