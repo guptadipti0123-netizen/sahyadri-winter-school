@@ -281,8 +281,7 @@ export default function SummerSchoolJawharPage() {
         <div className="bg-white rounded-3xl p-6 md:p-10 border border-celadon/50 shadow-sm relative overflow-hidden">
           
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
-              <Sparkles size={14} />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-frosted_mint/50 border border-celadon text-sea_green text-xs font-bold uppercase tracking-wider">
               <span>Why Jawhar?</span>
             </div>
 
