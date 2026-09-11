@@ -11,84 +11,72 @@ const campDetails = {
   location: "Palghar, Maharashtra"
 }
 
-const galleryImages = [
-  "/sahyadri-1.jpg", "/floating1.jpeg", "/floating2.jpeg",
-  "/floating4.jpeg", "/sahyadri-2.jpeg", "/floating8.jpeg",
-  "/floating3.jpeg", "/sahyadri-3.jpg", "/floating6.jpeg",
-  "/floating11.jpeg", "/sahyadri-6.jpg", "/floating5.jpeg",
-  "/sahyadri-5.jpg", "/floating10.jpeg", "/sahyadri-7.jpg",
-  "/floating9.jpeg", "/sahyadri-8.jpg", "/grassland-hero1.jpg",
+const palgharPhotos = [
+  {
+    src: "/palghar/palghar-mango-orchard-community.jpg",
+    title: "Grassroots Dialogue with Farming Families",
+    desc: "Student fellows engaging with local village farmers in Palghar mango orchards.",
+    tag: "Orchard Immersion",
+    span: "lg:col-span-2 lg:row-span-2"
+  },
+  {
+    src: "/palghar/palghar-traditional-community-meal.jpg",
+    title: "Communal Dining in Village Hamlet",
+    desc: "Sharing authentic, home-cooked Maharashtrian meals on traditional floor mats.",
+    tag: "Cultural Lived Experience",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-village-children-fellows.jpg",
+    title: "Learning with Village Youth",
+    desc: "Interacting with rural schoolchildren, understanding village education & everyday aspirations.",
+    tag: "Youth & Education",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-viewpoint-fellows-scooter.jpg",
+    title: "Sahyadri Ridge Explorations",
+    desc: "Fellows exploring scenic vantage points across the Western Ghats terrain.",
+    tag: "Field Expeditions",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-mango-harvest-fellows.jpg",
+    title: "Local Produce & Agro-Ecology",
+    desc: "Learning about seasonal agricultural cycles, fruit orchards, and local livelihoods.",
+    tag: "Rural Livelihoods",
+    span: "lg:col-span-1 lg:row-span-1"
+  }
 ]
 
-// --- SLIDER BLOCK COMPONENT ---
-const AutoSlideBlock = ({ images, currentIndex }) => {
-  return (
-    <div className="relative w-full h-40 md:h-56 rounded-xl overflow-hidden shadow-sm border border-white/50 group select-none">
-      {/* Sliding Track */}
-      <div
-        className="flex w-full h-full transition-transform duration-700 ease-in-out will-change-transform"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {images.map((src, i) => (
-          <div key={i} className="relative w-full h-full flex-shrink-0">
-            <Image
-              src={src}
-              alt="Camp memory"
-              fill
-              className="object-cover pointer-events-none" // Prevent image drag interfering with swipe
-              sizes="(max-width: 768px) 50vw, 33vw"
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
 export default function Camp1Page() {
-
-  // --- STATE ---
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
   const timerRef = useRef(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // --- TIMER LOGIC ---
-  const startTimer = () => {
-    // Clear any existing timer first to avoid duplicates
-    if (timerRef.current) clearInterval(timerRef.current);
-
-    timerRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % 4);
-    }, 4000);
-  };
-
+  // Auto-slide for mobile view
   useEffect(() => {
-    startTimer();
-    // Cleanup on unmount
+    timerRef.current = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % palgharPhotos.length);
+    }, 4500);
+
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
   }, []);
 
-  // --- MANUAL NAVIGATION HANDLERS ---
-  const handleManualChange = (direction) => {
-    // 1. Stop auto-slide temporarily
+  const handleNext = () => {
     if (timerRef.current) clearInterval(timerRef.current);
-
-    // 2. Change Slide
-    setCurrentIndex((prev) => {
-      if (direction === 'next') return (prev + 1) % 4;
-      if (direction === 'prev') return (prev - 1 + 4) % 4; // +4 ensures positive modulo
-      return prev;
-    });
-
-    // 3. Restart auto-slide
-    startTimer();
+    setActiveSlide((prev) => (prev + 1) % palgharPhotos.length);
   };
 
-  // --- SWIPE HANDLERS ---
+  const handlePrev = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setActiveSlide((prev) => (prev - 1 + palgharPhotos.length) % palgharPhotos.length);
+  };
+
   const handleTouchStart = (e) => {
     touchStartX.current = e.targetTouches[0].clientX;
   };
@@ -99,32 +87,18 @@ export default function Camp1Page() {
 
   const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return;
-
     const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50;
-
-    if (distance > minSwipeDistance) {
-      handleManualChange('next'); // Swiped Left -> Next
-    } else if (distance < -minSwipeDistance) {
-      handleManualChange('prev'); // Swiped Right -> Prev
-    }
-
-    // Reset
+    if (distance > 40) handleNext();
+    else if (distance < -40) handlePrev();
     touchStartX.current = 0;
     touchEndX.current = 0;
   };
-
-  // --- DATA SPLITTING ---
-  const sliderChunks = [];
-  for (let i = 0; i < galleryImages.length; i += 4) {
-    sliderChunks.push(galleryImages.slice(i, i + 4));
-  }
 
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-10 overflow-hidden">
         {/* --- WAVE BACKGROUND --- */}
         <div className="absolute inset-0 z-0">
           <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
@@ -140,7 +114,7 @@ export default function Camp1Page() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-evergreen space-y-4 sm:space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-evergreen/30 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
               <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">{campDetails.edition}</p>
             </div>
@@ -151,110 +125,158 @@ export default function Camp1Page() {
             </div>
 
             <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 border-l-2 border-sea_green pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
-
           </div>
+          
+          {/* Polaroid Hero Card */}
           <div className="relative z-10 flex justify-center">
-            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[440px] h-[270px] xs:h-[300px] md:h-[380px] bg-white p-3 pb-10 sm:pb-12 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-sm">
-              <div className="relative w-full h-full overflow-hidden bg-gray-200">
-                <Image src="/grassland-hero1.jpg" alt="Winter Camp Jan 2025 Memories" fill className="object-cover" />
+            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[270px] xs:h-[300px] md:h-[360px] bg-white p-3 pb-10 sm:pb-12 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-sm cursor-pointer"
+              onClick={() => setSelectedPhoto(palgharPhotos[0])}
+            >
+              <div className="relative w-full h-full overflow-hidden bg-gray-100 rounded-xs">
+                <Image 
+                  src="/palghar/palghar-mango-orchard-community.jpg" 
+                  alt="Winter Camp Palghar Jan 2025" 
+                  fill 
+                  className="object-cover"
+                  priority
+                />
               </div>
-              <div className="absolute bottom-3 sm:bottom-4 left-0 w-full text-center">
-                <span className="font-serif text-evergreen/90 text-base sm:text-lg font-bold">Where It Began</span>
+              <div className="absolute bottom-3 sm:bottom-4 left-0 w-full text-center px-2">
+                <span className="font-serif text-evergreen font-bold text-sm sm:text-base">Palghar Inaugural Cohort • Jan 2025</span>
               </div>
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-10 sm:h-12 bg-white/30 backdrop-blur-sm transform -rotate-2 shadow-sm border border-white/40"></div>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-8 bg-white/40 backdrop-blur-sm transform -rotate-2 shadow-xs border border-white/50"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= 2. CAMP GALLERY ================= */}
-      <section className="py-12 px-3 sm:px-6 bg-frosted_mint/50 relative overflow-hidden">
+      {/* ================= 2. PALGHAR PHOTO GALLERY ================= */}
+      <section className="py-10 sm:py-16 px-3 sm:px-6 bg-frosted_mint/40 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
 
-          {/* Header */}
-          <div className="text-center mb-8 space-y-2.5 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-white border border-celadon shadow-sm text-sea_green text-[10px] font-bold tracking-widest uppercase mb-1">
-              <Camera size={12} className="md:w-3.5 md:h-3.5" />
-              <span>Visual Archive</span>
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1">
+              <Camera size={13} className="text-sea_green" />
+              <span>Palghar Visual Archive</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-              Moments from the <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Start</span>
+              Memories from <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Palghar</span>
             </h2>
-            <p className="text-pine_teal/80 text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto">
-              &quot;Capturing the spirit of our very first rural connect cohort.&quot;
+            <p className="text-pine_teal/80 text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
+              Real field moments capturing community dialogues, village immersion, and our inaugural cohort fellows.
             </p>
           </div>
 
-          {/* --- LAYOUT 1: DESKTOP ONLY (Large Screens) --- */}
-          <div className="hidden lg:grid grid-cols-4 gap-4 auto-rows-[200px]">
-            {galleryImages.map((src, i) => (
+          {/* --- DESKTOP VIEW: BENTO / EDITORIAL GRID --- */}
+          <div className="hidden md:grid grid-cols-3 gap-4 lg:gap-5 auto-rows-[240px]">
+            {palgharPhotos.map((item, idx) => (
               <div
-                key={i}
-                className={`
-                      relative rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500
-                      ${i % 5 === 0 ? "col-span-2 row-span-2" : ""}
-                      ${i % 7 === 0 ? "row-span-2" : ""}
-                    `}
+                key={idx}
+                onClick={() => setSelectedPhoto(item)}
+                className={`relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer bg-evergreen/10 border-2 border-white ${item.span}`}
               >
                 <Image
-                  src={src}
-                  alt={`Winter Camp Jan 2025 Memory ${i + 1}`}
+                  src={item.src}
+                  alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 50vw, 33vw"
                 />
+
+                {/* Gradient Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+
+                {/* Top Tag */}
+                <div className="absolute top-3.5 left-3.5 z-10">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/50 text-frosted_mint backdrop-blur-md border border-white/20">
+                    {item.tag}
+                  </span>
+                </div>
+
+                {/* Bottom Details */}
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-white transform transition-transform duration-300">
+                  <h3 className="font-serif font-bold text-sm sm:text-lg lg:text-xl leading-tight text-white mb-1 drop-shadow-sm">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-frosted_mint/90 line-clamp-2 leading-relaxed font-light">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* --- LAYOUT 2: MOBILE & TABLET (2 Cols) --- */}
-          {/* WRAPPER: Handles Touch Events */}
-          <div
-            className="relative lg:hidden group/mobile-gallery px-1"
+          {/* --- MOBILE VIEW: INTERACTIVE SLIDER CARDS --- */}
+          <div 
+            className="md:hidden relative px-1"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* BUTTON STYLES: Inset safely */}
+            {/* Nav Arrows */}
             <button
-              onClick={() => handleManualChange('prev')}
-              className="absolute left-1 top-1/2 -translate-y-full z-20 p-2 bg-black/30 backdrop-blur-md rounded-full border border-white/30 text-white shadow-lg active:scale-95 transition-all hover:bg-black/50"
-              aria-label="Previous Photos"
+              onClick={handlePrev}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center border border-white/30 active:scale-95 transition-transform shadow-md"
+              aria-label="Previous image"
             >
               <ChevronLeft size={18} />
             </button>
-
             <button
-              onClick={() => handleManualChange('next')}
-              className="absolute right-1 top-1/2 -translate-y-full z-20 p-2 bg-black/30 backdrop-blur-md rounded-full border border-white/30 text-white shadow-lg active:scale-95 transition-all hover:bg-black/50"
-              aria-label="Next Photos"
+              onClick={handleNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center border border-white/30 active:scale-95 transition-transform shadow-md"
+              aria-label="Next image"
             >
               <ChevronRight size={18} />
             </button>
 
-            {/* Grid Content */}
-            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-              {sliderChunks.slice(0, 4).map((chunk, i) => (
-                <AutoSlideBlock
-                  key={i}
-                  images={chunk}
-                  currentIndex={currentIndex}
-                />
-              ))}
+            {/* Current Active Slide Card */}
+            <div 
+              className="relative w-full h-[320px] rounded-2xl overflow-hidden shadow-xl border-2 border-white bg-evergreen/10 cursor-pointer"
+              onClick={() => setSelectedPhoto(palgharPhotos[activeSlide])}
+            >
+              <Image
+                src={palgharPhotos[activeSlide].src}
+                alt={palgharPhotos[activeSlide].title}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+
+              {/* Tag */}
+              <div className="absolute top-3 left-3 z-10">
+                <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-black/60 text-frosted_mint backdrop-blur-md border border-white/20">
+                  {palgharPhotos[activeSlide].tag}
+                </span>
+              </div>
+
+              {/* Text */}
+              <div className="absolute bottom-0 inset-x-0 p-4 text-white z-10">
+                <h3 className="font-serif font-bold text-base leading-snug mb-1">
+                  {palgharPhotos[activeSlide].title}
+                </h3>
+                <p className="text-xs text-frosted_mint/90 line-clamp-2 leading-relaxed font-light">
+                  {palgharPhotos[activeSlide].desc}
+                </p>
+              </div>
             </div>
 
-            {/* Dots Indicator */}
-            <div className="flex justify-center gap-2 mt-5 sm:mt-6">
-              {[0, 1, 2, 3].map((idx) => (
+            {/* Dots */}
+            <div className="flex justify-center items-center gap-1.5 mt-4">
+              {palgharPhotos.map((_, i) => (
                 <button
-                  key={idx}
+                  key={i}
                   onClick={() => {
                     if (timerRef.current) clearInterval(timerRef.current);
-                    setCurrentIndex(idx);
-                    startTimer();
+                    setActiveSlide(i);
                   }}
-                  className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? "w-6 bg-sea_green" : "w-2 bg-sea_green/30"
-                    }`}
-                  aria-label={`Slide ${idx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeSlide === i ? "w-6 bg-sea_green" : "w-2 bg-sea_green/30"
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
                 />
               ))}
             </div>
@@ -262,6 +284,53 @@ export default function Camp1Page() {
 
         </div>
       </section>
+
+      {/* ================= 3. LIGHTBOX MODAL ================= */}
+      {selectedPhoto && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div 
+            className="relative max-w-4xl w-full max-h-[90vh] bg-[#1b4332] rounded-2xl overflow-hidden border border-white/20 shadow-2xl flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedPhoto(null)}
+              className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 transition-colors cursor-pointer border border-white/30"
+            >
+              ✕
+            </button>
+
+            {/* Photo Container */}
+            <div className="relative w-full h-[360px] sm:h-[480px] md:h-[540px] bg-black">
+              <Image
+                src={selectedPhoto.src}
+                alt={selectedPhoto.title}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {/* Details */}
+            <div className="p-4 sm:p-5 bg-evergreen text-white">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-sea_green text-white">
+                  {selectedPhoto.tag}
+                </span>
+              </div>
+              <h3 className="font-serif font-bold text-base sm:text-xl text-white">
+                {selectedPhoto.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-frosted_mint/85 mt-0.5">
+                {selectedPhoto.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </main>
   )
