@@ -13,11 +13,46 @@ const campDetails = {
 
 const palgharPhotos = [
   {
+    src: "/palghar/palghar-cohort-memorial-courtyard.jpg",
+    title: "Palghar Inaugural Cohort Group",
+    desc: "The complete student fellowship cohort and organizers at the campus memorial courtyard.",
+    tag: "Cohort Assembly",
+    span: "lg:col-span-2 lg:row-span-2"
+  },
+  {
     src: "/palghar/palghar-mango-orchard-community.jpg",
     title: "Grassroots Dialogue with Farming Families",
     desc: "Student fellows engaging with local village farmers in Palghar mango orchards.",
     tag: "Orchard Immersion",
-    span: "lg:col-span-2 lg:row-span-2"
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-classroom-reflection-session.jpg",
+    title: "Peer Learning & Cohort Reflections",
+    desc: "Interactive discussion and debrief sessions synthesizing daily grassroots field insights.",
+    tag: "Cohort Reflection",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-community-tree-dialogue.jpg",
+    title: "Village Tree Assembly & Dialogue",
+    desc: "Conversations with village elders and farmers under the community tree shade.",
+    tag: "Village Assembly",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-tribal-household-mangoes.jpg",
+    title: "Tribal Household & Family Immersion",
+    desc: "Fellows connecting with local village families and understanding rural livelihoods.",
+    tag: "Community Connect",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-village-street-interaction.jpg",
+    title: "Village Walk & Elder Interactions",
+    desc: "Walking through village hamlets and engaging with local community leaders.",
+    tag: "Hamlet Walk",
+    span: "lg:col-span-1 lg:row-span-1"
   },
   {
     src: "/palghar/palghar-traditional-community-meal.jpg",
