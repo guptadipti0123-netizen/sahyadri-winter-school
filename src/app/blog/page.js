@@ -2,138 +2,76 @@ import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { blogsData } from "@/data/blogsData"
-import { Calendar, Clock, ArrowRight, Sparkles } from "lucide-react"
+import { Calendar, Clock, ArrowRight } from "lucide-react"
 
 export default function BlogHubPage() {
-  // Hero Featured Blog (First blog)
-  const heroBlog = blogsData[0]
   const allBlogs = blogsData
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
+    <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#fcfbf7]">
 
-      {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-10 md:pb-14 overflow-hidden">
-        {/* Wave Background */}
+      {/* ================= 1. HERO SECTION WITH GROUP PHOTO BACKGROUND ================= */}
+      <section className="relative pt-36 sm:pt-44 pb-20 sm:pb-28 overflow-hidden flex items-center justify-center min-h-[420px] sm:min-h-[480px]">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
-            <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 700" className="absolute -top-[300px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
-            <path fill="#40916C" fillOpacity="0.8" d="M0,460 C220,540 420,360 660,440 C900,500 1120,580 1320,500 C1400,460 1440,440 1440,420 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 600" className="absolute -top-[180px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
-            <path fill="#d8f3dc" fillOpacity="0.65" d="M0,380 C260,430 460,320 700,380 C940,420 1140,470 1340,410 C1400,380 1440,360 1440,340 L1440,0 L0,0 Z" />
-          </svg>
+          <Image
+            src="/camp2/camp2-day1-i4.jpg"
+            alt="Sahyadri Rural Connect Cohort at Karjat Camp"
+            fill
+            priority
+            className="object-cover object-center filter brightness-[0.85] contrast-[1.05]"
+          />
+          {/* Rich Dark Forest & Vignette Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#081c15]/85 via-[#1b4332]/75 to-[#081c15]/90" />
+          <div className="absolute inset-0 bg-black/25" />
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-celadon shadow-sm backdrop-blur-md">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
+        {/* Hero Content */}
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-4 sm:space-y-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 shadow-lg backdrop-blur-md">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+            <p className="text-xs sm:text-sm font-bold text-white tracking-widest uppercase">
               Dispatches from the Ground
             </p>
           </div>
-          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-6xl text-evergreen leading-tight drop-shadow-sm">
-            Stories from <span className="text-sea_green italic">Real Bharat</span>
+
+          <h1 className="font-extrabold font-serif text-3xl sm:text-5xl md:text-6xl text-white leading-tight drop-shadow-md">
+            Stories from <span className="text-[#74c69d] italic font-normal">Real Bharat</span>
           </h1>
 
-          <p className="text-base md:text-lg text-pine_teal/90 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-emerald-100/90 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow-sm">
             Deep-dives, field diaries, student presentations, and voices from our grassroots immersion cohorts.
           </p>
         </div>
       </section>
 
-      {/* ================= 2. FIELD STORIES & ARTICLES ================= */}
-      <section className="px-4 md:px-8 pb-16 max-w-6xl mx-auto relative z-10 space-y-8">
+      {/* ================= 2. ALL ARTICLES GRID ================= */}
+      <section className="px-4 sm:px-6 md:px-8 py-12 sm:py-16 max-w-7xl mx-auto relative z-10 space-y-8 sm:space-y-10">
         
         {/* Section Header */}
-        <div className="space-y-1">
-          <span className="text-xs font-bold uppercase tracking-widest text-sea_green">
+        <div className="space-y-1.5 border-b border-[#e5dec9] pb-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#2d6a4f]">
             FIELD DISPATCHES
           </span>
-          <h3 className="font-serif text-2xl md:text-3xl font-bold text-evergreen">
-            Stories & Cohort Notes
-          </h3>
-          <p className="text-xs sm:text-sm text-pine_teal/80 font-medium">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#1c1917]">
+            Stories &amp; Cohort Notes
+          </h2>
+          <p className="text-xs sm:text-sm text-gray-600 font-medium">
             Read detailed journals, case studies, and field observations written across our cohorts.
           </p>
         </div>
 
-        {/* Featured Story Card */}
-        <div className="bg-white rounded-3xl border-2 border-celadon/60 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 grid lg:grid-cols-12 gap-0">
-          
-          {/* Image */}
-          <div className="lg:col-span-6 relative h-64 lg:h-auto min-h-[300px] bg-gray-100">
-            <Image
-              src={heroBlog.heroImage || heroBlog.image}
-              alt={heroBlog.title}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute top-4 left-4 px-3 py-1 bg-sea_green text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-sm">
-              Featured Story
-            </div>
-          </div>
-
-          {/* Text Content */}
-          <div className="lg:col-span-6 p-6 md:p-10 flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-xs text-pine_teal/80 font-semibold">
-                <span className="text-sea_green font-bold uppercase">{heroBlog.category}</span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Calendar size={13} />
-                  {heroBlog.date}
-                </span>
-                <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Clock size={13} />
-                  {heroBlog.readTime}
-                </span>
-              </div>
-
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-evergreen hover:text-sea_green transition-colors leading-snug">
-                <Link href={`/blog/${heroBlog.slug}`}>{heroBlog.title}</Link>
-              </h2>
-
-              <p className="text-xs font-semibold text-pine_teal/70 italic">
-                {heroBlog.subtitle}
-              </p>
-
-              <p className="text-pine_teal text-sm leading-relaxed line-clamp-3">
-                {heroBlog.excerpt}
-              </p>
-            </div>
-
-            <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span className="text-xs font-medium text-pine_teal/70">
-                By {heroBlog.author}
-              </span>
-              <Link
-                href={`/blog/${heroBlog.slug}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-sea_green to-dark_emerald text-white text-xs md:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all whitespace-nowrap shrink-0 w-fit"
-              >
-                <span>Read Full Story</span>
-                <ArrowRight size={15} />
-              </Link>
-            </div>
-          </div>
-
-        </div>
-
         {/* All Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {allBlogs.map((blog) => (
             <Link
               key={blog.slug}
               href={`/blog/${blog.slug}`}
-              className="group bg-white rounded-3xl overflow-hidden border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-2xl overflow-hidden border border-[#ebdcc6] hover:border-[#2d6a4f]/60 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Image */}
-                <div className="relative h-48 w-full bg-gray-100 overflow-hidden">
+                {/* Card Thumbnail */}
+                <div className="relative h-52 w-full bg-gray-100 overflow-hidden">
                   <Image
                     src={blog.image}
                     alt={blog.title}
@@ -145,35 +83,36 @@ export default function BlogHubPage() {
                   </div>
                 </div>
 
-                {/* Body */}
-                <div className="p-5 space-y-2.5">
-                  <div className="flex items-center gap-3 text-[11px] text-pine_teal/70 font-medium">
+                {/* Card Content */}
+                <div className="p-5 sm:p-6 space-y-3">
+                  <div className="flex items-center gap-3 text-[11px] sm:text-xs text-gray-500 font-medium">
                     <span className="flex items-center gap-1">
-                      <Calendar size={12} />
+                      <Calendar size={13} />
                       {blog.date}
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1">
-                      <Clock size={12} />
+                      <Clock size={13} />
                       {blog.readTime}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1c1917] group-hover:text-[#2d6a4f] transition-colors leading-snug">
                     {blog.title}
                   </h3>
 
-                  <p className="text-xs text-pine_teal/80 leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
                     {blog.excerpt}
                   </p>
                 </div>
               </div>
 
-              <div className="p-5 pt-0 flex items-center justify-between border-t border-gray-50 mt-2">
-                <span className="text-[11px] text-pine_teal/60 font-medium">{blog.edition}</span>
-                <div className="flex items-center gap-1 text-xs font-bold text-sea_green group-hover:text-dark_emerald">
-                  <span>Read</span>
-                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+              {/* Card Footer */}
+              <div className="p-5 sm:p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-2">
+                <span className="text-[11px] sm:text-xs text-gray-500 font-medium">{blog.edition}</span>
+                <div className="flex items-center gap-1 text-xs sm:text-sm font-bold text-[#2d6a4f] group-hover:text-[#1b4332]">
+                  <span>Read Story</span>
+                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </Link>
