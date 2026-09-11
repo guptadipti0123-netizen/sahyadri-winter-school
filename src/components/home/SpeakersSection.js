@@ -1,268 +1,246 @@
 "use client"
-import React, { useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { 
-  Quote, 
-  Sparkles, 
-  User, 
-  Briefcase, 
-  ShieldCheck, 
-  Users, 
-  GraduationCap, 
-  HeartHandshake 
-} from "lucide-react"
+import { ChevronLeft, ChevronRight, User } from "lucide-react"
 
 export default function SpeakersSection() {
   const speakers = [
     {
-      name: "Kedar Joshi",
-      title: "Industry Expert",
-      role: "Development Sector",
-      description: "Actively involved in GRA (Group Rural Activities, IIT Bombay). To understand North East, volunteered for 3 years during Swami Birth Centenary of Swami Vivekanand in Maharashtra and North East India.",
-      image: "/Kedar Joshi.png",
-      tag: "M.TECH IIT BOMBAY",
-    },
-    {
       name: "V Giriraj",
       title: "IAS Officer (Retired)",
-      role: "Additional Chief Secretary of Maharashtra",
-      description: "Distinguished Indian Administrative Service officer who retired as Additional Chief Secretary of Maharashtra. Held key positions including Chairman of 5th State Finance Commission, and more.",
+      role: "Former Additional Chief Secretary of Maharashtra & Chairman, 5th State Finance Commission",
       image: "/Giriraj.png",
-      tag: "IAS OFFICER",
-    },
-    {
-      name: "Varsha Parchure",
-      title: "Program Implementation Lead",
-      role: "CEQUE",
-      description: "Over 17 years in social sector focusing on women's and children's rights. Extensive work on children's education for underserved tribal communities, led Kheiwadi project in Palghar for academic and life skills.",
-      image: "/Varsha Parchure.png",
-      tag: "PROGRAM LEAD",
-    },
-    {
-      name: "Kiran Limaye",
-      title: "Assistant Professor",
-      role: "Gokhale Institute of Politics and Economics, Pune",
-      description: "Works with Centre for Excellence in Entrepreneurship and Development, overseeing research agenda. Founder of SAJAG, organization working in early age education.",
-      image: "/Kiran Limaye.png",
-      tag: "PROFESSOR",
+      tag: "GOVERNANCE & POLICY"
     },
     {
       name: "Surabhi Gajbhiye",
       title: "Program Director",
-      role: "SAAD NGO",
-      description: "Surabhi has over a decade of experience in rural development, disaster risk reduction, child safety, mental health, climate change, and sustainable development. Former child safety specialist at SEEDS India.",
+      role: "SAAD NGO, Rural Development & Child Safety Specialist",
       image: "/Surabhi Gajbhiye.png",
-      tag: "PROGRAM DIRECTOR",
+      tag: "COMMUNITY RESILIENCE"
+    },
+    {
+      name: "Kiran Limaye",
+      title: "Assistant Professor",
+      role: "Gokhale Institute of Politics and Economics, Pune & Founder SAJAG",
+      image: "/Kiran Limaye.png",
+      tag: "ECONOMICS & EDUCATION"
+    },
+    {
+      name: "Varsha Parchure",
+      title: "Program Implementation Lead",
+      role: "CEQUE, Tribal Education & Women's Empowerment (Palghar)",
+      image: "/Varsha Parchure.png",
+      tag: "TRIBAL EDUCATION"
     },
     {
       name: "Virendra Champanerkar",
       title: "CEO",
-      role: "Pragati Pratishthan",
-      description: "Leads impactful initiatives uplifting tribal communities through education, water conservation, agriculture, and skill development. Implemented solar-powered irrigation and livelihood programs.",
+      role: "Pragati Pratishthan, Tribal Empowerment & Clean Tech",
       image: "/Virendra Champanerkar.png",
-      tag: "CEO",
+      tag: "TRIBAL LIVELIHOODS"
     },
+    {
+      name: "Kedar Joshi",
+      title: "Industry Expert & Social Mentor",
+      role: "Development Sector & Group Rural Activities (IIT Bombay)",
+      image: "/Kedar Joshi.png",
+      tag: "GRASSROOTS TECH"
+    }
   ]
 
-  /* ---------------- AUTO SCROLL LOGIC ---------------- */
-  const sliderRef = useRef(null)
-  const isPaused = useRef(false)
+  const [itemsPerView, setItemsPerView] = useState(4)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    const slider = sliderRef.current
-    if (!slider) return
-
-    let rafId
-    const speed = 0.5
-
-    const animate = () => {
-      if (!isPaused.current) {
-        slider.scrollLeft += speed
-        // Infinite loop logic: reset to 0 when halfway
-        if (slider.scrollLeft >= slider.scrollWidth / 2) {
-          slider.scrollLeft = 0
-        }
-      }
-      rafId = requestAnimationFrame(animate)
+    const updateItems = () => {
+      if (window.innerWidth < 640) setItemsPerView(1)
+      else if (window.innerWidth < 1024) setItemsPerView(2)
+      else setItemsPerView(4)
     }
-
-    rafId = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(rafId)
+    updateItems()
+    window.addEventListener("resize", updateItems)
+    return () => window.removeEventListener("resize", updateItems)
   }, [])
 
-  // Icon Helper mapped to role
-  const getSpeakerIcon = (tag, title) => {
-    const t = (tag + " " + title).toLowerCase();
-    if (t.includes("ias") || t.includes("officer") || t.includes("secretary")) {
-      return <ShieldCheck size={16} className="text-white" />;
-    }
-    if (t.includes("lead") || t.includes("program") || t.includes("social")) {
-      return <Users size={16} className="text-white" />;
-    }
-    if (t.includes("prof") || t.includes("academic") || t.includes("education")) {
-      return <GraduationCap size={16} className="text-white" />;
-    }
-    if (t.includes("director") || t.includes("ngo")) {
-      return <HeartHandshake size={16} className="text-white" />;
-    }
-    return <Briefcase size={16} className="text-white" />;
-  };
+  const maxIndex = Math.max(0, speakers.length - itemsPerView)
 
-  // Compact Balanced Speaker Card (Without Quote Icon & Reduced Gap)
-  const SpeakerCard = ({ speaker }) => (
-    <div className="w-[250px] sm:w-[270px] md:w-[285px] h-[315px] sm:h-[325px] md:h-[335px] flex-shrink-0 flex flex-col justify-between bg-white rounded-3xl p-4 sm:p-4.5 shadow-lg border border-celadon/40 hover:shadow-2xl hover:border-mint_leaf/60 transition-all duration-300 hover:-translate-y-1.5 relative overflow-hidden group snap-center">
-      
-      {/* 1. TOP: Description (Quote Icon Removed & Text Positioned Cleanly) */}
-      <div className="flex flex-col items-center text-center pt-1 px-1">
-        <p className="text-pine_teal/80 text-[11.5px] sm:text-xs leading-relaxed font-sans line-clamp-4">
-          &quot;{speaker.description}&quot;
-        </p>
-      </div>
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0))
+  }
 
-      {/* 2. MIDDLE & BOTTOM: Subtle Arch Backdrop with Avatar & Details (Tightly Spaced) */}
-      <div className="relative pt-5 pb-0.5 mt-1">
-        
-        {/* Soft, clean light arch background */}
-        <div className="absolute inset-0 top-1 -mx-5 -mb-5 bg-gradient-to-b from-frosted_mint/30 via-frosted_mint/45 to-celadon/30 rounded-t-[36px] -z-0" />
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : maxIndex))
+  }
 
-        {/* Subtle accent arches */}
-        <svg className="absolute bottom-0 left-0 w-24 h-24 pointer-events-none -z-0" viewBox="0 0 100 100" fill="none">
-          <path d="M0,100 L0,35 Q35,70 100,100 Z" fill="#95d5b2" opacity="0.25" />
-        </svg>
-        <svg className="absolute bottom-0 right-0 w-24 h-24 pointer-events-none -z-0" viewBox="0 0 100 100" fill="none">
-          <path d="M100,100 L100,30 Q65,65 0,100 Z" fill="#74c69d" opacity="0.2" />
-        </svg>
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
-        {/* Avatar in Center (Close to top text) */}
-        <div className="relative z-10 flex justify-center -mt-6 mb-1.5">
-          <div className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-white shadow-md overflow-hidden bg-white shrink-0 group-hover:scale-105 transition-transform duration-300">
-            {speaker.image ? (
-              <Image 
-                src={speaker.image} 
-                alt={speaker.name} 
-                fill 
-                className="object-cover" 
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-pine_teal">
-                <User size={22} />
-              </div>
-            )}
-          </div>
-        </div>
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX
+  }
 
-        {/* Name & Pill Tag */}
-        <div className="relative z-10 text-center mb-2">
-          <h3 className="font-serif text-base sm:text-lg font-bold text-evergreen leading-tight">
-            {speaker.name}
-          </h3>
-          <span className="inline-block mt-0.5 px-2.5 py-0.5 rounded-full text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider bg-white/90 text-dark_emerald border border-celadon shadow-xs">
-            {speaker.tag}
-          </span>
-        </div>
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX
+  }
 
-        {/* Bottom Row: Icon + Title & Role */}
-        <div className="relative z-10 flex items-center gap-2.5 px-1 py-1 rounded-xl bg-white/60 backdrop-blur-xs border border-white/60 shadow-xs">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-dark_emerald text-white flex items-center justify-center shrink-0 shadow-sm">
-            {getSpeakerIcon(speaker.tag, speaker.title)}
-          </div>
-          <div className="min-w-0 flex-1 text-left">
-            <p className="text-xs sm:text-[12px] font-bold text-evergreen leading-tight truncate">
-              {speaker.title}
-            </p>
-            <p className="text-[10px] sm:text-[10.5px] text-dark_emerald font-semibold leading-tight truncate mt-0.5">
-              {speaker.role}
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  );
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return
+    const distance = touchStartX.current - touchEndX.current
+    if (distance > 40) handleNext()
+    else if (distance < -40) handlePrev()
+    touchStartX.current = 0
+    touchEndX.current = 0
+  }
 
   return (
-    <section className="pb-8 pt-4 md:px-8 bg-frosted_mint/20 relative overflow-hidden">
-      
-      {/* Background Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--color-frosted_mint),_transparent_70%)] opacity-50 -z-10" />
-
-      <div className="max-w-full mx-auto relative z-10">
+    <section className="py-14 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#fcfbf7] border-t border-[#ebdcc6]/60 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* HEADER */}
-        <div className="text-center mb-6 md:mb-10 px-4 mt-4 sm:mt-6">
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-            Voices of <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Change</span>
+        {/* ================= 1. SECTION HEADER (Clean Institutional Typography) ================= */}
+        <div className="text-center mb-10 sm:mb-14 space-y-2">
+          <h2 className="font-sans font-extrabold text-xl xs:text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-wider uppercase">
+            VOICES OF CHANGE: <span className="font-serif italic font-normal text-[#2d6a4f] capitalize">Faculty &amp; Mentors</span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-pine_teal/80 text-sm sm:text-base md:text-lg font-medium max-w-2xl mx-auto text-center">
-            &quot;Learn from distinguished professionals with decades of experience in governance, social development, and education.&quot;
+          <p className="text-gray-600 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+            Learn from distinguished professionals with decades of experience in governance, social development, and education.
           </p>
         </div>
 
-        {/* --- SLIDER CONTAINER --- */}
-        <div className="relative w-full group/slider">
-          
-          {/* MAIN SCROLL AREA */}
-          <div 
-             ref={sliderRef}
-             className="flex overflow-x-auto hide-scrollbar pb-6 md:pb-0 touch-pan-x select-none"
-             style={{ WebkitOverflowScrolling: "touch" }}
-             onMouseEnter={() => (isPaused.current = true)}
-             onMouseLeave={() => (isPaused.current = false)}
-             onTouchStart={() => (isPaused.current = true)}
-             onTouchEnd={() => (isPaused.current = false)}
+        {/* ================= 2. CAROUSEL WRAPPER WITH NAVIGATION ================= */}
+        <div 
+          className="relative px-1 sm:px-10"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Left Arrow Button */}
+          <button
+            onClick={handlePrev}
+            aria-label="Previous Faculty"
+            disabled={currentIndex === 0}
+            className="absolute left-0 sm:left-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-20 disabled:cursor-not-allowed hidden sm:flex"
           >
-            
-            {/* Set 1 */}
-            <div className="flex gap-3 sm:gap-4 md:gap-8 px-2 md:px-4 shrink-0">
-              {speakers.map((speaker, index) => (
-                <SpeakerCard key={`a-${index}`} speaker={speaker} />
-              ))}
-            </div>
+            <ChevronLeft size={20} />
+          </button>
 
-            {/* Set 2 (Clone for infinite loop) */}
-            <div className="flex gap-3 sm:gap-4 md:gap-8 px-2 md:px-4 shrink-0">
+          {/* Right Arrow Button */}
+          <button
+            onClick={handleNext}
+            aria-label="Next Faculty"
+            disabled={currentIndex >= maxIndex}
+            className="absolute right-0 sm:right-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-20 disabled:cursor-not-allowed hidden sm:flex"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+          {/* Cards Slider / Grid View */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-out gap-4 sm:gap-6"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`
+              }}
+            >
               {speakers.map((speaker, index) => (
-                <SpeakerCard key={`b-${index}`} speaker={speaker} />
+                <div
+                  key={index}
+                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 flex flex-col group cursor-pointer"
+                >
+                  
+                  {/* --- TOP: ARTISTIC HERITAGE PARCHMENT CARD --- */}
+                  <div className="relative w-full aspect-[4/4.3] rounded-sm bg-[#f6f2e9] border border-[#e5dec9] overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 flex items-end justify-center select-none">
+                    
+                    {/* Subtle Ruled Lines Texture */}
+                    <div 
+                      className="absolute inset-0 pointer-events-none opacity-40"
+                      style={{
+                        backgroundImage: "repeating-linear-gradient(to bottom, transparent, transparent 23px, #e2d7c3 24px)"
+                      }}
+                    />
+
+                    {/* Left Vertical Accent Stitch Line */}
+                    <div className="absolute top-0 bottom-0 left-3 w-[2px] bg-[#cbb898] opacity-60 pointer-events-none" />
+
+                    {/* Left Mandala Watermark Seal */}
+                    <div className="absolute top-12 left-1.5 w-6 h-6 rounded-full border border-[#cbb898] flex items-center justify-center opacity-40 pointer-events-none">
+                      <div className="w-3 h-3 rounded-full border border-[#cbb898]" />
+                    </div>
+
+                    {/* Faint Sanskrit Calligraphy Watermark */}
+                    <div className="absolute top-3 left-7 right-3 text-left pointer-events-none select-none opacity-25">
+                      <p className="font-serif text-[10px] leading-[14px] text-[#4a3f35]">
+                        आचार्यात् पादमादत्ते<br />
+                        पादं शिष्यः स्वमेधया ।<br />
+                        पादं सब्रह्मचारिभ्यः<br />
+                        पादं कालक्रमेण च ॥
+                      </p>
+                      <p className="text-[8px] leading-[11px] text-[#5c4e43] mt-2 font-serif italic">
+                        From the teacher, one learns a quarter.<br />
+                        A quarter from one&apos;s own study.<br />
+                        A quarter from peers and companions.<br />
+                        A quarter from time and experience.
+                      </p>
+                    </div>
+
+                    {/* Portrait Photo of Faculty */}
+                    <div className="relative w-[78%] h-[84%] z-10 flex items-end justify-center">
+                      {speaker.image ? (
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={speaker.image}
+                            alt={speaker.name}
+                            fill
+                            className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-104 transition-transform duration-500"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-20 h-20 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-6 border border-gray-300">
+                          <User size={32} />
+                        </div>
+                      )}
+                    </div>
+
+                  </div>
+
+                  {/* --- BOTTOM: CLEAN EDITORIAL TYPOGRAPHY --- */}
+                  <div className="text-left pt-3.5 pb-1 space-y-1">
+                    <h3 className="font-sans font-bold text-base sm:text-[17px] text-[#1c1917] leading-tight group-hover:text-[#2d6a4f] transition-colors">
+                      {speaker.name}
+                    </h3>
+                    
+                    <p className="text-xs sm:text-[13px] text-gray-700 font-medium leading-snug">
+                      {speaker.title}
+                    </p>
+
+                    <p className="text-[11px] sm:text-xs text-gray-500 font-normal leading-snug line-clamp-2">
+                      {speaker.role}
+                    </p>
+                  </div>
+
+                </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Scroll Hint */}
-        <div className="text-center mt-3 md:mt-8">
-           <span className="text-[10px] font-bold text-pine_teal/40 uppercase tracking-widest animate-pulse border border-pine_teal/10 px-3 py-1 rounded-full">
-              Swipe to explore
-           </span>
+          {/* ================= 3. PAGINATION DOTS ================= */}
+          <div className="flex justify-center items-center gap-2 mt-8 sm:mt-10">
+            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentIndex === idx ? "bg-[#2d6a4f] w-5 sm:w-6" : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+
         </div>
 
       </div>
-
-      <style jsx global>{`
-        /* Keep scrollbar hidden for cleaner look */
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-
-        /* Description Scrollbar */
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.05);
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(45, 106, 79, 0.2);
-          border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(45, 106, 79, 0.5);
-        }
-      `}</style>
     </section>
   )
 }
