@@ -10,9 +10,9 @@ export default function BlogHubPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#fcfbf7]">
 
-      {/* ================= 1. HERO SECTION (NO CONTAINER BOX, JUST CLEAN TEXT OVER PHOTO) ================= */}
+      {/* ================= 1. HERO SECTION (100% RAW PHOTO BACKGROUND, CRISP DARK TEXT) ================= */}
       <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden flex items-center justify-center min-h-[420px] sm:min-h-[480px]">
-        {/* Natural Background Image */}
+        {/* 100% Pure Raw Background Image (No white shade, no overlay) */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/camp2/camp2-day1-i4.jpg"
@@ -21,24 +21,22 @@ export default function BlogHubPage() {
             priority
             className="object-cover object-center"
           />
-          {/* Very light soft tint for text legibility without black shade or box */}
-          <div className="absolute inset-0 bg-white/40 backdrop-blur-[0.5px]" />
         </div>
 
-        {/* Hero Content - Direct Text without any white container */}
+        {/* Hero Content - Crisp Dark Text directly over image */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 border border-emerald-200/80 shadow-xs backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-[#2d6a4f] animate-pulse" />
-            <p className="text-[11px] sm:text-xs font-bold text-[#1b4332] tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-emerald-300 shadow-md">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#1b4332] animate-pulse" />
+            <p className="text-[11px] sm:text-xs font-black text-[#0d2818] tracking-wider uppercase">
               Dispatches from the Ground
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-3xl sm:text-5xl md:text-6xl text-[#1c1917] leading-tight drop-shadow-sm">
-            Stories from <span className="text-[#2d6a4f] italic font-normal">Real Bharat</span>
+          <h1 className="font-extrabold font-serif text-3xl sm:text-5xl md:text-6xl text-black leading-tight drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]">
+            Stories from <span className="text-[#1b4332] italic font-black">Real Bharat</span>
           </h1>
 
-          <p className="text-xs sm:text-base md:text-lg text-[#1f2937] max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-xs">
+          <p className="text-xs sm:text-base md:text-lg text-black font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(255,255,255,0.95)]">
             Deep-dives, field diaries, student presentations, and voices from our grassroots immersion cohorts.
           </p>
         </div>
