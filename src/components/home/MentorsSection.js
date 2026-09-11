@@ -11,7 +11,7 @@ export default function MentorsSection() {
       affiliation: "IIT Bombay",
       image: null,
       initials: "OD",
-      circleBg: "bg-[#426a8f]",
+      circleBg: "bg-[#2d6a4f]",
       barColor: "bg-[#b84a2b]"
     },
     {
@@ -20,7 +20,7 @@ export default function MentorsSection() {
       affiliation: "IRMA - SEED",
       image: null,
       initials: "RA",
-      circleBg: "bg-[#3d6e85]",
+      circleBg: "bg-[#245b44]",
       barColor: "bg-[#b84a2b]"
     },
     {
@@ -29,7 +29,7 @@ export default function MentorsSection() {
       affiliation: "Pragati Pratishthan",
       image: "/Virendra Champanerkar.png",
       initials: "VC",
-      circleBg: "bg-[#4a729e]",
+      circleBg: "bg-[#1b4332]",
       barColor: "bg-[#b84a2b]"
     },
     {
@@ -38,7 +38,7 @@ export default function MentorsSection() {
       affiliation: "Entrepreneur",
       image: null,
       initials: "CR",
-      circleBg: "bg-[#39637c]",
+      circleBg: "bg-[#31694f]",
       barColor: "bg-[#b84a2b]"
     }
   ]
