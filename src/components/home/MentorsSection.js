@@ -161,13 +161,10 @@ export default function MentorsSection() {
                   {/* Top Decorative Gold/Teal Accent Bar */}
                   <div className="h-1 bg-gradient-to-r from-[#c8880a] via-[#d4a825] to-[#1f5c54] w-full" />
 
-                  {/* Top Row: Index Marker & Advisory Tag */}
+                  {/* Top Row: Index Marker */}
                   <div className="px-4 sm:px-5 pt-3.5 sm:pt-4 pb-0 flex items-center justify-between z-10 relative">
                     <span className="font-serif font-bold text-xs sm:text-sm text-[#c8880a] tracking-wider">
                       {String(actualIndex + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-[#1f5c54] bg-[#3a8c7e]/10 border border-[#3a8c7e]/25 px-2.5 py-0.5 rounded-full">
-                      ADVISORY
                     </span>
                   </div>
 
