@@ -91,34 +91,33 @@ export default function AboutPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= 1. EDITORIAL HERO SECTION WITH RIGHT-SIDE CAMP SHOWCASE ================= */}
-      <section className="relative pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 px-3 sm:px-6 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+      <section className="relative pt-24 sm:pt-32 md:pt-36 pb-12 sm:pb-16 px-3 sm:px-6 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         
-        {/* Background Atmosphere */}
-        <div className="absolute inset-0 bg-black/30 mix-blend-multiply pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+        {/* Warm Ambient Glows */}
+        <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[600px] h-[350px] bg-[#e8a87c]/15 rounded-full blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-[#3a8c7e]/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
         <div className="max-w-6xl mx-auto px-1 sm:px-4 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Hero Copy & CTA */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#f5efe2]/15 backdrop-blur-md border border-[#f5efe2]/25 text-[#d4a825] text-[11px] sm:text-xs font-bold tracking-widest uppercase">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-[11px] sm:text-xs font-semibold tracking-widest uppercase shadow-xs">
               ABOUT SAHYADRI RURAL CONNECT
             </span>
 
-            <h1 className="font-serif font-bold text-3xl xs:text-4xl sm:text-5xl md:text-6xl leading-[1.15] text-[#f5efe2] drop-shadow-md">
+            <h1 className="font-serif font-normal text-3xl xs:text-4xl sm:text-5xl md:text-6xl leading-[1.15] text-[#3e2410] tracking-tight">
               Where Ground-Level Immersion Becomes{" "}
-              <span className="italic text-[#d4a825] font-serif">Meaningful Leadership.</span>
+              <span className="italic text-[#3a8c7e] font-serif">Meaningful Leadership.</span>
             </h1>
 
-            <p className="text-xs sm:text-base md:text-lg text-[#f5efe2]/90 leading-relaxed max-w-xl font-normal">
+            <p className="text-xs sm:text-base md:text-lg text-[#5c3818] leading-relaxed max-w-xl font-light">
               Sahyadri Rural Connect is an experiential education and rural immersion initiative dedicated to bridging classroom knowledge with grassroots realities, indigenous culture, and sustainable social impact.
             </p>
 
             <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
               <Link
                 href="/register"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#3a8c7e] text-[#f5efe2] font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:bg-[#1f5c54] hover:scale-102 active:scale-95 transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-[#3a8c7e] text-white font-medium text-xs sm:text-sm md:text-base shadow-sm hover:shadow-md hover:bg-[#1f5c54] active:scale-95 transition-all duration-300 whitespace-nowrap"
               >
                 <span>Winter Camp Loading</span>
                 <ArrowRight size={15} />
@@ -131,15 +130,15 @@ export default function AboutPage() {
           <div className="lg:col-span-5 flex flex-col items-center w-full">
             
             {/* Camp Selector Tabs */}
-            <div className="flex items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-black/40 backdrop-blur-md border border-[#dccdb2]/30 mb-3 max-w-full overflow-x-auto">
+            <div className="flex items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-[#fdfbf7] border border-[#dccdb2] mb-3 max-w-full overflow-x-auto shadow-xs">
               {heroCamps.map((camp, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveCampIdx(idx)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     activeCampIdx === idx
-                      ? "bg-[#f5efe2] text-[#3e2410] shadow-sm font-bold scale-102"
-                      : "text-[#f5efe2]/80 hover:text-[#f5efe2] hover:bg-white/10"
+                      ? "bg-[#3a8c7e] text-white shadow-xs font-semibold"
+                      : "text-[#5c3818] hover:text-[#3e2410] hover:bg-[#ebe2d1]"
                   }`}
                 >
                   {camp.badge.split(" • ")[0]}
@@ -148,7 +147,7 @@ export default function AboutPage() {
             </div>
 
             {/* Feature Card with Background Image, Caption & Camp Link */}
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#dccdb2]/40 bg-[#3e2410] group mx-auto">
+            <div className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-3xl overflow-hidden shadow-md border border-[#dccdb2] bg-[#fdfbf7] group mx-auto">
               <div className="relative h-[380px] xs:h-[410px] sm:h-[440px] w-full">
                 <Image
                   src={heroCamps[activeCampIdx].image}
@@ -159,38 +158,38 @@ export default function AboutPage() {
                 />
                 
                 {/* Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/95 via-[#241407]/60 to-[#241407]/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/45 to-transparent" />
                 
                 {/* Top Badges */}
                 <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#f5efe2]/20 backdrop-blur-md border border-[#f5efe2]/30 text-[#f5efe2] text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
-                    <MapPin size={11} className="text-[#d4a825]" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md border border-[#dccdb2] text-[#1f5c54] text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase">
+                    <MapPin size={11} className="text-[#3a8c7e]" />
                     {heroCamps[activeCampIdx].badge}
                   </span>
-                  <span className="text-[10px] font-semibold text-[#d4a825] bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-[#dccdb2]/20">
+                  <span className="text-[10px] font-semibold text-[#fdfbf7] bg-[#3a8c7e]/90 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-[#dccdb2]/40">
                     {heroCamps[activeCampIdx].tag}
                   </span>
                 </div>
 
                 {/* Bottom Content & Caption */}
                 <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 space-y-2 sm:space-y-2.5 z-10 text-left">
-                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#f5efe2] leading-tight drop-shadow-md">
+                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-[#fdfbf7] leading-tight drop-shadow-sm">
                     {heroCamps[activeCampIdx].title}
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs md:text-sm text-[#f5efe2]/95 leading-relaxed font-light bg-black/50 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-[#dccdb2]/20 line-clamp-3 sm:line-clamp-none">
+                  <p className="text-[11px] sm:text-xs md:text-sm text-[#fdfbf7]/95 leading-relaxed font-light bg-[#241407]/60 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-[#dccdb2]/30 line-clamp-3 sm:line-clamp-none">
                     &quot;{heroCamps[activeCampIdx].caption}&quot;
                   </p>
 
                   <div className="flex items-center justify-between pt-1">
                     <Link
                       href={heroCamps[activeCampIdx].href}
-                      className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] text-xs sm:text-sm font-bold shadow-md hover:scale-105 transition-all group/btn"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-white text-xs sm:text-sm font-medium shadow-sm hover:scale-102 transition-all group/btn"
                     >
                       <span>Explore Camp Page</span>
                       <ArrowRight size={13} className="group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
-                    <span className="text-[10px] sm:text-[11px] font-medium text-[#f5efe2]/75 bg-white/10 px-2 py-0.5 rounded-full border border-white/15">
+                    <span className="text-[10px] sm:text-[11px] font-medium text-[#fdfbf7]/90 bg-black/40 px-2.5 py-1 rounded-full border border-white/20">
                       {heroCamps[activeCampIdx].duration}
                     </span>
                   </div>
