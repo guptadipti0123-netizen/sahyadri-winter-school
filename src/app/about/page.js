@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -13,6 +13,14 @@ export default function AboutPage() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
   const [activeCampIdx, setActiveCampIdx] = useState(0)
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHasMounted(true)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   const heroCamps = [
     {
@@ -99,35 +107,79 @@ export default function AboutPage() {
 
         <div className="max-w-6xl mx-auto px-1 sm:px-4 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Hero Copy & CTA (Animated pop-up entrance from bottom) */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left animate-popup-hero">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-[11px] sm:text-xs font-semibold tracking-widest uppercase shadow-xs">
-              ABOUT SAHYADRI RURAL CONNECT
-            </span>
+          {/* Left Column: Hero Copy & CTA (Staggered smooth slide-up from bottom) */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
+            
+            {/* 1. Badge */}
+            <div 
+              style={{
+                transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+                transform: hasMounted ? "translateY(0)" : "translateY(40px)",
+                opacity: hasMounted ? 1 : 0
+              }}
+            >
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-[11px] sm:text-xs font-semibold tracking-widest uppercase shadow-xs">
+                ABOUT SAHYADRI RURAL CONNECT
+              </span>
+            </div>
 
-            <h1 className="font-serif font-normal text-3xl xs:text-4xl sm:text-5xl md:text-6xl leading-[1.15] text-[#3e2410] tracking-tight">
-              Where Ground-Level Immersion Becomes{" "}
-              <span className="italic text-[#3a8c7e] font-serif">Meaningful Leadership.</span>
-            </h1>
+            {/* 2. Main Title */}
+            <div
+              style={{
+                transition: "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s",
+                transform: hasMounted ? "translateY(0)" : "translateY(55px)",
+                opacity: hasMounted ? 1 : 0
+              }}
+            >
+              <h1 className="font-serif font-normal text-3xl xs:text-4xl sm:text-5xl md:text-6xl leading-[1.15] text-[#3e2410] tracking-tight">
+                Where Ground-Level Immersion Becomes{" "}
+                <span className="italic text-[#3a8c7e] font-serif">Meaningful Leadership.</span>
+              </h1>
+            </div>
 
-            <p className="text-xs sm:text-base md:text-lg text-[#5c3818] leading-relaxed max-w-xl font-light">
-              Sahyadri Rural Connect is an experiential education and rural immersion initiative dedicated to bridging classroom knowledge with grassroots realities, indigenous culture, and sustainable social impact.
-            </p>
+            {/* 3. Description Paragraph */}
+            <div
+              style={{
+                transition: "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.24s, opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.24s",
+                transform: hasMounted ? "translateY(0)" : "translateY(55px)",
+                opacity: hasMounted ? 1 : 0
+              }}
+            >
+              <p className="text-xs sm:text-base md:text-lg text-[#5c3818] leading-relaxed max-w-xl font-light">
+                Sahyadri Rural Connect is an experiential education and rural immersion initiative dedicated to bridging classroom knowledge with grassroots realities, indigenous culture, and sustainable social impact.
+              </p>
+            </div>
 
-            <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
-              <Link
-                href="/register"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-[#3a8c7e] text-white font-medium text-xs sm:text-sm md:text-base shadow-sm hover:shadow-md hover:bg-[#1f5c54] active:scale-95 transition-all duration-300 whitespace-nowrap"
-              >
-                <span>Winter Camp Loading</span>
-                <ArrowRight size={15} />
-              </Link>
+            {/* 4. Action Button */}
+            <div
+              style={{
+                transition: "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.36s, opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.36s",
+                transform: hasMounted ? "translateY(0)" : "translateY(55px)",
+                opacity: hasMounted ? 1 : 0
+              }}
+            >
+              <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
+                <Link
+                  href="/register"
+                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-[#3a8c7e] text-white font-medium text-xs sm:text-sm md:text-base shadow-sm hover:shadow-md hover:bg-[#1f5c54] active:scale-95 transition-all duration-300 whitespace-nowrap"
+                >
+                  <span>Winter Camp Loading</span>
+                  <ArrowRight size={15} />
+                </Link>
+              </div>
             </div>
 
           </div>
 
           {/* Right Column: Camp Link Card with Interactive Switcher & Background Images */}
-          <div className="lg:col-span-5 flex flex-col items-center w-full animate-popup-delay-1">
+          <div 
+            className="lg:col-span-5 flex flex-col items-center w-full"
+            style={{
+              transition: "transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s, opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s",
+              transform: hasMounted ? "translateY(0)" : "translateY(60px)",
+              opacity: hasMounted ? 1 : 0
+            }}
+          >
             
             {/* Camp Selector Tabs */}
             <div className="flex items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-[#fdfbf7] border border-[#dccdb2] mb-3 max-w-full overflow-x-auto shadow-xs">
