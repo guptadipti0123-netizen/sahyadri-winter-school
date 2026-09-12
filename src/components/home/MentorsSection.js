@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -11,8 +11,6 @@ export default function MentorsSection() {
       affiliation: "IIT Bombay",
       image: null,
       initials: "OD",
-      circleBg: "bg-[#3a8c7e]",
-      barColor: "bg-[#c8880a]"
     },
     {
       name: "Dr. Rakesh Arrawatia",
@@ -20,8 +18,6 @@ export default function MentorsSection() {
       affiliation: "IRMA - SEED",
       image: null,
       initials: "RA",
-      circleBg: "bg-[#1f5c54]",
-      barColor: "bg-[#c8880a]"
     },
     {
       name: "Virendra Champanerkar",
@@ -29,8 +25,6 @@ export default function MentorsSection() {
       affiliation: "Pragati Pratishthan",
       image: "/Virendra Champanerkar.png",
       initials: "VC",
-      circleBg: "bg-[#241407]",
-      barColor: "bg-[#c8880a]"
     },
     {
       name: "Chirag Rawat",
@@ -38,166 +32,212 @@ export default function MentorsSection() {
       affiliation: "Entrepreneur",
       image: null,
       initials: "CR",
-      circleBg: "bg-[#6e9e97]",
-      barColor: "bg-[#c8880a]"
     }
   ]
 
-  const [activePage, setActivePage] = useState(0);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const [windowWidth, setWindowWidth] = useState(1200)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth)
+      window.addEventListener("resize", handleResize)
+    }
+    return () => {
+      if (typeof window !== "undefined") window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
+  const itemsPerView = windowWidth < 640 ? 1 : windowWidth < 1024 ? 2 : 4
+  const maxIndex = Math.max(0, mentors.length - itemsPerView)
+
+  // Ensure index stays in bounds on resize
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex)
+    }
+  }, [maxIndex, currentIndex])
 
   const handlePrev = () => {
-    setActivePage((prev) => (prev > 0 ? prev - 1 : 0));
-  };
+    setCurrentIndex((prev) => Math.max(0, prev - 1))
+  }
 
   const handleNext = () => {
-    setActivePage((prev) => (prev < 1 ? prev + 1 : 1));
-  };
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1))
+  }
 
   const handleTouchStart = (e) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
+    touchStartX.current = e.targetTouches[0].clientX
+  }
 
   const handleTouchMove = (e) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
+    touchEndX.current = e.targetTouches[0].clientX
+  }
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    const distance = touchStartX.current - touchEndX.current;
-    if (distance > 40) handleNext();
-    else if (distance < -40) handlePrev();
-    touchStartX.current = 0;
-    touchEndX.current = 0;
-  };
+    if (!touchStartX.current || !touchEndX.current) return
+    const distance = touchStartX.current - touchEndX.current
+    if (distance > 45 && currentIndex < maxIndex) {
+      handleNext()
+    } else if (distance < -45 && currentIndex > 0) {
+      handlePrev()
+    }
+    touchStartX.current = 0
+    touchEndX.current = 0
+  }
+
+  // Sliced mentors for current view in carousel mode
+  const visibleMentors = itemsPerView === 4 
+    ? mentors 
+    : mentors.slice(currentIndex, currentIndex + itemsPerView)
+
+  const totalPages = Math.max(1, mentors.length - itemsPerView + 1)
 
   return (
-    <section className="py-12 sm:py-18 px-3.5 sm:px-6 md:px-8 bg-[#f5efe2] border-b border-[#dccdb2]/70 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 px-3.5 sm:px-6 md:px-8 bg-[#f5efe2] border-b border-[#dccdb2]/70 relative overflow-hidden">
+      
+      {/* Subtle Warm Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-[#3a8c7e]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* SECTION HEADER */}
-        <div className="text-center mb-8 sm:mb-12 space-y-2">
-          <div className="text-xs font-semibold tracking-widest text-[#3a8c7e] uppercase">
-            Advisory &amp; Guidance
+        {/* ================= SECTION HEADER ================= */}
+        <div className="text-center mb-10 sm:mb-14 space-y-2.5">
+          <div className="inline-block px-3.5 py-1 rounded-full bg-[#3a8c7e]/10 border border-[#3a8c7e]/20 text-[11px] sm:text-xs font-bold tracking-widest text-[#1f5c54] uppercase">
+            ADVISORY &amp; GUIDANCE
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#3e2410] tracking-tight">
-            Our <span className="italic text-[#3a8c7e]">Mentors</span> &amp; Advisory
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-[#3e2410] tracking-tight">
+            Our <span className="italic text-[#3a8c7e] font-serif">Mentors</span> &amp; Advisory
           </h2>
-          <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal max-w-xl mx-auto">
+          <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal max-w-xl mx-auto leading-relaxed px-2">
             Distinguished academicians, practitioners, and grassroots leaders guiding our fellows.
           </p>
         </div>
 
-        {/* CAROUSEL WRAPPER WITH SIDE ARROWS */}
+        {/* ================= CAROUSEL WRAPPER WITH SIDE ARROWS ================= */}
         <div 
-          className="relative px-2 sm:px-8"
+          className="relative px-0 sm:px-6"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Left Arrow Button */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous Mentors"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-sm text-[#3e2410] hover:text-[#3a8c7e] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed hidden sm:flex"
-            disabled={activePage === 0}
-          >
-            <ChevronLeft size={18} />
-          </button>
+          {/* Left Navigation Arrow */}
+          {maxIndex > 0 && (
+            <button
+              onClick={handlePrev}
+              disabled={currentIndex === 0}
+              aria-label="Previous Mentors"
+              className="absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-sm text-[#3e2410] hover:text-[#1f5c54] hover:border-[#1f5c54] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-25 disabled:cursor-not-allowed hidden sm:flex"
+            >
+              <ChevronLeft size={18} />
+            </button>
+          )}
 
-          {/* Right Arrow Button */}
-          <button
-            onClick={handleNext}
-            aria-label="Next Mentors"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-sm text-[#3e2410] hover:text-[#3a8c7e] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed hidden sm:flex"
-            disabled={activePage === 1}
-          >
-            <ChevronRight size={18} />
-          </button>
+          {/* Right Navigation Arrow */}
+          {maxIndex > 0 && (
+            <button
+              onClick={handleNext}
+              disabled={currentIndex === maxIndex}
+              aria-label="Next Mentors"
+              className="absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-sm text-[#3e2410] hover:text-[#1f5c54] hover:border-[#1f5c54] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer disabled:opacity-25 disabled:cursor-not-allowed hidden sm:flex"
+            >
+              <ChevronRight size={18} />
+            </button>
+          )}
 
-          {/* MENTORS 4-COL GRID */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 items-start">
-            {mentors.map((mentor, index) => (
-              <div
-                key={index}
-                className="group flex flex-col transition-all duration-300"
-              >
-                {/* 1. ARTISTIC CIRCULAR PORTRAIT CONTAINER */}
-                <div className="relative w-36 h-36 xs:w-40 xs:h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 mx-auto mb-3 sm:mb-4 flex items-center justify-center select-none">
+          {/* ================= 4-CARD INSTITUTIONAL PORTRAIT GRID ================= */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+            {visibleMentors.map((mentor, idx) => {
+              const actualIndex = itemsPerView === 4 ? idx : currentIndex + idx
+              return (
+                <div
+                  key={actualIndex}
+                  className="group bg-[#fdfbf7] rounded-2xl border border-[#dccdb2] shadow-xs hover:shadow-md hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between text-left relative"
+                >
                   
-                  {/* Top-Right 2 Vertical Gold Accent Stripes */}
-                  <div className="absolute top-1 sm:top-2 right-4 sm:right-6 md:right-7 flex gap-1.5 z-0 pointer-events-none">
-                    <span className="w-1.5 sm:w-2 h-10 sm:h-14 bg-[#c8880a] rounded-xs" />
-                    <span className="w-1.5 sm:w-2 h-14 sm:h-18 bg-[#d4a825] rounded-xs" />
+                  {/* Top Decorative Gold/Teal Accent Bar */}
+                  <div className="h-1 bg-gradient-to-r from-[#c8880a] via-[#d4a825] to-[#1f5c54] w-full" />
+
+                  {/* Top Row: Index Marker & Advisory Tag */}
+                  <div className="px-4 sm:px-5 pt-3.5 sm:pt-4 pb-0 flex items-center justify-between">
+                    <span className="font-serif font-bold text-xs sm:text-sm text-[#c8880a] tracking-wider">
+                      {String(actualIndex + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-[#1f5c54] bg-[#3a8c7e]/10 border border-[#3a8c7e]/25 px-2.5 py-0.5 rounded-full">
+                      ADVISORY
+                    </span>
                   </div>
 
-                  {/* Circular Graphic Disc */}
-                  <div className={`relative w-28 h-28 xs:w-32 xs:h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full ${mentor.circleBg} overflow-hidden flex items-end justify-center shadow-md border-2 border-[#fdfbf7] group-hover:scale-105 transition-transform duration-500 z-10`}>
-                    
-                    {/* Left 3 Horizontal Sand Stripes */}
-                    <div className="absolute left-2 sm:left-2.5 top-9 sm:top-11 flex flex-col gap-1.5 z-10 pointer-events-none">
-                      <span className="w-7 sm:w-8 md:w-9 h-[2px] sm:h-[2.5px] bg-[#f5efe2]/90 rounded-full" />
-                      <span className="w-5 sm:w-6 md:w-7 h-[2px] sm:h-[2.5px] bg-[#f5efe2]/90 rounded-full" />
-                      <span className="w-4 sm:w-5 md:w-6 h-[2px] sm:h-[2.5px] bg-[#f5efe2]/90 rounded-full" />
-                    </div>
-
-                    {/* Portrait Image or Stylized Monogram */}
-                    {mentor.image ? (
-                      <div className="relative w-full h-[94%] z-20">
+                  {/* Center: Portrait Media Container */}
+                  <div className="p-4 sm:p-5 pt-3 pb-3">
+                    <div className="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-[#ebe2d1]/50 border border-[#dccdb2]/80 flex items-center justify-center">
+                      {mentor.image ? (
                         <Image
                           src={mentor.image}
                           alt={mentor.name}
                           fill
-                          className="object-cover object-top filter contrast-[1.05]"
+                          className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
                         />
-                      </div>
-                    ) : (
-                      <div className="relative w-full h-full z-20 flex flex-col items-center justify-center bg-gradient-to-t from-black/25 via-transparent to-transparent">
-                        {/* Elegant Initial Monogram */}
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/15 backdrop-blur-xs flex items-center justify-center border border-white/30 shadow-inner">
-                          <span className="font-serif font-bold text-xl sm:text-2xl text-[#f5efe2] tracking-widest drop-shadow-sm">
-                            {mentor.initials}
+                      ) : (
+                        /* Elegant Academic Monogram Placeholder */
+                        <div className="relative w-full h-full bg-gradient-to-br from-[#241407]/90 via-[#3e2410] to-[#1f5c54] flex flex-col items-center justify-center p-4 text-center">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-white/25 backdrop-blur-xs flex items-center justify-center shadow-inner group-hover:scale-105 group-hover:border-[#d4a825]/60 transition-all duration-300">
+                            <span className="font-serif font-bold text-xl sm:text-2xl text-[#f5efe2] tracking-widest drop-shadow-sm">
+                              {mentor.initials}
+                            </span>
+                          </div>
+                          <span className="text-[10px] uppercase font-bold tracking-widest text-[#d4a825] mt-2.5 opacity-90">
+                            Sahyadri Mentor
                           </span>
                         </div>
-                      </div>
-                    )}
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Bottom: Typography Hierarchy (Name, Designation, Affiliation) */}
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 space-y-2 flex-1 flex flex-col justify-between">
+                    <div className="space-y-1">
+                      <h3 className="font-serif font-bold text-base sm:text-lg md:text-[17px] text-[#3e2410] leading-snug group-hover:text-[#1f5c54] transition-colors">
+                        {mentor.name}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] font-medium text-[#1f5c54] leading-snug">
+                        {mentor.role}
+                      </p>
+                    </div>
+
+                    <div className="pt-2 border-t border-[#ebe2d1] flex items-center justify-between text-xs text-[#7a5232]">
+                      <span className="font-normal text-[11.5px] sm:text-xs text-[#7a5232]">
+                        {mentor.affiliation}
+                      </span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c8880a] shrink-0" />
+                    </div>
                   </div>
 
                 </div>
-
-                {/* 2. TYPOGRAPHY CONTENT BELOW PORTRAIT */}
-                <div className="text-left px-1 sm:px-2 space-y-0.5 sm:space-y-1">
-                  <h3 className="font-serif font-semibold text-sm sm:text-base md:text-[17px] text-[#3e2410] leading-tight group-hover:text-[#3a8c7e] transition-colors">
-                    {mentor.name}
-                  </h3>
-                  
-                  <p className="text-xs sm:text-[13px] text-[#7a5232] font-medium leading-snug">
-                    {mentor.role}
-                  </p>
-
-                  <p className="text-[11px] sm:text-xs text-[#8c6747] font-normal leading-snug">
-                    {mentor.affiliation}
-                  </p>
-                </div>
-
-              </div>
-            ))}
+              )
+            })}
           </div>
 
-          {/* DOTS PAGINATION */}
-          <div className="flex justify-center items-center gap-2 mt-8 sm:mt-10">
-            <button
-              onClick={() => setActivePage(0)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activePage === 0 ? "bg-[#3a8c7e] scale-125" : "bg-[#dccdb2] hover:bg-[#c4b49a]"}`}
-              aria-label="Page 1"
-            />
-            <button
-              onClick={() => setActivePage(1)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activePage === 1 ? "bg-[#3a8c7e] scale-125" : "bg-[#dccdb2] hover:bg-[#c4b49a]"}`}
-              aria-label="Page 2"
-            />
-          </div>
+          {/* ================= PAGINATION DOTS (Active when maxIndex > 0) ================= */}
+          {maxIndex > 0 && (
+            <div className="flex justify-center items-center gap-2 mt-8 sm:mt-10">
+              {Array.from({ length: totalPages }).map((_, pageIdx) => (
+                <button
+                  key={pageIdx}
+                  onClick={() => setCurrentIndex(pageIdx)}
+                  aria-label={`Go to mentor slide ${pageIdx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    currentIndex === pageIdx 
+                      ? "w-6 bg-[#1f5c54]" 
+                      : "w-2 bg-[#dccdb2] hover:bg-[#c4b49a]"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
 
         </div>
 
@@ -205,4 +245,3 @@ export default function MentorsSection() {
     </section>
   )
 }
-
