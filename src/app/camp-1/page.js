@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Camera, ChevronLeft, ChevronRight, Calendar, MapPin } from "lucide-react"
 // --- WINTER CAMP JAN 2025 DATA ---
 const campDetails = {
-  title: "Sahyadri Winter School",
+  title: "Sahyadri Rural Connect",
   edition: "January 2025",
   tagline: "The beginning of a journey into Rural India.",
   dates: "Jan 09th - 12th",

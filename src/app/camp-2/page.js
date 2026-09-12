@@ -7,7 +7,7 @@ import {
 
 // --- WINTER CAMP DEC 2025 DATA ---
 const campDetails = {
-   title: "Sahyadri Winter School",
+   title: "Sahyadri Rural Connect",
    edition: "December 2025",
    dates: "Dec 24th - 28th",
    location: "Kothimbe, Karjat",

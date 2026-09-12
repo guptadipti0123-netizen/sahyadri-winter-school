@@ -10,7 +10,7 @@ import {
 
 // --- SUMMER SCHOOL MAY 2026 DATA ---
 const campDetails = {
-  title: "Sahyadri Summer School",
+  title: "Sahyadri Rural Connect",
   edition: "May 2026",
   tagline: "Exploring Tribal Heritage, Ecology & Rural Governance in the Cradle of Warli Art.",
   dates: "May 2026",

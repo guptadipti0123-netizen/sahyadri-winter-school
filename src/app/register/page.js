@@ -228,7 +228,7 @@ export default function RegisterPage() {
 
               {/* Headline */}
               <h1 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#3e2410] leading-[1.15] tracking-tight">
-                Sahyadri Winter School <br className="hidden sm:inline" />
+                Sahyadri Rural Connect <br className="hidden sm:inline" />
                 <span className="text-[#3a8c7e] italic font-normal">2026 Cohort</span>
               </h1>
 

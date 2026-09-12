@@ -9,8 +9,8 @@ export default function CampsHubPage() {
   const camps = [
     {
       id: "camp-3",
-      title: "Sahyadri Summer School",
-      edition: "Summer School (Jawhar - May 2026)",
+      title: "Sahyadri Rural Connect",
+      edition: "Summer Edition (Jawhar - May 2026)",
       location: "Jawhar, Maharashtra",
       dates: "May 2026",
       status: "Archive / Completed",
@@ -22,8 +22,8 @@ export default function CampsHubPage() {
     },
     {
       id: "camp-2",
-      title: "Sahyadri Winter School",
-      edition: "Winter School (Karjat - December 2025)",
+      title: "Sahyadri Rural Connect",
+      edition: "Winter Edition (Karjat - December 2025)",
       location: "Kothimbe, Karjat, Maharashtra",
       dates: "Dec 24th - 28th, 2025",
       status: "Archive / Completed",
@@ -35,8 +35,8 @@ export default function CampsHubPage() {
     },
     {
       id: "camp-1",
-      title: "Sahyadri Winter School",
-      edition: "Winter School (Palghar - January 2025)",
+      title: "Sahyadri Rural Connect",
+      edition: "Inaugural Edition (Palghar - January 2025)",
       location: "Palghar, Maharashtra",
       dates: "Jan 09th - 12th, 2025",
       status: "Archive / Completed",
@@ -96,7 +96,7 @@ export default function CampsHubPage() {
                 <span>Upcoming Flagship Edition</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-[#f5efe2]">
-                Sahyadri Winter School 2026
+                Sahyadri Rural Connect 2026
               </h2>
               <p className="text-[#f5efe2]/85 text-xs sm:text-sm leading-relaxed">
                 40 selected students &amp; researchers from premier institutes (IIT, TISS, IIM, ILS) for a 5-day grassroots residential fellowship in rural Maharashtra.
