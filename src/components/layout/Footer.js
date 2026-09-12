@@ -136,16 +136,17 @@ export default function Footer() {
             {/* CENTER COLUMN: Hero Brand Logo & Emblem */}
             <div className="lg:col-span-4 flex flex-col items-center justify-center text-center order-1 lg:order-2 py-2">
               <Link href="/" className="group inline-flex flex-col items-center cursor-pointer">
-                {/* Emblem Icon with Glow */}
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-2.5 transition-transform duration-500 group-hover:scale-105">
-                  <div className="absolute inset-0 bg-[#d4a825]/20 rounded-full blur-xl group-hover:bg-[#3a8c7e]/30 transition-all" />
-                  <Image
-                    src="/icon.png"
-                    alt="Sahyadri Rural Connect Emblem"
-                    fill
-                    className="object-contain brightness-0 invert drop-shadow-[0_4px_12px_rgba(255,255,255,0.25)] relative z-10"
-                    priority
-                  />
+                {/* Official Brand Logo Medal */}
+                <div className="relative w-16 h-16 sm:w-20 sm:h-20 mb-2.5 transition-transform duration-500 group-hover:scale-105 shrink-0 rounded-full bg-[#fdfbf7] p-1 shadow-lg border-2 border-[#d4a825]/60 flex items-center justify-center">
+                  <div className="relative w-full h-full rounded-full overflow-hidden">
+                    <Image
+                      src="/logo.jpg"
+                      alt="Sahyadri Rural Connect Logo"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
                 </div>
 
                 {/* Stately Brand Typography */}
