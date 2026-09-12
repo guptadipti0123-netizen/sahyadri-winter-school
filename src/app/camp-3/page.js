@@ -142,14 +142,14 @@ const itinerary = [
   }
 ]
 
-// --- PHOTO GALLERY SAMPLES ---
+// --- PHOTO GALLERY SAMPLES (100% Real Field Immersion Photographs) ---
 const galleryImages = [
-  { src: "/jawahar-village-tribal-community.jpg", caption: "Jawhar tribal community and indigenous heritage" },
-  { src: "/floating7.jpeg", caption: "Scenic landscapes and palace heritage of Jawhar" },
-  { src: "/rural_immersion_real.jpg", caption: "Field learning and grassroots conversations" },
-  { src: "/sahyadri-bg-hero6.jpeg", caption: "Sahyadri Western Ghats and forest trails" },
-  { src: "/hiware-bazar-sustainable-village.jpg", caption: "Sustainable village governance and community models" },
-  { src: "/bhilar-village-books-strawberry.jpg", caption: "Experiential outdoor study & rural enterprise" }
+  { src: "/palghar/palghar-community-tree-dialogue.jpg", caption: "Village community dialogue and tree assembly" },
+  { src: "/camp2/camp2-day2-i1.jpg", caption: "Historic trail trek and mountain geography" },
+  { src: "/palghar/palghar-village-street-interaction.jpg", caption: "Direct grassroots engagement with farming families" },
+  { src: "/camp2/camp2-day3-i2.jpg", caption: "Organic farm immersion and forest ecology" },
+  { src: "/palghar/palghar-traditional-community-meal.jpg", caption: "Shared community dining and fellowship" },
+  { src: "/palghar/palghar-cohort-memorial-courtyard.jpg", caption: "Cohort assembly and student peer reflections" }
 ]
 
 export default function SummerSchoolJawharPage() {
