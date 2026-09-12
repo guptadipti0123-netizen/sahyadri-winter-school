@@ -16,6 +16,8 @@ export default function AboutPage() {
   const [hasMounted, setHasMounted] = useState(false)
   const [timelineVisible, setTimelineVisible] = useState(false)
   const timelineRef = useRef(null)
+  const [visionVisible, setVisionVisible] = useState(false)
+  const visionRef = useRef(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,6 +37,26 @@ export default function AboutPage() {
     )
 
     const currentRef = timelineRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
+    }
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef)
+    }
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisionVisible(true)
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    const currentRef = visionRef.current
     if (currentRef) {
       observer.observe(currentRef)
     }
@@ -519,11 +541,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ================= 4. VISION, MISSION & OBJECTIVES (Compact Reference Style) ================= */}
-      <section className="py-12 sm:py-18 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto relative z-10">
+      {/* ================= 4. VISION, MISSION & OBJECTIVES (Directional Slide-in on Scroll) ================= */}
+      <section 
+        ref={visionRef}
+        className="py-12 sm:py-18 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto relative z-10 overflow-hidden"
+      >
         
         {/* Section Heading */}
-        <div className="text-center mb-8 sm:mb-10 space-y-2">
+        <div 
+          className="text-center mb-8 sm:mb-10 space-y-2"
+          style={{
+            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+            transform: visionVisible ? "translateY(0)" : "translateY(30px)",
+            opacity: visionVisible ? 1 : 0
+          }}
+        >
           <span className="inline-block px-3.5 py-1 rounded-full bg-[#c8880a]/15 text-[#c8880a] text-xs font-bold tracking-wider uppercase border border-[#c8880a]/30">
             GUIDING PRINCIPLES
           </span>
@@ -538,8 +570,15 @@ export default function AboutPage() {
         {/* 3 Compact Modern Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left">
           
-          {/* Card 1: OUR MISSION */}
-          <div className="bg-[#fdfbf7] rounded-2xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
+          {/* Card 1: OUR MISSION (Slides in from LEFT) */}
+          <div 
+            className="bg-[#fdfbf7] rounded-2xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group"
+            style={{
+              transition: "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1)",
+              transform: visionVisible ? "translateX(0)" : "translateX(-90px)",
+              opacity: visionVisible ? 1 : 0
+            }}
+          >
             <div>
               {/* Header: Icon Next to Title */}
               <div className="flex items-center gap-3 pb-3 mb-3 border-b border-[#dccdb2]">
@@ -569,8 +608,15 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Card 2: OUR VISION */}
-          <div className="bg-[#fdfbf7] rounded-2xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
+          {/* Card 2: OUR VISION (Slides up from BOTTOM) */}
+          <div 
+            className="bg-[#fdfbf7] rounded-2xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group"
+            style={{
+              transition: "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s",
+              transform: visionVisible ? "translateY(0)" : "translateY(80px)",
+              opacity: visionVisible ? 1 : 0
+            }}
+          >
             <div>
               {/* Header: Icon Next to Title */}
               <div className="flex items-center gap-3 pb-3 mb-3 border-b border-[#dccdb2]">
@@ -600,8 +646,15 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Card 3: OBJECTIVES */}
-          <div className="bg-[#fdfbf7] rounded-2xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group">
+          {/* Card 3: OBJECTIVES (Slides in from RIGHT) */}
+          <div 
+            className="bg-[#fdfbf7] rounded-2xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group"
+            style={{
+              transition: "transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s",
+              transform: visionVisible ? "translateX(0)" : "translateX(90px)",
+              opacity: visionVisible ? 1 : 0
+            }}
+          >
             <div>
               {/* Header: Icon Next to Title */}
               <div className="flex items-center gap-3 pb-3 mb-3 border-b border-[#dccdb2]">
