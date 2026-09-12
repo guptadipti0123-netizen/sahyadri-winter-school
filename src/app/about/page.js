@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -14,12 +14,34 @@ export default function AboutPage() {
   const [submitted, setSubmitted] = useState(false)
   const [activeCampIdx, setActiveCampIdx] = useState(0)
   const [hasMounted, setHasMounted] = useState(false)
+  const [timelineVisible, setTimelineVisible] = useState(false)
+  const timelineRef = useRef(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setHasMounted(true)
     }, 100)
     return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimelineVisible(true)
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    const currentRef = timelineRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
+    }
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef)
+    }
   }, [])
 
   const heroCamps = [
@@ -396,11 +418,21 @@ export default function AboutPage() {
       </section>
 
       {/* ================= 3. OUR STORY TIMELINE / THE JOURNEY SO FAR ================= */}
-      <section className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#ebe2d1]/50 border-y border-[#dccdb2] relative">
+      <section 
+        ref={timelineRef}
+        className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#ebe2d1]/50 border-y border-[#dccdb2] relative overflow-hidden"
+      >
         <div className="max-w-3xl mx-auto">
           
           {/* Section Heading */}
-          <div className="text-center mb-10 sm:mb-12 space-y-2">
+          <div 
+            className="text-center mb-10 sm:mb-12 space-y-2"
+            style={{
+              transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+              transform: timelineVisible ? "translateY(0)" : "translateY(30px)",
+              opacity: timelineVisible ? 1 : 0
+            }}
+          >
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e2410] tracking-tight">
               The Journey <span className="text-[#3a8c7e] italic">So Far</span>
             </h2>
@@ -409,12 +441,20 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Pure Editorial Timeline */}
+          {/* Pure Editorial Timeline (Items slide in one-by-one from the right on scroll) */}
           <div className="relative pl-1 sm:pl-0">
             {timelineMilestones.map((item, idx) => {
               const isLast = idx === timelineMilestones.length - 1
               return (
-                <div key={idx} className="relative flex items-start group">
+                <div 
+                  key={idx} 
+                  className="relative flex items-start group"
+                  style={{
+                    transition: `transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 240}ms, opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 240}ms`,
+                    transform: timelineVisible ? "translateX(0)" : "translateX(85px)",
+                    opacity: timelineVisible ? 1 : 0
+                  }}
+                >
                   
                   {/* Left Column: Date / Year (Serif Italic) */}
                   <div className="w-14 xs:w-18 sm:w-28 text-right pr-2.5 sm:pr-6 shrink-0 pt-0.5">
