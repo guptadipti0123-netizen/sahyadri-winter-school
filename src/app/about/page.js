@@ -33,7 +33,7 @@ export default function AboutPage() {
           setTimelineVisible(true)
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
     )
 
     const currentRef = timelineRef.current
@@ -53,7 +53,7 @@ export default function AboutPage() {
           setVisionVisible(true)
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
     )
 
     const currentRef = visionRef.current
@@ -441,20 +441,12 @@ export default function AboutPage() {
 
       {/* ================= 3. OUR STORY TIMELINE / THE JOURNEY SO FAR ================= */}
       <section 
-        ref={timelineRef}
         className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#ebe2d1]/50 border-y border-[#dccdb2] relative overflow-hidden"
       >
         <div className="max-w-3xl mx-auto">
           
           {/* Section Heading */}
-          <div 
-            className="text-center mb-10 sm:mb-12 space-y-2"
-            style={{
-              transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-              transform: timelineVisible ? "translateY(0)" : "translateY(30px)",
-              opacity: timelineVisible ? 1 : 0
-            }}
-          >
+          <div className="text-center mb-10 sm:mb-12 space-y-2">
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e2410] tracking-tight">
               The Journey <span className="text-[#3a8c7e] italic">So Far</span>
             </h2>
@@ -464,7 +456,7 @@ export default function AboutPage() {
           </div>
 
           {/* Pure Editorial Timeline (Items slide in one-by-one from the right on scroll) */}
-          <div className="relative pl-1 sm:pl-0">
+          <div ref={timelineRef} className="relative pl-1 sm:pl-0">
             {timelineMilestones.map((item, idx) => {
               const isLast = idx === timelineMilestones.length - 1
               return (
@@ -543,18 +535,12 @@ export default function AboutPage() {
 
       {/* ================= 4. VISION, MISSION & OBJECTIVES (Directional Slide-in on Scroll) ================= */}
       <section 
-        ref={visionRef}
         className="py-12 sm:py-18 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto relative z-10 overflow-hidden"
       >
         
         {/* Section Heading */}
         <div 
           className="text-center mb-8 sm:mb-10 space-y-2"
-          style={{
-            transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-            transform: visionVisible ? "translateY(0)" : "translateY(30px)",
-            opacity: visionVisible ? 1 : 0
-          }}
         >
           <span className="inline-block px-3.5 py-1 rounded-full bg-[#c8880a]/15 text-[#c8880a] text-xs font-bold tracking-wider uppercase border border-[#c8880a]/30">
             GUIDING PRINCIPLES
@@ -568,7 +554,7 @@ export default function AboutPage() {
         </div>
 
         {/* 3 Compact Modern Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left">
+        <div ref={visionRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left">
           
           {/* Card 1: OUR MISSION (Slides in from LEFT) */}
           <div 
