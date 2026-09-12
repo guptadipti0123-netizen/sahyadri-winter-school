@@ -1,21 +1,32 @@
-import { Inter, Lora } from 'next/font/google'
+import { Josefin_Sans, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const lora = Lora({ subsets: ['latin'], variable: '--font-lora' })
+const josefin = Josefin_Sans({
+  subsets: ['latin'],
+  variable: '--font-josefin',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+})
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#1b4332',
+  themeColor: '#3a8c7e',
 }
 
 export const metadata = {
-  title: 'Sahyadri Rural Connect',
-  description: 'Understanding Real Bharat - Experiential Learning & Rural Immersion Fellowship',
+  title: 'Sahyadri Rural Connect — Experiential Learning & Rural Immersion',
+  description: 'Understanding Real Bharat - Experiential Learning & Rural Immersion Fellowship in the Sahyadris.',
   icons: {
     icon: [
       { url: '/logo.jpg?v=3', type: 'image/jpeg' },
@@ -31,19 +42,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full scroll-smooth antialiased">
       <head>
         <link rel="icon" href="/logo.jpg?v=3" type="image/jpeg" />
         <link rel="shortcut icon" href="/logo.jpg?v=3" type="image/jpeg" />
         <link rel="apple-touch-icon" href="/logo.jpg?v=3" />
       </head>
       <body
-        className={`${inter.variable} ${lora.variable} font-sans text-pine_teal selection:bg-mint_leaf selection:text-white`}
+        className={`${josefin.variable} ${cormorant.variable} min-h-full flex flex-col font-sans bg-[#f5efe2] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]`}
       >
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
   )
 }
+

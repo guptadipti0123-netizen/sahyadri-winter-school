@@ -1,9 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { 
   Users, TrendingUp, Mail, 
-  HeartHandshake, ArrowRight, Sprout 
+  HeartHandshake, ArrowRight, Sprout, Sparkles
 } from "lucide-react"
 
 import Link from "next/link"
@@ -13,121 +12,102 @@ export default function CareerPage() {
   const benefits = [
     {
       title: "Meaningful Work",
-      description: "Contribute to impactful projects that make a real difference in rural communities across India.",
+      description: "Contribute to impactful projects that make a real difference in rural communities across Maharashtra.",
       icon: <HeartHandshake size={28} />, 
-      // Styles
-      theme: "orange",
-      bg: "bg-orange-50",
-      text: "text-orange-600",
-      border: "border-orange-100 group-hover:border-orange-300",
-      dashColor: "bg-orange-200 group-hover:bg-orange-400",
-      shape: "rounded-2xl rounded-tr-[5rem] rounded-bl-[5rem]", 
+      theme: "teal",
+      bg: "bg-[#3a8c7e]/10",
+      text: "text-[#1f5c54]",
+      border: "border-[#dccdb2] hover:border-[#3a8c7e]/50",
+      dashColor: "bg-[#3a8c7e]",
+      shape: "rounded-2xl rounded-tr-[4rem] rounded-bl-[4rem]", 
     },
     {
       title: "Collaborative Team",
-      description: "Work with a diverse team of passionate professionals dedicated to social change and innovation.",
+      description: "Work with a diverse team of passionate professionals, educators, and ground leaders dedicated to social transformation.",
       icon: <Users size={28} />,
-      // Styles
-      theme: "emerald",
-      bg: "bg-emerald-50",
-      text: "text-emerald-600",
-      border: "border-emerald-100 group-hover:border-emerald-300",
-      dashColor: "bg-emerald-200 group-hover:bg-emerald-400",
-      shape: "rounded-2xl rounded-tl-[5rem] rounded-br-[5rem]", 
+      theme: "gold",
+      bg: "bg-[#c8880a]/10",
+      text: "text-[#c8880a]",
+      border: "border-[#dccdb2] hover:border-[#c8880a]/50",
+      dashColor: "bg-[#c8880a]",
+      shape: "rounded-2xl rounded-tl-[4rem] rounded-br-[4rem]", 
     },
     {
       title: "Growth & Learning",
-      description: "Develop your skills through continuous learning, mentorship, and professional development programs.",
+      description: "Develop your skills through grassroots fieldwork, continuous mentorship, and hands-on community leadership programs.",
       icon: <TrendingUp size={28} />,
-      // Styles
-      theme: "blue",
-      bg: "bg-blue-50",
-      text: "text-blue-600",
-      border: "border-blue-100 group-hover:border-blue-300",
-      dashColor: "bg-blue-200 group-hover:bg-blue-400",
-      shape: "rounded-2xl rounded-tr-[5rem] rounded-bl-[5rem]", 
+      theme: "terracotta",
+      bg: "bg-[#7a3a1c]/10",
+      text: "text-[#7a3a1c]",
+      border: "border-[#dccdb2] hover:border-[#7a3a1c]/50",
+      dashColor: "bg-[#7a3a1c]",
+      shape: "rounded-2xl rounded-tr-[4rem] rounded-bl-[4rem]", 
     },
   ]
 
   return (
-    <main className="min-h-screen bg-frosted_mint/20 font-sans selection:bg-sea_green selection:text-white overflow-x-hidden">
+    <main className="min-h-screen bg-[#f5efe2] text-[#3e2410] overflow-x-hidden selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-6 sm:pb-10">
+      <section className="relative pt-28 md:pt-36 pb-12 sm:pb-16">
         
-        {/* --- WAVE BACKGROUND --- */}
-        <div className="absolute inset-0 z-0">
-          <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
-            <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 700" className="absolute -top-[300px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
-            <path fill="#40916C" fillOpacity="0.8" d="M0,460 C220,540 420,360 660,440 C900,500 1120,580 1320,500 C1400,460 1440,440 1440,420 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 600" className="absolute -top-[180px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
-            <path fill="#d8f3dc" fillOpacity="0.65" d="M0,380 C260,430 460,320 700,380 C940,420 1140,470 1340,410 C1400,380 1440,360 1440,340 L1440,0 L0,0 Z" />
-          </svg>
-        </div>
+        {/* Subtle Background Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] mb-5 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
+            <p className="text-xs md:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
               Join Our Mission
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal mb-4 text-[#3e2410] leading-tight tracking-tight">
             Career Opportunities
           </h1>
 
-          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
-            Build a career with purpose. Join a team that is redefining rural development.
+          <p className="font-serif italic text-lg sm:text-xl text-[#7a5232] max-w-2xl mx-auto leading-relaxed">
+            Build a purposeful career rooted in meaningful impact, collective wisdom, and rural leadership.
           </p>
         </div>
       </section>
 
       {/* ================= VALUES SECTION ================= */}
-      <section className="pb-8 pt-4 sm:pt-8 md:pt-12 md:pb-12 px-4 md:px-6 relative">
+      <section className="pb-16 pt-2 px-4 md:px-6 relative">
         <div className="max-w-6xl mx-auto">
           
-          <div className="flex flex-col gap-4 sm:gap-6 md:grid md:grid-cols-3 md:gap-6 lg:gap-8 relative z-20">
+          <div className="flex flex-col gap-5 sm:gap-6 md:grid md:grid-cols-3 md:gap-6 lg:gap-8 relative z-20">
             
             {benefits.map((item, index) => (
               <div 
                 key={index}
                 className={`
-                  group relative bg-white transition-all duration-500 ease-out shadow-sm hover:shadow-lg
+                  group relative bg-[#fdfbf7] transition-all duration-500 ease-out shadow-sm hover:shadow-md
                   /* MOBILE STYLES */
-                  flex flex-row items-center text-left p-4 sm:p-5 gap-4 sm:gap-5 rounded-2xl border border-gray-100
+                  flex flex-row items-center text-left p-5 sm:p-6 gap-4 sm:gap-5 rounded-2xl border ${item.border}
                   /* TABLET & DESKTOP STYLES */
-                  md:flex-col md:items-center md:text-center md:p-6 lg:p-8 md:shadow-xl 
-                  md:hover:shadow-2xl md:hover:-translate-y-2 lg:hover:-translate-y-3 
-                  md:border-[2px] lg:border-[3px] md:${item.border} md:rounded-2xl lg:${item.shape}
-                  ${index === 1 ? 'lg:-translate-y-4 lg:hover:-translate-y-6 md:z-10' : 'md:z-0'}
+                  md:flex-col md:items-center md:text-center md:p-8 lg:p-10
+                  md:hover:-translate-y-2 
+                  md:border-[1.5px] lg:${item.shape}
+                  ${index === 1 ? 'lg:-translate-y-3 md:z-10' : 'md:z-0'}
                 `}
               >
-                <div className={`hidden md:block absolute inset-0 rounded-[inherit] opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${item.bg.replace('50', '200')}`} />
-
-                <div className={`
-                  shrink-0 flex items-center justify-center relative z-10
-                  w-12 h-12 rounded-xl ${item.bg} ${item.text}
-                  md:w-16 md:h-16 lg:w-20 lg:h-20 md:rounded-full md:shadow-sm md:border md:border-white 
-                  md:transition-transform md:duration-500 md:group-hover:scale-110 md:group-hover:rotate-6
-                `}>
-                  <div className="scale-75 md:scale-90 lg:scale-100">{item.icon}</div>
+                <div className="shrink-0 flex items-center justify-center relative z-10 w-14 h-14 rounded-2xl md:w-18 md:h-18 md:rounded-full bg-[#ebe2d1]/60 border border-[#dccdb2] shadow-xs group-hover:scale-105 transition-transform duration-500">
+                  <div className={item.text}>{item.icon}</div>
                 </div>
 
-                <div className="relative z-10 flex-1">
-                  <h3 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-evergreen transition-colors">
+                <div className="relative z-10 flex-1 md:mt-3">
+                  <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-normal text-[#3e2410] mb-2 group-hover:text-[#1f5c54] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed md:px-1 font-normal">
+                  <p className="text-[#7a5232] text-xs sm:text-sm md:text-base leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>
 
-                <div className={`hidden md:block mt-auto pt-2 opacity-60 group-hover:opacity-100 transition-opacity duration-500`}>
-                   <div className={`w-16 h-1.5 rounded-full ${item.dashColor} transition-colors`} />
+                <div className="hidden md:block mt-6 pt-2 opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                   <div className={`w-12 h-1 rounded-full ${item.dashColor} transition-colors`} />
                 </div>
               </div>
             ))}
@@ -137,60 +117,61 @@ export default function CareerPage() {
       </section>
 
       {/* ================= CURRENT STATUS SECTION ================= */}
-      <section className="pb-12 px-4 sm:px-6 relative">
-        <div className="relative overflow-hidden bg-white rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-xl border-2 border-emerald-100 max-w-6xl mx-auto">
+      <section className="pb-20 px-4 sm:px-6 relative">
+        <div className="relative overflow-hidden bg-[#fdfbf7] rounded-3xl md:rounded-[2.5rem] shadow-sm border border-[#dccdb2] max-w-5xl mx-auto">
           
-          <div className="absolute inset-0 opacity-70" />
-          <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-frosted_mint/30 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#3a8c7e]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#c8880a]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
             
             {/* Left: Text Content */}
-            <div className="p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-              <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-frosted_mint border border-celadon mb-4 w-fit shadow-xs">
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-sea_green">Get Involved</span>
+            <div className="p-8 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-center">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ebe2d1] border border-[#dccdb2] mb-5 w-fit">
+                <Sparkles size={14} className="text-[#c8880a]" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#1f5c54]">Get Involved</span>
               </div>
               
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-evergreen mb-4 leading-tight">
-                Be the part of Change
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#3e2410] mb-4 leading-tight">
+                Be a Catalyst for Rural Transformation
               </h2>
               
-              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm md:text-base font-normal">
-                We currently don&apos;t have any specific job openings available. However, we are always looking for talented individuals who are passionate about rural development.
+              <p className="text-[#7a5232] mb-8 leading-relaxed text-sm md:text-base font-light">
+                While we do not have full-time staff vacancies open currently, we are always eager to collaborate with educators, researchers, and changemakers who share our vision.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-evergreen text-white rounded-full font-bold hover:bg-sea_green transition-all shadow-md text-sm md:text-base active:scale-95 text-center"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#3a8c7e] text-white rounded-full font-medium hover:bg-[#1f5c54] transition-all shadow-sm text-sm active:scale-95 text-center"
                 >
                   <Mail size={16} />
                   <span>Contact Us</span>
                 </Link>
                 <Link
                   href="/volunteers"
-                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-white text-evergreen border border-evergreen/20 rounded-full font-semibold hover:bg-frosted_mint transition-all text-sm md:text-base active:scale-95 shadow-xs text-center"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-transparent text-[#3e2410] border border-[#dccdb2] rounded-full font-medium hover:bg-[#ebe2d1] transition-all text-sm active:scale-95 text-center"
                 >
-                  <Sprout size={16} />
+                  <Sprout size={16} className="text-[#3a8c7e]" />
                   <span>Volunteer With Us</span>
                 </Link>
               </div>
             </div>
 
             {/* Right: Visual Area */}
-            <div className="bg-frosted_mint/30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] p-8 sm:p-10 md:p-16 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-gray-100">
+            <div className="bg-[#ebe2d1]/40 p-8 sm:p-12 md:p-16 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-[#dccdb2]">
                <div className="text-center space-y-6">
-                  <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto">
-                     <div className="absolute inset-0 bg-sea_green/20 rounded-full blur-xl animate-pulse" />
-                     <div className="relative bg-white p-6 sm:p-8 rounded-full shadow-sm border border-white/50 flex items-center justify-center h-full w-full">
-                        <Users className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-pine_teal/50" />
+                  <div className="relative w-36 h-36 sm:w-44 sm:h-44 mx-auto">
+                     <div className="absolute inset-0 bg-[#3a8c7e]/15 rounded-full blur-xl animate-pulse" />
+                     <div className="relative bg-[#fdfbf7] p-8 rounded-full shadow-sm border border-[#dccdb2] flex items-center justify-center h-full w-full">
+                        <Users className="w-12 h-12 text-[#1f5c54]" />
                      </div>
-                     <div className="absolute -top-2 -right-2 bg-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg shadow-md border border-gray-100 text-[10px] sm:text-xs font-bold text-evergreen animate-bounce">Join the Tribe</div>
-                     <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow-md border border-gray-100 text-[10px] sm:text-xs font-bold text-sea_green animate-bounce delay-700">Make Impact</div> 
+                     <div className="absolute -top-2 -right-2 bg-[#fdfbf7] px-3 py-1.5 rounded-full shadow-xs border border-[#dccdb2] text-[11px] font-semibold text-[#1f5c54]">Community First</div>
+                     <div className="absolute -bottom-2 -left-2 bg-[#fdfbf7] px-3 py-1.5 rounded-full shadow-xs border border-[#dccdb2] text-[11px] font-semibold text-[#c8880a]">Vedic Wisdom</div> 
                   </div>
                   <div>
-                     <h3 className="font-bold text-pine_teal text-base md:text-lg">Stay Connected</h3>
-                     <p className="text-xs sm:text-sm text-gray-500 mt-1">Follow us for updates.</p>
+                     <h3 className="font-serif text-lg md:text-xl font-normal text-[#3e2410]">Stay Connected</h3>
+                     <p className="text-xs sm:text-sm text-[#7a5232] mt-1 font-light">Follow our journey and upcoming camp announcements.</p>
                   </div>
                </div>
             </div>
@@ -201,4 +182,4 @@ export default function CareerPage() {
 
     </main>
   )
-}
+}

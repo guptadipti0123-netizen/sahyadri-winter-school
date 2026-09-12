@@ -182,7 +182,7 @@ export default function RegisterFormPage() {
 
   // --- Shared input styling helper ---
   const inputBaseClass = (fieldName) =>
-    `w-full px-4 py-3 rounded-xl border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sea_green/50 focus:border-sea_green transition-all duration-300 text-sm ${errors[fieldName] ? 'border-red-400 ring-1 ring-red-300' : 'border-gray-200 hover:border-gray-300'
+    `w-full px-4 py-3 rounded-xl border bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#3a8c7e]/30 focus:border-[#3a8c7e] transition-all duration-300 text-sm ${errors[fieldName] ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#3a8c7e]/50'
     }`;
 
   // --- Render a single field ---
@@ -192,13 +192,13 @@ export default function RegisterFormPage() {
       <div
         key={field.name}
         ref={(el) => { fieldRefs.current[field.name] = el; }}
-        className="relative"
+        className="relative text-left"
       >
         <label
           htmlFor={field.name}
-          className="block text-sm font-semibold text-gray-700 mb-1.5"
+          className="block text-sm font-semibold text-[#3e2410] mb-1.5"
         >
-          {field.label} {!isOptional && <span className="text-red-400">*</span>}
+          {field.label} {!isOptional && <span className="text-red-500">*</span>}
         </label>
 
         {/* TEXT / EMAIL / TEL */}
@@ -254,7 +254,7 @@ export default function RegisterFormPage() {
 
         {/* Error Message */}
         {errors[field.name] && (
-          <p className="mt-1.5 text-xs text-red-500 font-medium flex items-center gap-1">
+          <p className="mt-1.5 text-xs text-red-600 font-medium flex items-center gap-1">
             <XCircle className="w-3.5 h-3.5 shrink-0" />
             {errors[field.name]}
           </p>
@@ -264,58 +264,49 @@ export default function RegisterFormPage() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
+    <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-6 md:pb-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
-            <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 700" className="absolute -top-[300px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
-            <path fill="#40916C" fillOpacity="0.8" d="M0,460 C220,540 420,360 660,440 C900,500 1120,580 1320,500 C1400,460 1440,440 1440,420 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 600" className="absolute -top-[180px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
-            <path fill="#d8f3dc" fillOpacity="0.65" d="M0,380 C260,430 460,320 700,380 C940,420 1140,470 1340,410 C1400,380 1440,360 1440,340 L1440,0 L0,0 Z" />
-          </svg>
-        </div>
+      <section className="relative pt-28 md:pt-36 pb-8 md:pb-12 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-evergreen/30 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#d4a825] animate-pulse" />
+            <p className="text-xs md:text-sm font-bold text-[#d4a825] tracking-widest uppercase">
               Registration
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">
-            Registration Form
+          <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#f5efe2] leading-tight drop-shadow-sm">
+            Registration <span className="text-[#d4a825] italic font-serif">Form</span>
           </h1>
 
-          <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 max-w-2xl mx-auto leading-relaxed">
-            Fill in the form below to apply for Sahyadri Rural Connect.
+          <p className="text-sm sm:text-base md:text-lg text-[#f5efe2]/85 max-w-2xl mx-auto leading-relaxed">
+            Fill in the form below to apply for Sahyadri Rural Connect fellowship programs.
           </p>
         </div>
       </section>
 
       {/* ================= SUCCESS / ERROR STATUS BANNERS ================= */}
       {submitStatus === 'success' && (
-        <div className="px-4 md:px-6 relative z-20 max-w-5xl mx-auto mb-6">
-          <div className="p-5 rounded-2xl bg-green-50 border border-green-200 flex items-start gap-4 shadow-lg animate-in fade-in slide-in-from-top-4 duration-500">
-            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-              <CheckCircle className="w-6 h-6 text-green-600" />
+        <div className="px-4 md:px-6 relative z-20 max-w-5xl mx-auto my-6">
+          <div className="p-5 rounded-2xl bg-[#3a8c7e]/15 border border-[#3a8c7e]/30 flex items-start gap-4 shadow-lg animate-in fade-in slide-in-from-top-4 duration-500">
+            <div className="w-10 h-10 rounded-full bg-[#3a8c7e]/20 flex items-center justify-center shrink-0">
+              <CheckCircle className="w-6 h-6 text-[#1f5c54]" />
             </div>
-            <div className="flex-1">
-              <h4 className="font-bold text-green-800 text-base">
+            <div className="flex-1 text-left">
+              <h4 className="font-bold text-[#1f5c54] text-base font-serif">
                 Registration submitted successfully!
               </h4>
-              <p className="text-green-700 text-sm mt-1">
+              <p className="text-[#3e2410] text-sm mt-1">
                 Thank you for registering. We&apos;ll review your application and get in touch soon.
               </p>
             </div>
             <button
               onClick={() => setSubmitStatus(null)}
-              className="text-green-400 hover:text-green-600 transition-colors p-1"
+              className="text-[#7a5232] hover:text-[#3e2410] transition-colors p-1"
               aria-label="Dismiss success message"
             >
               <XCircle className="w-5 h-5" />
@@ -325,13 +316,13 @@ export default function RegisterFormPage() {
       )}
 
       {submitStatus === 'error' && (
-        <div className="px-4 md:px-6 relative z-20 max-w-5xl mx-auto mb-6">
+        <div className="px-4 md:px-6 relative z-20 max-w-5xl mx-auto my-6">
           <div className="p-5 rounded-2xl bg-red-50 border border-red-200 flex items-start gap-4 shadow-lg animate-in fade-in slide-in-from-top-4 duration-500">
             <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center shrink-0">
               <XCircle className="w-6 h-6 text-red-600" />
             </div>
-            <div className="flex-1">
-              <h4 className="font-bold text-red-800 text-base">
+            <div className="flex-1 text-left">
+              <h4 className="font-bold text-red-800 text-base font-serif">
                 Submission failed
               </h4>
               <p className="text-red-700 text-sm mt-1">
@@ -350,27 +341,27 @@ export default function RegisterFormPage() {
       )}
 
       {/* ================= FORM SECTION ================= */}
-      <section className="px-4 md:px-6 pb-16 relative z-10">
+      <section className="px-4 md:px-6 py-10 pb-16 relative z-10">
         <div className="max-w-5xl mx-auto">
 
           {/* Back to Register link */}
           <Link
             href="/register"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-sea_green hover:text-dark_emerald mb-6 transition-colors duration-200 group"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#3a8c7e] hover:text-[#1f5c54] mb-6 transition-colors duration-200 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
             Back to Details
           </Link>
 
-          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 p-4 sm:p-6 md:p-10">
+          <div className="bg-[#fdfbf7] rounded-2xl sm:rounded-3xl shadow-sm border border-[#dccdb2] p-5 sm:p-8 md:p-10 text-left">
 
             {/* Form Header */}
-            <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-100">
-              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-evergreen mb-2">
+            <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-[#dccdb2]">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#3e2410] mb-2">
                 Camp Registration
               </h2>
-              <p className="text-xs sm:text-sm text-gray-500">
-                Fields marked with <span className="text-red-400 font-semibold">*</span> are required. Please fill in accurate details.
+              <p className="text-xs sm:text-sm text-[#7a5232]">
+                Fields marked with <span className="text-red-500 font-semibold">*</span> are required. Please fill in accurate details.
               </p>
             </div>
 
@@ -379,10 +370,10 @@ export default function RegisterFormPage() {
               {/* ---- PART 1: Personal & Academic Details ---- */}
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-sea_green text-white text-sm font-bold shadow-md">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#3a8c7e] text-[#f5efe2] text-sm font-bold shadow-xs">
                     1
                   </span>
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-pine_teal">
+                  <h3 className="font-serif text-lg md:text-xl font-bold text-[#3e2410]">
                     Personal &amp; Academic Details
                   </h3>
                 </div>
@@ -395,10 +386,10 @@ export default function RegisterFormPage() {
               {/* ---- PART 2: Additional Information ---- */}
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-sea_green text-white text-sm font-bold shadow-md">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#3a8c7e] text-[#f5efe2] text-sm font-bold shadow-xs">
                     2
                   </span>
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-pine_teal">
+                  <h3 className="font-serif text-lg md:text-xl font-bold text-[#3e2410]">
                     Experience &amp; Additional Information
                   </h3>
                 </div>
@@ -409,11 +400,11 @@ export default function RegisterFormPage() {
               </div>
 
               {/* SUBMIT BUTTON */}
-              <div className="pt-6 border-t border-gray-100">
+              <div className="pt-6 border-t border-[#dccdb2]">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full md:w-auto md:min-w-[280px] mx-auto py-3.5 px-8 rounded-xl bg-gradient-to-r from-sea_green to-dark_emerald text-white font-bold text-sm md:text-base flex items-center justify-center gap-2.5 hover:from-dark_emerald hover:to-evergreen hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 shadow-lg"
+                  className="w-full md:w-auto md:min-w-[280px] mx-auto py-3.5 px-8 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] font-bold text-sm md:text-base flex items-center justify-center gap-2.5 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 shadow-md cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>

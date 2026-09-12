@@ -112,18 +112,21 @@ export default function SpeakersSection() {
 
   return (
     <section 
-      className="py-12 sm:py-20 px-3 sm:px-6 md:px-8 bg-[#fcfbf7] border-t border-[#ebdcc6]/60 relative overflow-hidden"
+      className="py-12 sm:py-20 px-3.5 sm:px-6 md:px-8 bg-[#f5efe2] border-b border-[#dccdb2]/70 relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* ================= 1. SECTION HEADER (Clean Institutional Typography) ================= */}
-        <div className="text-center mb-8 sm:mb-14 space-y-2">
-          <h2 className="font-sans font-extrabold text-lg xs:text-xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-wider uppercase">
-            VOICES OF CHANGE: <span className="font-serif italic font-normal text-[#2d6a4f] capitalize">Faculty &amp; Mentors</span>
+        {/* ================= 1. SECTION HEADER ================= */}
+        <div className="text-center mb-8 sm:mb-12 space-y-2">
+          <div className="text-xs font-semibold tracking-widest text-[#3a8c7e] uppercase">
+            Eminent Voices
+          </div>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#3e2410] tracking-tight">
+            Voices of Change: <span className="italic text-[#3a8c7e]">Faculty &amp; Speakers</span>
           </h2>
-          <p className="text-gray-600 text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal max-w-2xl mx-auto leading-relaxed px-2">
             Learn from distinguished professionals with decades of experience in governance, social development, and education.
           </p>
         </div>
@@ -139,7 +142,7 @@ export default function SpeakersSection() {
           <button
             onClick={handlePrev}
             aria-label="Previous Faculty"
-            className="absolute left-0 sm:left-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer hidden sm:flex"
+            className="absolute left-0 sm:left-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-sm text-[#3e2410] hover:text-[#3a8c7e] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer hidden sm:flex"
           >
             <ChevronLeft size={20} />
           </button>
@@ -148,7 +151,7 @@ export default function SpeakersSection() {
           <button
             onClick={handleNext}
             aria-label="Next Faculty"
-            className="absolute right-0 sm:right-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border border-gray-200 shadow-md text-gray-700 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer hidden sm:flex"
+            className="absolute right-0 sm:right-1 top-[35%] -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-sm text-[#3e2410] hover:text-[#3a8c7e] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer hidden sm:flex"
           >
             <ChevronRight size={20} />
           </button>
@@ -168,34 +171,34 @@ export default function SpeakersSection() {
                 >
                   
                   {/* --- TOP: COMPACT ARTISTIC HERITAGE PARCHMENT CARD --- */}
-                  <div className="relative w-[75%] sm:w-[68%] lg:w-[70%] max-w-[170px] aspect-[1/1.08] mx-auto rounded-xl bg-[#f6f2e9] border border-[#e5dec9] overflow-hidden shadow-xs group-hover:shadow-md transition-all duration-300 flex items-end justify-center select-none">
+                  <div className="hover-lift relative w-[80%] sm:w-[72%] lg:w-[75%] max-w-[175px] aspect-[1/1.08] mx-auto rounded-2xl bg-[#fdfbf7] border border-[#dccdb2] group-hover:border-[#3a8c7e]/60 overflow-hidden shadow-xs transition-all duration-300 flex items-end justify-center select-none">
                     
                     {/* Subtle Ruled Lines Texture */}
                     <div 
-                      className="absolute inset-0 pointer-events-none opacity-40"
+                      className="absolute inset-0 pointer-events-none opacity-30"
                       style={{
-                        backgroundImage: "repeating-linear-gradient(to bottom, transparent, transparent 15px, #e2d7c3 16px)"
+                        backgroundImage: "repeating-linear-gradient(to bottom, transparent, transparent 15px, #dccdb2 16px)"
                       }}
                     />
 
                     {/* Left Vertical Accent Stitch Line */}
-                    <div className="absolute top-0 bottom-0 left-2 w-[1.5px] bg-[#cbb898] opacity-60 pointer-events-none" />
+                    <div className="absolute top-0 bottom-0 left-2 w-[1.5px] bg-[#c4b49a] opacity-60 pointer-events-none" />
 
-                    {/* Left Mandala Watermark Seal */}
-                    <div className="absolute top-4 left-1 w-3.5 h-3.5 rounded-full border border-[#cbb898] flex items-center justify-center opacity-40 pointer-events-none">
-                      <div className="w-1.5 h-1.5 rounded-full border border-[#cbb898]" />
+                    {/* Left Mandala Seal */}
+                    <div className="absolute top-4 left-1 w-3.5 h-3.5 rounded-full border border-[#c8880a] flex items-center justify-center opacity-50 pointer-events-none">
+                      <div className="w-1.5 h-1.5 rounded-full border border-[#c8880a]" />
                     </div>
 
                     {/* Faint Sanskrit Calligraphy Watermark */}
                     <div className="absolute top-1.5 left-4 right-1.5 text-left pointer-events-none select-none opacity-25">
-                      <p className="font-serif text-[7px] sm:text-[8px] leading-[9.5px] sm:leading-[11px] text-[#4a3f35]">
+                      <p className="font-serif text-[7px] sm:text-[8px] leading-[9.5px] sm:leading-[11px] text-[#3e2410]">
                         आचार्यात् पादमादत्ते<br />
                         पादं शिष्यः स्वमेधया ।<br />
                         पादं सब्रह्मचारिभ्यः
                       </p>
                     </div>
 
-                    {/* Portrait Photo of Faculty (Snug & Compact inside the small box) */}
+                    {/* Portrait Photo of Faculty */}
                     <div className="relative w-[84%] h-[86%] z-10 flex items-end justify-center pb-0">
                       {speaker.image ? (
                         <div className="relative w-full h-full">
@@ -203,12 +206,12 @@ export default function SpeakersSection() {
                             src={speaker.image}
                             alt={speaker.name}
                             fill
-                            className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-104 transition-transform duration-500"
+                            className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
                             sizes="(max-width: 640px) 35vw, (max-width: 1024px) 25vw, 15vw"
                           />
                         </div>
                       ) : (
-                        <div className="w-10 h-10 rounded-full bg-white/60 flex items-center justify-center text-gray-500 mb-2 border border-gray-300">
+                        <div className="w-10 h-10 rounded-full bg-[#ebe2d1] flex items-center justify-center text-[#7a5232] mb-2 border border-[#dccdb2]">
                           <User size={18} />
                         </div>
                       )}
@@ -218,15 +221,15 @@ export default function SpeakersSection() {
 
                   {/* --- BOTTOM: CLEAN EDITORIAL TYPOGRAPHY --- */}
                   <div className="text-center pt-2.5 sm:pt-3 pb-1 space-y-0.5 sm:space-y-1 max-w-[210px] mx-auto px-1">
-                    <h3 className="font-sans font-bold text-xs xs:text-sm sm:text-base text-[#1c1917] leading-tight group-hover:text-[#2d6a4f] transition-colors">
+                    <h3 className="font-serif font-semibold text-xs xs:text-sm sm:text-base text-[#3e2410] leading-tight group-hover:text-[#3a8c7e] transition-colors">
                       {speaker.name}
                     </h3>
                     
-                    <p className="text-[11px] sm:text-xs text-gray-700 font-medium leading-snug">
+                    <p className="text-[11px] sm:text-xs text-[#7a5232] font-medium leading-snug">
                       {speaker.title}
                     </p>
 
-                    <p className="text-[10px] sm:text-[11px] text-gray-500 font-normal leading-snug line-clamp-2">
+                    <p className="text-[10px] sm:text-[11px] text-[#8c6747] font-normal leading-snug line-clamp-2">
                       {speaker.role}
                     </p>
                   </div>
@@ -243,7 +246,7 @@ export default function SpeakersSection() {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx ? "bg-[#2d6a4f] w-5 sm:w-6" : "w-2 sm:w-2.5 bg-gray-300 hover:bg-gray-400"
+                  currentIndex === idx ? "bg-[#3a8c7e] w-5 sm:w-6" : "w-2 sm:w-2.5 bg-[#dccdb2] hover:bg-[#c4b49a]"
                 }`}
                 aria-label={`Slide ${idx + 1}`}
               />

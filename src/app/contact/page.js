@@ -5,8 +5,8 @@ import { Mail, MapPin, Phone, Send, Instagram, XCircle, ArrowUpRight } from 'luc
 
 const filledBg = (value) =>
   value.trim()
-    ? 'bg-white text-green-900 placeholder:text-gray-400'
-    : 'bg-green-800/40 text-white placeholder:text-green-100/50';
+    ? 'bg-white text-[#3e2410] placeholder:text-[#7a5232]/50'
+    : 'bg-[#241407]/40 text-[#f5efe2] placeholder:text-[#f5efe2]/50';
 
 
 export default function ContactPage() {
@@ -127,42 +127,33 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-frosted_mint/20 font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-[#f5efe2] text-[#3e2410] font-sans overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-20 md:pt-24 pb-2 md:pb-3 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <svg viewBox="0 0 1440 800" className="absolute -top-[480px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
-            <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 700" className="absolute -top-[360px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
-            <path fill="#40916C" fillOpacity="0.8" d="M0,460 C220,540 420,360 660,440 C900,500 1120,580 1320,500 C1400,460 1440,440 1440,420 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 600" className="absolute -top-[240px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
-            <path fill="#d8f3dc" fillOpacity="0.65" d="M0,380 C260,430 460,320 700,380 C940,420 1140,470 1340,410 C1400,380 1440,360 1440,340 L1440,0 L0,0 Z" />
-          </svg>
-        </div>
+      <section className="relative pt-24 md:pt-32 pb-8 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-evergreen/30 backdrop-blur-md mb-2 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-sea_green animate-pulse" />
-            <p className="text-[10px] sm:text-xs font-bold text-evergreen tracking-wider uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-2 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#d4a825] animate-pulse" />
+            <p className="text-[10px] sm:text-xs font-bold text-[#d4a825] tracking-widest uppercase">
               Contact Us
             </p>
           </div>
 
-          <h1 className="font-extrabold font-serif text-2xl sm:text-3xl md:text-4xl mb-1 text-evergreen leading-tight drop-shadow-sm">
-            Get in Touch
+          <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl mb-2 text-[#f5efe2] leading-tight drop-shadow-sm">
+            Get in <span className="italic text-[#d4a825] font-serif">Touch</span>
           </h1>
 
-          <p className="font-serif italic text-xs sm:text-sm md:text-base text-pine_teal/85 max-w-xl mx-auto leading-snug">
+          <p className="text-xs sm:text-sm md:text-base text-[#f5efe2]/85 max-w-xl mx-auto leading-relaxed">
             Have questions or want to collaborate with us? We&apos;d love to hear from you.
           </p>
         </div>
       </section>
 
       {/* 2. CARDS CONTAINER */}
-      <div className="relative w-full max-w-4xl mx-auto h-auto lg:h-[410px] perspective z-20 px-4 mb-8 sm:mb-10 flex flex-col lg:block gap-4 lg:gap-0">
+      <div className="relative w-full max-w-4xl mx-auto h-auto lg:h-[430px] perspective z-20 px-4 my-10 sm:my-14 flex flex-col lg:block gap-4 lg:gap-0">
 
         {/* Left Card - Contact Info */}
         <div
@@ -171,37 +162,37 @@ export default function ContactPage() {
             transform: isSeparated && canSeparate ? 'translateX(-100px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-r-none p-4 sm:p-6 lg:p-6 shadow-xl flex flex-col justify-center relative border border-gray-100">
-            <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-white rotate-45 z-50" />
+          <div className="h-full bg-[#fdfbf7] rounded-2xl sm:rounded-3xl lg:rounded-r-none p-5 sm:p-7 lg:p-7 shadow-xl flex flex-col justify-center relative border border-[#dccdb2] text-left">
+            <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-[#fdfbf7] border-t border-r border-[#dccdb2] rotate-45 z-50" />
             <div className="relative z-10">
-              <h2 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-evergreen mb-1 text-left leading-tight">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#3e2410] mb-1.5 leading-tight">
                 Let&apos;s get in touch
               </h2>
-              <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-[11px] sm:text-xs font-normal">
+              <p className="text-[#7a5232] mb-4 leading-relaxed text-xs sm:text-[13px] font-normal">
                 Have questions or want to learn more about our programs? We&apos;d love to hear from you.
               </p>
-              <div className="space-y-2.5 sm:space-y-3 mb-3 sm:mb-4">
-                <div className="flex gap-2.5 items-start">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
-                    <MapPin className="w-3.5 h-3.5 text-sea_green" />
+              <div className="space-y-3 mb-4">
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-xl bg-[#3a8c7e]/15 border border-[#3a8c7e]/25 flex items-center justify-center shrink-0 shadow-xs">
+                    <MapPin className="w-4 h-4 text-[#3a8c7e]" />
                   </div>
                   <div>
-                    <p className="text-[9px] font-bold text-sea_green tracking-wider uppercase mb-0.5">ADDRESS</p>
-                    <p className="text-gray-900 font-medium text-[11px] sm:text-xs">Mumbai, Maharashtra 400076</p>
+                    <p className="text-[9.5px] font-bold text-[#3a8c7e] tracking-wider uppercase mb-0.5">ADDRESS</p>
+                    <p className="text-[#3e2410] font-medium text-xs sm:text-sm">Mumbai, Maharashtra 400076</p>
                   </div>
                 </div>
-                <div className="flex gap-2.5 items-start">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-frosted_mint/40 border border-celadon/50 flex items-center justify-center shrink-0 shadow-xs">
-                    <Mail className="w-3.5 h-3.5 text-sea_green" />
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-xl bg-[#3a8c7e]/15 border border-[#3a8c7e]/25 flex items-center justify-center shrink-0 shadow-xs">
+                    <Mail className="w-4 h-4 text-[#3a8c7e]" />
                   </div>
                   <div>
-                    <p className="text-[9px] font-bold text-sea_green tracking-wider uppercase mb-0.5">EMAIL</p>
-                    <p className="text-gray-900 font-medium text-[11px] sm:text-xs break-all">info@sahyadriruralconnect.org</p>
+                    <p className="text-[9.5px] font-bold text-[#3a8c7e] tracking-wider uppercase mb-0.5">EMAIL</p>
+                    <p className="text-[#3e2410] font-medium text-xs sm:text-sm break-all">info@sahyadriruralconnect.org</p>
                   </div>
                 </div>
               </div>
-              <div className="pt-0.5">
-                <p className="text-[9px] font-bold text-gray-400 tracking-wider uppercase mb-1.5">
+              <div className="pt-1">
+                <p className="text-[9.5px] font-bold text-[#7a5232] tracking-wider uppercase mb-2">
                   Follow Our Field Stories
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2">
@@ -209,18 +200,18 @@ export default function ContactPage() {
                     href="https://www.instagram.com/sahyadriwinterschool"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-between p-2 rounded-xl bg-gradient-to-r from-rose-50/80 via-pink-50/40 to-amber-50/50 border border-rose-200/70 hover:border-rose-300 hover:shadow-md transition-all group/ig"
+                    className="flex-1 inline-flex items-center justify-between p-2.5 rounded-xl bg-[#f5efe2] border border-[#dccdb2] hover:border-[#3a8c7e] hover:shadow-md transition-all group/ig"
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
                         <Instagram size={13} />
                       </div>
                       <div className="text-left">
-                        <span className="text-[8.5px] font-bold text-rose-700 uppercase tracking-wider block">Instagram</span>
-                        <span className="text-[11px] font-bold text-gray-900 group-hover/ig:text-rose-700 transition-colors">@sahyadriwinterschool</span>
+                        <span className="text-[8.5px] font-bold text-[#7a5232] uppercase tracking-wider block">Instagram</span>
+                        <span className="text-[11px] font-bold text-[#3e2410] group-hover/ig:text-[#3a8c7e] transition-colors">@sahyadriwinterschool</span>
                       </div>
                     </div>
-                    <ArrowUpRight size={13} className="text-gray-400 group-hover/ig:text-rose-600 group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
+                    <ArrowUpRight size={13} className="text-[#7a5232] group-hover/ig:text-[#3a8c7e] group-hover/ig:translate-x-0.5 group-hover/ig:-translate-y-0.5 transition-all mr-1" />
                   </a>
                 </div>
               </div>
@@ -235,29 +226,29 @@ export default function ContactPage() {
             transform: isSeparated && canSeparate ? 'translateX(100px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-sea_green rounded-2xl sm:rounded-3xl lg:rounded-l-none p-4 sm:p-6 lg:p-6 shadow-2xl relative flex flex-col justify-center">
-            <div className="hidden lg:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-sea_green rotate-45 z-50" />
+          <div className="h-full bg-[#3e2410] rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 lg:p-7 shadow-2xl relative flex flex-col justify-center border border-[#3e2410] text-left">
+            <div className="hidden lg:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-[#3e2410] rotate-45 z-50" />
             <div className="relative z-10">
-              <form onSubmit={handleSubmit} className="space-y-2.5">
+              <form onSubmit={handleSubmit} className="space-y-3">
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-bold text-white mb-0.5">Email</label>
+                  <label className="block text-[11px] sm:text-xs font-bold text-[#f5efe2] mb-1">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs sm:text-[13px]
-  ${emailError ? 'border-red-400' : 'border-green-400/30'}
+                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px]
+  ${emailError ? 'border-red-400' : 'border-[#dccdb2]/30'}
   ${filledBg(formData.email)}
-  focus:outline-none focus:border-white transition-all duration-300
+  focus:outline-none focus:border-[#d4a825] transition-all duration-300
 `}
 
                   />
-                  {emailError && <p className="mt-0.5 text-[10px] text-red-200 font-medium">{emailError}</p>}
+                  {emailError && <p className="mt-0.5 text-[10px] text-red-300 font-medium">{emailError}</p>}
                 </div>
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-bold text-white mb-0.5">Phone</label>
+                  <label className="block text-[11px] sm:text-xs font-bold text-[#f5efe2] mb-1">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -265,40 +256,40 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="9876543210"
                     required
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs sm:text-[13px]
-  ${phoneError ? 'border-red-400' : 'border-green-400/30'}
+                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px]
+  ${phoneError ? 'border-red-400' : 'border-[#dccdb2]/30'}
   ${filledBg(formData.phone)}
-  focus:outline-none focus:border-white transition-all duration-300
+  focus:outline-none focus:border-[#d4a825] transition-all duration-300
 `}
 
                   />
-                  {phoneError && <p className="mt-0.5 text-[10px] text-red-200 font-medium">{phoneError}</p>}
+                  {phoneError && <p className="mt-0.5 text-[10px] text-red-300 font-medium">{phoneError}</p>}
                 </div>
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-bold text-white mb-0.5">Message</label>
+                  <label className="block text-[11px] sm:text-xs font-bold text-[#f5efe2] mb-1">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={2}
                     placeholder="Your message..."
-                    className={`w-full px-3 py-1.5 sm:py-2 rounded-lg border text-xs sm:text-[13px] min-h-[50px] sm:min-h-[56px]
-  ${messageError ? 'border-red-400' : 'border-green-400/30'}
+                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] min-h-[55px]
+  ${messageError ? 'border-red-400' : 'border-[#dccdb2]/30'}
   ${filledBg(formData.message)}
-  focus:outline-none focus:border-white transition-all duration-300 resize-none
+  focus:outline-none focus:border-[#d4a825] transition-all duration-300 resize-none
 `}
 
                   />
-                  {messageError && <p className="mt-0.5 text-[10px] text-red-200 font-medium">{messageError}</p>}
+                  {messageError && <p className="mt-0.5 text-[10px] text-red-300 font-medium">{messageError}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-1.5 py-2 sm:py-2.5 px-4 rounded-full bg-white text-green-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
+                  className="w-full mt-2 py-2.5 px-5 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-3.5 h-3.5 border-2 border-green-600/30 border-t-green-600 rounded-full animate-spin" />
+                      <div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       <span>Sending...</span>
                     </>
                   ) : (
@@ -318,26 +309,22 @@ export default function ContactPage() {
         {/* Success Popup */}
         {showSuccess && (
           <div className={`
-            /* Mobile Styles: Fixed center screen, dark overlay only (NO BLUR) */
-            fixed inset-0 z-[100] flex items-center justify-center bg-black/10 p-4
-            /* Desktop Styles: Absolute inside container, no overlay */
+            fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4
             md:absolute md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:bg-transparent md:p-0
             animate-in fade-in zoom-in duration-300
           `}>
             <div className={`
-              bg-white rounded-2xl shadow-2xl flex flex-col items-center justify-center border border-gray-100
-              /* Mobile Size: Small */
+              bg-[#fdfbf7] rounded-2xl shadow-2xl flex flex-col items-center justify-center border border-[#dccdb2]
               w-[85%] max-w-sm p-6
-              /* Desktop Size: Original */
               md:min-w-[300px] md:p-8 md:w-auto
             `}>
-              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 rounded-full bg-[#3a8c7e]/15 flex items-center justify-center mb-4 border border-[#3a8c7e]/30">
+                <svg className="w-8 h-8 text-[#3a8c7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">Sent Successfully!</h3>
-              <p className="text-gray-500 text-center text-sm md:text-base max-w-xs">
+              <h3 className="text-2xl font-serif font-bold text-[#3e2410] text-center mb-2">Sent Successfully!</h3>
+              <p className="text-[#7a5232] text-center text-sm md:text-base max-w-xs">
                 Thank you for reaching out. We&apos;ll be in touch soon!
               </p>
             </div>
@@ -347,24 +334,20 @@ export default function ContactPage() {
         {/* Failure Popup */}
         {showError && (
           <div className={`
-            /* Mobile Styles: Fixed center screen, dark overlay only (NO BLUR) */
-            fixed inset-0 z-[100] flex items-center justify-center bg-black/10 p-4
-            /* Desktop Styles: Absolute inside container, no overlay */
+            fixed inset-0 z-[100] flex items-center justify-center bg-black/40 p-4
             md:absolute md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:bg-transparent md:p-0
             animate-in fade-in zoom-in duration-300
           `}>
             <div className={`
-              bg-white rounded-2xl shadow-2xl flex flex-col items-center justify-center border border-red-50
-              /* Mobile Size: Small */
+              bg-[#fdfbf7] rounded-2xl shadow-2xl flex flex-col items-center justify-center border border-red-200
               w-[85%] max-w-sm p-6
-              /* Desktop Size: Original */
               md:min-w-[300px] md:p-8 md:w-auto
             `}>
               <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-4">
                 <XCircle className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-2">Sending Failed</h3>
-              <p className="text-gray-500 text-center text-sm md:text-base max-w-xs">
+              <h3 className="text-2xl font-serif font-bold text-[#3e2410] text-center mb-2">Sending Failed</h3>
+              <p className="text-[#7a5232] text-center text-sm md:text-base max-w-xs">
                 We couldn&apos;t send your message. Please check your internet or try again later.
               </p>
             </div>

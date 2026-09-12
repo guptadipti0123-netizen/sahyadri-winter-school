@@ -3,41 +3,41 @@ import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { blogsData } from "@/data/blogsData"
-import { BookOpen, Calendar, Clock, ArrowRight, Sparkles } from "lucide-react"
+import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react"
 
 export default function BlogSection() {
   // Show top 3 recent stories on homepage
   const featuredBlogs = blogsData.slice(0, 3)
 
   return (
-    <section className="py-12 md:py-16 px-4 md:px-8 bg-frosted_mint/30 relative overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sea_green/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-mint_leaf/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-12 md:py-18 px-3.5 sm:px-6 md:px-8 bg-[#f5efe2] border-b border-[#dccdb2]/70 relative overflow-hidden">
+      {/* Background Subtle Glows */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ebe2d1]/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#3a8c7e]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[11px] font-bold tracking-widest uppercase">
-              <BookOpen size={13} />
-              <span>Voices & Reflections</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs text-[#3a8c7e] text-[11px] font-semibold tracking-widest uppercase">
+              <BookOpen size={13} className="text-[#c8880a]" />
+              <span>Field Dispatches</span>
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-              Stories from the <span className="italic text-sea_green">Field</span>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#3e2410]">
+              Stories from the <span className="italic text-[#3a8c7e]">Field</span>
             </h2>
-            <p className="text-pine_teal/80 text-sm md:text-base font-medium max-w-xl">
-              Narratives, student reflections, and key takeaways from our rural immersion programs.
+            <p className="text-[#7a5232] text-sm md:text-base font-normal max-w-xl leading-relaxed">
+              Narratives, student reflections, and key takeaways from our rural immersion programs across Maharashtra.
             </p>
           </div>
 
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-bold text-evergreen hover:text-sea_green transition-colors group w-fit"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#3e2410] hover:text-[#3a8c7e] transition-colors group w-fit"
           >
             <span>View All Stories</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform text-[#3a8c7e]" />
           </Link>
         </div>
 
@@ -47,48 +47,48 @@ export default function BlogSection() {
             <Link
               key={blog.slug}
               href={`/blog/${blog.slug}`}
-              className="group bg-white rounded-3xl overflow-hidden border-2 border-celadon/50 hover:border-sea_green shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="hover-lift group bg-[#fdfbf7] hover:bg-[#f5efe2] rounded-3xl overflow-hidden border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Image Banner */}
-                <div className="relative h-48 sm:h-52 w-full bg-gray-100 overflow-hidden">
+                <div className="relative h-48 sm:h-52 w-full bg-[#ebe2d1] overflow-hidden">
                   <Image
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#241407]/70 backdrop-blur-md text-[#f5efe2] text-[10px] font-semibold uppercase tracking-wider border border-[#dccdb2]/20">
                     {blog.category}
                   </div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-5 space-y-2.5">
-                  <div className="flex items-center gap-3 text-[11px] text-pine_teal/70 font-medium">
+                <div className="p-5 sm:p-6 space-y-2.5">
+                  <div className="flex items-center gap-3 text-[11px] text-[#7a5232] font-medium">
                     <span className="flex items-center gap-1">
-                      <Calendar size={12} />
+                      <Calendar size={12} className="text-[#c8880a]" />
                       {blog.date}
                     </span>
                     <span>•</span>
                     <span className="flex items-center gap-1">
-                      <Clock size={12} />
+                      <Clock size={12} className="text-[#c4b49a]" />
                       {blog.readTime}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-lg font-bold text-evergreen group-hover:text-sea_green transition-colors leading-snug">
+                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#3e2410] group-hover:text-[#3a8c7e] transition-colors leading-snug">
                     {blog.title}
                   </h3>
 
-                  <p className="text-xs text-pine_teal/80 leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-[#7a5232] leading-relaxed line-clamp-3">
                     {blog.excerpt}
                   </p>
                 </div>
               </div>
 
               {/* Read More Footer */}
-              <div className="p-5 pt-0 flex items-center gap-1 text-xs font-bold text-sea_green group-hover:text-dark_emerald">
+              <div className="p-5 sm:p-6 pt-0 flex items-center gap-1.5 text-xs font-semibold text-[#3a8c7e] group-hover:text-[#1f5c54]">
                 <span>Read Story</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </div>
@@ -100,3 +100,4 @@ export default function BlogSection() {
     </section>
   )
 }
+

@@ -24,56 +24,56 @@ export default async function BlogPostPage({ params }) {
   const relatedArticles = blogsData.filter((b) => b.slug !== slug).slice(0, 2)
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
+    <main className="min-h-screen relative overflow-x-hidden bg-[#f5efe2] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO HEADER ================= */}
-      <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden bg-gradient-to-b from-evergreen via-dark_emerald to-sea_green text-white">
+      <section className="relative pt-28 md:pt-36 pb-14 overflow-hidden bg-[#241407] text-[#f5efe2]">
         
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-black/30 mix-blend-multiply" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-mint_leaf/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Background Subtle Glows */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#3a8c7e]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8880a]/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-5">
+        <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
           
           {/* Back link */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-frosted_mint/90 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs md:text-sm font-medium text-[#dccdb2] hover:text-white transition-colors"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={16} className="text-[#3a8c7e]" />
             <span>Back to All Stories</span>
           </Link>
 
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider">
+            <span className="px-3.5 py-1 rounded-full bg-[#f5efe2]/10 border border-[#dccdb2]/30 text-[#f5efe2] text-xs font-semibold uppercase tracking-wider">
               {blog.category}
             </span>
-            <span className="px-3 py-1 rounded-full bg-frosted_mint/20 backdrop-blur-md text-frosted_mint text-[11px] font-semibold">
+            <span className="px-3.5 py-1 rounded-full bg-[#3a8c7e]/20 border border-[#3a8c7e]/40 text-[#6e9e97] text-xs font-medium">
               {blog.edition}
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="font-serif font-extrabold text-2xl sm:text-4xl md:text-5xl leading-tight text-white drop-shadow-md">
+          <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl leading-tight text-[#f5efe2]">
             {blog.title}
           </h1>
 
           {blog.subtitle && (
-            <p className="text-base sm:text-xl font-light text-frosted_mint/90 italic font-serif">
+            <p className="text-base sm:text-xl font-light text-[#dccdb2] italic font-serif leading-relaxed">
               {blog.subtitle}
             </p>
           )}
 
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-frosted_mint/80 pt-2 border-t border-white/20">
+          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-[#dccdb2]/80 pt-4 border-t border-[#dccdb2]/20 font-light">
             <span className="flex items-center gap-1.5">
-              <Calendar size={14} />
+              <Calendar size={14} className="text-[#3a8c7e]" />
               {blog.date}
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">
-              <Clock size={14} />
+              <Clock size={14} className="text-[#c8880a]" />
               {blog.readTime}
             </span>
             <span>•</span>
@@ -85,10 +85,10 @@ export default async function BlogPostPage({ params }) {
 
       {/* ================= ARTICLE CONTENT ================= */}
       <section className="py-12 px-4 md:px-6 max-w-4xl mx-auto">
-        <div className="bg-white rounded-3xl border border-celadon/50 p-6 md:p-12 shadow-sm space-y-8">
+        <div className="bg-[#fdfbf7] rounded-3xl border border-[#dccdb2] p-6 sm:p-10 md:p-14 shadow-sm space-y-8">
           
           {/* Main Cover Image */}
-          <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden shadow-md">
+          <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden border border-[#dccdb2] shadow-xs">
             <Image
               src={blog.image}
               alt={blog.title}
@@ -99,13 +99,13 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           {/* Body Content */}
-          <div className="space-y-6 text-pine_teal text-base sm:text-lg leading-relaxed font-normal">
+          <div className="space-y-6 text-[#3e2410] text-base sm:text-lg leading-relaxed font-light">
             {blog.content.map((block, index) => {
               if (block.type === "heading") {
                 return (
                   <h2
                     key={index}
-                    className="font-serif text-2xl sm:text-3xl font-bold text-evergreen pt-6 border-t border-gray-100 first:border-none first:pt-0"
+                    className="font-serif text-2xl sm:text-3xl font-normal text-[#3e2410] pt-6 border-t border-[#dccdb2]/60 first:border-none first:pt-0"
                   >
                     {block.text}
                   </h2>
@@ -116,9 +116,9 @@ export default async function BlogPostPage({ params }) {
                 return (
                   <blockquote
                     key={index}
-                    className="relative my-6 p-6 rounded-2xl bg-frosted_mint/40 border-l-4 border-sea_green text-evergreen font-serif italic text-lg sm:text-xl leading-relaxed shadow-xs"
+                    className="relative my-6 p-6 rounded-2xl bg-[#ebe2d1]/40 border-l-4 border-[#3a8c7e] text-[#1f5c54] font-serif italic text-lg sm:text-xl leading-relaxed"
                   >
-                    <Quote className="w-8 h-8 text-sea_green/30 absolute top-3 right-4 pointer-events-none" />
+                    <Quote className="w-8 h-8 text-[#3a8c7e]/25 absolute top-3 right-4 pointer-events-none" />
                     &quot;{block.text}&quot;
                   </blockquote>
                 )
@@ -128,8 +128,8 @@ export default async function BlogPostPage({ params }) {
                 return (
                   <ul key={index} className="space-y-3.5 my-4">
                     {block.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed">
-                        <CheckCircle2 className="w-5 h-5 text-sea_green mt-1 flex-shrink-0" />
+                      <li key={itemIdx} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed text-[#7a5232]">
+                        <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] mt-0.5 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }) {
               }
 
               return (
-                <p key={index} className="text-gray-700 leading-relaxed">
+                <p key={index} className="text-[#3e2410]/90 leading-relaxed font-light">
                   {block.text}
                 </p>
               )
@@ -146,22 +146,22 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           {/* Author Card Footer */}
-          <div className="mt-12 pt-8 border-t-2 border-celadon/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-frosted_mint/20 p-6 rounded-2xl">
+          <div className="mt-12 pt-8 border-t border-[#dccdb2] flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#ebe2d1]/40 p-6 rounded-2xl">
             <div>
-              <span className="text-xs font-bold text-sea_green uppercase tracking-wider block">
+              <span className="text-xs font-semibold text-[#1f5c54] uppercase tracking-wider block">
                 Published By
               </span>
-              <h4 className="font-serif text-lg font-bold text-evergreen">
+              <h4 className="font-serif text-xl font-normal text-[#3e2410] mt-0.5">
                 {blog.author}
               </h4>
-              <p className="text-xs text-pine_teal/80">
+              <p className="text-xs text-[#7a5232] font-light">
                 {blog.authorRole} • {blog.edition}
               </p>
             </div>
 
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-celadon text-evergreen text-xs font-bold shadow-xs hover:bg-sea_green hover:text-white transition-all w-fit"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-xs font-semibold shadow-xs hover:bg-[#3a8c7e] hover:text-white transition-all w-fit"
             >
               <ArrowLeft size={14} />
               More Stories
@@ -173,9 +173,9 @@ export default async function BlogPostPage({ params }) {
 
       {/* ================= RELATED STORIES ================= */}
       {relatedArticles.length > 0 && (
-        <section className="pb-16 px-4 md:px-6 max-w-4xl mx-auto">
+        <section className="pb-20 px-4 md:px-6 max-w-4xl mx-auto">
           <div className="space-y-6">
-            <h3 className="font-serif text-2xl font-bold text-evergreen">
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#3e2410]">
               More Field Stories
             </h3>
 
@@ -184,21 +184,21 @@ export default async function BlogPostPage({ params }) {
                 <Link
                   key={rel.slug}
                   href={`/blog/${rel.slug}`}
-                  className="group bg-white rounded-2xl p-5 border border-celadon/50 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+                  className="group bg-[#fdfbf7] rounded-3xl p-6 border border-[#dccdb2] shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold text-sea_green uppercase tracking-wider">
+                    <span className="text-[10px] font-semibold text-[#1f5c54] uppercase tracking-wider">
                       {rel.category}
                     </span>
-                    <h4 className="font-serif font-bold text-base text-evergreen group-hover:text-sea_green transition-colors leading-snug">
+                    <h4 className="font-serif font-normal text-lg sm:text-xl text-[#3e2410] group-hover:text-[#1f5c54] transition-colors leading-snug">
                       {rel.title}
                     </h4>
-                    <p className="text-xs text-pine_teal/75 line-clamp-2">
+                    <p className="text-xs sm:text-sm text-[#7a5232] font-light line-clamp-2">
                       {rel.excerpt}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-2 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-sea_green">
+                  <div className="mt-5 pt-3 border-t border-[#dccdb2]/60 flex items-center justify-between text-xs font-semibold text-[#1f5c54]">
                     <span>Read Story</span>
                     <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -212,3 +212,4 @@ export default async function BlogPostPage({ params }) {
     </main>
   )
 }
+

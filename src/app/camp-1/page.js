@@ -172,44 +172,35 @@ export default function Camp1Page() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden font-sans bg-frosted_mint/20">
+    <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-24 md:pt-32 pb-10 overflow-hidden">
-        {/* --- WAVE BACKGROUND --- */}
-        <div className="absolute inset-0 z-0">
-          <svg viewBox="0 0 1440 800" className="absolute -top-[420px] left-0 w-full h-[800px] -z-10" preserveAspectRatio="none">
-            <path fill="#1B4332" fillOpacity="0.95" d="M0,520 C200,620 420,420 640,500 C860,560 1080,650 1280,560 C1380,500 1440,480 1440,460 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 700" className="absolute -top-[300px] left-0 w-full h-[700px] -z-10" preserveAspectRatio="none">
-            <path fill="#40916C" fillOpacity="0.8" d="M0,460 C220,540 420,360 660,440 C900,500 1120,580 1320,500 C1400,460 1440,440 1440,420 L1440,0 L0,0 Z" />
-          </svg>
-          <svg viewBox="0 0 1440 600" className="absolute -top-[180px] left-0 w-full h-[600px] -z-10" preserveAspectRatio="none">
-            <path fill="#d8f3dc" fillOpacity="0.65" d="M0,380 C260,430 460,320 700,380 C940,420 1140,470 1340,410 C1400,380 1440,360 1440,340 L1440,0 L0,0 Z" />
-          </svg>
-        </div>
+      <section className="relative pt-24 md:pt-32 pb-12 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+        {/* Glows */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="text-evergreen space-y-4 sm:space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-evergreen/30 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-sea_green animate-pulse" />
-              <p className="text-xs md:text-sm font-bold text-evergreen tracking-wider uppercase">{campDetails.edition}</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+          <div className="space-y-4 sm:space-y-6 text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#d4a825] animate-pulse" />
+              <p className="text-xs md:text-sm font-bold text-[#d4a825] tracking-widest uppercase">{campDetails.edition}</p>
             </div>
-            <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-evergreen leading-tight drop-shadow-sm">{campDetails.title}</h1>
-            <div className="flex flex-col gap-2 text-sm md:text-base font-medium text-pine_teal/90">
-              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-sea_green" /><span>{campDetails.dates}</span></div>
-              <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-sea_green" /><span>{campDetails.location}</span></div>
+            <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#f5efe2] leading-tight drop-shadow-sm">{campDetails.title}</h1>
+            <div className="flex flex-col gap-2 text-sm md:text-base font-medium text-[#f5efe2]/85">
+              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[#d4a825]" /><span>{campDetails.dates}</span></div>
+              <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#d4a825]" /><span>{campDetails.location}</span></div>
             </div>
 
-            <p className="font-serif italic text-base sm:text-lg md:text-xl text-pine_teal/85 border-l-2 border-sea_green pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
+            <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#f5efe2]/90 border-l-2 border-[#d4a825] pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
           </div>
           
           {/* Polaroid Hero Card */}
-          <div className="relative z-10 flex justify-center">
-            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[270px] xs:h-[300px] md:h-[360px] bg-white p-3 pb-10 sm:pb-12 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-sm cursor-pointer"
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[270px] xs:h-[300px] md:h-[360px] bg-[#fdfbf7] p-3 pb-10 sm:pb-12 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-sm cursor-pointer border border-[#dccdb2]"
               onClick={() => setSelectedPhoto(palgharPhotos[0])}
             >
-              <div className="relative w-full h-full overflow-hidden bg-gray-100 rounded-xs">
+              <div className="relative w-full h-full overflow-hidden bg-[#ebe2d1] rounded-xs">
                 <Image 
                   src="/palghar/palghar-mango-orchard-community.jpg" 
                   alt="Winter Camp Palghar Jan 2025" 
@@ -219,39 +210,38 @@ export default function Camp1Page() {
                 />
               </div>
               <div className="absolute bottom-3 sm:bottom-4 left-0 w-full text-center px-2">
-                <span className="font-serif text-evergreen font-bold text-sm sm:text-base">Palghar Inaugural Cohort • Jan 2025</span>
+                <span className="font-serif text-[#3e2410] font-bold text-sm sm:text-base">Palghar Inaugural Cohort • Jan 2025</span>
               </div>
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-8 bg-white/40 backdrop-blur-sm transform -rotate-2 shadow-xs border border-white/50"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ================= 2. PALGHAR PHOTO GALLERY ================= */}
-      <section className="py-10 sm:py-16 px-3 sm:px-6 bg-frosted_mint/40 relative overflow-hidden">
+      <section className="py-12 sm:py-18 px-3 sm:px-6 bg-[#f5efe2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
 
           {/* Section Header */}
           <div className="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-celadon shadow-xs text-sea_green text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1">
-              <Camera size={13} className="text-sea_green" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#c8880a]/15 border border-[#c8880a]/30 shadow-xs text-[#c8880a] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1">
+              <Camera size={13} className="text-[#c8880a]" />
               <span>Palghar Visual Archive</span>
             </div>
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-evergreen">
-              Memories from <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea_green to-mint_leaf">Palghar</span>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3e2410]">
+              Memories from <span className="text-[#3a8c7e] italic">Palghar</span>
             </h2>
-            <p className="text-pine_teal/80 text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
+            <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
               Real field moments capturing community dialogues, village immersion, and our inaugural cohort fellows.
             </p>
           </div>
 
-          {/* --- RESPONSIVE PHOTO GALLERY GRID (ALL 16 PHOTOS VISIBLE ON MOBILE & DESKTOP) --- */}
+          {/* --- RESPONSIVE PHOTO GALLERY GRID --- */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[260px] sm:auto-rows-[280px]">
             {palgharPhotos.map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => setSelectedPhoto(item)}
-                className={`relative rounded-2xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer bg-evergreen/10 border-2 border-white ${
+                className={`relative rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer bg-[#ebe2d1] border border-[#dccdb2] ${
                   idx === 0 ? "sm:col-span-2 sm:row-span-2 auto-rows-[340px] sm:min-h-[420px]" : ""
                 }`}
               >
@@ -264,24 +254,24 @@ export default function Camp1Page() {
                 />
 
                 {/* Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
                 {/* Top Tag Badge */}
                 <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
-                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/60 text-frosted_mint backdrop-blur-md border border-white/20">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/60 text-[#d4a825] backdrop-blur-md border border-[#dccdb2]/20">
                     {item.tag}
                   </span>
-                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/20 text-white backdrop-blur-md border border-white/10">
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/20 text-[#f5efe2] backdrop-blur-md border border-white/10">
                     #{idx + 1}
                   </span>
                 </div>
 
                 {/* Bottom Details */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-white transform transition-transform duration-300">
-                  <h3 className="font-serif font-bold text-sm sm:text-base lg:text-lg leading-snug text-white mb-1 drop-shadow-sm">
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-[#f5efe2] text-left transform transition-transform duration-300">
+                  <h3 className="font-serif font-bold text-sm sm:text-base lg:text-lg leading-snug text-[#f5efe2] mb-1 drop-shadow-sm">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-frosted_mint/90 line-clamp-2 leading-relaxed font-light">
+                  <p className="text-xs text-[#f5efe2]/90 line-clamp-2 leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
@@ -299,7 +289,7 @@ export default function Camp1Page() {
           onClick={() => setSelectedPhoto(null)}
         >
           <div 
-            className="relative max-w-4xl w-full max-h-[90vh] bg-[#1b4332] rounded-2xl overflow-hidden border border-white/20 shadow-2xl flex flex-col"
+            className="relative max-w-4xl w-full max-h-[90vh] bg-[#241407] rounded-2xl overflow-hidden border border-[#dccdb2]/30 shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -322,16 +312,16 @@ export default function Camp1Page() {
             </div>
 
             {/* Details */}
-            <div className="p-4 sm:p-5 bg-evergreen text-white">
+            <div className="p-4 sm:p-5 bg-[#3e2410] text-[#f5efe2] text-left">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full bg-sea_green text-white">
+                <span className="text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#3a8c7e] text-[#f5efe2]">
                   {selectedPhoto.tag}
                 </span>
               </div>
-              <h3 className="font-serif font-bold text-base sm:text-xl text-white">
+              <h3 className="font-serif font-bold text-base sm:text-xl text-[#f5efe2]">
                 {selectedPhoto.title}
               </h3>
-              <p className="text-xs sm:text-sm text-frosted_mint/85 mt-0.5">
+              <p className="text-xs sm:text-sm text-[#f5efe2]/85 mt-0.5">
                 {selectedPhoto.desc}
               </p>
             </div>
