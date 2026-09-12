@@ -305,29 +305,29 @@ export default function Camp2Page() {
       <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
          {/* ================= 1. HERO SECTION ================= */}
-         <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+         <section className="relative pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
             {/* Glows */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+            <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
-               <div className="space-y-4 sm:space-y-6 text-left">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
-                     <span className="w-2 h-2 rounded-full bg-[#d4a825] animate-pulse" />
-                     <p className="text-xs md:text-sm font-bold text-[#d4a825] tracking-widest uppercase">{campDetails.edition}</p>
+               <div className="space-y-4 sm:space-y-5 text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+                     <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+                     <p className="text-xs md:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">{campDetails.edition}</p>
                   </div>
-                  <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#f5efe2] leading-tight drop-shadow-sm">{campDetails.title}</h1>
-                  <div className="flex flex-col gap-2 text-sm md:text-base font-medium text-[#f5efe2]/85">
-                     <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[#d4a825]" /><span>{campDetails.dates}</span></div>
-                     <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#d4a825]" /><span>{campDetails.location}</span></div>
+                  <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#3e2410] leading-tight tracking-tight">{campDetails.title}</h1>
+                  <div className="flex flex-wrap gap-3 text-sm font-medium text-[#3e2410]">
+                     <div className="flex items-center gap-2 bg-[#fdfbf7] px-4 py-2 rounded-full border border-[#dccdb2] shadow-xs"><Calendar className="w-4 h-4 text-[#3a8c7e]" /><span className="text-xs sm:text-sm">{campDetails.dates}</span></div>
+                     <div className="flex items-center gap-2 bg-[#fdfbf7] px-4 py-2 rounded-full border border-[#dccdb2] shadow-xs"><MapPin className="w-4 h-4 text-[#c8880a]" /><span className="text-xs sm:text-sm">{campDetails.location}</span></div>
                   </div>
-                  <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#f5efe2]/90 border-l-2 border-[#d4a825] pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
+                  <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#7a5232] border-l-2 border-[#3a8c7e] pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
                </div>
 
                <div className="relative z-10 flex justify-center">
-                  <div className="relative w-full max-w-[270px] xs:max-w-[290px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[300px] h-[500px] xs:h-[540px] md:h-[600px] lg:h-[450px] bg-black rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-[#241407] shadow-2xl overflow-hidden ring-4 ring-[#dccdb2]/20 group">
+                  <div className="relative w-full max-w-[270px] xs:max-w-[290px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[300px] h-[500px] xs:h-[540px] md:h-[600px] lg:h-[450px] bg-black rounded-[2rem] sm:rounded-[2.5rem] border-[6px] sm:border-[8px] border-[#3e2410] shadow-xl overflow-hidden ring-4 ring-[#dccdb2]/40 group">
                      {/* --- IPHONE NOTCH START --- */}
-                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-6 sm:h-7 bg-[#241407] rounded-b-2xl z-30 flex items-center justify-center gap-2">
+                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-6 sm:h-7 bg-[#3e2410] rounded-b-2xl z-30 flex items-center justify-center gap-2">
                         {/* Speaker Grill */}
                         <div className="w-8 sm:w-10 h-1 bg-gray-800 rounded-full"></div>
                         {/* Camera Dot */}
@@ -346,7 +346,7 @@ export default function Camp2Page() {
                         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent pt-10 pb-5 px-4 z-20 flex flex-col gap-2.5" onClick={(e) => e.stopPropagation()}>
                            <div className="w-full flex items-center gap-2">
                               <span className="text-[9px] sm:text-[10px] text-white/80 font-mono w-7 text-right">{formatTime(currentTime)}</span>
-                              <input type="range" min="0" max="100" value={progress || 0} onChange={handleSeek} className="flex-grow h-1 bg-white/20 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:bg-[#d4a825] [&::-webkit-slider-thumb]:rounded-full" />
+                              <input type="range" min="0" max="100" value={progress || 0} onChange={handleSeek} className="flex-grow h-1 bg-white/20 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-2.5 [&::-webkit-slider-thumb]:h-2.5 [&::-webkit-slider-thumb]:bg-[#3a8c7e] [&::-webkit-slider-thumb]:rounded-full" />
                               <span className="text-[9px] sm:text-[10px] text-white/80 font-mono w-7">{formatTime(duration)}</span>
                            </div>
                            <div className="flex justify-between items-center">

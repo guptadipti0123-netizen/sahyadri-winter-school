@@ -157,57 +157,57 @@ export default function SummerSchoolJawharPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+      <section className="relative pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         
-        {/* Ambient Glows */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+        {/* Ambient Warm Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10 items-center relative z-10">
           
           {/* LEFT: TEXT CONTENT */}
           <div className="lg:col-span-7 space-y-5 text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 shadow-sm backdrop-blur-md">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#d4a825] animate-pulse" />
-              <p className="text-xs md:text-sm font-bold text-[#d4a825] tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+              <p className="text-xs md:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
                 {campDetails.edition} • {campDetails.status}
               </p>
             </div>
 
-            <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-6xl text-[#f5efe2] leading-[1.15] drop-shadow-sm">
+            <h1 className="font-serif font-normal text-3xl sm:text-5xl md:text-6xl text-[#3e2410] leading-[1.15] tracking-tight">
               {campDetails.title}
-              <span className="block text-2xl sm:text-3xl md:text-4xl text-[#d4a825] font-normal italic mt-1 font-serif">
+              <span className="block text-2xl sm:text-3xl md:text-4xl text-[#3a8c7e] font-normal italic mt-1 font-serif">
                 Jawhar, Maharashtra
               </span>
             </h1>
 
-            <div className="flex flex-wrap gap-4 text-sm md:text-base font-medium text-[#f5efe2]/85">
-              <div className="flex items-center gap-2 bg-black/30 px-3.5 py-1.5 rounded-full border border-[#dccdb2]/20 shadow-xs">
-                <Calendar className="w-4 h-4 text-[#d4a825]" />
-                <span>{campDetails.dates}</span>
+            <div className="flex flex-wrap gap-3 sm:gap-4 text-sm font-medium text-[#3e2410]">
+              <div className="flex items-center gap-2 bg-[#fdfbf7] px-4 py-2 rounded-full border border-[#dccdb2] shadow-xs">
+                <Calendar className="w-4 h-4 text-[#3a8c7e]" />
+                <span className="text-xs sm:text-sm">{campDetails.dates}</span>
               </div>
-              <div className="flex items-center gap-2 bg-black/30 px-3.5 py-1.5 rounded-full border border-[#dccdb2]/20 shadow-xs">
-                <MapPin className="w-4 h-4 text-[#d4a825]" />
-                <span>{campDetails.location}</span>
+              <div className="flex items-center gap-2 bg-[#fdfbf7] px-4 py-2 rounded-full border border-[#dccdb2] shadow-xs">
+                <MapPin className="w-4 h-4 text-[#c8880a]" />
+                <span className="text-xs sm:text-sm">{campDetails.location}</span>
               </div>
             </div>
 
-            <p className="text-base md:text-lg italic border-l-2 border-[#d4a825] pl-4 text-[#f5efe2]/90">
+            <p className="text-base md:text-lg italic font-serif border-l-2 border-[#3a8c7e] pl-4 text-[#7a5232] leading-relaxed">
               &quot;{campDetails.tagline}&quot;
             </p>
 
             {/* ACTION BUTTONS */}
-            <div className="flex flex-row items-center gap-2 sm:gap-4 pt-3">
+            <div className="flex flex-row items-center gap-3 sm:gap-4 pt-3">
               <Link
                 href="#themes"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] font-bold text-xs sm:text-sm md:text-base shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-white font-medium text-xs sm:text-sm md:text-base shadow-sm hover:shadow-md transition-all duration-300 whitespace-nowrap active:scale-95"
               >
                 <span>Explore Themes</span>
                 <ArrowRight size={15} />
               </Link>
               <Link
                 href="#gallery"
-                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-[#f5efe2]/15 text-[#f5efe2] border border-[#f5efe2]/30 font-semibold text-xs sm:text-sm md:text-base shadow-sm hover:bg-[#f5efe2]/25 transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-transparent text-[#3e2410] border border-[#dccdb2] font-medium text-xs sm:text-sm md:text-base shadow-xs hover:bg-[#ebe2d1] transition-all duration-300 whitespace-nowrap active:scale-95"
               >
                 <span>Visual Archive</span>
               </Link>
@@ -216,8 +216,8 @@ export default function SummerSchoolJawharPage() {
 
           {/* RIGHT: POLAROID / FEATURE CARD */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-[380px] bg-[#fdfbf7] p-4 shadow-2xl rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-4">
-              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0">
+            <div className="w-full max-w-[380px] bg-[#fdfbf7] p-4 shadow-md rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-4">
+              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60">
                 <Image
                   src="/floating7.jpeg"
                   alt="Summer School Jawhar Tribal Community"
@@ -225,15 +225,15 @@ export default function SummerSchoolJawharPage() {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute top-3 right-3 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-[11px] font-semibold text-[#d4a825] tracking-wider uppercase border border-[#dccdb2]/20">
+                <div className="absolute top-3 right-3 px-3 py-1 bg-[#fdfbf7]/90 backdrop-blur-md rounded-full text-[11px] font-semibold text-[#1f5c54] tracking-wider uppercase border border-[#dccdb2]">
                   Jawhar Hub
                 </div>
               </div>
               <div className="text-center px-3 pt-1 pb-2">
-                <span className="font-serif text-[#3e2410] font-bold text-base md:text-lg block leading-snug">
+                <span className="font-serif text-[#3e2410] font-normal text-lg md:text-xl block leading-snug">
                   Cradle of Warli Art &amp; Tribal Heritage
                 </span>
-                <span className="text-xs text-[#7a5232] font-medium block mt-1.5">
+                <span className="text-xs text-[#7a5232] font-light block mt-1.5">
                   Jawhar, Palghar District (May 2026)
                 </span>
               </div>

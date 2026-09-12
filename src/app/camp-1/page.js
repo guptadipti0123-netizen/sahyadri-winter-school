@@ -175,32 +175,32 @@ export default function Camp1Page() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-24 md:pt-32 pb-12 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
+      <section className="relative pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         {/* Glows */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
-          <div className="space-y-4 sm:space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-2 md:mb-4 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#d4a825] animate-pulse" />
-              <p className="text-xs md:text-sm font-bold text-[#d4a825] tracking-widest uppercase">{campDetails.edition}</p>
+          <div className="space-y-4 sm:space-y-5 text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+              <p className="text-xs md:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">{campDetails.edition}</p>
             </div>
-            <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#f5efe2] leading-tight drop-shadow-sm">{campDetails.title}</h1>
-            <div className="flex flex-col gap-2 text-sm md:text-base font-medium text-[#f5efe2]/85">
-              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[#d4a825]" /><span>{campDetails.dates}</span></div>
-              <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-[#d4a825]" /><span>{campDetails.location}</span></div>
+            <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#3e2410] leading-tight tracking-tight">{campDetails.title}</h1>
+            <div className="flex flex-wrap gap-3 text-sm font-medium text-[#3e2410]">
+              <div className="flex items-center gap-2 bg-[#fdfbf7] px-4 py-2 rounded-full border border-[#dccdb2] shadow-xs"><Calendar className="w-4 h-4 text-[#3a8c7e]" /><span className="text-xs sm:text-sm">{campDetails.dates}</span></div>
+              <div className="flex items-center gap-2 bg-[#fdfbf7] px-4 py-2 rounded-full border border-[#dccdb2] shadow-xs"><MapPin className="w-4 h-4 text-[#c8880a]" /><span className="text-xs sm:text-sm">{campDetails.location}</span></div>
             </div>
 
-            <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#f5efe2]/90 border-l-2 border-[#d4a825] pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
+            <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#7a5232] border-l-2 border-[#3a8c7e] pl-4 ml-1 leading-relaxed">&quot;{campDetails.tagline}&quot;</p>
           </div>
           
           {/* Polaroid Hero Card */}
           <div className="flex justify-center">
-            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[270px] xs:h-[300px] md:h-[360px] bg-[#fdfbf7] p-3 pb-10 sm:pb-12 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-sm cursor-pointer border border-[#dccdb2]"
+            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[270px] xs:h-[300px] md:h-[360px] bg-[#fdfbf7] p-3 pb-10 sm:pb-12 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-2xl cursor-pointer border border-[#dccdb2]"
               onClick={() => setSelectedPhoto(palgharPhotos[0])}
             >
-              <div className="relative w-full h-full overflow-hidden bg-[#ebe2d1] rounded-xs">
+              <div className="relative w-full h-full overflow-hidden bg-[#ebe2d1] rounded-xl border border-[#dccdb2]/60">
                 <Image 
                   src="/palghar/palghar-mango-orchard-community.jpg" 
                   alt="Winter Camp Palghar Jan 2025" 
@@ -210,7 +210,7 @@ export default function Camp1Page() {
                 />
               </div>
               <div className="absolute bottom-3 sm:bottom-4 left-0 w-full text-center px-2">
-                <span className="font-serif text-[#3e2410] font-bold text-sm sm:text-base">Palghar Inaugural Cohort • Jan 2025</span>
+                <span className="font-serif text-[#3e2410] font-normal text-sm sm:text-base">Palghar Inaugural Cohort • Jan 2025</span>
               </div>
             </div>
           </div>
