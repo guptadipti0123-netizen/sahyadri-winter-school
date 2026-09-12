@@ -99,8 +99,8 @@ export default function AboutPage() {
 
         <div className="max-w-6xl mx-auto px-1 sm:px-4 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Hero Copy & CTA */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
+          {/* Left Column: Hero Copy & CTA (Animated pop-up entrance from bottom) */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left animate-popup-hero">
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-[11px] sm:text-xs font-semibold tracking-widest uppercase shadow-xs">
               ABOUT SAHYADRI RURAL CONNECT
             </span>
@@ -127,7 +127,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right Column: Camp Link Card with Interactive Switcher & Background Images */}
-          <div className="lg:col-span-5 flex flex-col items-center w-full">
+          <div className="lg:col-span-5 flex flex-col items-center w-full animate-popup-delay-1">
             
             {/* Camp Selector Tabs */}
             <div className="flex items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-[#fdfbf7] border border-[#dccdb2] mb-3 max-w-full overflow-x-auto shadow-xs">
