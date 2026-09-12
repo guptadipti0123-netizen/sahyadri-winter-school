@@ -162,7 +162,7 @@ export default function MentorsSection() {
                   <div className="h-1 bg-gradient-to-r from-[#c8880a] via-[#d4a825] to-[#1f5c54] w-full" />
 
                   {/* Top Row: Index Marker & Advisory Tag */}
-                  <div className="px-4 sm:px-5 pt-3.5 sm:pt-4 pb-0 flex items-center justify-between">
+                  <div className="px-4 sm:px-5 pt-3.5 sm:pt-4 pb-0 flex items-center justify-between z-10 relative">
                     <span className="font-serif font-bold text-xs sm:text-sm text-[#c8880a] tracking-wider">
                       {String(actualIndex + 1).padStart(2, "0")}
                     </span>
@@ -171,34 +171,48 @@ export default function MentorsSection() {
                     </span>
                   </div>
 
-                  {/* Center: Portrait Media Container */}
-                  <div className="p-4 sm:p-5 pt-3 pb-3">
-                    <div className="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden bg-[#ebe2d1]/50 border border-[#dccdb2]/80 flex items-center justify-center">
-                      {mentor.image ? (
+                  {/* ================= PORTRAIT MEDIA (NO INNER BOX OR CIRCLE, SEAMLESS SOFT SHADE) ================= */}
+                  <div className="relative w-full h-48 sm:h-52 overflow-hidden flex items-end justify-center select-none pt-2">
+                    
+                    {/* Soft Ambient Backdrop Shade */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#ebe2d1]/20 via-transparent to-transparent pointer-events-none" />
+
+                    {mentor.image ? (
+                      <div className="relative w-full h-full flex items-end justify-center">
                         <Image
                           src={mentor.image}
                           alt={mentor.name}
                           fill
-                          className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
+                          className="object-contain object-bottom filter contrast-[1.04] group-hover:scale-105 transition-transform duration-500"
                         />
-                      ) : (
-                        /* Elegant Academic Monogram Placeholder */
-                        <div className="relative w-full h-full bg-gradient-to-br from-[#241407]/90 via-[#3e2410] to-[#1f5c54] flex flex-col items-center justify-center p-4 text-center">
-                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-white/25 backdrop-blur-xs flex items-center justify-center shadow-inner group-hover:scale-105 group-hover:border-[#d4a825]/60 transition-all duration-300">
-                            <span className="font-serif font-bold text-xl sm:text-2xl text-[#f5efe2] tracking-widest drop-shadow-sm">
-                              {mentor.initials}
-                            </span>
-                          </div>
-                          <span className="text-[10px] uppercase font-bold tracking-widest text-[#d4a825] mt-2.5 opacity-90">
-                            Sahyadri Mentor
+                        {/* Soft gradient shade dissolving smoothly into card background */}
+                        <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/50 to-transparent pointer-events-none" />
+                      </div>
+                    ) : (
+                      /* Dignified Academic Monogram with soft ambient shade, NO box or circle */
+                      <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
+                        {/* Soft radial backdrop shade */}
+                        <div className="absolute w-28 h-28 bg-[#3a8c7e]/8 rounded-full blur-xl pointer-events-none" />
+                        
+                        {/* Clean elegant monogram with subtle underline */}
+                        <div className="relative z-10 flex flex-col items-center">
+                          <span className="font-serif italic font-bold text-4xl sm:text-5xl text-[#1f5c54] tracking-widest drop-shadow-xs group-hover:scale-105 transition-transform duration-300">
+                            {mentor.initials}
+                          </span>
+                          <div className="w-10 h-[2px] bg-gradient-to-r from-transparent via-[#c8880a] to-transparent mt-2 opacity-80" />
+                          <span className="text-[10px] uppercase font-bold tracking-widest text-[#7a5232] mt-2">
+                            Faculty Advisor
                           </span>
                         </div>
-                      )}
-                    </div>
+
+                        {/* Bottom fade into card background */}
+                        <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#fdfbf7] to-transparent pointer-events-none" />
+                      </div>
+                    )}
                   </div>
 
                   {/* Bottom: Typography Hierarchy (Name, Designation, Affiliation) */}
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 space-y-2 flex-1 flex flex-col justify-between">
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 space-y-2 flex-1 flex flex-col justify-between relative z-10">
                     <div className="space-y-1">
                       <h3 className="font-serif font-bold text-base sm:text-lg md:text-[17px] text-[#3e2410] leading-snug group-hover:text-[#1f5c54] transition-colors">
                         {mentor.name}
