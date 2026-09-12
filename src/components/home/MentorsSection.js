@@ -158,15 +158,7 @@ export default function MentorsSection() {
                   className="group bg-[#fdfbf7] rounded-2xl border border-[#dccdb2] shadow-xs hover:shadow-md hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between text-left relative"
                 >
                   
-                  {/* Top Decorative Gold/Teal Accent Bar */}
-                  <div className="h-1 bg-gradient-to-r from-[#c8880a] via-[#d4a825] to-[#1f5c54] w-full" />
 
-                  {/* Top Row: Index Marker */}
-                  <div className="px-4 sm:px-5 pt-3.5 sm:pt-4 pb-0 flex items-center justify-between z-10 relative">
-                    <span className="font-serif font-bold text-xs sm:text-sm text-[#c8880a] tracking-wider">
-                      {String(actualIndex + 1).padStart(2, "0")}
-                    </span>
-                  </div>
 
                   {/* ================= PORTRAIT MEDIA (NO INNER BOX OR CIRCLE, SEAMLESS SOFT SHADE) ================= */}
                   <div className="relative w-full h-48 sm:h-52 overflow-hidden flex items-end justify-center select-none pt-2">
