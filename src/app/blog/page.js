@@ -26,7 +26,7 @@ export default function BlogHubPage() {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-12 sm:pb-16 md:pb-24 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
+      <section className="relative overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] pt-28 sm:pt-36 md:pt-44 pb-20 sm:pb-28 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
 
         {/* ================= LAYER 1: WARLI & NATURE LINE-ART SCATTER ================= */}
         <svg
@@ -146,7 +146,7 @@ export default function BlogHubPage() {
         {/* ================= LAYER 2: LAYERED ABSTRACT MOUNTAINS ================= */}
         <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
           <svg
-            className="w-full h-24 sm:h-36 md:h-52"
+            className="w-full h-36 sm:h-48 md:h-64"
             viewBox="0 0 1440 380"
             preserveAspectRatio="none"
             aria-hidden="true"
@@ -172,23 +172,23 @@ export default function BlogHubPage() {
               points="0,320 250,240 520,335 800,215 1090,340 1310,245 1440,305 1440,380 0,380"
             />
           </svg>
-          <div className="absolute inset-x-0 bottom-0 h-12 sm:h-20 md:h-28 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 md:h-32 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
         </div>
 
         {/* ================= HERO FOREGROUND CONTENT ================= */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-2 sm:space-y-3.5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-xs border border-[#dccdb2] shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-[10px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.18em] uppercase">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-xs border border-[#dccdb2] shadow-xs">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.18em] uppercase">
               Dispatches from the Ground
             </p>
           </div>
 
-          <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a332d] leading-tight tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a332d] leading-tight tracking-tight">
             Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
           </h1>
 
-          <p className="font-serif italic text-xs sm:text-base md:text-lg font-medium text-[#122620] max-w-xl mx-auto leading-relaxed" style={{ color: '#122620' }}>
+          <p className="font-serif italic text-sm sm:text-base md:text-lg font-medium text-[#122620] max-w-xl mx-auto leading-relaxed" style={{ color: '#122620' }}>
             Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts.
           </p>
         </div>
