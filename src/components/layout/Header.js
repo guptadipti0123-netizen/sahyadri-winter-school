@@ -209,7 +209,7 @@ export default function Header() {
               href="/register"
               className="hidden min-[960px]:inline-flex bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] font-semibold text-[11px] sm:text-xs tracking-wider uppercase px-4 sm:px-5 py-2 sm:py-2.5 rounded-full items-center gap-1.5 shadow-sm transition-all hover:scale-102 active:scale-98 whitespace-nowrap"
             >
-              <span>Explore Programs</span>
+              <span>Winter Camp Loading</span>
               <ChevronRight size={13} className="text-[#f5efe2]/90" />
             </Link>
 
@@ -309,7 +309,7 @@ export default function Header() {
                   className="w-full flex items-center justify-center gap-2 text-center py-3 rounded-full bg-[#3a8c7e] text-[#f5efe2] font-semibold text-xs uppercase tracking-wider shadow-md hover:bg-[#1f5c54] active:scale-98 transition-all"
                   onClick={() => setIsOpen(false)}
                 >
-                  <span>Explore Programs</span>
+                  <span>Winter Camp Loading</span>
                   <ArrowRight size={14} />
                 </Link>
               </div>
