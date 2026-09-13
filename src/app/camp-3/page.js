@@ -5,7 +5,7 @@ import Link from "next/link"
 import {
   Calendar, MapPin, Sparkles, BookOpen, Users, Palette,
   Trees, Landmark, ArrowRight, CheckCircle2, Compass, Sun,
-  Award, ShieldCheck, HeartHandshake, Eye
+  Award, ShieldCheck, HeartHandshake, Eye, Camera, X
 } from "lucide-react"
 
 // --- SUMMER SCHOOL MAY 2026 DATA ---
@@ -142,17 +142,125 @@ const itinerary = [
   }
 ]
 
-// --- PHOTO GALLERY SAMPLES (100% Real Field Immersion Photographs) ---
-const galleryImages = [
-  { src: "/palghar/palghar-community-tree-dialogue.jpg", caption: "Village community dialogue and tree assembly" },
-  { src: "/camp2/camp2-day2-i1.jpg", caption: "Historic trail trek and mountain geography" },
-  { src: "/palghar/palghar-village-street-interaction.jpg", caption: "Direct grassroots engagement with farming families" },
-  { src: "/camp2/camp2-day3-i2.jpg", caption: "Organic farm immersion and forest ecology" },
-  { src: "/palghar/palghar-traditional-community-meal.jpg", caption: "Shared community dining and fellowship" },
-  { src: "/palghar/palghar-cohort-memorial-courtyard.jpg", caption: "Cohort assembly and student peer reflections" }
+// --- COMPLETE PALGHAR & JAWHAR FIELD IMMERSION PHOTO GALLERY (16 Photos) ---
+const palgharPhotos = [
+  {
+    src: "/palghar/palghar-cohort-memorial-courtyard.jpg",
+    title: "Palghar Inaugural Cohort Group",
+    desc: "The complete student fellowship cohort and organizers at the campus memorial courtyard.",
+    tag: "Cohort Assembly",
+    span: "lg:col-span-2 lg:row-span-2"
+  },
+  {
+    src: "/palghar/palghar-solar-pump-valley-field.jpg",
+    title: "Solar Lift Irrigation Demonstration",
+    desc: "Hands-on field learning about solar-powered lift irrigation in hilly tribal terrain.",
+    tag: "Clean Tech & Irrigation",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-solar-panels-valley-view.jpg",
+    title: "Valley Micro-Grid & Renewable Energy",
+    desc: "Understanding decentralized solar infrastructure supporting rural agricultural clusters.",
+    tag: "Renewable Energy",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-irrigation-filter-demo.jpg",
+    title: "Micro-Irrigation & Water Filtration Tech",
+    desc: "Field demonstration of pressurized drip filtration and efficient water management systems.",
+    tag: "Water Engineering",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-fort-stone-steps-cohort.jpg",
+    title: "Heritage Fort Exploration",
+    desc: "Fellows gathering on historic fort bastions during sunset field excursions.",
+    tag: "Heritage & Trekking",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-mango-orchard-community.jpg",
+    title: "Grassroots Dialogue with Farming Families",
+    desc: "Student fellows engaging with local village farmers in Palghar mango orchards.",
+    tag: "Orchard Immersion",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-classroom-reflection-session.jpg",
+    title: "Peer Learning & Cohort Reflections",
+    desc: "Interactive discussion and debrief sessions synthesizing daily grassroots field insights.",
+    tag: "Cohort Reflection",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-community-tree-dialogue.jpg",
+    title: "Village Tree Assembly & Dialogue",
+    desc: "Conversations with village elders and farmers under the community tree shade.",
+    tag: "Village Assembly",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-tribal-household-mangoes.jpg",
+    title: "Tribal Household & Family Immersion",
+    desc: "Fellows connecting with local village families and understanding rural livelihoods.",
+    tag: "Community Connect",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-village-street-interaction.jpg",
+    title: "Village Walk & Elder Interactions",
+    desc: "Walking through village hamlets and engaging with local community leaders.",
+    tag: "Hamlet Walk",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-traditional-community-meal.jpg",
+    title: "Communal Dining in Village Hamlet",
+    desc: "Sharing authentic, home-cooked Maharashtrian meals on traditional floor mats.",
+    tag: "Cultural Lived Experience",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-village-children-fellows.jpg",
+    title: "Learning with Village Youth",
+    desc: "Interacting with rural schoolchildren, understanding village education & everyday aspirations.",
+    tag: "Youth & Education",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-viewpoint-fellows-scooter.jpg",
+    title: "Sahyadri Ridge Explorations",
+    desc: "Fellows exploring scenic vantage points across the Western Ghats terrain.",
+    tag: "Field Expeditions",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-mango-harvest-fellows.jpg",
+    title: "Local Produce & Agro-Ecology",
+    desc: "Learning about seasonal agricultural cycles, fruit orchards, and local livelihoods.",
+    tag: "Rural Livelihoods",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-village-temple-community-assembly.jpg",
+    title: "Village Temple Community Assembly",
+    desc: "Engaging with village elders, temple trusts, and grassroots community leaders.",
+    tag: "Cultural Assembly",
+    span: "lg:col-span-1 lg:row-span-1"
+  },
+  {
+    src: "/palghar/palghar-heritage-stone-wada-dusk.png",
+    title: "Traditional Stone Wada Architecture",
+    desc: "Exploring indigenous basalt stone craftsmanship and rural heritage architecture at dusk.",
+    tag: "Heritage Architecture",
+    span: "lg:col-span-1 lg:row-span-1"
+  }
 ]
 
 export default function SummerSchoolJawharPage() {
+  const [selectedPhoto, setSelectedPhoto] = useState(null)
+
   return (
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
@@ -420,43 +528,118 @@ export default function SummerSchoolJawharPage() {
 
       </section>
 
-      {/* ================= 6. GLIMPSES GALLERY ================= */}
-      <section id="gallery" className="py-14 px-4 md:px-8 bg-[#ebe2d1]/30 border-t border-[#dccdb2]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#c8880a] bg-[#c8880a]/10 px-3.5 py-1 rounded-full border border-[#c8880a]/20">
-              FIELD PHOTO ARCHIVE
-            </span>
-            <h2 className="font-serif text-2xl md:text-4xl font-bold text-[#3e2410] mt-2">
-              Glimpses of Jawhar &amp; Sahyadri
+      {/* ================= 6. GLIMPSES & PALGHAR VISUAL ARCHIVE (ALL 16 REAL PHOTOS) ================= */}
+      <section id="gallery" className="py-14 sm:py-18 px-4 sm:px-6 md:px-8 bg-[#ebe2d1]/30 border-t border-[#dccdb2]">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#c8880a]/15 border border-[#c8880a]/30 shadow-xs text-[#c8880a] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1">
+              <Camera size={13} className="text-[#c8880a]" />
+              <span>Palghar &amp; Jawhar Visual Archive</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3e2410]">
+              Memories &amp; Glimpses from <span className="text-[#3a8c7e] italic">Palghar</span>
             </h2>
-            <p className="text-[#7a5232] text-sm md:text-base">
-              The landscapes, art, and vibrant village life from our field immersions.
+            <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
+              100% real field moments capturing community dialogues, tribal immersion, clean-tech demonstrations, and cohort fellowship across Palghar district.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {galleryImages.map((img, idx) => (
+          {/* --- 16-PHOTO RESPONSIVE GALLERY GRID --- */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[260px] sm:auto-rows-[280px]">
+            {palgharPhotos.map((item, idx) => (
               <div
                 key={idx}
-                className="group relative h-56 rounded-2xl overflow-hidden shadow-xs hover:shadow-md border border-[#dccdb2] bg-[#ebe2d1]"
+                onClick={() => setSelectedPhoto(item)}
+                className={`relative rounded-2xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer bg-[#ebe2d1] border border-[#dccdb2] ${
+                  idx === 0 ? "sm:col-span-2 sm:row-span-2 auto-rows-[340px] sm:min-h-[420px]" : ""
+                }`}
               >
                 <Image
-                  src={img.src}
-                  alt={img.caption}
+                  src={item.src}
+                  alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-[#f5efe2] text-xs font-medium drop-shadow-sm">
-                    {img.caption}
+
+                {/* Gradient Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+
+                {/* Top Tag Badge */}
+                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/60 text-[#d4a825] backdrop-blur-md border border-[#dccdb2]/20">
+                    {item.tag}
                   </span>
+                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/20 text-[#f5efe2] backdrop-blur-md border border-white/10">
+                    #{idx + 1}
+                  </span>
+                </div>
+
+                {/* Bottom Details */}
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-[#f5efe2] text-left transform transition-transform duration-300">
+                  <h3 className="font-serif font-bold text-sm sm:text-base lg:text-lg leading-snug text-[#f5efe2] mb-1 drop-shadow-sm">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-[#f5efe2]/90 line-clamp-2 leading-relaxed font-light">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
+
+      {/* ================= LIGHTBOX MODAL ================= */}
+      {selectedPhoto && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div 
+            className="relative max-w-4xl w-full max-h-[90vh] bg-[#241407] rounded-2xl overflow-hidden border border-[#dccdb2]/30 shadow-2xl flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedPhoto(null)}
+              className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 transition-colors cursor-pointer border border-white/30"
+              aria-label="Close photo preview"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Photo Container */}
+            <div className="relative w-full h-[360px] sm:h-[480px] md:h-[540px] bg-black">
+              <Image
+                src={selectedPhoto.src}
+                alt={selectedPhoto.title}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {/* Details */}
+            <div className="p-4 sm:p-5 bg-[#3e2410] text-[#f5efe2] text-left">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#3a8c7e] text-[#f5efe2]">
+                  {selectedPhoto.tag}
+                </span>
+              </div>
+              <h3 className="font-serif font-bold text-base sm:text-xl text-[#f5efe2]">
+                {selectedPhoto.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#f5efe2]/85 mt-0.5">
+                {selectedPhoto.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </main>
   )
