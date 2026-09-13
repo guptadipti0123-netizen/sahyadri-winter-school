@@ -201,9 +201,6 @@ export default function BlogHubPage() {
         {/* Section Header */}
         <div className="space-y-1 border-b border-[#dccdb2] pb-3 sm:pb-4 flex flex-col md:flex-row md:items-end md:justify-between gap-1.5 md:gap-4">
           <div>
-            <div className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#ebe2d1] border border-[#dccdb2] mb-1">
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-[#1f5c54]">FIELD DISPATCHES</span>
-            </div>
             <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-[#3e2410]">
               Stories &amp; Cohort Notes
             </h2>
