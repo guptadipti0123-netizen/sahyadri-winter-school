@@ -8,35 +8,234 @@ export default function BlogHubPage() {
   const allBlogs = blogsData
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden bg-[#f5efe2] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
+    <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden">
-        
-        {/* Ambient Warm Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
-        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
+      {/* ================= HERO SECTION (WARLI ART & SAHYADRI MOUNTAINS BACKGROUND) ================= */}
+      <section className="relative overflow-hidden min-h-[520px] md:min-h-[580px] pt-32 sm:pt-36 md:pt-44 pb-32 sm:pb-36 md:pb-44 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
 
+        {/* ================= LAYER 1: WARLI & NATURE LINE-ART SCATTER ================= */}
+        {/* Motifs safely positioned below navbar line with center 45% clear */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none select-none z-0"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          <g
+            stroke="#458377"
+            strokeWidth="2.2"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.65"
+          >
+            {/* ---------------- 1. TOP-LEFT CLUSTER (Safely below navbar) ---------------- */}
+            {/* Tarpa Dance Pair Holding Hands */}
+            <g transform="translate(40, 60)">
+              {/* Left Figure */}
+              <circle cx="90" cy="80" r="8" />
+              <line x1="90" y1="88" x2="90" y2="118" />
+              <line x1="72" y1="100" x2="108" y2="112" />
+              <line x1="72" y1="112" x2="108" y2="100" />
+              <line x1="90" y1="118" x2="74" y2="146" />
+              <line x1="90" y1="118" x2="106" y2="146" />
+
+              {/* Handshake connector */}
+              <line x1="108" y1="106" x2="152" y2="106" strokeWidth="2.4" />
+
+              {/* Right Figure */}
+              <circle cx="170" cy="80" r="8" />
+              <line x1="170" y1="88" x2="170" y2="118" />
+              <line x1="152" y1="100" x2="188" y2="112" />
+              <line x1="152" y1="112" x2="188" y2="100" />
+              <line x1="170" y1="118" x2="154" y2="146" />
+              <line x1="170" y1="118" x2="186" y2="146" />
+            </g>
+
+            {/* Tree 1 (Top-Left) */}
+            <g transform="translate(40, 60)">
+              <line x1="280" y1="165" x2="280" y2="60" strokeWidth="2.4" />
+              <line x1="280" y1="86" x2="254" y2="68" />
+              <line x1="280" y1="86" x2="306" y2="68" />
+              <line x1="280" y1="112" x2="246" y2="90" />
+              <line x1="280" y1="112" x2="314" y2="90" />
+              <line x1="280" y1="138" x2="240" y2="114" />
+              <line x1="280" y1="138" x2="320" y2="114" />
+            </g>
+
+            {/* Minimal Tree Branch (Top-Left Center) */}
+            <g transform="translate(40, 60)">
+              <line x1="410" y1="120" x2="410" y2="55" strokeWidth="2.2" />
+              <line x1="410" y1="80" x2="385" y2="62" />
+              <line x1="410" y1="80" x2="435" y2="62" />
+            </g>
+
+            {/* ---------------- 2. MID-LEFT MOTIFS ---------------- */}
+            {/* Simple House / Hut (Mid-Left) */}
+            <g transform="translate(30, 20)">
+              <polygon points="105,230 155,180 205,230" strokeWidth="2.4" />
+              <polyline points="115,230 115,290 195,290 195,230" strokeWidth="2.4" />
+            </g>
+
+            {/* Sun with Radiating Ticks (Mid-Left) */}
+            <g transform="translate(20, 20)">
+              <circle cx="280" cy="230" r="20" strokeWidth="2.2" />
+              <line x1="280" y1="200" x2="280" y2="190" strokeWidth="2.2" />
+              <line x1="280" y1="260" x2="280" y2="270" strokeWidth="2.2" />
+              <line x1="250" y1="230" x2="240" y2="230" strokeWidth="2.2" />
+              <line x1="310" y1="230" x2="320" y2="230" strokeWidth="2.2" />
+              <line x1="259" y1="209" x2="251" y2="201" strokeWidth="2.2" />
+              <line x1="301" y1="251" x2="309" y2="259" strokeWidth="2.2" />
+              <line x1="259" y1="251" x2="251" y2="259" strokeWidth="2.2" />
+              <line x1="301" y1="209" x2="309" y2="201" strokeWidth="2.2" />
+            </g>
+
+            {/* ---------------- 3. BOTTOM-LEFT MOTIFS (On Mountains) ---------------- */}
+            <g transform="translate(20, 0)">
+              {/* Lower House */}
+              <polygon points="105,440 145,400 185,440" strokeWidth="2.2" />
+              <polyline points="112,440 112,485 178,485 178,440" strokeWidth="2.2" />
+
+              {/* Lower Figure */}
+              <circle cx="240" cy="430" r="8" />
+              <line x1="240" y1="438" x2="240" y2="465" />
+              <line x1="222" y1="448" x2="258" y2="458" />
+              <line x1="222" y1="458" x2="258" y2="448" />
+              <line x1="240" y1="465" x2="225" y2="492" />
+              <line x1="240" y1="465" x2="255" y2="492" />
+            </g>
+
+            {/* ---------------- 4. TOP-RIGHT CLUSTER (Safely below navbar) ---------------- */}
+            {/* Figure 1 (Top-Right Inner) */}
+            <g transform="translate(-20, 60)">
+              <circle cx="950" cy="80" r="8" />
+              <line x1="950" y1="88" x2="950" y2="118" />
+              <line x1="932" y1="100" x2="968" y2="110" />
+              <line x1="932" y1="110" x2="968" y2="100" />
+              <line x1="950" y1="118" x2="935" y2="146" />
+              <line x1="950" y1="118" x2="965" y2="146" />
+            </g>
+
+            {/* Triangular Tree (Top-Right) */}
+            <g transform="translate(-20, 60)">
+              <line x1="1080" y1="165" x2="1080" y2="60" strokeWidth="2.4" />
+              <line x1="1080" y1="86" x2="1052" y2="68" />
+              <line x1="1080" y1="86" x2="1108" y2="68" />
+              <line x1="1080" y1="112" x2="1044" y2="90" />
+              <line x1="1080" y1="112" x2="1116" y2="90" />
+              <line x1="1080" y1="138" x2="1038" y2="114" />
+              <line x1="1080" y1="138" x2="1122" y2="114" />
+            </g>
+
+            {/* Figure 2 (Top-Right Outer) */}
+            <g transform="translate(-20, 60)">
+              <circle cx="1220" cy="80" r="8" />
+              <line x1="1220" y1="88" x2="1220" y2="118" />
+              <line x1="1202" y1="100" x2="1238" y2="110" />
+              <line x1="1202" y1="110" x2="1238" y2="100" />
+              <line x1="1220" y1="118" x2="1205" y2="146" />
+              <line x1="1220" y1="118" x2="1235" y2="146" />
+            </g>
+
+            {/* ---------------- 5. MID-RIGHT MOTIFS ---------------- */}
+            {/* Simple House / Hut (Mid-Right) */}
+            <g transform="translate(-20, 20)">
+              <polygon points="1165,230 1215,180 1265,230" strokeWidth="2.4" />
+              <polyline points="1175,230 1175,290 1255,290 1255,230" strokeWidth="2.4" />
+            </g>
+
+            {/* Sun with Radiating Ticks (Mid-Right) */}
+            <g transform="translate(-15, 20)">
+              <circle cx="1310" cy="225" r="22" strokeWidth="2.2" />
+              <line x1="1310" y1="193" x2="1310" y2="181" strokeWidth="2.2" />
+              <line x1="1310" y1="257" x2="1310" y2="269" strokeWidth="2.2" />
+              <line x1="1278" y1="225" x2="1266" y2="225" strokeWidth="2.2" />
+              <line x1="1342" y1="225" x2="1354" y2="225" strokeWidth="2.2" />
+              <line x1="1287" y1="202" x2="1278" y2="193" strokeWidth="2.2" />
+              <line x1="1333" y1="248" x2="1342" y2="257" strokeWidth="2.2" />
+              <line x1="1287" y1="248" x2="1278" y2="257" strokeWidth="2.2" />
+              <line x1="1333" y1="202" x2="1342" y2="193" strokeWidth="2.2" />
+            </g>
+
+            {/* ---------------- 6. BOTTOM-RIGHT MOTIFS (On Mountains) ---------------- */}
+            <g transform="translate(-15, 0)">
+              {/* Lower Tree */}
+              <line x1="1280" y1="475" x2="1280" y2="385" strokeWidth="2.4" />
+              <line x1="1280" y1="410" x2="1255" y2="392" />
+              <line x1="1280" y1="410" x2="1305" y2="392" />
+              <line x1="1280" y1="432" x2="1248" y2="412" />
+              <line x1="1280" y1="432" x2="1312" y2="412" />
+            </g>
+          </g>
+        </svg>
+
+        {/* ================= LAYER 2: LAYERED ABSTRACT MOUNTAINS ================= */}
+        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
+          <svg
+            className="w-full h-48 sm:h-64 md:h-88"
+            viewBox="0 0 1440 380"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            {/* Mountain Layer 1: Back Lightest Sage */}
+            <polygon
+              fill="#a8cdc6"
+              fillOpacity="0.45"
+              points="0,170 200,85 400,165 640,65 880,180 1080,85 1280,175 1440,110 1440,380 0,380"
+            />
+
+            {/* Mountain Layer 2: Medium Soft Sage */}
+            <polygon
+              fill="#83b9af"
+              fillOpacity="0.60"
+              points="0,225 180,140 370,230 600,115 820,225 1040,125 1260,220 1440,155 1440,380 0,380"
+            />
+
+            {/* Mountain Layer 3: Muted Forest Green */}
+            <polygon
+              fill="#5f9e93"
+              fillOpacity="0.75"
+              points="0,270 220,185 460,280 720,165 960,290 1180,180 1360,265 1440,210 1440,380 0,380"
+            />
+
+            {/* Mountain Layer 4: Deep Front Teal */}
+            <polygon
+              fill="#3a8275"
+              fillOpacity="0.85"
+              points="0,320 250,240 520,335 800,215 1090,340 1310,245 1440,305 1440,380 0,380"
+            />
+          </svg>
+
+          {/* Soft Bottom Mist Gradient */}
+          <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 md:h-40 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
+        </div>
+
+        {/* ================= HERO FOREGROUND CONTENT (z-10 ON TOP) ================= */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-xs font-semibold text-[#1f5c54] tracking-widest uppercase">
+          
+          {/* Top Pill Badge with Pulsing Dot */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-xs border border-[#dccdb2] shadow-xs">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+            <p className="text-xs font-semibold text-[#1f5c54] tracking-[0.2em] uppercase">
               Dispatches from the Ground
             </p>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#3e2410] leading-tight tracking-tight">
+          {/* Main H1 Title */}
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#1a332d] leading-tight tracking-tight">
             Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
           </h1>
 
-          <p className="font-serif italic text-base sm:text-xl text-[#7a5232] max-w-2xl mx-auto leading-relaxed">
+          {/* Subtitle */}
+          <p className="font-serif italic text-base sm:text-xl text-[#5c5042] max-w-2xl mx-auto leading-relaxed font-light">
             Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts.
           </p>
         </div>
+
       </section>
 
       {/* ================= ALL ARTICLES GRID ================= */}
-      <section className="px-4 sm:px-6 md:px-8 pb-20 max-w-7xl mx-auto relative z-10 space-y-8 sm:space-y-10">
+      <section className="px-4 sm:px-6 md:px-8 pb-20 max-w-7xl mx-auto relative z-10 space-y-8 sm:space-y-10 pt-12">
         
         {/* Section Header */}
         <div className="space-y-1.5 border-b border-[#dccdb2] pb-4 flex flex-col md:flex-row md:items-end md:justify-between gap-2">
@@ -60,7 +259,7 @@ export default function BlogHubPage() {
             <Link
               key={blog.slug}
               href={`/blog/${blog.slug}`}
-              className="group bg-[#fdfbf7] rounded-3xl overflow-hidden border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              className="group bg-[#fdfbf7] rounded-3xl overflow-hidden border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Card Thumbnail */}
