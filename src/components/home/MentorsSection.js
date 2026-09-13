@@ -42,24 +42,13 @@ export default function MentorsSection() {
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
-    if (typeof window !== "undefined") {
-      setWindowWidth(window.innerWidth)
-      window.addEventListener("resize", handleResize)
-    }
-    return () => {
-      if (typeof window !== "undefined") window.removeEventListener("resize", handleResize)
-    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const itemsPerView = windowWidth < 640 ? 1 : windowWidth < 1024 ? 2 : 4
   const maxIndex = Math.max(0, mentors.length - itemsPerView)
-
-  // Ensure index stays in bounds on resize
-  useEffect(() => {
-    if (currentIndex > maxIndex) {
-      setCurrentIndex(maxIndex)
-    }
-  }, [maxIndex, currentIndex])
+  const safeCurrentIndex = Math.min(currentIndex, maxIndex)
 
   const handlePrev = () => {
     setCurrentIndex((prev) => Math.max(0, prev - 1))
@@ -92,7 +81,7 @@ export default function MentorsSection() {
   // Sliced mentors for current view in carousel mode
   const visibleMentors = itemsPerView === 4 
     ? mentors 
-    : mentors.slice(currentIndex, currentIndex + itemsPerView)
+    : mentors.slice(safeCurrentIndex, safeCurrentIndex + itemsPerView)
 
   const totalPages = Math.max(1, mentors.length - itemsPerView + 1)
 
@@ -151,7 +140,7 @@ export default function MentorsSection() {
           {/* ================= 4-CARD INSTITUTIONAL PORTRAIT GRID ================= */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
             {visibleMentors.map((mentor, idx) => {
-              const actualIndex = itemsPerView === 4 ? idx : currentIndex + idx
+              const actualIndex = itemsPerView === 4 ? idx : safeCurrentIndex + idx
               return (
                 <div
                   key={actualIndex}

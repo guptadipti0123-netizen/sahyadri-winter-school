@@ -24,10 +24,12 @@ export default function Header() {
   }, [])
 
   // Close menus on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname)
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname)
     setIsOpen(false)
     setCampsDropdownOpen(false)
-  }, [pathname])
+  }
 
   // Camps list in chronological order
   const campsList = [
