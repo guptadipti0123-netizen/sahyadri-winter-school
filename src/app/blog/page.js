@@ -10,186 +10,219 @@ export default function BlogHubPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden bg-[#f5efe2] dark:bg-[#0e1f1c] text-[#3e2410] dark:text-[#e8f0ec] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
-      {/* ================= HERO SECTION WITH LAYERED CULTURAL COMPOSITION ================= */}
-      <section className="relative pt-24 sm:pt-28 md:pt-36 pb-16 sm:pb-24 md:pb-28 overflow-hidden bg-[#faf7f0] dark:bg-[#0e1f1c] border-b border-[#dccdb2]/50 dark:border-[#1f5c54]/30">
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative overflow-hidden min-h-[480px] md:min-h-[520px] pt-28 sm:pt-32 md:pt-40 pb-20 sm:pb-28 md:pb-32 bg-[#faf7f0] dark:bg-[#0e1f1c] border-b border-[#dccdb2]/50 dark:border-[#1f5c54]/30 flex flex-col justify-center">
 
-        {/* --- LAYER 1: Paper Grain Noise Filter (Authentic Field Notebook Texture) --- */}
+        {/* ================= LAYER 1: WARLI MOTIF ASYMMETRIC EDGE SCATTER (INLINE SVG) ================= */}
+        {/* Center 45% is completely clear so headline never fights a motif */}
         <svg
-          className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.045] mix-blend-multiply dark:opacity-[0.035] dark:mix-blend-overlay -z-30"
+          className="absolute inset-0 w-full h-full opacity-10 dark:opacity-15 pointer-events-none select-none -z-20"
+          viewBox="0 0 1440 600"
+          preserveAspectRatio="xMidYMid slice"
           aria-hidden="true"
         >
-          <filter id="field-notebook-grain">
-            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.85 0" />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#field-notebook-grain)" />
+          <g
+            stroke="#3a8c7e"
+            className="dark:stroke-[#5ab8a8]"
+            strokeWidth="1.3"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {/* ---------------- TOP-LEFT CLUSTER ---------------- */}
+            {/* Tarpa Dance Pair Holding Hands */}
+            <g>
+              <circle cx="140" cy="80" r="6" />
+              <line x1="140" y1="86" x2="140" y2="108" />
+              <line x1="126" y1="94" x2="154" y2="102" />
+              <line x1="126" y1="102" x2="154" y2="94" />
+              <line x1="140" y1="108" x2="128" y2="130" />
+              <line x1="140" y1="108" x2="152" y2="130" />
+
+              {/* Handshake connector */}
+              <line x1="154" y1="98" x2="198" y2="98" />
+
+              <circle cx="210" cy="80" r="6" />
+              <line x1="210" y1="86" x2="210" y2="108" />
+              <line x1="196" y1="94" x2="224" y2="102" />
+              <line x1="196" y1="102" x2="224" y2="94" />
+              <line x1="210" y1="108" x2="198" y2="130" />
+              <line x1="210" y1="108" x2="222" y2="130" />
+            </g>
+
+            {/* Triangular Tree (Top-Left) */}
+            <g className="hidden sm:block">
+              <line x1="300" y1="145" x2="300" y2="65" />
+              <line x1="300" y1="85" x2="278" y2="70" />
+              <line x1="300" y1="85" x2="322" y2="70" />
+              <line x1="300" y1="105" x2="272" y2="88" />
+              <line x1="300" y1="105" x2="328" y2="88" />
+              <line x1="300" y1="125" x2="268" y2="108" />
+              <line x1="300" y1="125" x2="332" y2="108" />
+            </g>
+
+            {/* Small Top Tree (Left) */}
+            <g className="hidden md:block">
+              <line x1="430" y1="105" x2="430" y2="55" />
+              <line x1="430" y1="72" x2="412" y2="60" />
+              <line x1="430" y1="72" x2="448" y2="60" />
+              <line x1="430" y1="88" x2="416" y2="76" />
+              <line x1="430" y1="88" x2="444" y2="76" />
+            </g>
+
+            {/* ---------------- MID-LEFT MOTIFS ---------------- */}
+            {/* Tribal Hut (Mid-Left) */}
+            <g>
+              <polygon points="145,215 185,180 225,215" />
+              <polyline points="152,215 152,260 218,260 218,215" />
+            </g>
+
+            {/* Sun with Radiating Ticks (Mid-Left) */}
+            <g className="hidden sm:block">
+              <circle cx="310" cy="205" r="16" />
+              <line x1="310" y1="181" x2="310" y2="173" />
+              <line x1="310" y1="229" x2="310" y2="237" />
+              <line x1="286" y1="205" x2="278" y2="205" />
+              <line x1="334" y1="205" x2="342" y2="205" />
+              <line x1="293" y1="188" x2="287" y2="182" />
+              <line x1="327" y1="222" x2="333" y2="228" />
+              <line x1="293" y1="222" x2="287" y2="228" />
+              <line x1="327" y1="188" x2="333" y2="182" />
+            </g>
+
+            {/* ---------------- BOTTOM-LEFT MOTIFS (Near Hills) ---------------- */}
+            <g className="hidden md:block">
+              {/* Lower Hut */}
+              <polygon points="115,445 150,415 185,445" />
+              <polyline points="122,445 122,485 178,485 178,445" />
+
+              {/* Lower Stick Figure */}
+              <circle cx="240" cy="435" r="6" />
+              <line x1="240" y1="441" x2="240" y2="463" />
+              <line x1="226" y1="449" x2="254" y2="457" />
+              <line x1="226" y1="457" x2="254" y2="449" />
+              <line x1="240" y1="463" x2="228" y2="485" />
+              <line x1="240" y1="463" x2="252" y2="485" />
+            </g>
+
+            {/* ---------------- TOP-RIGHT CLUSTER ---------------- */}
+            {/* Stick Figure (Top-Right Inner) */}
+            <g className="hidden md:block">
+              <circle cx="930" cy="80" r="6" />
+              <line x1="930" y1="86" x2="930" y2="108" />
+              <line x1="916" y1="94" x2="944" y2="102" />
+              <line x1="916" y1="102" x2="944" y2="94" />
+              <line x1="930" y1="108" x2="918" y2="130" />
+              <line x1="930" y1="108" x2="942" y2="130" />
+            </g>
+
+            {/* Triangular Tree (Top-Right) */}
+            <g className="hidden sm:block">
+              <line x1="1080" y1="145" x2="1080" y2="65" />
+              <line x1="1080" y1="85" x2="1058" y2="70" />
+              <line x1="1080" y1="85" x2="1102" y2="70" />
+              <line x1="1080" y1="105" x2="1052" y2="88" />
+              <line x1="1080" y1="105" x2="1108" y2="88" />
+              <line x1="1080" y1="125" x2="1048" y2="108" />
+              <line x1="1080" y1="125" x2="1112" y2="108" />
+            </g>
+
+            {/* Stick Figure (Top-Right Outer) */}
+            <g>
+              <circle cx="1220" cy="80" r="6" />
+              <line x1="1220" y1="86" x2="1220" y2="108" />
+              <line x1="1206" y1="94" x2="1234" y2="102" />
+              <line x1="1206" y1="102" x2="1234" y2="94" />
+              <line x1="1220" y1="108" x2="1208" y2="130" />
+              <line x1="1220" y1="108" x2="1232" y2="130" />
+            </g>
+
+            {/* ---------------- MID-RIGHT MOTIFS ---------------- */}
+            {/* Tribal Hut (Mid-Right) */}
+            <g>
+              <polygon points="1165,225 1205,190 1245,225" />
+              <polyline points="1172,225 1172,270 1238,270 1238,225" />
+            </g>
+
+            {/* Sun with Radiating Ticks (Mid-Right) */}
+            <g className="hidden sm:block">
+              <circle cx="1300" cy="210" r="18" />
+              <line x1="1300" y1="184" x2="1300" y2="176" />
+              <line x1="1300" y1="236" x2="1300" y2="244" />
+              <line x1="1274" y1="210" x2="1266" y2="210" />
+              <line x1="1326" y1="210" x2="1334" y2="210" />
+              <line x1="1282" y1="192" x2="1276" y2="186" />
+              <line x1="1318" y1="228" x2="1324" y2="234" />
+              <line x1="1282" y1="228" x2="1276" y2="234" />
+              <line x1="1318" y1="192" x2="1324" y2="186" />
+            </g>
+
+            {/* ---------------- BOTTOM-RIGHT MOTIFS (Near Hills) ---------------- */}
+            <g className="hidden md:block">
+              <line x1="1270" y1="460" x2="1270" y2="395" />
+              <line x1="1270" y1="412" x2="1252" y2="398" />
+              <line x1="1270" y1="412" x2="1288" y2="398" />
+              <line x1="1270" y1="428" x2="1248" y2="414" />
+              <line x1="1270" y1="428" x2="1292" y2="414" />
+            </g>
+          </g>
         </svg>
 
-        {/* --- LAYER 2: Authentic Geometric Warli Motif Pattern (Drifting SVG Pattern) --- */}
-        <div className="absolute inset-0 pointer-events-none select-none -z-20 overflow-hidden">
-          <svg className="w-full h-full opacity-[0.07] dark:opacity-[0.10] warli-drift-layer" aria-hidden="true">
-            <defs>
-              {/* Desktop Pattern (120px) */}
-              <pattern id="warli-desktop" width="120" height="120" patternUnits="userSpaceOnUse">
-                <g stroke="#3a8c7e" className="dark:stroke-[#5ab8a8]" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Single Warli Figure (Circle head, triangular torso, straight stick limbs) */}
-                  <circle cx="28" cy="22" r="4" />
-                  <polygon points="23,28 33,28 23,40 33,40" />
-                  <line x1="23" y1="32" x2="16" y2="26" />
-                  <line x1="33" y1="32" x2="40" y2="26" />
-                  <line x1="25" y1="40" x2="20" y2="52" />
-                  <line x1="31" y1="40" x2="36" y2="52" />
-
-                  {/* Tarpa Dance Pair Holding Hands */}
-                  <circle cx="58" cy="22" r="4" />
-                  <polygon points="53,28 63,28 53,40 63,40" />
-                  <line x1="53" y1="32" x2="47" y2="34" />
-                  <line x1="63" y1="32" x2="73" y2="32" />
-                  <line x1="55" y1="40" x2="50" y2="52" />
-                  <line x1="61" y1="40" x2="66" y2="52" />
-
-                  <circle cx="78" cy="22" r="4" />
-                  <polygon points="73,28 83,28 73,40 83,40" />
-                  <line x1="73" y1="32" x2="63" y2="32" />
-                  <line x1="83" y1="32" x2="89" y2="26" />
-                  <line x1="75" y1="40" x2="70" y2="52" />
-                  <line x1="81" y1="40" x2="86" y2="52" />
-
-                  {/* Triangular Sacred Tree (Straight trunk + herringbone branches) */}
-                  <line x1="102" y1="58" x2="102" y2="18" strokeWidth="1.8" />
-                  <line x1="102" y1="26" x2="94" y2="19" />
-                  <line x1="102" y1="26" x2="110" y2="19" />
-                  <line x1="102" y1="35" x2="92" y2="28" />
-                  <line x1="102" y1="35" x2="112" y2="28" />
-                  <line x1="102" y1="44" x2="90" y2="37" />
-                  <line x1="102" y1="44" x2="114" y2="37" />
-                  <line x1="102" y1="53" x2="92" y2="46" />
-                  <line x1="102" y1="53" x2="112" y2="46" />
-
-                  {/* Traditional Tribal Hut with Pitched Roof & Frame */}
-                  <polygon points="16,92 28,78 40,92" />
-                  <polyline points="20,92 20,106 36,106 36,92" />
-                  <line x1="25" y1="106" x2="25" y2="98" />
-                  <line x1="31" y1="106" x2="31" y2="98" />
-                  <line x1="25" y1="98" x2="31" y2="98" />
-
-                  {/* Small Sun Circle with Minimal Cardinal Rays */}
-                  <circle cx="85" cy="88" r="7" />
-                  <line x1="85" y1="77" x2="85" y2="79" />
-                  <line x1="85" y1="97" x2="85" y2="99" />
-                  <line x1="74" y1="88" x2="76" y2="88" />
-                  <line x1="94" y1="88" x2="96" y2="88" />
-                </g>
-              </pattern>
-
-              {/* Mobile Pattern (80px) */}
-              <pattern id="warli-mobile" width="80" height="80" patternUnits="userSpaceOnUse">
-                <g stroke="#3a8c7e" className="dark:stroke-[#5ab8a8]" strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" transform="scale(0.666)">
-                  <circle cx="28" cy="22" r="4" />
-                  <polygon points="23,28 33,28 23,40 33,40" />
-                  <line x1="23" y1="32" x2="16" y2="26" />
-                  <line x1="33" y1="32" x2="40" y2="26" />
-                  <line x1="25" y1="40" x2="20" y2="52" />
-                  <line x1="31" y1="40" x2="36" y2="52" />
-
-                  <line x1="102" y1="58" x2="102" y2="18" strokeWidth="1.8" />
-                  <line x1="102" y1="26" x2="94" y2="19" />
-                  <line x1="102" y1="26" x2="110" y2="19" />
-                  <line x1="102" y1="38" x2="92" y2="30" />
-                  <line x1="102" y1="38" x2="112" y2="30" />
-
-                  <polygon points="16,92 28,78 40,92" />
-                  <polyline points="20,92 20,106 36,106 36,92" />
-
-                  <circle cx="85" cy="88" r="7" />
-                </g>
-              </pattern>
-            </defs>
-
-            {/* Responsive Pattern fill */}
-            <rect width="100%" height="100%" fill="url(#warli-desktop)" className="hidden sm:block" />
-            <rect width="100%" height="100%" fill="url(#warli-mobile)" className="block sm:hidden" />
-          </svg>
-        </div>
-
-        {/* --- LAYER 3: Jagged Sahyadri Mountain Plateau Silhouettes (3 Overlapping Layers) --- */}
+        {/* ================= LAYER 2: SAHYADRI HILL SILHOUETTES (JAGGED GHATS PLATEAUS) ================= */}
         <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none -z-10">
           <svg
-            className="w-full h-32 sm:h-44 md:h-56"
-            viewBox="0 0 1440 260"
+            className="w-full h-36 sm:h-52 md:h-64"
+            viewBox="0 0 1440 320"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            {/* Back Mountain Ridge (16% Opacity, Asymmetric Basalt Escarpments - Hidden on small mobile for clean simplicity) */}
-            <path
+            {/* Back Mountain Ridge (16% Opacity - Hidden on small mobile for clean simplicity) */}
+            <polygon
               fill="#3a8c7e"
               fillOpacity="0.16"
               className="hidden sm:block dark:fill-[#5ab8a8] dark:fill-opacity-15"
-              d="M0,190 L140,120 L220,90 L340,140 L460,80 L580,135 L700,70 L840,150 L980,90 L1120,165 L1260,105 L1380,150 L1440,110 L1440,260 L0,260 Z"
+              points="0,170 240,75 420,165 620,60 840,185 1060,85 1280,180 1440,120 1440,320 0,320"
             />
 
-            {/* Middle Mountain Ridge (30% Opacity, Rugged Tableland Plateau Ridges) */}
-            <path
+            {/* Middle Mountain Ridge (30% Opacity) */}
+            <polygon
               fill="#3a8c7e"
               fillOpacity="0.30"
               className="dark:fill-[#3a8c7e] dark:fill-opacity-25"
-              d="M0,225 L160,160 L280,195 L400,130 L540,175 L680,120 L820,185 L960,135 L1100,190 L1240,145 L1360,195 L1440,165 L1440,260 L0,260 Z"
+              points="0,225 180,140 380,235 680,115 920,250 1140,135 1340,230 1440,170 1440,320 0,320"
             />
 
-            {/* Front Mountain Ridge (45% Opacity, Deep Teal Foreground Crags) */}
-            <path
+            {/* Front Mountain Ridge (48% Opacity) */}
+            <polygon
               fill="#2c6a5f"
-              fillOpacity="0.45"
+              fillOpacity="0.48"
               className="dark:fill-[#1b433c] dark:fill-opacity-50"
-              d="M0,255 L180,210 L320,240 L480,185 L620,230 L780,180 L920,235 L1060,190 L1200,240 L1340,205 L1440,235 L1440,260 L0,260 Z"
+              points="0,280 260,205 540,290 800,180 1080,295 1300,215 1440,265 1440,320 0,320"
             />
           </svg>
 
-          {/* --- LAYER 4: Bottom Mist Gradient (Fades into articles grid) --- */}
-          <div className="absolute inset-x-0 bottom-0 h-36 sm:h-44 md:h-48 bg-gradient-to-t from-[#faf7f0] via-[#faf7f0]/75 to-transparent dark:from-[#0e1f1c] dark:via-[#0e1f1c]/80" />
+          {/* ================= LAYER 3: MIST GRADIENT ================= */}
+          {/* Fades from #f5efe2 (95%) at bottom into transparent over hills area */}
+          <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 md:h-44 bg-gradient-to-t from-[#f5efe2] via-[#f5efe2]/85 to-transparent dark:from-[#0e1f1c] dark:via-[#0e1f1c]/85" />
         </div>
 
-        {/* --- LAYER 5: Soft Radial Glow Behind Text for WCAG AA Readability & Pop --- */}
+        {/* ================= HERO FOREGROUND TEXT CONTENT (z-10, UNCHANGED) ================= */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-4">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-radial from-[#faf7f0] via-[#faf7f0]/80 to-transparent dark:from-[#0e1f1c] dark:via-[#0e1f1c]/85 rounded-full blur-2xl pointer-events-none -z-10" />
-
-          {/* Eyebrow Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] dark:bg-[#162d28] border border-[#dccdb2] dark:border-[#2c6a5f]/40 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-xs font-semibold text-[#1f5c54] dark:text-[#5ab8a8] tracking-[0.22em] uppercase">
+            <p className="text-xs font-semibold text-[#1f5c54] dark:text-[#5ab8a8] tracking-widest uppercase">
               Dispatches from the Ground
             </p>
           </div>
 
-          {/* Main H1 Title */}
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#12332e] dark:text-[#f5efe2] leading-tight tracking-tight">
-            Stories from <span className="text-[#3a8c7e] dark:text-[#5ab8a8] italic font-serif">Real Bharat</span>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#3e2410] dark:text-[#f5efe2] leading-tight tracking-tight">
+            Stories from <span className="text-[#1f5c54] dark:text-[#5ab8a8] italic font-serif">Real Bharat</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="font-serif italic text-base sm:text-xl text-[#3f5c56] dark:text-[#a8c7bf] max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="font-serif italic text-base sm:text-xl text-[#7a5232] dark:text-[#a8c7bf] max-w-2xl mx-auto leading-relaxed">
             Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts.
           </p>
         </div>
-
-        {/* CSS Motion Styles: Subtle Linear Infinite Warli Drift with Reduced Motion Support */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes warliDrift {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(120px, 120px); }
-          }
-          @media (prefers-reduced-motion: no-preference) {
-            .warli-drift-layer {
-              animation: warliDrift 60s linear infinite;
-              will-change: transform;
-            }
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .warli-drift-layer {
-              animation: none;
-            }
-          }
-        `}} />
       </section>
 
       {/* ================= ALL ARTICLES GRID ================= */}
@@ -217,7 +250,7 @@ export default function BlogHubPage() {
             <Link
               key={blog.slug}
               href={`/blog/${blog.slug}`}
-              className="group bg-[#fdfbf7] dark:bg-[#122622] rounded-3xl overflow-hidden border border-[#dccdb2] dark:border-[#2c6a5f]/40 hover:border-[#3a8c7e]/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              className="group bg-[#fdfbf7] dark:bg-[#122622] rounded-3xl overflow-hidden border border-[#dccdb2] dark:border-[#2c6a5f]/40 hover:border-[#3a8c7e]/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Card Thumbnail */}
