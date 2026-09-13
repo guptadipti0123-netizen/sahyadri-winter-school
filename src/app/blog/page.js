@@ -211,7 +211,7 @@ export default function BlogHubPage() {
             Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
           </h1>
 
-          <p className="font-serif italic text-base sm:text-xl text-[#5c5042] max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="font-serif italic text-base sm:text-xl text-[#2f1e10] max-w-2xl mx-auto leading-relaxed font-normal">
             Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts.
           </p>
         </div>
