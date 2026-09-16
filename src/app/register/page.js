@@ -339,21 +339,6 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* Direct Register Callout */}
-          <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-[#dccdb2]">
-            <Link
-              href="/register/form"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#1f5c54] hover:bg-[#124d45] text-white font-bold text-sm shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all w-fit"
-            >
-              <span>Register for Winter Camp</span>
-              <ArrowRight size={16} />
-            </Link>
-
-            <span className="text-xs text-[#7a5232] font-medium">
-              *Takes only 2 minutes to fill your registration details.
-            </span>
-          </div>
-
         </div>
       </section>
 
