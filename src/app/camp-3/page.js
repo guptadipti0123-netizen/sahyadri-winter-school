@@ -207,23 +207,6 @@ export default function SummerSchoolJawharPage() {
             <p className="text-base md:text-lg italic font-serif border-l-2 border-[#3a8c7e] pl-4 text-[#7a5232] leading-relaxed">
               &quot;{campDetails.tagline}&quot;
             </p>
-
-            {/* ACTION BUTTONS */}
-            <div className="flex flex-row items-center gap-3 sm:gap-4 pt-3">
-              <Link
-                href="#themes"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-white font-medium text-xs sm:text-sm md:text-base shadow-sm hover:shadow-md transition-all duration-300 whitespace-nowrap active:scale-95"
-              >
-                <span>Explore Themes</span>
-                <ArrowRight size={15} />
-              </Link>
-              <Link
-                href="#gallery"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-transparent text-[#3e2410] border border-[#dccdb2] font-medium text-xs sm:text-sm md:text-base shadow-xs hover:bg-[#ebe2d1] transition-all duration-300 whitespace-nowrap active:scale-95"
-              >
-                <span>Visual Archive</span>
-              </Link>
-            </div>
           </div>
 
           {/* RIGHT: POLAROID / FEATURE CARD */}
