@@ -257,23 +257,23 @@ export const blogsData = [
     content: [
       {
         type: "paragraph",
-        text: "As we look ahead to May 2026, the Sahyadri Rural Connect journey heads to Jawhar in Palghar district — a landscape steeped in indigenous heritage, vibrant Warli art traditions, and pioneer models of tribal self-governance under PESA."
+        text: "As we look ahead to May 2026, the Sahyadri Rural Connect journey heads to Jawhar in Palghar district — a landscape steeped in indigenous heritage, vibrant community traditions, and pioneer models of tribal self-governance under PESA."
       },
       {
         type: "heading",
-        text: "An Open-Air Laboratory of Culture and Governance"
+        text: "An Open-Air Laboratory of Community Wisdom and Governance"
       },
       {
         type: "paragraph",
-        text: "Jawhar offers an extraordinary setting for participants to learn how traditional communities maintain sustainable relations with their forest ecology while navigating modern market and governance systems."
+        text: "Jawhar offers an extraordinary setting for participants to learn how traditional communities maintain sustainable relations with their forest ecology while navigating grassroots institutions, Gram Sabhas, and local self-rule."
       },
       {
         type: "quote",
-        text: "Warli painting is not merely decorative canvas; it is a pictographic language documenting farming cycles, marriage rituals, wildlife, and the sacred harmony between human and nature."
+        text: "Village assemblies and dialogues under the community tree are not just administrative gatherings; they are the living heartbeat of grassroots democracy, indigenous wisdom, and collective stewardship."
       },
       {
         type: "paragraph",
-        text: "Registrations for the May 2026 cohort are now open for undergraduate, postgraduate, and research scholars eager to experience this unique blend of art, ecology, and social leadership."
+        text: "Registrations for the May 2026 cohort are now open for undergraduate, postgraduate, and research scholars eager to experience this unique blend of governance, ecology, and grassroots leadership."
       }
     ]
   }
