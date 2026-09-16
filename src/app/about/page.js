@@ -13,6 +13,7 @@ export default function AboutPage() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
   const [activeCampIdx, setActiveCampIdx] = useState(0)
+  const [isCampPaused, setIsCampPaused] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
   const [timelineVisible, setTimelineVisible] = useState(false)
   const timelineRef = useRef(null)
@@ -25,6 +26,46 @@ export default function AboutPage() {
     }, 100)
     return () => clearTimeout(timer)
   }, [])
+
+  const heroCamps = [
+    {
+      badge: "Jawhar • May 2026",
+      title: "Forest Ecology & Livelihoods",
+      tag: "Summer Edition",
+      caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
+      image: "/palghar/palghar-community-tree-dialogue.jpg",
+      href: "/camp-3",
+      duration: "Summer 2026"
+    },
+    {
+      badge: "Karjat • Dec 2025",
+      title: "Access True Expertise",
+      tag: "2nd Edition Camp",
+      caption: "Expertise, here, was measured in years of practice, not pages. Direct mentorship from distinguished experts in governance and social development.",
+      image: "/camp2/camp2-day2-i3_copy.png",
+      href: "/camp-2",
+      duration: "5 Days Immersion"
+    },
+    {
+      badge: "Palghar • Jan 2025",
+      title: "Where The Journey Began",
+      tag: "1st Edition Camp",
+      caption: "40 students, tribal hamlets, and immersive grassroots dialogue. Real learning happens outside the four walls of a classroom.",
+      image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
+      href: "/camp-1",
+      duration: "Tribal Education"
+    }
+  ]
+
+  // Auto-rotate hero camp slides every 4 seconds unless hovered/paused
+  useEffect(() => {
+    if (isCampPaused) return
+    const campTimer = setInterval(() => {
+      setActiveCampIdx((prev) => (prev + 1) % heroCamps.length)
+    }, 4000)
+
+    return () => clearInterval(campTimer)
+  }, [isCampPaused, heroCamps.length])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,36 +106,6 @@ export default function AboutPage() {
       if (currentRef) observer.unobserve(currentRef)
     }
   }, [])
-
-  const heroCamps = [
-    {
-      badge: "Jawhar • May 2026",
-      title: "Forest Ecology & Livelihoods",
-      tag: "Summer Edition",
-      caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
-      image: "/palghar/palghar-community-tree-dialogue.jpg",
-      href: "/camp-3",
-      duration: "Summer 2026"
-    },
-    {
-      badge: "Karjat • Dec 2025",
-      title: "Access True Expertise",
-      tag: "2nd Edition Camp",
-      caption: "Expertise, here, was measured in years of practice, not pages. Direct mentorship from distinguished experts in governance and social development.",
-      image: "/camp2/camp2-day2-i3_copy.png",
-      href: "/camp-2",
-      duration: "5 Days Immersion"
-    },
-    {
-      badge: "Palghar • Jan 2025",
-      title: "Where The Journey Began",
-      tag: "1st Edition Camp",
-      caption: "40 students, tribal hamlets, and immersive grassroots dialogue. Real learning happens outside the four walls of a classroom.",
-      image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
-      href: "/camp-1",
-      duration: "Tribal Education"
-    }
-  ]
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -226,14 +237,18 @@ export default function AboutPage() {
           >
             
             {/* Camp Selector Tabs */}
-            <div className="flex items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-[#fdfbf7] border border-[#dccdb2] mb-3 max-w-full overflow-x-auto shadow-xs">
+            <div 
+              onMouseEnter={() => setIsCampPaused(true)}
+              onMouseLeave={() => setIsCampPaused(false)}
+              className="flex items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-[#fdfbf7] border border-[#dccdb2] mb-3 max-w-full overflow-x-auto shadow-xs"
+            >
               {heroCamps.map((camp, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveCampIdx(idx)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     activeCampIdx === idx
-                      ? "bg-[#3a8c7e] text-white shadow-xs font-semibold"
+                      ? "bg-[#3a8c7e] text-white shadow-xs font-semibold scale-102"
                       : "text-[#5c3818] hover:text-[#3e2410] hover:bg-[#ebe2d1]"
                   }`}
                 >
@@ -243,21 +258,34 @@ export default function AboutPage() {
             </div>
 
             {/* Feature Card with Background Image, Caption & Camp Link */}
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-3xl overflow-hidden shadow-md border border-[#dccdb2] bg-[#fdfbf7] group mx-auto">
-              <div className="relative h-[380px] xs:h-[410px] sm:h-[440px] w-full">
-                <Image
-                  src={heroCamps[activeCampIdx].image}
-                  alt={heroCamps[activeCampIdx].title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority
-                />
+            <div 
+              onMouseEnter={() => setIsCampPaused(true)}
+              onMouseLeave={() => setIsCampPaused(false)}
+              className="relative w-full max-w-[380px] sm:max-w-[420px] rounded-3xl overflow-hidden shadow-md border border-[#dccdb2] bg-[#fdfbf7] group mx-auto"
+            >
+              <div className="relative h-[380px] xs:h-[410px] sm:h-[440px] w-full overflow-hidden">
+                {heroCamps.map((camp, idx) => (
+                  <div
+                    key={idx}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      activeCampIdx === idx ? "opacity-100 z-0 pointer-events-auto" : "opacity-0 z-[-1] pointer-events-none"
+                    }`}
+                  >
+                    <Image
+                      src={camp.image}
+                      alt={camp.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      priority={idx === 0}
+                    />
+                  </div>
+                ))}
                 
                 {/* Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/45 to-transparent z-10" />
                 
                 {/* Top Badges */}
-                <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10">
+                <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-20">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md border border-[#dccdb2] text-[#1f5c54] text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase">
                     <MapPin size={11} className="text-[#3a8c7e]" />
                     {heroCamps[activeCampIdx].badge}
@@ -268,12 +296,12 @@ export default function AboutPage() {
                 </div>
 
                 {/* Bottom Content & Caption */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 space-y-2 sm:space-y-2.5 z-10 text-left">
-                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-[#fdfbf7] leading-tight drop-shadow-sm">
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 space-y-2 sm:space-y-2.5 z-20 text-left">
+                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-[#fdfbf7] leading-tight drop-shadow-sm transition-all duration-300">
                     {heroCamps[activeCampIdx].title}
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs md:text-sm text-[#fdfbf7]/95 leading-relaxed font-light bg-[#241407]/60 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-[#dccdb2]/30 line-clamp-3 sm:line-clamp-none">
+                  <p className="text-[11px] sm:text-xs md:text-sm text-[#fdfbf7]/95 leading-relaxed font-light bg-[#241407]/60 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-[#dccdb2]/30 line-clamp-3 sm:line-clamp-none transition-all duration-300">
                     &quot;{heroCamps[activeCampIdx].caption}&quot;
                   </p>
 
