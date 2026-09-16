@@ -244,16 +244,16 @@ export const blogsData = [
   },
   {
     slug: "cradle-of-warli-art-jawhar-preview",
-    title: "Cradle of Warli Art: Previewing Summer School in Jawhar",
+    title: "Grassroots Dialogue with Tribal Elders: Previewing Summer School in Jawhar",
     subtitle: "Summer Edition — May 2026, Jawhar, Palghar",
     date: "May 2026",
     edition: "Summer School 2026",
     author: "Sahyadri Rural Connect Editorial",
     authorRole: "Summer Cohort Preview",
     readTime: "4 min read",
-    category: "Culture & Art",
+    category: "Culture & Governance",
     image: "/palghar/palghar-community-tree-dialogue.jpg",
-    excerpt: "Jawhar, known for its mist-clad plateaus, ancient tribal palaces, and world-renowned Warli paintings, will host our May 2026 Summer School edition.",
+    excerpt: "Engaging directly with tribal elders, Gram Sabhas, and experiencing indigenous wisdom and self-governance under PESA in Jawhar.",
     content: [
       {
         type: "paragraph",

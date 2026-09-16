@@ -30,9 +30,9 @@ export default function AboutPage() {
   const heroCamps = [
     {
       badge: "Jawhar • May 2026",
-      title: "Forest Ecology & Livelihoods",
+      title: "Grassroots Dialogue with Tribal Elders",
       tag: "Summer Edition",
-      caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
+      caption: "Direct dialogues with village elders and Gram Panchayats on PESA self-governance and tribal livelihoods in the Sahyadris.",
       image: "/palghar/palghar-community-tree-dialogue.jpg",
       href: "/camp-3",
       duration: "Summer 2026"

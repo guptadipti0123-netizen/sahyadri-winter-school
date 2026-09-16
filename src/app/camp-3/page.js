@@ -243,7 +243,7 @@ export default function SummerSchoolJawharPage() {
               </div>
               <div className="text-center px-3 pt-1 pb-2">
                 <span className="font-serif text-[#3e2410] font-normal text-lg md:text-xl block leading-snug">
-                  Cradle of Warli Art &amp; Tribal Heritage
+                  Grassroots Dialogue with Tribal Elders
                 </span>
                 <span className="text-xs text-[#7a5232] font-light block mt-1.5">
                   Jawhar, Palghar District (May 2026)
