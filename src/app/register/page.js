@@ -111,7 +111,7 @@ export default function RegisterPage() {
       desc: 'Interdisciplinary teams present actionable rural development blueprints to NGO founders and mentors. Closing valedictory ceremony and award of official fellowship certificates.',
       image: '/palghar/palghar-classroom-reflection-session.jpg',
       alt: 'Scholars presenting capstone blueprints',
-      highlights: ['Capstone Blueprint Defense', 'Policy Feedback from Mentors', 'Fellowship Certification']
+      highlights: ['Capstone Blueprint Defense', 'Policy Feedback from Mentors', 'Immersion Certification']
     }
   ];
 
@@ -125,7 +125,7 @@ export default function RegisterPage() {
     },
     {
       number: '02',
-      title: 'Curated 40-Fellow Interdisciplinary Cohort',
+      title: 'Curated 40-Scholar Interdisciplinary Cohort',
       desc: 'Collaborate with top students selected from IITs, TISS, IIMs, Law & Policy institutes across engineering, economics, design, and agriculture.',
       icon: <Users className="w-5 h-5 text-[#3a8c7e]" />,
       accent: 'border-[#3a8c7e]/30 bg-[#fdfbf7]'
@@ -228,7 +228,7 @@ export default function RegisterPage() {
                 Winter Camp 2026 • Registration Loading
               </span>
               <span className="hidden sm:inline-block text-[10px] font-semibold text-[#c8880a] bg-[#c8880a]/10 px-2 py-0.5 rounded-full">
-                40 Fellowship Seats
+                40 Selected Seats
               </span>
             </div>
           </div>
@@ -245,14 +245,14 @@ export default function RegisterPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-[#7a5232] max-w-2xl leading-relaxed font-normal">
-                Step away from sterile lecture halls into the vibrant grassroots of Maharashtra&apos;s Western Ghats. A high-impact 5-day residential fellowship exploring indigenous farming, tribal self-governance, and sustainable village economies.
+                Step away from sterile lecture halls into the vibrant grassroots of Maharashtra&apos;s Western Ghats. A high-impact 5-day residential immersion camp exploring indigenous farming, tribal self-governance, and sustainable village economies.
               </p>
 
               {/* Trust Metric Badges */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
                 <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] text-xs font-semibold shadow-xs">
                   <Users className="w-4 h-4 text-[#3a8c7e]" />
-                  <span>40 Selected Fellows</span>
+                  <span>40 Selected Scholars</span>
                 </div>
                 <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] text-xs font-semibold shadow-xs">
                   <MapPin className="w-4 h-4 text-[#c8880a]" />
@@ -270,7 +270,7 @@ export default function RegisterPage() {
                   href="/register/form"
                   className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-center"
                 >
-                  <span>Register for Fellowship</span>
+                  <span>Register for Winter Camp</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
 
@@ -314,7 +314,7 @@ export default function RegisterPage() {
                       Grassroots Immersion
                     </span>
                     <h3 className="font-serif text-2xl font-bold text-[#3e2410] leading-tight">
-                      Sahyadri Rural Fellowship
+                      Sahyadri Rural Connect
                     </h3>
                   </div>
                 </div>
