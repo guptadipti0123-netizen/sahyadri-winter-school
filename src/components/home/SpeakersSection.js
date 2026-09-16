@@ -209,6 +209,9 @@ export default function SpeakersSection() {
                             className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
                             sizes="(max-width: 640px) 35vw, (max-width: 1024px) 25vw, 15vw"
                           />
+                          {/* Soft dissolves into card background */}
+                          <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
+                          <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-[#fdfbf7] to-transparent pointer-events-none" />
                         </div>
                       ) : (
                         <div className="w-10 h-10 rounded-full bg-[#ebe2d1] flex items-center justify-center text-[#7a5232] mb-2 border border-[#dccdb2]">

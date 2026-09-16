@@ -76,8 +76,10 @@ export default function MentorsSection() {
                       fill
                       className="object-contain object-bottom filter contrast-[1.04] group-hover:scale-105 transition-transform duration-500"
                     />
-                    {/* Soft gradient shade dissolving smoothly into card background */}
-                    <div className="absolute inset-x-0 bottom-0 h-8 sm:h-10 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/50 to-transparent pointer-events-none" />
+                    {/* Soft multi-directional gradient shades dissolving smoothly into card background */}
+                    <div className="absolute inset-x-0 bottom-0 h-9 sm:h-12 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/70 to-transparent pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-8 sm:w-12 bg-gradient-to-l from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-y-0 left-0 w-6 sm:w-8 bg-gradient-to-r from-[#fdfbf7] via-[#fdfbf7]/50 to-transparent pointer-events-none" />
                   </div>
                 ) : (
                   /* Dignified Academic Monogram */
