@@ -689,10 +689,6 @@ export default function AboutPage() {
             
             {/* Left Info Column */}
             <div className="lg:col-span-5 space-y-4 sm:space-y-6 text-left">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#c8880a]/15 text-[#c8880a] text-xs font-bold tracking-wider uppercase border border-[#c8880a]/30">
-                GET IN TOUCH
-              </span>
-
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e2410]">
                 Let&apos;s Start a <span className="italic text-[#3a8c7e]">Conversation</span>
               </h2>
