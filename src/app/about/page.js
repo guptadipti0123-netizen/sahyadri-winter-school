@@ -324,28 +324,29 @@ export default function AboutPage() {
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#dccdb2] group bg-[#3e2410]/10">
               <div className="relative h-[320px] xs:h-[380px] sm:h-[440px] w-full">
                 <Image
-                  src="/rural_immersion_real.jpg"
-                  alt="Students and village community immersion"
+                  src="/palghar/palghar-community-tree-dialogue.jpg"
+                  alt="Students and village elders in dialogue under the village tree in Palghar"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/25 to-transparent" />
                 
                 {/* Floating Top Tag */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md text-[#3e2410] font-bold text-xs uppercase tracking-wider shadow-md border border-[#dccdb2]">
-                    🌱 Rural Immersion Fieldwork
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md text-[#3e2410] font-bold text-xs uppercase tracking-wider shadow-md border border-[#dccdb2]">
+                    <MapPin size={12} className="text-[#3a8c7e]" />
+                    <span>Palghar Field Immersion</span>
                   </span>
                 </div>
 
                 {/* Bottom Overlay Info */}
                 <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl bg-[#fdfbf7]/95 backdrop-blur-md border border-[#dccdb2] shadow-lg text-left">
                   <span className="text-[10px] font-bold text-[#3a8c7e] uppercase tracking-wider block">
-                    GROUND REALITIES
+                    GRASSROOTS DIALOGUE
                   </span>
                   <p className="text-xs sm:text-sm font-serif font-bold text-[#3e2410] mt-0.5 leading-snug">
-                    Learning with communities, questioning assumptions, and exploring stories beyond statistics.
+                    Conversations under the village tree — learning directly with communities and listening to lived experiences.
                   </p>
                 </div>
               </div>
