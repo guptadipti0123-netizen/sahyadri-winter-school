@@ -2,7 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
-import { HeartHandshake, Users, TrendingUp, Mail, Sprout, Sparkles } from "lucide-react"
+import { HeartHandshake, Users, TrendingUp, Mail, Sprout } from "lucide-react"
 
 export default function CareerPage() {
   return (
@@ -133,11 +133,6 @@ export default function CareerPage() {
             
             {/* Left: Text Content */}
             <div className="p-8 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ebe2d1] border border-[#dccdb2] mb-5 w-fit">
-                <Sparkles size={14} className="text-[#c8880a]" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#1f5c54]">Get Involved</span>
-              </div>
-              
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-[#1a332d] mb-4 leading-tight">
                 Be a Catalyst for Rural Transformation
               </h2>
