@@ -170,13 +170,6 @@ export default function SpeakersSection() {
               
               {/* Compact Portrait Image with Soft Backdrop & Fade */}
               <div className="relative w-full h-28 sm:h-34 rounded-xl overflow-hidden bg-[#f5efe2] border border-[#dccdb2]/60 flex items-end justify-center select-none">
-                {/* Top Category Badge */}
-                <div className="absolute top-1.5 left-1.5 z-10">
-                  <span className="inline-block px-2 py-0.5 rounded-md bg-[#fdfbf7]/90 backdrop-blur-xs text-[#c8880a] text-[8.5px] sm:text-[9px] font-bold uppercase tracking-wider border border-[#dccdb2]">
-                    {speaker.tag.split(" ")[0]}
-                  </span>
-                </div>
-
                 {speaker.image ? (
                   <div className="relative w-full h-full flex items-end justify-center">
                     <Image
