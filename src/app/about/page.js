@@ -728,16 +728,6 @@ export default function AboutPage() {
 
               <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
                 <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#f5efe2] border border-[#dccdb2]">
-                  <Mail className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
-                  <div className="min-w-0">
-                    <span className="text-xs font-bold text-[#3e2410] block">Email Us</span>
-                    <a href="mailto:info@sahyadriruralconnect.org" className="text-xs text-[#7a5232] hover:text-[#3a8c7e] font-medium truncate block">
-                      info@sahyadriruralconnect.org
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#f5efe2] border border-[#dccdb2]">
                   <MapPin className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
                   <div className="min-w-0">
                     <span className="text-xs font-bold text-[#3e2410] block">Field Locations</span>
