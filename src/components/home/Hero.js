@@ -10,46 +10,26 @@ import {
   Clock 
 } from "lucide-react"
 
-// Main Featured Slides (Left Big Carousel) — All Unique Real Images
+// Main Featured Slides (Left Big Carousel) — All Unique Real Images across Camps
 const featuredSlides = [
   {
-    id: "real-bharat",
-    category: "RURAL IMMERSION",
-    title: "Understanding Real Bharat: Ground-Level Leadership & Grassroots Realities",
-    subtitle: "A transformative 5-day residential fellowship taking students from premier universities to rural Maharashtra communities.",
-    image: "/sahyadri-bg-hero6.jpeg", // Panoramic Sahyadri Ghats
-    link: "/blog/a-day-at-sahyadri-rural-connect",
-    date: "Dec 2025",
-    readTime: "5 Days Immersion",
+    id: "jawhar-summer-school",
+    category: "CULTURE & GOVERNANCE",
+    title: "Grassroots Dialogue with Tribal Elders: Previewing Summer School in Jawhar",
+    subtitle: "Direct dialogues with village elders, forest naturalists, and tribal self-governance models under PESA in Palghar district.",
+    image: "/palghar/palghar-community-tree-dialogue.jpg",
+    link: "/blog/cradle-of-warli-art-jawhar-preview",
+    date: "May 2026",
+    readTime: "4 min read",
   },
   {
     id: "rural-connectivity",
     category: "TECH & INFRASTRUCTURE",
     title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
     subtitle: "Examining last-mile PMGSY road networks, BharatNet optical fiber, and solar telecom towers across Sahyadri villages.",
-    image: "/camp2/camp2-day4-i1.jpg", // Real field photo: solar telecom & rural infrastructure
+    image: "/camp2/camp2-day4-i1.jpg",
     link: "/blog/rural-connectivity-and-digital-divide",
-    date: "Dec 28, 2025",
-    readTime: "5 min read",
-  },
-  {
-    id: "jawhar-summer-school",
-    category: "CULTURE & GOVERNANCE",
-    title: "Grassroots Dialogue with Tribal Elders: Previewing Summer School in Jawhar",
-    subtitle: "Direct dialogues with village elders, forest naturalists, and tribal self-governance models under PESA in Palghar district.",
-    image: "/palghar/palghar-community-tree-dialogue.jpg", // Jawhar tribal community & landscape
-    link: "/blog/cradle-of-warli-art-jawhar-preview",
-    date: "May 2026",
-    readTime: "4 min read",
-  },
-  {
-    id: "sustainable-ecology",
-    category: "ECOLOGY & INNOVATION",
-    title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
-    subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
-    image: "/camp2/camp2-day3-i2.jpg", // Real field photo: organic farm & forest walk
-    link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
-    date: "Dec 27, 2025",
+    date: "Dec 2025",
     readTime: "5 min read",
   },
   {
@@ -57,14 +37,34 @@ const featuredSlides = [
     category: "CULTURE & ECONOMY",
     title: "Grassroots Enterprise & Maratha Heritage: Fort Trails to Farmer Collectives",
     subtitle: "Examining the strategic water architecture of Maratha forts and visiting farmer collectives in Karjat.",
-    image: "/camp2/camp2-day2-i1.jpg", // Real photo: fort trek trail & grassroots enterprise
+    image: "/camp2/camp2-day2-i1.jpg",
     link: "/blog/maratha-heritage-and-rural-immersion",
-    date: "Dec 25, 2025",
+    date: "Dec 2025",
     readTime: "6 min read",
+  },
+  {
+    id: "sustainable-ecology",
+    category: "ECOLOGY & INNOVATION",
+    title: "Deep Roots: Organic Farming, Forest Walks & Clean Tech",
+    subtitle: "Documenting ethnobotany, decentralized solar micro-grids, and regenerative farming with local tribal elders.",
+    image: "/camp2/camp2-day3-i2.jpg",
+    link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
+    date: "Apr 2025",
+    readTime: "5 min read",
+  },
+  {
+    id: "real-bharat",
+    category: "RURAL IMMERSION",
+    title: "Where the Journey Began: Inaugural Grassroots Fellowship in Palghar",
+    subtitle: "A transformative residential fellowship connecting students from premier universities with rural Maharashtra communities.",
+    image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
+    link: "/blog/a-day-at-sahyadri-rural-connect",
+    date: "Jan 2025",
+    readTime: "Inaugural Cohort",
   },
 ]
 
-// Right Side Latest Articles — Styled with Kwina earthy palette
+// Right Side Latest Articles — Styled with Kwina earthy palette across all editions
 const sideArticles = [
   {
     id: "art-1",
@@ -80,7 +80,7 @@ const sideArticles = [
     id: "art-2",
     category: "TECH & CONNECTIVITY",
     title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
-    date: "Dec 28, 2025",
+    date: "Dec 2025",
     readTime: "5 min read",
     image: "/camp2/camp2-day4-i1.jpg",
     link: "/blog/rural-connectivity-and-digital-divide",
@@ -89,8 +89,8 @@ const sideArticles = [
   {
     id: "art-3",
     category: "ECOLOGY & INNOVATION",
-    title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
-    date: "Dec 27, 2025",
+    title: "Deep Roots: Organic Farming, Forest Walks & Clean Tech",
+    date: "Apr 2025",
     readTime: "5 min read",
     image: "/camp2/camp2-day3-i2.jpg",
     link: "/blog/sustainable-livelihoods-and-tribal-wisdom",
@@ -98,12 +98,12 @@ const sideArticles = [
   },
   {
     id: "art-4",
-    category: "CULTURE & HISTORY",
-    title: "Grassroots Enterprise & Maratha Heritage: Fort Trails to Farmer Collectives",
-    date: "Dec 25, 2025",
-    readTime: "6 min read",
-    image: "/camp2/camp2-day2-i1.jpg",
-    link: "/blog/maratha-heritage-and-rural-immersion",
+    category: "RURAL IMMERSION",
+    title: "Where the Journey Began: Inaugural Grassroots Fellowship in Palghar",
+    date: "Jan 2025",
+    readTime: "5 min read",
+    image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
+    link: "/blog/a-day-at-sahyadri-rural-connect",
     tagColor: "bg-[#7a3a1c]/10 text-[#7a3a1c] border-[#7a3a1c]/30",
   },
 ]

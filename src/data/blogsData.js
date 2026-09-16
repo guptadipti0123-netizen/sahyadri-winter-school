@@ -1,89 +1,107 @@
 export const blogsData = [
   {
-    slug: "a-day-at-sahyadri-rural-connect",
-    title: "A Day at Sahyadri Rural Connect",
-    subtitle: "Day 1 — December 24th, Kothimbe, Karjat",
-    date: "Dec 24, 2025",
-    edition: "Winter Camp 2025",
+    slug: "cradle-of-warli-art-jawhar-preview",
+    title: "Grassroots Dialogue with Tribal Elders: Previewing Summer School in Jawhar",
+    subtitle: "Summer Edition — May 2026, Jawhar, Palghar",
+    date: "May 2026",
+    edition: "Summer School 2026",
     author: "Sahyadri Rural Connect Editorial",
-    authorRole: "Field Notes & Observations",
-    readTime: "5 min read",
-    category: "Field Stories",
-    image: "/camp2/camp2-day1-i1.jpg",
-    heroImage: "/camp2/camp2-day1-i4.jpg",
-    excerpt: "There is a particular kind of quiet that settles over Kothimbe in late December. The second edition of Sahyadri Rural Connect began with a folding table, a stack of registration forms, and a slow trickle of students stepping off buses.",
+    authorRole: "Summer Cohort Preview",
+    readTime: "4 min read",
+    category: "Culture & Governance",
+    image: "/palghar/palghar-community-tree-dialogue.jpg",
+    excerpt: "Engaging directly with tribal elders, Gram Sabhas, and experiencing indigenous wisdom, forest ecology, and self-governance under PESA in Jawhar.",
     content: [
       {
         type: "paragraph",
-        text: "There is a particular kind of quiet that settles over Kothimbe in late December. The Sahyadris hold the morning mist a little longer, the air is cool enough for a jacket, and the only traffic is a bullock cart and a school bus. It was into this quiet that the second edition of Sahyadri Rural Connect began — with a folding table, a stack of registration forms, and a slow trickle of students stepping off buses with rucksacks and a fair amount of nervousness."
+        text: "As we look ahead to May 2026, the Sahyadri Rural Connect journey heads to Jawhar in Palghar district — a landscape steeped in indigenous heritage, vibrant community traditions, and pioneer models of tribal self-governance under PESA."
       },
       {
         type: "heading",
-        text: "Arrivals"
+        text: "An Open-Air Laboratory of Community Wisdom and Governance"
       },
       {
         type: "paragraph",
-        text: "Onsite registration is a deceptively small ritual. A name is ticked off, a lanyard is handed over, a room is assigned. But watch it closely and you see something else happening: a law student from ILS meeting a PhD scholar from IGIDR; someone from IIT Bombay working out that the person beside them studies population science at IIPS. For the next five days, none of that would matter very much — and that was rather the point."
-      },
-      {
-        type: "paragraph",
-        text: "By late morning, the group had gathered under the trees outside the hall. Introductions were still tentative. Everyone had read the brochure. Nobody quite knew yet what \"understanding real Bharat\" was going to feel like from the inside."
-      },
-      {
-        type: "heading",
-        text: "The Inauguration"
-      },
-      {
-        type: "paragraph",
-        text: "The hall filled up — ceiling fans turning slowly, a projector throwing light onto the screen, students settling cross-legged and on chairs alike. The inauguration set the tone for the week ahead: this was not going to be a lecture series delivered at a distance. It was going to be a conversation, and everyone in the room was expected to hold up their end of it."
-      },
-      {
-        type: "heading",
-        text: "Discussions: Policy, Environment, Climate, Culture, and the Work of NGOs"
-      },
-      {
-        type: "paragraph",
-        text: "The first day's sessions moved deliberately through the frames students would carry into the field for the rest of the camp."
+        text: "Jawhar offers an extraordinary setting for participants to learn how traditional communities maintain sustainable relations with their forest ecology while navigating grassroots institutions, Gram Sabhas, and local self-rule."
       },
       {
         type: "quote",
-        text: "Rural India is not a problem statement waiting for a solution, but a living civilisational context with its own logic, memory, and forms of knowledge."
+        text: "Village assemblies and dialogues under the community tree are not just administrative gatherings; they are the living heartbeat of grassroots democracy, indigenous wisdom, and collective stewardship."
+      },
+      {
+        type: "paragraph",
+        text: "Registrations for the May 2026 cohort are now open for undergraduate, postgraduate, and research scholars eager to experience this unique blend of governance, ecology, and grassroots leadership."
+      }
+    ]
+  },
+  {
+    slug: "rural-connectivity-and-digital-divide",
+    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
+    subtitle: "Telecom Infrastructure, Optical Fiber & Last-Mile Road Access in Sahyadri Villages",
+    date: "Dec 28, 2025",
+    edition: "Winter Camp 2025",
+    author: "Sahyadri Rural Connect Editorial",
+    authorRole: "Field Notes & Analysis",
+    readTime: "5 min read",
+    category: "Tech & Infrastructure",
+    image: "/camp2/camp2-day4-i1.jpg",
+    excerpt: "From rugged hill roads under PMGSY to optical fiber rollouts and solar-powered Common Service Centers, understanding how last-mile connectivity unlocks healthcare, education, and rural livelihoods.",
+    content: [
+      {
+        type: "paragraph",
+        text: "In the steep valleys and scattered padas (tribal hamlets) of the Sahyadri range, connectivity has always been physical first and digital second. During our field immersion, cohort participants investigated how geography defines access — where a missing all-weather bridge or an absent telecom tower can mean the difference between life and death during the monsoon."
+      },
+      {
+        type: "heading",
+        text: "Physical Roads: The Foundation of Rural Mobility"
+      },
+      {
+        type: "paragraph",
+        text: "Visiting interior tribal hamlets in Karjat highlighted the transformative power of the Pradhan Mantri Gram Sadak Yojana (PMGSY). All-weather bitumen roads do far more than transport vehicles: they enable secondary school attendance for adolescent girls, allow emergency 108 ambulances to reach remote padas, and drastically lower transport costs for perishable farm produce."
+      },
+      {
+        type: "heading",
+        text: "The Digital Frontier: BharatNet, Optical Fiber & Solar Telecom Towers"
+      },
+      {
+        type: "paragraph",
+        text: "While metro cities celebrate high-speed 5G, rural hamlets often battle intermittent signals and frequent grid outages. The cohort examined decentralized solutions: solar-hybrid BTS towers, line-of-sight wireless relays, and the BharatNet optical fiber backbone reaching Gram Panchayats."
+      },
+      {
+        type: "quote",
+        text: "Connectivity in rural Bharat is not merely about bandwidth; it is the fundamental bridge to Direct Benefit Transfers (DBT), Aadhaar-enabled banking, tele-medicine consultations, and digital education."
+      },
+      {
+        type: "heading",
+        text: "Grassroots Digital Enablers: Common Service Centers (CSCs)"
+      },
+      {
+        type: "paragraph",
+        text: "At the local Gram Panchayat level, Village Level Entrepreneurs (VLEs) operating Common Service Centers act as the human interface of Digital India. From filing crop insurance claims to biometric pension payouts and student scholarship applications, CSCs ensure that digital tools translate into accessible public services."
       },
       {
         type: "list",
         items: [
-          "Policy came first — not as statute, but as the machinery of intention: how a decision made in Mumbai travels down to a gram panchayat, what it loses on the way, and why implementation is so often the harder half of the problem.",
-          "Environment and Climate followed, grounded in the very landscape outside the window. In the Sahyadris, climate is not an abstraction on a chart. It is the timing of the rain, the depth of a well in April, the yield of a hillside plot.",
-          "Indian Culture widened the lens — a reminder that rural India is not a problem statement waiting for a solution, but a living civilisational context with its own logic, memory, and forms of knowledge.",
-          "NGO Working brought it back to practice: what it actually takes to run an organisation in the field. Funding cycles, community trust, staff retention, the long unglamorous years between a good idea and a measurable change."
+          "Solar-Hybrid Power: Grid instability is the leading cause of rural network downtime; solar-backed battery systems ensure uninterrupted 24/7 connectivity.",
+          "Last-Mile Road Corridors: Connecting tribal hamlets with block headquarters reduces maternal mortality and enhances daily market access for smallholders.",
+          "Digital Literacy & Security: Equipping village youth and women self-help groups with digital transaction security to prevent financial fraud.",
+          "Tele-Medicine & Remote Clinics: High-speed video consultations connecting primary health sub-centres with tertiary hospital specialists in Mumbai and Pune."
         ]
       },
       {
         type: "heading",
-        text: "Voices from the Field"
+        text: "Student Action Blueprints"
       },
       {
         type: "paragraph",
-        text: "Three keynote speakers anchored the day, each bringing a different vantage point on the same terrain."
-      },
-      {
-        type: "list",
-        items: [
-          "Mr. Suresh Hake of Vanvasi Kalyan Ashram spoke from decades of work with tribal communities — the kind of grounded, patient engagement that does not make headlines but changes districts.",
-          "Dr. Tupkary, founder of BAVP and Sevankur Bharat, offered the builder's perspective: how institutions for social work are conceived, sustained, and handed on.",
-          "Mrs. Siddhi Advankar, former Commissioner with the Government of Maharashtra, brought the view from inside the system — what the state can do, where it gets stuck, and how citizens and civil society can move it."
-        ]
-      },
-      {
-        type: "paragraph",
-        text: "Between them, the three sketched something students rarely get in a classroom: the same problem seen from the village, from the NGO, and from the secretariat."
+        text: "Synthesizing their field observations, student teams drafted actionable blueprints for community-managed Wi-Fi mesh networks and micro-logistics hubs that empower tribal youth to run decentralized delivery and service points across Sahyadri hill villages."
       }
     ]
   },
   {
     slug: "maratha-heritage-and-rural-immersion",
     title: "Grassroots Enterprise & Maratha Heritage: Fort Trails to Farmer Collectives",
-    subtitle: "Day 2 — Fort Trekking, Maratha Samrajya & FPO Visit",
+    subtitle: "December 2025 — Historical Governance, Fort Water Systems & FPO Economics",
     date: "Dec 25, 2025",
     edition: "Winter Camp 2025",
     author: "Sahyadri Rural Connect Editorial",
@@ -133,20 +151,20 @@ export const blogsData = [
   },
   {
     slug: "sustainable-livelihoods-and-tribal-wisdom",
-    title: "Deep Roots: Organic Farming, Forest Walks & Solar Innovation",
-    subtitle: "Day 3 & 4 — Immersion into Tribal Ecology and Clean Tech",
-    date: "Dec 27, 2025",
-    edition: "Winter Camp 2025",
+    title: "Deep Roots: Organic Farming, Forest Walks & Clean Tech",
+    subtitle: "Agrarian Livelihoods, Solar Lift Irrigation & Orchard Ecosystems",
+    date: "Apr 20, 2025",
+    edition: "Spring Research 2025",
     author: "Sahyadri Rural Connect Editorial",
     authorRole: "Field Notes & Observations",
     readTime: "5 min read",
     category: "Ecology & Innovation",
     image: "/camp2/camp2-day3-i2.jpg",
-    excerpt: "Walking through dense groves with tribal elders who read the forest like a library of medicinal remedies, students learned that sustainability is not a modern buzzword, but an ancient habit of restraint.",
+    excerpt: "Walking through dense groves with tribal elders who read the forest like a library of medicinal remedies, students learned that sustainability is an ancient habit of restraint.",
     content: [
       {
         type: "paragraph",
-        text: "Days 3 and 4 took the cohort deep into tribal hamlets and forest pockets. In rural Maharashtra, every tree, stream, and soil type carries a lineage of traditional knowledge honed over centuries."
+        text: "During field immersion into tribal hamlets and forest pockets, participants explored how rural Maharashtra's traditional knowledge systems have preserved soil health and native biodiversity over generations."
       },
       {
         type: "heading",
@@ -154,7 +172,7 @@ export const blogsData = [
       },
       {
         type: "paragraph",
-        text: "Guided by Mr. Mithun Ovalekar, participants rolled up their sleeves for an immersion in regenerative organic farming. They explored indigenous composting techniques, multi-cropping patterns that preserve topsoil, and natural pest control methods that keep farming economically viable without crippling chemical debt."
+        text: "Guided by organic farming mentors, participants rolled up their sleeves for an immersion in regenerative agriculture. They explored indigenous composting techniques, multi-cropping patterns that preserve topsoil, and natural pest control methods that keep farming economically viable without crippling chemical debt."
       },
       {
         type: "heading",
@@ -166,11 +184,11 @@ export const blogsData = [
       },
       {
         type: "heading",
-        text: "Grassroots Tech: Solar Initiatives with Chirag Rawat"
+        text: "Grassroots Tech: Decentralized Solar & Micro-Grids"
       },
       {
         type: "paragraph",
-        text: "Sessions with entrepreneur Chirag Rawat, Atharv Patankar, and Amogh Sahaje illuminated how decentralized solar infrastructure and micro-grids are revolutionizing rural refrigeration, irrigation pumps, and school classrooms without relying on unstable centralized grids."
+        text: "Field sessions illuminated how decentralized solar infrastructure and micro-irrigation systems are revolutionizing rural refrigeration, agricultural pumps, and school classrooms without relying on unstable centralized grids."
       },
       {
         type: "quote",
@@ -179,101 +197,45 @@ export const blogsData = [
     ]
   },
   {
-    slug: "rural-connectivity-and-digital-divide",
-    title: "Bridging the Divide: Physical & Digital Connectivity in Rural Bharat",
-    subtitle: "Telecom Infrastructure, Optical Fiber & Last-Mile Road Access in Sahyadri Villages",
-    date: "Dec 28, 2025",
-    edition: "Winter Camp 2025",
+    slug: "a-day-at-sahyadri-rural-connect",
+    title: "Where the Journey Began: Inaugural Grassroots Fellowship in Palghar",
+    subtitle: "January 2025 — Connecting University Scholars with Grassroots Bharat",
+    date: "Jan 12, 2025",
+    edition: "Inaugural Edition (Palghar)",
     author: "Sahyadri Rural Connect Editorial",
-    authorRole: "Field Notes & Analysis",
+    authorRole: "Inaugural Cohort Dispatch",
     readTime: "5 min read",
-    category: "Tech & Infrastructure",
-    image: "/camp2/camp2-day4-i1.jpg",
-    excerpt: "From rugged hill roads under PMGSY to optical fiber rollouts and solar-powered Common Service Centers, understanding how last-mile physical and digital connectivity unlocks healthcare, education, and rural livelihoods.",
+    category: "Field Immersion",
+    image: "/palghar/palghar-cohort-memorial-courtyard.jpg",
+    excerpt: "The first edition of Sahyadri Rural Connect brought 25+ students and researchers to Palghar, marking the start of a movement to bridge academia with lived grassroots reality.",
     content: [
       {
         type: "paragraph",
-        text: "In the steep valleys and scattered padas (tribal hamlets) of the Sahyadri range, connectivity has always been physical first and digital second. During our field immersion, cohort participants investigated how geography defines access — where a missing all-weather bridge or an absent telecom tower can mean the difference between life and death during the monsoon."
+        text: "In January 2025, the inaugural edition of Sahyadri Rural Connect brought together a vibrant cohort of multi-disciplinary scholars — from IITs, TISS, ILS, and state universities — to live and learn alongside farming communities and tribal elders in Palghar district."
       },
       {
         type: "heading",
-        text: "Physical Roads: The Foundation of Rural Mobility"
+        text: "Stepping Outside the Classroom"
       },
       {
         type: "paragraph",
-        text: "Visiting interior tribal hamlets in Karjat and Murbad highlighted the transformative power of the Pradhan Mantri Gram Sadak Yojana (PMGSY). All-weather bitumen roads do far more than transport vehicles: they enable secondary school attendance for adolescent girls, allow emergency 108 ambulances to reach remote padas, and drastically lower the transport costs of perishable farm produce."
+        text: "Students stepped off buses with rucksacks and curiosity, leaving behind academic lecture halls to experience the rhythms of rural life firsthand. From morning village walks to discussions under community trees, the camp established our core ethos: true learning happens on the ground."
       },
       {
         type: "heading",
-        text: "The Digital Frontier: BharatNet, Optical Fiber & Solar Telecom Towers"
+        text: "Community Dialogues & Orchard Immersion"
       },
       {
         type: "paragraph",
-        text: "While metro cities celebrate high-speed 5G, rural hamlets often battle intermittent signals and frequent grid outages. The cohort examined decentralized solutions: solar-hybrid BTS towers, line-of-sight wireless relays, and the BharatNet optical fiber backbone reaching Gram Panchayats."
+        text: "Days were spent interacting with mango orchard cultivators, studying solar lift irrigation projects, and understanding how tribal families maintain sustainable relations with their natural surroundings."
       },
       {
         type: "quote",
-        text: "Connectivity in rural Bharat is not merely about bandwidth; it is the fundamental bridge to Direct Benefit Transfers (DBT), Aadhaar-enabled banking, tele-medicine consultations, and digital education."
-      },
-      {
-        type: "heading",
-        text: "Grassroots Digital Enablers: Common Service Centers (CSCs)"
+        text: "Rural Bharat is not a problem statement waiting for outside intervention, but a living civilisational landscape with its own deep wisdom, resilience, and forms of knowledge."
       },
       {
         type: "paragraph",
-        text: "At the local Gram Panchayat level, Village Level Entrepreneurs (VLEs) operating Common Service Centers act as the human interface of Digital India. From filing crop insurance claims to biometric pension payouts and student scholarship applications, CSCs ensure that digital tools translate into accessible public services."
-      },
-      {
-        type: "list",
-        items: [
-          "Solar-Hybrid Power: Grid instability is the leading cause of rural network downtime; solar-backed battery systems ensure uninterrupted 24/7 connectivity.",
-          "Last-Mile Road Corridors: Connecting tribal hamlets with block headquarters reduces maternal mortality and enhances daily market access for smallholders.",
-          "Digital Literacy & Security: Equipping village youth and women self-help groups with digital transaction security to prevent financial fraud.",
-          "Tele-Medicine & Remote Clinics: High-speed video consultations connecting primary health sub-centres with tertiary hospital specialists in Mumbai and Pune."
-        ]
-      },
-      {
-        type: "heading",
-        text: "Student Action Blueprints"
-      },
-      {
-        type: "paragraph",
-        text: "Synthesizing their field observations, student teams drafted actionable blueprints for community-managed Wi-Fi mesh networks and micro-logistics hubs that empower tribal youth to run decentralized delivery and service points across Sahyadri hill villages."
-      }
-    ]
-  },
-  {
-    slug: "cradle-of-warli-art-jawhar-preview",
-    title: "Grassroots Dialogue with Tribal Elders: Previewing Summer School in Jawhar",
-    subtitle: "Summer Edition — May 2026, Jawhar, Palghar",
-    date: "May 2026",
-    edition: "Summer School 2026",
-    author: "Sahyadri Rural Connect Editorial",
-    authorRole: "Summer Cohort Preview",
-    readTime: "4 min read",
-    category: "Culture & Governance",
-    image: "/palghar/palghar-community-tree-dialogue.jpg",
-    excerpt: "Engaging directly with tribal elders, Gram Sabhas, and experiencing indigenous wisdom and self-governance under PESA in Jawhar.",
-    content: [
-      {
-        type: "paragraph",
-        text: "As we look ahead to May 2026, the Sahyadri Rural Connect journey heads to Jawhar in Palghar district — a landscape steeped in indigenous heritage, vibrant community traditions, and pioneer models of tribal self-governance under PESA."
-      },
-      {
-        type: "heading",
-        text: "An Open-Air Laboratory of Community Wisdom and Governance"
-      },
-      {
-        type: "paragraph",
-        text: "Jawhar offers an extraordinary setting for participants to learn how traditional communities maintain sustainable relations with their forest ecology while navigating grassroots institutions, Gram Sabhas, and local self-rule."
-      },
-      {
-        type: "quote",
-        text: "Village assemblies and dialogues under the community tree are not just administrative gatherings; they are the living heartbeat of grassroots democracy, indigenous wisdom, and collective stewardship."
-      },
-      {
-        type: "paragraph",
-        text: "Registrations for the May 2026 cohort are now open for undergraduate, postgraduate, and research scholars eager to experience this unique blend of governance, ecology, and grassroots leadership."
+        text: "The inaugural cohort laid the blueprint for our ongoing winter and summer schools, creating a lasting network of young researchers dedicated to grassroots social change."
       }
     ]
   }
