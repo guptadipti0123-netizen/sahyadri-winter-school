@@ -702,8 +702,8 @@ export default function AboutPage() {
                   <Mail className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
                   <div className="min-w-0">
                     <span className="text-xs font-bold text-[#3e2410] block">Email Us</span>
-                    <a href="mailto:sahyadriruralconnect@gmail.com" className="text-xs text-[#7a5232] hover:text-[#3a8c7e] font-medium truncate block">
-                      sahyadriruralconnect@gmail.com
+                    <a href="mailto:info@sahyadriruralconnect.org" className="text-xs text-[#7a5232] hover:text-[#3a8c7e] font-medium truncate block">
+                      info@sahyadriruralconnect.org
                     </a>
                   </div>
                 </div>
