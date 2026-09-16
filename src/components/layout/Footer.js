@@ -36,10 +36,7 @@ export default function Footer() {
         style={{
           backgroundImage: "url('/Sahyadri-footer-2.jpg')",
         }}
-      >
-        {/* Soft, light gradient overlay so the mountain peaks, blue sky & valleys are fully visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/20" />
-      </div>
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
