@@ -72,7 +72,7 @@ export default function AboutPage() {
       title: "Forest Ecology & Livelihoods",
       tag: "Summer Edition",
       caption: "Exploring PESA self-governance, Warli cultural heritage, and decentralized rural livelihoods in the Sahyadris.",
-      image: "/floating7.jpeg",
+      image: "/palghar/palghar-community-tree-dialogue.jpg",
       href: "/camp-3",
       duration: "Summer 2026"
     },

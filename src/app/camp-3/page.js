@@ -144,118 +144,22 @@ const itinerary = [
 
 // --- COMPLETE PALGHAR & JAWHAR FIELD IMMERSION PHOTO GALLERY (16 Photos) ---
 const palgharPhotos = [
-  {
-    src: "/palghar/palghar-cohort-memorial-courtyard.jpg",
-    title: "Palghar Inaugural Cohort Group",
-    desc: "The complete student fellowship cohort and organizers at the campus memorial courtyard.",
-    tag: "Cohort Assembly",
-    span: "lg:col-span-2 lg:row-span-2"
-  },
-  {
-    src: "/palghar/palghar-solar-pump-valley-field.jpg",
-    title: "Solar Lift Irrigation Demonstration",
-    desc: "Hands-on field learning about solar-powered lift irrigation in hilly tribal terrain.",
-    tag: "Clean Tech & Irrigation",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-solar-panels-valley-view.jpg",
-    title: "Valley Micro-Grid & Renewable Energy",
-    desc: "Understanding decentralized solar infrastructure supporting rural agricultural clusters.",
-    tag: "Renewable Energy",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-irrigation-filter-demo.jpg",
-    title: "Micro-Irrigation & Water Filtration Tech",
-    desc: "Field demonstration of pressurized drip filtration and efficient water management systems.",
-    tag: "Water Engineering",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-fort-stone-steps-cohort.jpg",
-    title: "Heritage Fort Exploration",
-    desc: "Fellows gathering on historic fort bastions during sunset field excursions.",
-    tag: "Heritage & Trekking",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-mango-orchard-community.jpg",
-    title: "Grassroots Dialogue with Farming Families",
-    desc: "Student fellows engaging with local village farmers in Palghar mango orchards.",
-    tag: "Orchard Immersion",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-classroom-reflection-session.jpg",
-    title: "Peer Learning & Cohort Reflections",
-    desc: "Interactive discussion and debrief sessions synthesizing daily grassroots field insights.",
-    tag: "Cohort Reflection",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-community-tree-dialogue.jpg",
-    title: "Village Tree Assembly & Dialogue",
-    desc: "Conversations with village elders and farmers under the community tree shade.",
-    tag: "Village Assembly",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-tribal-household-mangoes.jpg",
-    title: "Tribal Household & Family Immersion",
-    desc: "Fellows connecting with local village families and understanding rural livelihoods.",
-    tag: "Community Connect",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-village-street-interaction.jpg",
-    title: "Village Walk & Elder Interactions",
-    desc: "Walking through village hamlets and engaging with local community leaders.",
-    tag: "Hamlet Walk",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-traditional-community-meal.jpg",
-    title: "Communal Dining in Village Hamlet",
-    desc: "Sharing authentic, home-cooked Maharashtrian meals on traditional floor mats.",
-    tag: "Cultural Lived Experience",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-village-children-fellows.jpg",
-    title: "Learning with Village Youth",
-    desc: "Interacting with rural schoolchildren, understanding village education & everyday aspirations.",
-    tag: "Youth & Education",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-viewpoint-fellows-scooter.jpg",
-    title: "Sahyadri Ridge Explorations",
-    desc: "Fellows exploring scenic vantage points across the Western Ghats terrain.",
-    tag: "Field Expeditions",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-mango-harvest-fellows.jpg",
-    title: "Local Produce & Agro-Ecology",
-    desc: "Learning about seasonal agricultural cycles, fruit orchards, and local livelihoods.",
-    tag: "Rural Livelihoods",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-village-temple-community-assembly.jpg",
-    title: "Village Temple Community Assembly",
-    desc: "Engaging with village elders, temple trusts, and grassroots community leaders.",
-    tag: "Cultural Assembly",
-    span: "lg:col-span-1 lg:row-span-1"
-  },
-  {
-    src: "/palghar/palghar-heritage-stone-wada-dusk.png",
-    title: "Traditional Stone Wada Architecture",
-    desc: "Exploring indigenous basalt stone craftsmanship and rural heritage architecture at dusk.",
-    tag: "Heritage Architecture",
-    span: "lg:col-span-1 lg:row-span-1"
-  }
+  { src: "/palghar/palghar-cohort-memorial-courtyard.jpg", alt: "Palghar Inaugural Cohort Group" },
+  { src: "/palghar/palghar-solar-pump-valley-field.jpg", alt: "Solar Lift Irrigation Demonstration" },
+  { src: "/palghar/palghar-solar-panels-valley-view.jpg", alt: "Valley Micro-Grid & Renewable Energy" },
+  { src: "/palghar/palghar-irrigation-filter-demo.jpg", alt: "Micro-Irrigation & Water Filtration Tech" },
+  { src: "/palghar/palghar-fort-stone-steps-cohort.jpg", alt: "Heritage Fort Exploration" },
+  { src: "/palghar/palghar-mango-orchard-community.jpg", alt: "Grassroots Dialogue with Farming Families" },
+  { src: "/palghar/palghar-classroom-reflection-session.jpg", alt: "Peer Learning & Cohort Reflections" },
+  { src: "/palghar/palghar-community-tree-dialogue.jpg", alt: "Village Tree Assembly & Dialogue" },
+  { src: "/palghar/palghar-tribal-household-mangoes.jpg", alt: "Tribal Household & Family Immersion" },
+  { src: "/palghar/palghar-village-street-interaction.jpg", alt: "Village Walk & Elder Interactions" },
+  { src: "/palghar/palghar-traditional-community-meal.jpg", alt: "Communal Dining in Village Hamlet" },
+  { src: "/palghar/palghar-village-children-fellows.jpg", alt: "Learning with Village Youth" },
+  { src: "/palghar/palghar-viewpoint-fellows-scooter.jpg", alt: "Sahyadri Ridge Explorations" },
+  { src: "/palghar/palghar-mango-harvest-fellows.jpg", alt: "Local Produce & Agro-Ecology" },
+  { src: "/palghar/palghar-village-temple-community-assembly.jpg", alt: "Village Temple Community Assembly" },
+  { src: "/palghar/palghar-heritage-stone-wada-dusk.png", alt: "Traditional Stone Wada Architecture" }
 ]
 
 export default function SummerSchoolJawharPage() {
@@ -327,7 +231,7 @@ export default function SummerSchoolJawharPage() {
             <div className="w-full max-w-[380px] bg-[#fdfbf7] p-4 shadow-md rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-4">
               <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60">
                 <Image
-                  src="/floating7.jpeg"
+                  src="/palghar/palghar-community-tree-dialogue.jpg"
                   alt="Summer School Jawhar Tribal Community"
                   fill
                   className="object-cover"
@@ -398,28 +302,20 @@ export default function SummerSchoolJawharPage() {
 
             <div className="grid sm:grid-cols-2 gap-3 pt-2">
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-[#3e2410]">
-                  Live in-depth dialogues with Gram Panchayat &amp; tribal councils
-                </span>
+                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm text-[#3e2410] font-medium">Direct mentorship from tribal grassroots practitioners</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-[#3e2410]">
-                  Hands-on workshops with master indigenous Warli painters
-                </span>
+                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm text-[#3e2410] font-medium">Hands-on indigenous art workshops in authentic tribal wadas</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-[#3e2410]">
-                  Ethnobotany &amp; forest biodiversity expeditions
-                </span>
+                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm text-[#3e2410] font-medium">Field study of PESA governance &amp; Forest Rights Act</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm font-medium text-[#3e2410]">
-                  Multi-disciplinary policy and rural economy problem-solving
-                </span>
+                <CheckCircle2 className="w-5 h-5 text-[#3a8c7e] shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm text-[#3e2410] font-medium">Peer synthesis and collaborative policy presentations</span>
               </div>
             </div>
           </div>
@@ -427,40 +323,37 @@ export default function SummerSchoolJawharPage() {
         </div>
       </section>
 
-      {/* ================= 4. CORE IMMERSION THEMES ================= */}
-      <section id="themes" className="py-14 px-4 md:px-8 bg-[#ebe2d1]/40 border-y border-[#dccdb2] relative">
-        <div className="max-w-6xl mx-auto">
+      {/* ================= 4. ACADEMIC & FIELD THEMES ================= */}
+      <section id="themes" className="py-14 px-4 md:px-8 bg-[#ebe2d1]/30 border-y border-[#dccdb2]">
+        <div className="max-w-6xl mx-auto space-y-10">
           
-          <div className="text-center mb-10 space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#c8880a] text-xs font-bold uppercase tracking-wider">
-              <BookOpen size={14} />
-              <span>Pillars of Learning</span>
-            </div>
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-bold tracking-widest text-[#3a8c7e] uppercase">
+              Curriculum &amp; Immersion
+            </span>
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-[#3e2410]">
-              Key Themes of the Summer School
+              Interdisciplinary Immersion Themes
             </h2>
-            <p className="text-[#7a5232] text-sm md:text-base max-w-xl mx-auto">
-              A comprehensive curriculum designed to blend cultural heritage, environmental stewardship, and social policy.
+            <p className="text-xs sm:text-sm text-[#7a5232]">
+              Bridging traditional community wisdom with modern policy research frameworks.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {themes.map((item, idx) => (
+          <div className="grid sm:grid-cols-2 gap-5 text-left">
+            {themes.map((theme, i) => (
               <div
-                key={idx}
-                className="p-5 sm:p-6 rounded-3xl border border-[#dccdb2] bg-[#fdfbf7] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left"
+                key={i}
+                className="bg-[#fdfbf7] p-6 rounded-2xl border border-[#dccdb2] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
-                <div>
-                  <div className="flex items-center gap-3.5 sm:gap-4 mb-3 sm:mb-3.5">
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#f5efe2] border border-[#dccdb2] flex items-center justify-center shadow-xs shrink-0">
-                      {item.icon}
-                    </div>
-                    <h3 className="font-serif text-base sm:text-lg md:text-xl font-bold text-[#3e2410] leading-snug">
-                      {item.title}
-                    </h3>
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#ebe2d1]/70 border border-[#dccdb2] flex items-center justify-center">
+                    {theme.icon}
                   </div>
-                  <p className="text-[#7a5232] text-xs sm:text-sm leading-relaxed">
-                    {item.desc}
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#3e2410]">
+                    {theme.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#7a5232] leading-relaxed">
+                    {theme.desc}
                   </p>
                 </div>
               </div>
@@ -470,65 +363,58 @@ export default function SummerSchoolJawharPage() {
         </div>
       </section>
 
-      {/* ================= 5. ITINERARY OVERVIEW ================= */}
-      <section className="py-14 px-4 md:px-8 max-w-6xl mx-auto">
-        <div className="text-center mb-10 space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3a8c7e] text-xs font-bold uppercase tracking-wider">
-            <Calendar size={14} />
-            <span>5-Day Immersive Plan</span>
-          </div>
+      {/* ================= 5. 5-DAY DETAILED SCHEDULE ================= */}
+      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+          <span className="text-xs font-bold tracking-widest text-[#c8880a] uppercase">
+            Day-By-Day Progression
+          </span>
           <h2 className="font-serif text-2xl md:text-4xl font-bold text-[#3e2410]">
-            Indicative Day-by-Day Schedule
+            The 5-Day Summer School Journey
           </h2>
-          <p className="text-[#7a5232] text-sm md:text-base max-w-xl mx-auto">
-            Each day connects field interactions with conceptual reflections and peer learning.
+          <p className="text-xs sm:text-sm text-[#7a5232]">
+            A structured progression from village orientation to actionable policy presentations.
           </p>
         </div>
 
-        {/* 5-DAY HORIZONTAL TRACK */}
-        <div className="relative group/track">
-          <div className="flex items-stretch gap-4 overflow-x-auto pb-4 md:pb-6 pt-2 px-2 snap-x snap-mandatory hide-scrollbar">
-            {itinerary.map((item, index) => (
-              <div key={index} className="flex items-center shrink-0">
-                <div className="w-[280px] sm:w-[320px] bg-[#fdfbf7] rounded-3xl p-5 sm:p-6 border border-[#dccdb2] shadow-sm hover:shadow-xl transition-all duration-300 snap-center relative z-10 overflow-hidden flex flex-col h-full group hover:-translate-y-1 text-left">
-                  <div className={`absolute top-0 left-0 w-full h-1.5 ${item.accent}`} />
-                  <div className="flex justify-between items-start mb-4">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${item.color} shadow-xs`}>
-                      {item.icon}
-                    </div>
-                    <div className="text-right">
-                      <span className="block text-xs font-bold uppercase tracking-widest text-[#3a8c7e]">
-                        {item.day}
-                      </span>
-                    </div>
-                  </div>
-                  <h3 className="font-serif text-base sm:text-lg font-bold text-[#3e2410] leading-tight mb-3 min-h-[2.75rem]">
-                    {item.theme}
-                  </h3>
-                  <ul className="space-y-2 flex-grow">
-                    {item.activities.map((act, i) => (
-                      <li key={i} className="text-xs sm:text-sm text-[#7a5232] flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#3a8c7e]" />
-                        <span className="leading-snug">{act}</span>
-                      </li>
-                    ))}
-                  </ul>
+        <div className="space-y-4">
+          {itinerary.map((item, i) => (
+            <div
+              key={i}
+              className="bg-[#fdfbf7] border border-[#dccdb2] rounded-2xl p-5 sm:p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-5 text-left"
+            >
+              {/* Day Badge */}
+              <div className="flex items-center gap-3 shrink-0 md:w-44">
+                <div className="w-10 h-10 rounded-xl bg-[#ebe2d1] border border-[#dccdb2] flex items-center justify-center text-[#3a8c7e]">
+                  {item.icon}
                 </div>
-                {index !== itinerary.length - 1 && (
-                  <div className="hidden xl:flex w-6 shrink-0 items-center justify-center relative z-0 mx-0.5">
-                    <div className="w-6 h-6 rounded-full bg-[#fdfbf7] border border-[#dccdb2] flex items-center justify-center shadow-xs">
-                      <ArrowRight size={11} className="text-[#3a8c7e]" />
-                    </div>
-                  </div>
-                )}
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#3a8c7e] block">
+                    {item.day}
+                  </span>
+                  <span className="font-serif font-bold text-base text-[#3e2410] leading-tight">
+                    {item.theme}
+                  </span>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
 
+              {/* Activities */}
+              <div className="flex-1 border-t md:border-t-0 md:border-l border-[#dccdb2]/70 pt-3 md:pt-0 md:pl-6">
+                <ul className="space-y-1.5">
+                  {item.activities.map((act, actIdx) => (
+                    <li key={actIdx} className="flex items-start gap-2 text-xs sm:text-sm text-[#7a5232]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c8880a] mt-1.5 shrink-0" />
+                      <span>{act}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* ================= 6. GLIMPSES & PALGHAR VISUAL ARCHIVE (ALL 16 REAL PHOTOS) ================= */}
+      {/* ================= 6. GLIMPSES & PALGHAR VISUAL ARCHIVE (ALL 16 REAL PHOTOS - CLEAN IMAGES ONLY) ================= */}
       <section id="gallery" className="py-14 sm:py-18 px-4 sm:px-6 md:px-8 bg-[#ebe2d1]/30 border-t border-[#dccdb2]">
         <div className="max-w-7xl mx-auto">
           
@@ -546,8 +432,8 @@ export default function SummerSchoolJawharPage() {
             </p>
           </div>
 
-          {/* --- 16-PHOTO RESPONSIVE GALLERY GRID --- */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[260px] sm:auto-rows-[280px]">
+          {/* --- 16-PHOTO RESPONSIVE GALLERY GRID (CLEAN IMAGES ONLY) --- */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[240px] sm:auto-rows-[280px]">
             {palgharPhotos.map((item, idx) => (
               <div
                 key={idx}
@@ -558,34 +444,11 @@ export default function SummerSchoolJawharPage() {
               >
                 <Image
                   src={item.src}
-                  alt={item.title}
+                  alt={item.alt || "Sahyadri Rural Connect Photo"}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-
-                {/* Gradient Overlay for Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#241407]/90 via-[#241407]/40 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-
-                {/* Top Tag Badge */}
-                <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
-                  <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full bg-black/60 text-[#d4a825] backdrop-blur-md border border-[#dccdb2]/20">
-                    {item.tag}
-                  </span>
-                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/20 text-[#f5efe2] backdrop-blur-md border border-white/10">
-                    #{idx + 1}
-                  </span>
-                </div>
-
-                {/* Bottom Details */}
-                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-[#f5efe2] text-left transform transition-transform duration-300">
-                  <h3 className="font-serif font-bold text-sm sm:text-base lg:text-lg leading-snug text-[#f5efe2] mb-1 drop-shadow-sm">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-[#f5efe2]/90 line-clamp-2 leading-relaxed font-light">
-                    {item.desc}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
@@ -596,46 +459,31 @@ export default function SummerSchoolJawharPage() {
       {/* ================= LIGHTBOX MODAL ================= */}
       {selectedPhoto && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
           onClick={() => setSelectedPhoto(null)}
         >
           <div 
-            className="relative max-w-4xl w-full max-h-[90vh] bg-[#241407] rounded-2xl overflow-hidden border border-[#dccdb2]/30 shadow-2xl flex flex-col"
+            className="relative max-w-5xl w-full max-h-[90vh] bg-transparent rounded-2xl overflow-hidden flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedPhoto(null)}
-              className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 transition-colors cursor-pointer border border-white/30"
+              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/70 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer border border-white/30 shadow-lg"
               aria-label="Close photo preview"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
 
             {/* Photo Container */}
-            <div className="relative w-full h-[360px] sm:h-[480px] md:h-[540px] bg-black">
+            <div className="relative w-full h-[60vh] sm:h-[75vh] max-h-[800px] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <Image
                 src={selectedPhoto.src}
-                alt={selectedPhoto.title}
+                alt={selectedPhoto.alt || "Sahyadri Photo"}
                 fill
                 className="object-contain"
                 priority
               />
-            </div>
-
-            {/* Details */}
-            <div className="p-4 sm:p-5 bg-[#3e2410] text-[#f5efe2] text-left">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#3a8c7e] text-[#f5efe2]">
-                  {selectedPhoto.tag}
-                </span>
-              </div>
-              <h3 className="font-serif font-bold text-base sm:text-xl text-[#f5efe2]">
-                {selectedPhoto.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-[#f5efe2]/85 mt-0.5">
-                {selectedPhoto.desc}
-              </p>
             </div>
           </div>
         </div>
