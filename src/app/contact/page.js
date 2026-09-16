@@ -121,26 +121,27 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f5efe2] text-[#3e2410] font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-[#faf6ee] text-[#3e2410] font-sans overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-24 md:pt-32 pb-8 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+      <section className="relative pt-28 md:pt-36 pb-8 overflow-hidden bg-[#faf6ee] text-[#3e2410]">
+        {/* Subtle Background Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-2 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#d4a825] animate-pulse" />
-            <p className="text-[10px] sm:text-xs font-bold text-[#d4a825] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] mb-3 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-widest uppercase">
               Contact Us
             </p>
           </div>
 
-          <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl mb-2 text-[#f5efe2] leading-tight drop-shadow-sm">
-            Get in <span className="italic text-[#d4a825] font-serif">Touch</span>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] mb-3 leading-tight tracking-tight">
+            Get in <span className="italic font-serif text-[#1f5c54]">Touch</span>
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base text-[#f5efe2]/85 max-w-xl mx-auto leading-relaxed">
+          <p className="font-serif italic text-base sm:text-xl text-[#7a5232] max-w-2xl mx-auto leading-relaxed">
             Have questions or want to collaborate with us? We&apos;d love to hear from you.
           </p>
         </div>
@@ -212,14 +213,14 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Right Card - Contact Form */}
+        {/* Right Card - Contact Form (Light Peach Card) */}
         <div
           className="relative lg:absolute right-0 lg:right-3 top-0 w-full lg:w-1/2 h-auto lg:h-full z-40 transition-all duration-700 ease-in-out"
           style={{
             transform: isSeparated && canSeparate ? 'translateX(100px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-[#fdfbf7] rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 lg:p-7 shadow-xl relative flex flex-col justify-center border border-[#dccdb2] text-left">
+          <div className="h-full bg-[#faebe0] rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 lg:p-7 shadow-xl relative flex flex-col justify-center border border-[#ebd7c8] text-left">
             <div className="relative z-10">
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div>
@@ -231,7 +232,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#1f5c54]/20 focus:border-[#1f5c54] transition-all duration-200 ${
-                      emailError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#1f5c54]/50'
+                      emailError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#ebd7c8] hover:border-[#1f5c54]/50'
                     }`}
                   />
                   {emailError && <p className="mt-0.5 text-[10px] text-red-600 font-medium">{emailError}</p>}
@@ -246,7 +247,7 @@ export default function ContactPage() {
                     placeholder="9876543210"
                     required
                     className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#1f5c54]/20 focus:border-[#1f5c54] transition-all duration-200 ${
-                      phoneError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#1f5c54]/50'
+                      phoneError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#ebd7c8] hover:border-[#1f5c54]/50'
                     }`}
                   />
                   {phoneError && <p className="mt-0.5 text-[10px] text-red-600 font-medium">{phoneError}</p>}
@@ -260,7 +261,7 @@ export default function ContactPage() {
                     rows={2}
                     placeholder="Your message..."
                     className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] min-h-[55px] bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#1f5c54]/20 focus:border-[#1f5c54] transition-all duration-200 resize-none ${
-                      messageError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#1f5c54]/50'
+                      messageError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#ebd7c8] hover:border-[#1f5c54]/50'
                     }`}
                   />
                   {messageError && <p className="mt-0.5 text-[10px] text-red-600 font-medium">{messageError}</p>}
