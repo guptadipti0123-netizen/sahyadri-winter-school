@@ -34,21 +34,21 @@ export default function Header() {
   // Camps list in chronological order
   const campsList = [
     {
-      name: 'Summer School',
+      name: 'Summer Camp',
       place: 'Jawhar',
       date: 'May 2026',
       badge: "Summer '26",
       href: '/camp-3'
     },
     {
-      name: 'Winter School',
+      name: 'Winter Camp',
       place: 'Karjat',
       date: 'Dec 2025',
       badge: '2nd Edition',
       href: '/camp-2'
     },
     {
-      name: 'Winter School',
+      name: 'Winter Camp',
       place: 'Palghar',
       date: 'Jan 2025',
       badge: '1st Edition',

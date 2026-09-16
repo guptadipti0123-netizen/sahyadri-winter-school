@@ -119,7 +119,7 @@ export default function RegisterPage() {
                       Sahyadri Rural Connect
                     </span>
                     <h3 className="font-serif text-2xl font-bold text-[#3e2410] leading-tight">
-                      Winter School 2026
+                      Winter Camp 2026
                     </h3>
                   </div>
                 </div>
