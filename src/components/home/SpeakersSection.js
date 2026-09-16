@@ -146,33 +146,33 @@ export default function SpeakersSection() {
       {/* SINGLE LINE AUTO-SCROLLING MARQUEE TRACK */}
       {/* ========================================================= */}
       <div 
-        className="relative w-full overflow-hidden py-2"
+        className="relative w-full overflow-hidden py-1"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
       >
         {/* Left Edge Soft Fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Right Edge Soft Fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Continuous Horizontal Scroll Track */}
-        <div className={`animate-continuous-scroll ${isPaused ? "paused" : ""} gap-3.5 sm:gap-5 px-4`}>
+        <div className={`animate-continuous-scroll ${isPaused ? "paused" : ""} gap-3 sm:gap-4 px-3`}>
           {marqueeSpeakers.map((speaker, idx) => (
             <button
               key={`${speaker.id}-${idx}`}
               onClick={() => setSelectedSpeaker(speaker)}
-              className="group w-[210px] sm:w-[235px] md:w-[250px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf5ea] rounded-2xl p-3 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1"
+              className="group w-[185px] sm:w-[210px] md:w-[230px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1"
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
             >
               
               {/* Compact Portrait Image with Soft Backdrop & Fade */}
-              <div className="relative w-full h-36 sm:h-40 rounded-xl overflow-hidden bg-[#ebe2d1]/40 border border-[#dccdb2]/50 flex items-end justify-center select-none pt-1">
+              <div className="relative w-full h-28 sm:h-34 rounded-xl overflow-hidden bg-[#f5efe2] border border-[#dccdb2]/60 flex items-end justify-center select-none">
                 {/* Top Category Badge */}
-                <div className="absolute top-2 left-2 z-10">
-                  <span className="inline-block px-2 py-0.5 rounded-md bg-[#fdfbf7]/90 backdrop-blur-xs text-[#c8880a] text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider border border-[#dccdb2]">
+                <div className="absolute top-1.5 left-1.5 z-10">
+                  <span className="inline-block px-2 py-0.5 rounded-md bg-[#fdfbf7]/90 backdrop-blur-xs text-[#c8880a] text-[8.5px] sm:text-[9px] font-bold uppercase tracking-wider border border-[#dccdb2]">
                     {speaker.tag.split(" ")[0]}
                   </span>
                 </div>
@@ -184,29 +184,29 @@ export default function SpeakersSection() {
                       alt={`${speaker.name} - ${speaker.title}`}
                       fill
                       className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 210px, 250px"
+                      sizes="(max-width: 640px) 185px, 230px"
                     />
                     {/* Bottom soft fade */}
-                    <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
                   </div>
                 ) : (
-                  <div className="w-12 h-12 rounded-full bg-[#ebe2d1] flex items-center justify-center text-[#7a5232] mb-4 border border-[#dccdb2]">
-                    <User size={22} />
+                  <div className="w-10 h-10 rounded-full bg-[#ebe2d1] flex items-center justify-center text-[#7a5232] mb-3 border border-[#dccdb2]">
+                    <User size={18} />
                   </div>
                 )}
               </div>
 
               {/* Bottom Details (Compact & Aligned with Site Typography) */}
-              <div className="pt-2.5 space-y-1 text-left">
-                <h3 className="font-serif font-bold text-sm sm:text-[15px] text-[#3e2410] group-hover:text-[#1f5c54] transition-colors leading-tight truncate">
+              <div className="pt-2 space-y-0.5 text-left">
+                <h3 className="font-serif font-bold text-xs xs:text-sm sm:text-[14.5px] text-[#3e2410] group-hover:text-[#1f5c54] transition-colors leading-tight truncate">
                   {speaker.name}
                 </h3>
                 
-                <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] truncate">
+                <p className="text-[10.5px] xs:text-[11px] sm:text-xs font-semibold text-[#1f5c54] truncate">
                   {speaker.title}
                 </p>
 
-                <p className="text-[10px] sm:text-[11px] text-[#7a5232] leading-snug line-clamp-2">
+                <p className="text-[9.5px] xs:text-[10px] sm:text-[10.5px] text-[#7a5232] leading-snug line-clamp-2">
                   {speaker.role}
                 </p>
               </div>
