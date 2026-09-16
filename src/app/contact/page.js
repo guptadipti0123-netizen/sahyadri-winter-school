@@ -1,13 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, Phone, Send, Instagram, XCircle, ArrowUpRight } from 'lucide-react';
-
-const filledBg = (value) =>
-  value.trim()
-    ? 'bg-white text-[#3e2410] placeholder:text-[#7a5232]/50'
-    : 'bg-[#241407]/40 text-[#f5efe2] placeholder:text-[#f5efe2]/50';
-
+import { Mail, MapPin, Send, Instagram, XCircle, ArrowUpRight } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ email: '', phone: '', message: '' });
@@ -163,7 +157,6 @@ export default function ContactPage() {
           }}
         >
           <div className="h-full bg-[#fdfbf7] rounded-2xl sm:rounded-3xl lg:rounded-r-none p-5 sm:p-7 lg:p-7 shadow-xl flex flex-col justify-center relative border border-[#dccdb2] text-left">
-            <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 bg-[#fdfbf7] border-t border-r border-[#dccdb2] rotate-45 z-50" />
             <div className="relative z-10">
               <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#3e2410] mb-1.5 leading-tight">
                 Let&apos;s get in touch
@@ -200,7 +193,7 @@ export default function ContactPage() {
                     href="https://www.instagram.com/sahyadriwinterschool"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-between p-2.5 rounded-xl bg-[#f5efe2] border border-[#dccdb2] hover:border-[#3a8c7e] hover:shadow-md transition-all group/ig"
+                    className="flex-1 inline-flex items-center justify-between p-2.5 rounded-xl bg-[#faf6ee] border border-[#dccdb2] hover:border-[#3a8c7e] hover:shadow-xs transition-all group/ig"
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs group-hover/ig:scale-105 transition-transform">
@@ -226,29 +219,25 @@ export default function ContactPage() {
             transform: isSeparated && canSeparate ? 'translateX(100px)' : 'translateX(0)',
           }}
         >
-          <div className="h-full bg-[#3e2410] rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 lg:p-7 shadow-2xl relative flex flex-col justify-center border border-[#3e2410] text-left">
-            <div className="hidden lg:block absolute top-1/2 -left-3 -translate-y-1/2 w-6 h-6 bg-[#3e2410] rotate-45 z-50" />
+          <div className="h-full bg-[#fdfbf7] rounded-2xl sm:rounded-3xl lg:rounded-l-none p-5 sm:p-7 lg:p-7 shadow-xl relative flex flex-col justify-center border border-[#dccdb2] text-left">
             <div className="relative z-10">
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-bold text-[#f5efe2] mb-1">Email</label>
+                  <label className="block text-[11px] sm:text-xs font-semibold text-[#3e2410] mb-1">Email <span className="text-red-500">*</span></label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px]
-  ${emailError ? 'border-red-400' : 'border-[#dccdb2]/30'}
-  ${filledBg(formData.email)}
-  focus:outline-none focus:border-[#d4a825] transition-all duration-300
-`}
-
+                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#1f5c54]/20 focus:border-[#1f5c54] transition-all duration-200 ${
+                      emailError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#1f5c54]/50'
+                    }`}
                   />
-                  {emailError && <p className="mt-0.5 text-[10px] text-red-300 font-medium">{emailError}</p>}
+                  {emailError && <p className="mt-0.5 text-[10px] text-red-600 font-medium">{emailError}</p>}
                 </div>
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-bold text-[#f5efe2] mb-1">Phone</label>
+                  <label className="block text-[11px] sm:text-xs font-semibold text-[#3e2410] mb-1">Phone <span className="text-red-500">*</span></label>
                   <input
                     type="tel"
                     name="phone"
@@ -256,36 +245,30 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="9876543210"
                     required
-                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px]
-  ${phoneError ? 'border-red-400' : 'border-[#dccdb2]/30'}
-  ${filledBg(formData.phone)}
-  focus:outline-none focus:border-[#d4a825] transition-all duration-300
-`}
-
+                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#1f5c54]/20 focus:border-[#1f5c54] transition-all duration-200 ${
+                      phoneError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#1f5c54]/50'
+                    }`}
                   />
-                  {phoneError && <p className="mt-0.5 text-[10px] text-red-300 font-medium">{phoneError}</p>}
+                  {phoneError && <p className="mt-0.5 text-[10px] text-red-600 font-medium">{phoneError}</p>}
                 </div>
                 <div>
-                  <label className="block text-[11px] sm:text-xs font-bold text-[#f5efe2] mb-1">Message</label>
+                  <label className="block text-[11px] sm:text-xs font-semibold text-[#3e2410] mb-1">Message <span className="text-red-500">*</span></label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={2}
                     placeholder="Your message..."
-                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] min-h-[55px]
-  ${messageError ? 'border-red-400' : 'border-[#dccdb2]/30'}
-  ${filledBg(formData.message)}
-  focus:outline-none focus:border-[#d4a825] transition-all duration-300 resize-none
-`}
-
+                    className={`w-full px-3.5 py-2 rounded-xl border text-xs sm:text-[13px] min-h-[55px] bg-white text-[#3e2410] placeholder:text-[#7a5232]/50 focus:outline-none focus:ring-2 focus:ring-[#1f5c54]/20 focus:border-[#1f5c54] transition-all duration-200 resize-none ${
+                      messageError ? 'border-red-400 ring-1 ring-red-300' : 'border-[#dccdb2] hover:border-[#1f5c54]/50'
+                    }`}
                   />
-                  {messageError && <p className="mt-0.5 text-[10px] text-red-300 font-medium">{messageError}</p>}
+                  {messageError && <p className="mt-0.5 text-[10px] text-red-600 font-medium">{messageError}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-2 py-2.5 px-5 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:shadow-lg hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer"
+                  className="w-full mt-2 py-2.5 px-5 rounded-full bg-[#1f5c54] hover:bg-[#124d45] text-white font-medium text-xs sm:text-sm flex items-center justify-center gap-2 hover:shadow-md hover:scale-[1.01] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer shadow-xs"
                 >
                   {isSubmitting ? (
                     <>
