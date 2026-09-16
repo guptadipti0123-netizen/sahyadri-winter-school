@@ -110,6 +110,8 @@ const sideArticles = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)
+  const [cardsVisible, setCardsVisible] = useState(false)
+  const fieldStoriesRef = useRef(null)
   const timerRef = useRef(null)
 
   const slideCount = featuredSlides.length
@@ -132,6 +134,32 @@ export default function Hero() {
       if (timerRef.current) clearInterval(timerRef.current)
     }
   }, [slideCount])
+
+  // Pop-up staggered animation for Field Stories cards
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCardsVisible(true)
+    }, 150)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCardsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    const currentRef = fieldStoriesRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
+    }
+
+    return () => {
+      clearTimeout(timer)
+      if (currentRef) observer.unobserve(currentRef)
+    }
+  }, [])
 
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
@@ -304,10 +332,17 @@ export default function Hero() {
           {/* ========================================================= */}
           {/* RIGHT COLUMN: "FIELD STORIES" Side Stack (Desktop Only) */}
           {/* ========================================================= */}
-          <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col">
+          <div ref={fieldStoriesRef} className="hidden lg:flex lg:col-span-5 xl:col-span-4 flex-col">
             
             {/* Section Heading */}
-            <div className="flex items-center justify-between mb-4 px-1">
+            <div 
+              className="flex items-center justify-between mb-4 px-1"
+              style={{
+                opacity: cardsVisible ? 1 : 0,
+                transform: cardsVisible ? "translateY(0)" : "translateY(12px)",
+                transition: "opacity 0.6s ease-out 80ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 80ms"
+              }}
+            >
               <h2 className="text-xs md:text-sm font-bold tracking-widest text-[#3a8c7e] uppercase">
                 FIELD STORIES
               </h2>
@@ -319,50 +354,58 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Vertical Stack of Clean Warm Cards */}
+            {/* Vertical Stack of Clean Warm Cards (Popping in One-by-One) */}
             <div className="flex flex-col gap-3.5">
-              {sideArticles.map((item) => {
+              {sideArticles.map((item, idx) => {
                 return (
-                  <Link
+                  <div
                     key={item.id}
-                    href={item.link}
-                    className="hover-lift group bg-[#fdfbf7] hover:bg-[#f5efe2] rounded-2xl p-3 sm:p-3.5 shadow-sm hover:shadow-md border border-[#dccdb2] hover:border-[#3a8c7e]/60 transition-all duration-300 flex items-center gap-3.5 sm:gap-4"
+                    style={{
+                      opacity: cardsVisible ? 1 : 0,
+                      transform: cardsVisible ? "translateY(0) scale(1)" : "translateY(36px) scale(0.92)",
+                      transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${140 + idx * 130}ms, transform 0.7s cubic-bezier(0.34, 1.45, 0.64, 1) ${140 + idx * 130}ms`
+                    }}
                   >
-                    {/* Square Thumbnail */}
-                    <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-[#dccdb2]/60 bg-[#ebe2d1]">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-
-                    {/* Card Text Content */}
-                    <div className="flex-1 min-w-0 flex flex-col justify-center">
-                      {/* Category Badge */}
-                      <div className="mb-1 flex items-center">
-                        <span className={`inline-block text-[10px] font-bold px-2 py-0.5 rounded-md border ${item.tagColor} tracking-wider uppercase`}>
-                          {item.category}
-                        </span>
+                    <Link
+                      href={item.link}
+                      className="hover-lift group bg-[#fdfbf7] hover:bg-[#f5efe2] rounded-2xl p-3 sm:p-3.5 shadow-sm hover:shadow-md border border-[#dccdb2] hover:border-[#3a8c7e]/60 transition-all duration-300 flex items-center gap-3.5 sm:gap-4"
+                    >
+                      {/* Square Thumbnail */}
+                      <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-[#dccdb2]/60 bg-[#ebe2d1]">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
                       </div>
 
-                      {/* Title */}
-                      <h3 className="font-serif text-xs sm:text-sm font-semibold text-[#3e2410] leading-snug line-clamp-2 group-hover:text-[#3a8c7e] transition-colors">
-                        {item.title}
-                      </h3>
+                      {/* Card Text Content */}
+                      <div className="flex-1 min-w-0 flex flex-col justify-center">
+                        {/* Category Badge */}
+                        <div className="mb-1 flex items-center">
+                          <span className={`inline-block text-[10px] font-bold px-2 py-0.5 rounded-md border ${item.tagColor} tracking-wider uppercase`}>
+                            {item.category}
+                          </span>
+                        </div>
 
-                      {/* Date & Read Time */}
-                      <div className="mt-1 flex items-center gap-2 text-[11px] text-[#7a5232] font-medium">
-                        <span>{item.date}</span>
-                        <span>•</span>
-                        <span className="flex items-center gap-1">
-                          <Clock size={11} className="text-[#c4b49a]" />
-                          {item.readTime}
-                        </span>
+                        {/* Title */}
+                        <h3 className="font-serif text-xs sm:text-sm font-semibold text-[#3e2410] leading-snug line-clamp-2 group-hover:text-[#3a8c7e] transition-colors">
+                          {item.title}
+                        </h3>
+
+                        {/* Date & Read Time */}
+                        <div className="mt-1 flex items-center gap-2 text-[11px] text-[#7a5232] font-medium">
+                          <span>{item.date}</span>
+                          <span>•</span>
+                          <span className="flex items-center gap-1">
+                            <Clock size={11} className="text-[#c4b49a]" />
+                            {item.readTime}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 )
               })}
             </div>
