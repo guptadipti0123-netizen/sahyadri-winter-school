@@ -173,17 +173,17 @@ export default function Header() {
             })}
           </div>
 
-          {/* ================= 2. BRAND LOGO (Responsive Text) ================= */}
+          {/* ================= 2. BRAND LOGO (Pure Logo, No Circle) ================= */}
           <Link
             href="/"
             className="flex items-center gap-2 sm:gap-2.5 group select-none shrink-0"
           >
-            <div className="relative w-7 h-7 sm:w-8 sm:h-8 overflow-hidden rounded-full shadow-xs border border-[#3e2410]/15 transition-transform duration-300 group-hover:scale-105 shrink-0">
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 transition-transform duration-300 group-hover:scale-105 shrink-0">
               <Image
-                src="/logo.jpg"
+                src="/logo-transparent.png"
                 alt="Sahyadri Rural Connect Logo"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
