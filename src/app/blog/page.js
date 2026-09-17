@@ -25,7 +25,7 @@ export default function BlogHubPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
-      {/* ================= HERO SECTION (Harmonized Theme Styling) ================= */}
+      {/* ================= HERO SECTION (2-Column with Side Photo Card) ================= */}
       <section className="relative isolate overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] border-b border-[#dccdb2]/80 flex flex-col justify-center text-[#3e2410]">
 
         {/* Warm Golden Sunlight & Teal Atmosphere Glows */}
@@ -34,38 +34,68 @@ export default function BlogHubPage() {
         <div className="absolute bottom-6 left-10 w-[250px] h-[250px] bg-[#8a481c]/08 rounded-full blur-[80px] pointer-events-none -z-10" />
 
         {/* ================= HERO FOREGROUND CONTENT ================= */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-4 sm:space-y-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 w-full">
           
-          {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.2em] uppercase font-sans">
-              Dispatches from the Ground
+          {/* Left Column: Heading & Info */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+            {/* Top Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+              <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.2em] uppercase font-sans">
+                Dispatches from the Ground
+              </p>
+            </div>
+
+            {/* Heading */}
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#3e2410] leading-tight tracking-tight">
+              Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#7a5232] max-w-xl leading-relaxed">
+              Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts across Palghar, Karjat &amp; Jawhar.
             </p>
+
+            {/* Theme Color Stat Pills */}
+            <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-medium">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] shadow-xs">
+                📖 5 Field Dispatches
+              </span>
+              <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#3a8c7e]/40 text-[#1f5c54] shadow-xs font-semibold">
+                📍 Palghar • Karjat • Jawhar
+              </span>
+              <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#c8880a]/40 text-[#c8880a] shadow-xs font-semibold">
+                🏔️ 3 Immersion Editions
+              </span>
+            </div>
           </div>
 
-          {/* Heading */}
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#3e2410] leading-tight tracking-tight">
-            Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#7a5232] max-w-xl mx-auto leading-relaxed">
-            Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts across Palghar, Karjat &amp; Jawhar.
-          </p>
-
-          {/* Theme Color Stat Pills */}
-          <div className="pt-2 flex flex-wrap justify-center items-center gap-2.5 text-xs font-medium">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] shadow-xs">
-              📖 5 Field Dispatches
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#3a8c7e]/40 text-[#1f5c54] shadow-xs font-semibold">
-              📍 Palghar • Karjat • Jawhar
-            </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#c8880a]/40 text-[#c8880a] shadow-xs font-semibold">
-              🏔️ 3 Immersion Editions
-            </span>
+          {/* Right Column: Featured Photo Card */}
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="w-full max-w-[400px] bg-[#fdfbf7] p-3.5 sm:p-4 shadow-xl rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-3">
+              <div className="relative w-full h-60 sm:h-68 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60 shadow-inner">
+                <Image
+                  src="/palghar/palghar-community-tree-dialogue.jpg"
+                  alt="Sahyadri Community Dialogue"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-[#fdfbf7]/95 backdrop-blur-md rounded-full text-[11px] font-semibold text-[#1f5c54] tracking-wider uppercase border border-[#dccdb2] shadow-sm">
+                  Field Archive
+                </div>
+              </div>
+              <div className="text-center px-2 pt-1 pb-1">
+                <span className="font-serif text-[#3e2410] font-medium text-base sm:text-lg block leading-snug">
+                  Grassroots Immersion Cohorts
+                </span>
+                <span className="text-xs text-[#7a5232] font-light block mt-0.5">
+                  Palghar, Karjat &amp; Jawhar Rural Fieldwork
+                </span>
+              </div>
+            </div>
           </div>
+
         </div>
 
       </section>

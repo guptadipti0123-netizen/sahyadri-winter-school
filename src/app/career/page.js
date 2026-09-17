@@ -2,6 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { HeartHandshake, Users, TrendingUp, Mail, Sprout } from "lucide-react"
 
 export default function CareerPage() {
@@ -9,7 +10,7 @@ export default function CareerPage() {
     <main className="min-h-screen bg-[#faf6ee] text-[#3e2410] overflow-x-hidden selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= TOP HERO & PILLARS SECTION ================= */}
-      <section className="relative isolate overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-44 bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] border-b border-[#dccdb2]/80">
+      <section className="relative isolate overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-16 sm:pb-24 md:pb-32 bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] border-b border-[#dccdb2]/80">
 
         {/* Clean Ambient Warm & Sage Organic Atmospheric Glows */}
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/12 rounded-full blur-[120px] pointer-events-none -z-10" />
@@ -17,24 +18,53 @@ export default function CareerPage() {
         <div className="absolute bottom-10 left-[-5%] w-72 h-72 bg-[#3a8c7e]/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
         {/* Content Container */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 relative z-10 space-y-8 sm:space-y-10 pb-6 sm:pb-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10 space-y-8 sm:space-y-10 pb-6 sm:pb-8">
           
-          {/* Header Area */}
-          <div className="space-y-3 sm:space-y-4 text-left max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-              <p className="text-xs sm:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
-                Join Our Mission
+          {/* Header 2-Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Header Area */}
+            <div className="lg:col-span-7 space-y-3 sm:space-y-4 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
+                <p className="text-xs sm:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
+                  Join Our Mission
+                </p>
+              </div>
+
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
+                Career Opportunities
+              </h1>
+
+              <p className="font-serif italic text-base sm:text-xl text-[#2b180d] font-medium leading-relaxed" style={{ color: '#2b180d' }}>
+                Build a purposeful career rooted in meaningful impact, collective wisdom, and rural leadership.
               </p>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
-              Career Opportunities
-            </h1>
-
-            <p className="font-serif italic text-base sm:text-xl text-[#2b180d] font-medium leading-relaxed" style={{ color: '#2b180d' }}>
-              Build a purposeful career rooted in meaningful impact, collective wisdom, and rural leadership.
-            </p>
+            {/* Right Photo Card */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="w-full max-w-[380px] bg-[#fdfbf7] p-3.5 sm:p-4 shadow-xl rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-3">
+                <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60 shadow-inner">
+                  <Image
+                    src="/palghar/palghar-cohort-memorial-courtyard.jpg"
+                    alt="Sahyadri Fellows and Team"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute top-3 right-3 px-3 py-1 bg-[#fdfbf7]/95 backdrop-blur-md rounded-full text-[11px] font-semibold text-[#1f5c54] tracking-wider uppercase border border-[#dccdb2] shadow-sm">
+                    Fellows &amp; Mentors
+                  </div>
+                </div>
+                <div className="text-center px-2 pt-1 pb-1">
+                  <span className="font-serif text-[#3e2410] font-medium text-base sm:text-lg block leading-snug">
+                    Community Leadership &amp; Impact
+                  </span>
+                  <span className="text-xs text-[#7a5232] font-light block mt-0.5">
+                    Sahyadri Rural Connect Mentorship Network
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Thin Horizontal Divider Line */}

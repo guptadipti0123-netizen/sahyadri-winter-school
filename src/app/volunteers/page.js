@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Users, Handshake, Compass, TrendingUp, CloudUpload, Sparkles, Check } from "lucide-react";
 import './volunteers.css';
 
@@ -80,28 +81,57 @@ export default function VolunteerPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden bg-[#f5efe2] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
       
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO SECTION (2-Column with Side Photo Card) ================= */}
       <section className="relative isolate pt-16 sm:pt-28 md:pt-36 pb-10 sm:pb-14 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         
         {/* Subtle Background Glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/12 rounded-full blur-[110px] pointer-events-none -z-10" />
         <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/12 rounded-full blur-[90px] pointer-events-none -z-10" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] mb-5 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-xs md:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
-              Join Our Mission
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 w-full">
+          {/* Left Column: Heading & Copy */}
+          <div className="lg:col-span-7 space-y-4 text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
+              <p className="text-xs md:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
+                Join Our Mission
+              </p>
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#3e2410] leading-tight tracking-tight">
+              Volunteer Opportunities
+            </h1>
+
+            <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#7a5232] max-w-xl leading-relaxed">
+              Make a tangible difference by volunteering with Sahyadri Rural Connect. Engage directly with tribal schools, regenerative farming, and village initiatives.
             </p>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal mb-4 text-[#3e2410] leading-tight tracking-tight">
-            Volunteer Opportunities
-          </h1>
-
-          <p className="font-serif italic text-lg sm:text-xl text-[#7a5232] max-w-2xl mx-auto leading-relaxed">
-            Make a tangible difference by volunteering with Sahyadri Rural Connect.
-          </p>
+          {/* Right Column: Featured Photo Card */}
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="w-full max-w-[380px] bg-[#fdfbf7] p-3.5 sm:p-4 shadow-xl rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-3">
+              <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60 shadow-inner">
+                <Image
+                  src="/palghar/palghar-village-children-fellows.jpg"
+                  alt="Sahyadri Volunteers and Village Community"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-[#fdfbf7]/95 backdrop-blur-md rounded-full text-[11px] font-semibold text-[#1f5c54] tracking-wider uppercase border border-[#dccdb2] shadow-sm">
+                  Ground Engagement
+                </div>
+              </div>
+              <div className="text-center px-2 pt-1 pb-1">
+                <span className="font-serif text-[#3e2410] font-medium text-base sm:text-lg block leading-snug">
+                  Fellows &amp; Volunteers on Ground
+                </span>
+                <span className="text-xs text-[#7a5232] font-light block mt-0.5">
+                  Grassroots Impact in Rural Hamlets
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

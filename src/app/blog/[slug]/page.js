@@ -23,7 +23,7 @@ export default async function BlogPostPage({ params }) {
   return (
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
-      {/* ================= HERO HEADER ================= */}
+      {/* ================= HERO HEADER (2-Column with Side Photo Card) ================= */}
       <section className="relative isolate pt-20 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         
         {/* Ambient Warm Atmosphere Glows */}
@@ -31,53 +31,82 @@ export default async function BlogPostPage({ params }) {
         <div className="absolute top-10 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
         <div className="absolute bottom-4 left-10 w-64 h-64 bg-[#7a3a1c]/08 rounded-full blur-2xl pointer-events-none -z-10" />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-4 sm:space-y-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           
-          {/* Back link */}
-          <div>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-xs md:text-sm font-semibold text-[#1f5c54] hover:bg-[#ebe2d1] hover:text-[#184841] transition-all shadow-xs group"
-            >
-              <ArrowLeft size={15} className="text-[#1f5c54] group-hover:-translate-x-1 transition-transform" />
-              <span>Back to All Stories</span>
-            </Link>
+          {/* Left Column: Story Details */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+            {/* Back link */}
+            <div>
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-xs md:text-sm font-semibold text-[#1f5c54] hover:bg-[#ebe2d1] hover:text-[#184841] transition-all shadow-xs group"
+              >
+                <ArrowLeft size={15} className="text-[#1f5c54] group-hover:-translate-x-1 transition-transform" />
+                <span>Back to All Stories</span>
+              </Link>
+            </div>
+
+            {/* Tags */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-xs font-bold uppercase tracking-wider shadow-2xs">
+                {blog.category}
+              </span>
+              <span className="px-3.5 py-1 rounded-full bg-[#3a8c7e]/15 border border-[#3a8c7e]/30 text-[#1f5c54] text-xs font-semibold">
+                {blog.edition}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[44px] leading-[1.2] text-[#1a0e06] tracking-tight">
+              {blog.title}
+            </h1>
+
+            {blog.subtitle && (
+              <p className="text-base sm:text-lg md:text-xl font-light text-[#7a5232] italic font-serif leading-relaxed">
+                {blog.subtitle}
+              </p>
+            )}
+
+            {/* Meta Bar */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a5232] pt-3 sm:pt-4 border-t border-[#dccdb2]/80 font-medium">
+              <span className="flex items-center gap-1.5 bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs">
+                <Calendar size={14} className="text-[#1f5c54]" />
+                {blog.date}
+              </span>
+              <span className="flex items-center gap-1.5 bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs">
+                <Clock size={14} className="text-[#c8880a]" />
+                {blog.readTime}
+              </span>
+              <span className="bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs text-[#3e2410]">
+                By {blog.author}
+              </span>
+            </div>
           </div>
 
-          {/* Tags */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-xs font-bold uppercase tracking-wider shadow-2xs">
-              {blog.category}
-            </span>
-            <span className="px-3.5 py-1 rounded-full bg-[#3a8c7e]/15 border border-[#3a8c7e]/30 text-[#1f5c54] text-xs font-semibold">
-              {blog.edition}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[44px] leading-[1.2] text-[#1a0e06] tracking-tight">
-            {blog.title}
-          </h1>
-
-          {blog.subtitle && (
-            <p className="text-base sm:text-lg md:text-xl font-light text-[#7a5232] italic font-serif leading-relaxed">
-              {blog.subtitle}
-            </p>
-          )}
-
-          {/* Meta Bar */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a5232] pt-3 sm:pt-4 border-t border-[#dccdb2]/80 font-medium">
-            <span className="flex items-center gap-1.5 bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs">
-              <Calendar size={14} className="text-[#1f5c54]" />
-              {blog.date}
-            </span>
-            <span className="flex items-center gap-1.5 bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs">
-              <Clock size={14} className="text-[#c8880a]" />
-              {blog.readTime}
-            </span>
-            <span className="bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs text-[#3e2410]">
-              By {blog.author}
-            </span>
+          {/* Right Column: Hero Side Polaroid / Photo Card */}
+          <div className="lg:col-span-5 flex justify-center">
+            <div className="w-full max-w-[400px] bg-[#fdfbf7] p-3.5 sm:p-4 shadow-xl rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-3">
+              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60 shadow-inner">
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute top-3 right-3 px-3 py-1 bg-[#fdfbf7]/95 backdrop-blur-md rounded-full text-[11px] font-semibold text-[#1f5c54] tracking-wider uppercase border border-[#dccdb2] shadow-sm">
+                  {blog.category}
+                </div>
+              </div>
+              <div className="text-center px-2 pt-1 pb-1.5">
+                <span className="font-serif text-[#3e2410] font-medium text-base sm:text-lg block leading-snug line-clamp-2">
+                  {blog.title}
+                </span>
+                <span className="text-xs text-[#7a5232] font-light block mt-1">
+                  {blog.edition} • {blog.date}
+                </span>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -86,17 +115,6 @@ export default async function BlogPostPage({ params }) {
       {/* ================= ARTICLE CONTENT ================= */}
       <section className="py-8 sm:py-14 px-3.5 sm:px-6 max-w-4xl mx-auto">
         <div className="bg-[#fdfbf7] rounded-3xl border border-[#dccdb2] p-5 sm:p-10 md:p-14 shadow-sm space-y-7 sm:space-y-8">
-          
-          {/* Main Cover Image */}
-          <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden border border-[#dccdb2] shadow-xs">
-            <Image
-              src={blog.image}
-              alt={blog.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
 
           {/* Body Content */}
           <div className="space-y-6 text-[#3e2410] text-base sm:text-lg leading-relaxed font-light">
