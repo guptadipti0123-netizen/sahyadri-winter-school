@@ -34,10 +34,7 @@ export default function Footer() {
         style={{
           backgroundImage: "url('/rural-connect-footer-option3.jpg')",
         }}
-      >
-        {/* Warm Dark Gradient Overlay for Maximum Text Contrast & Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a0e06]/95 via-[#241407]/80 to-[#241407]/65" />
-      </div>
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
