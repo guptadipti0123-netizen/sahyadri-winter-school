@@ -267,23 +267,23 @@ export default function RegisterFormPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-6 sm:pb-8 md:pb-12 overflow-hidden bg-gradient-to-b from-[#241407] via-[#3e2410] to-[#1f5c54] text-[#f5efe2]">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3a8c7e]/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-6 sm:pb-8 md:pb-12 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f5efe2]/15 border border-[#f5efe2]/25 backdrop-blur-md mb-4 md:mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#d4a825] animate-pulse" />
-            <p className="text-xs md:text-sm font-bold text-[#d4a825] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] mb-3 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3a8c7e] animate-pulse" />
+            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-widest uppercase">
               Registration
             </p>
           </div>
 
-          <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 text-[#f5efe2] leading-tight drop-shadow-sm">
-            Registration <span className="text-[#d4a825] italic font-serif">Form</span>
+          <h1 className="font-serif font-normal text-3xl sm:text-5xl md:text-6xl mb-3 text-[#1a0e06] leading-tight tracking-tight">
+            Registration <span className="text-[#1f5c54] italic font-serif">Form</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-[#f5efe2]/85 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-serif italic text-base sm:text-xl text-[#7a5232] max-w-2xl mx-auto leading-relaxed">
             Fill in the form below to apply for Sahyadri Rural Connect fellowship programs.
           </p>
         </div>

@@ -222,7 +222,7 @@ export default function SpeakersSection() {
           aria-labelledby="modal-speaker-name"
         >
           <div 
-            className="relative w-full max-w-lg bg-[#fdfbf7] rounded-3xl p-6 sm:p-8 border border-[#dccdb2] shadow-2xl space-y-5 text-left"
+            className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-[#fdfbf7] rounded-3xl p-5 sm:p-8 border border-[#dccdb2] shadow-2xl space-y-5 text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}

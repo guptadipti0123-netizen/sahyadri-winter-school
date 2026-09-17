@@ -260,8 +260,8 @@ export default function VolunteerPage() {
 
       {/* ================= UPLOAD MODAL ================= */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#241407]/60 backdrop-blur-xs px-4">
-          <div className="w-full max-w-md rounded-3xl bg-[#fdfbf7] border border-[#dccdb2] p-6 sm:p-8 shadow-2xl animate-scaleIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#241407]/60 backdrop-blur-xs px-4 p-4">
+          <div className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-[#fdfbf7] border border-[#dccdb2] p-5 sm:p-8 shadow-2xl animate-scaleIn">
             
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
