@@ -27,13 +27,28 @@ export default async function BlogPostPage({ params }) {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO HEADER ================= */}
-      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-10 sm:pb-14 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
+      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
         
-        {/* Background Subtle Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
-        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
+        {/* Ambient Warm Glows */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/15 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-16 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-5">
+        {/* Top Skyline Ridge Silhouette */}
+        <div className="absolute top-0 inset-x-0 h-36 sm:h-44 pointer-events-none select-none -z-10 opacity-25">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <polygon
+              fill="#1f5c54"
+              points="0,0 1440,0 1440,50 1320,100 1180,45 960,115 760,35 540,105 320,45 140,80 0,35"
+            />
+          </svg>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-4 sm:space-y-5">
           
           {/* Back link */}
           <div>
@@ -47,17 +62,17 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-xs font-bold uppercase tracking-wider shadow-xs">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-xs font-bold uppercase tracking-wider shadow-2xs">
               {blog.category}
             </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-[#3a8c7e]/15 border border-[#3a8c7e]/30 text-[#1f5c54] text-xs font-semibold">
+            <span className="px-3.5 py-1 rounded-full bg-[#3a8c7e]/15 border border-[#3a8c7e]/30 text-[#1f5c54] text-xs font-semibold">
               {blog.edition}
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl leading-tight text-[#1a0e06] tracking-tight">
+          <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[44px] leading-[1.2] text-[#1a0e06] tracking-tight">
             {blog.title}
           </h1>
 
@@ -67,8 +82,8 @@ export default async function BlogPostPage({ params }) {
             </p>
           )}
 
-          {/* Meta */}
-          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-[#7a5232] pt-4 border-t border-[#dccdb2]/60 font-medium">
+          {/* Meta Bar */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a5232] pt-3 sm:pt-4 border-t border-[#dccdb2]/60 font-medium">
             <span className="flex items-center gap-1.5">
               <Calendar size={14} className="text-[#1f5c54]" />
               {blog.date}
@@ -86,8 +101,8 @@ export default async function BlogPostPage({ params }) {
       </section>
 
       {/* ================= ARTICLE CONTENT ================= */}
-      <section className="py-10 sm:py-14 px-4 md:px-6 max-w-4xl mx-auto">
-        <div className="bg-[#fdfbf7] rounded-3xl border border-[#dccdb2] p-6 sm:p-10 md:p-14 shadow-sm space-y-8">
+      <section className="py-8 sm:py-14 px-3.5 sm:px-6 max-w-4xl mx-auto">
+        <div className="bg-[#fdfbf7] rounded-3xl border border-[#dccdb2] p-5 sm:p-10 md:p-14 shadow-sm space-y-7 sm:space-y-8">
           
           {/* Main Cover Image */}
           <div className="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden border border-[#dccdb2] shadow-xs">

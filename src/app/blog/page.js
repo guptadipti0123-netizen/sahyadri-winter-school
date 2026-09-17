@@ -26,7 +26,26 @@ export default function BlogHubPage() {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden min-h-[260px] sm:min-h-[420px] md:min-h-[520px] pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-24 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
+      <section className="relative overflow-hidden min-h-[300px] sm:min-h-[420px] md:min-h-[500px] pt-16 sm:pt-28 md:pt-36 pb-16 sm:pb-24 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
+
+        {/* Ambient Warm & Teal Atmospheric Glows */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/15 rounded-full blur-[110px] pointer-events-none z-0" />
+        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none z-0" />
+
+        {/* Top Skyline Ridge Silhouette */}
+        <div className="absolute top-0 inset-x-0 h-40 sm:h-48 pointer-events-none select-none z-0 opacity-30">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <polygon
+              fill="#1f5c54"
+              points="0,0 1440,0 1440,50 1320,100 1180,45 960,115 760,35 540,105 320,45 140,80 0,35"
+            />
+          </svg>
+        </div>
 
         {/* ================= LAYER 2: LAYERED ABSTRACT MOUNTAINS ================= */}
         <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
@@ -62,20 +81,32 @@ export default function BlogHubPage() {
 
         {/* ================= HERO FOREGROUND CONTENT ================= */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-xs border border-[#dccdb2] shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-[#fdfbf7]/95 backdrop-blur-xs border border-[#dccdb2] shadow-xs">
             <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
             <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.18em] uppercase">
               Dispatches from the Ground
             </p>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a332d] leading-tight tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
             Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
           </h1>
 
-          <p className="font-serif italic text-sm sm:text-base md:text-lg font-medium text-[#122620] max-w-xl mx-auto leading-relaxed" style={{ color: '#122620' }}>
-            Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts.
+          <p className="font-serif italic text-sm sm:text-base md:text-lg font-medium text-[#2b180d] max-w-xl mx-auto leading-relaxed">
+            Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts across Palghar, Karjat &amp; Jawhar.
           </p>
+
+          <div className="pt-2 flex flex-wrap justify-center gap-2 text-xs">
+            <span className="px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] font-medium shadow-2xs">
+              5 Field Dispatches
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3a8c7e] font-semibold shadow-2xs">
+              Palghar • Karjat • Jawhar
+            </span>
+            <span className="px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#c8880a] font-semibold shadow-2xs">
+              3 Immersion Editions
+            </span>
+          </div>
         </div>
 
       </section>
