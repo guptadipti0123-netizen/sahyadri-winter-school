@@ -9,42 +9,61 @@ export default function CareerPage() {
     <main className="min-h-screen bg-[#faf6ee] text-[#3e2410] overflow-x-hidden selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= TOP HERO & PILLARS SECTION ================= */}
-      <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-48 border-b border-[#dccdb2]/60">
+      <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-44 border-b border-[#dccdb2]/60">
 
-        {/* Layered Abstract Mountains at Bottom of Section */}
-        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
+        {/* Ambient Warm & Teal Glows */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/15 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
+
+        {/* Top Mountain Ridge Skyline Silhouette (Visible on Mobile & Desktop) */}
+        <div className="absolute top-0 inset-x-0 h-40 sm:h-52 pointer-events-none select-none -z-10 opacity-25">
           <svg
-            className="w-full h-36 sm:h-48 md:h-60"
-            viewBox="0 0 1440 320"
+            className="w-full h-full"
+            viewBox="0 0 1440 220"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            {/* Layer 1: Lightest Sage (Back) */}
+            <polygon
+              fill="#1f5c54"
+              points="0,0 1440,0 1440,60 1320,110 1180,50 960,130 760,40 540,120 320,50 140,90 0,40"
+            />
+          </svg>
+        </div>
+
+        {/* Layered Abstract Mountains Background (Visible on mobile & desktop) */}
+        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none -z-10">
+          <svg
+            className="w-full h-72 sm:h-80 md:h-96 lg:h-[420px]"
+            viewBox="0 0 1440 340"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            {/* Layer 1: Lightest Sage (Back Peaks) */}
             <polygon
               fill="#a8cdc6"
-              fillOpacity="0.50"
-              points="0,120 220,55 440,130 680,45 920,140 1140,60 1340,130 1440,85 1440,320 0,320"
+              fillOpacity="0.60"
+              points="0,80 220,25 440,95 680,20 920,105 1140,35 1340,95 1440,55 1440,340 0,340"
             />
             {/* Layer 2: Medium Soft Sage */}
             <polygon
               fill="#83b9af"
-              fillOpacity="0.65"
-              points="0,175 180,105 380,185 640,85 860,180 1080,95 1280,170 1440,125 1440,320 0,320"
+              fillOpacity="0.75"
+              points="0,135 180,65 380,145 640,50 860,140 1080,60 1280,130 1440,90 1440,340 0,340"
             />
             {/* Layer 3: Muted Forest Green */}
             <polygon
               fill="#5f9e93"
-              fillOpacity="0.75"
-              points="0,225 220,155 460,235 720,135 960,245 1180,145 1360,225 1440,175 1440,320 0,320"
+              fillOpacity="0.85"
+              points="0,190 220,120 460,200 720,100 960,210 1180,110 1360,190 1440,140 1440,340 0,340"
             />
-            {/* Layer 4: Deep Front Teal */}
+            {/* Layer 4: Deep Front Teal Ridge */}
             <polygon
               fill="#3a8275"
-              fillOpacity="0.85"
-              points="0,270 250,200 520,280 800,175 1090,285 1310,205 1440,255 1440,320 0,320"
+              fillOpacity="0.95"
+              points="0,245 250,170 520,250 800,145 1090,255 1310,175 1440,225 1440,340 0,340"
             />
           </svg>
-          <div className="absolute inset-x-0 bottom-0 h-16 sm:h-20 md:h-28 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/60 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
         </div>
 
         {/* Content Container */}
