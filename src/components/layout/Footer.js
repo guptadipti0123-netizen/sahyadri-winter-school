@@ -22,9 +22,7 @@ export default function Footer() {
 
   const opportunitiesLinks = [
     { name: 'Careers & Openings', href: '/career' },
-    { name: 'Student Fellowship', href: '/register' },
-    { name: 'Volunteer With Us', href: '/career' },
-    { name: 'Advisory & Mentorship', href: '/about#story' },
+    { name: 'Volunteer With Us', href: '/volunteers' },
   ]
 
   return (
