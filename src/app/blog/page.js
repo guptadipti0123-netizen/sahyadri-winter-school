@@ -26,39 +26,45 @@ export default function BlogHubPage() {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden min-h-[300px] sm:min-h-[420px] md:min-h-[500px] pt-16 sm:pt-28 md:pt-36 pb-16 sm:pb-24 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
+      <section className="relative overflow-hidden min-h-[300px] sm:min-h-[380px] md:min-h-[440px] pt-16 sm:pt-28 md:pt-36 pb-14 sm:pb-20 md:pb-24 border-b border-[#dccdb2]/60 flex flex-col justify-center bg-gradient-to-b from-[#f3ece0] via-[#faf6ee] to-[#f5efe2]">
 
-        {/* Ambient Warm & Teal Atmospheric Glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/10 rounded-full blur-[120px] pointer-events-none z-0" />
-        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/08 rounded-full blur-3xl pointer-events-none z-0" />
-        <div className="absolute bottom-10 left-[-5%] w-72 h-72 bg-[#3a8c7e]/08 rounded-full blur-3xl pointer-events-none z-0" />
+        {/* Natural Theme Color Atmosphere (Soft Warm Amber Sun & Deep Forest Teal Glows) */}
+        <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] h-[340px] bg-gradient-to-b from-[#c8880a]/12 via-[#3a8c7e]/10 to-transparent rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-12 left-[-10%] w-80 sm:w-96 h-80 sm:h-96 bg-[#1f5c54]/08 rounded-full blur-[110px] pointer-events-none" />
+        <div className="absolute top-8 right-[-10%] w-80 sm:w-96 h-80 sm:h-96 bg-[#c8880a]/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#faf6ee] to-transparent pointer-events-none" />
 
         {/* ================= HERO FOREGROUND CONTENT ================= */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-[#fdfbf7]/95 backdrop-blur-xs border border-[#dccdb2] shadow-xs">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-4 sm:space-y-5">
+          
+          {/* Top Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
             <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.18em] uppercase">
+            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.2em] uppercase font-sans">
               Dispatches from the Ground
             </p>
           </div>
 
+          {/* Heading */}
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
             Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>
           </h1>
 
-          <p className="font-serif italic text-sm sm:text-base md:text-lg font-medium text-[#2b180d] max-w-xl mx-auto leading-relaxed">
+          {/* Subtitle */}
+          <p className="font-serif italic text-sm sm:text-base md:text-lg text-[#5c3a1e] max-w-xl mx-auto leading-relaxed">
             Deep-dives, field diaries, student research, and voices from our grassroots immersion cohorts across Palghar, Karjat &amp; Jawhar.
           </p>
 
-          <div className="pt-2 flex flex-wrap justify-center gap-2 text-xs">
-            <span className="px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] font-medium shadow-2xs">
-              5 Field Dispatches
+          {/* Theme Color Stat Pills */}
+          <div className="pt-2 flex flex-wrap justify-center items-center gap-2.5 text-xs">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] font-medium shadow-xs">
+              📖 5 Field Dispatches
             </span>
-            <span className="px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3a8c7e] font-semibold shadow-2xs">
-              Palghar • Karjat • Jawhar
+            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#3a8c7e]/30 text-[#1f5c54] font-semibold shadow-xs">
+              📍 Palghar • Karjat • Jawhar
             </span>
-            <span className="px-3 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#c8880a] font-semibold shadow-2xs">
-              3 Immersion Editions
+            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#c8880a]/35 text-[#a86e08] font-semibold shadow-xs">
+              🏔️ 3 Immersion Editions
             </span>
           </div>
         </div>
