@@ -11,12 +11,12 @@ export default function CareerPage() {
       {/* ================= TOP HERO & PILLARS SECTION ================= */}
       <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-44 border-b border-[#dccdb2]/60">
 
-        {/* Ambient Warm & Teal Glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/15 rounded-full blur-[110px] pointer-events-none -z-10" />
-        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
+        {/* Ambient Warm & Teal Glows (z-0 so it sits above main background) */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/18 rounded-full blur-[100px] pointer-events-none z-0" />
+        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none z-0" />
 
         {/* Top Mountain Ridge Skyline Silhouette (Visible on Mobile & Desktop) */}
-        <div className="absolute top-0 inset-x-0 h-40 sm:h-52 pointer-events-none select-none -z-10 opacity-25">
+        <div className="absolute top-0 inset-x-0 h-44 sm:h-56 pointer-events-none select-none z-0 opacity-40">
           <svg
             className="w-full h-full"
             viewBox="0 0 1440 220"
@@ -31,9 +31,9 @@ export default function CareerPage() {
         </div>
 
         {/* Layered Abstract Mountains Background (Visible on mobile & desktop) */}
-        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none -z-10">
+        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
           <svg
-            className="w-full h-72 sm:h-80 md:h-96 lg:h-[420px]"
+            className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[480px]"
             viewBox="0 0 1440 340"
             preserveAspectRatio="none"
             aria-hidden="true"
@@ -41,19 +41,19 @@ export default function CareerPage() {
             {/* Layer 1: Lightest Sage (Back Peaks) */}
             <polygon
               fill="#a8cdc6"
-              fillOpacity="0.60"
+              fillOpacity="0.70"
               points="0,80 220,25 440,95 680,20 920,105 1140,35 1340,95 1440,55 1440,340 0,340"
             />
             {/* Layer 2: Medium Soft Sage */}
             <polygon
               fill="#83b9af"
-              fillOpacity="0.75"
+              fillOpacity="0.80"
               points="0,135 180,65 380,145 640,50 860,140 1080,60 1280,130 1440,90 1440,340 0,340"
             />
             {/* Layer 3: Muted Forest Green */}
             <polygon
               fill="#5f9e93"
-              fillOpacity="0.85"
+              fillOpacity="0.88"
               points="0,190 220,120 460,200 720,100 960,210 1180,110 1360,190 1440,140 1440,340 0,340"
             />
             {/* Layer 4: Deep Front Teal Ridge */}
@@ -63,7 +63,7 @@ export default function CareerPage() {
               points="0,245 250,170 520,250 800,145 1090,255 1310,175 1440,225 1440,340 0,340"
             />
           </svg>
-          <div className="absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
         </div>
 
         {/* Content Container */}
