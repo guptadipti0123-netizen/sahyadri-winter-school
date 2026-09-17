@@ -26,7 +26,7 @@ export default function BlogHubPage() {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO SECTION (Harmonized Theme Styling) ================= */}
-      <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 bg-[#f5efe2] border-b border-[#dccdb2]/80 flex flex-col justify-center text-[#3e2410]">
+      <section className="relative isolate overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] border-b border-[#dccdb2]/80 flex flex-col justify-center text-[#3e2410]">
 
         {/* Warm Golden Sunlight & Teal Atmosphere Glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/12 rounded-full blur-[110px] pointer-events-none -z-10" />

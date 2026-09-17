@@ -124,10 +124,10 @@ export default function ContactPage() {
     <main className="min-h-screen bg-[#faf6ee] text-[#3e2410] font-sans overflow-x-hidden">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-6 sm:pb-8 overflow-hidden bg-[#faf6ee] text-[#3e2410]">
+      <section className="relative isolate pt-16 sm:pt-28 md:pt-36 pb-8 sm:pb-12 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         {/* Subtle Background Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
-        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/12 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/12 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] mb-3 shadow-xs">

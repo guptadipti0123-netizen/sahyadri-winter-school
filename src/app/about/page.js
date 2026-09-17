@@ -154,7 +154,7 @@ export default function AboutPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= 1. EDITORIAL HERO SECTION WITH RIGHT-SIDE CAMP SHOWCASE ================= */}
-      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 px-3 sm:px-6 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
+      <section className="relative isolate pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 px-3 sm:px-6 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         
         {/* Warm Ambient Glows */}
         <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[600px] h-[350px] bg-[#e8a87c]/15 rounded-full blur-[120px] pointer-events-none -z-10" />

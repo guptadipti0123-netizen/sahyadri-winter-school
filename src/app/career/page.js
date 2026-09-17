@@ -9,12 +9,12 @@ export default function CareerPage() {
     <main className="min-h-screen bg-[#faf6ee] text-[#3e2410] overflow-x-hidden selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= TOP HERO & PILLARS SECTION ================= */}
-      <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-44 border-b border-[#dccdb2]/60">
+      <section className="relative isolate overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-44 bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] border-b border-[#dccdb2]/80">
 
         {/* Clean Ambient Warm & Sage Organic Atmospheric Glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/10 rounded-full blur-[120px] pointer-events-none z-0" />
-        <div className="absolute top-24 right-[-5%] w-80 sm:w-96 h-80 sm:h-96 bg-[#c8880a]/08 rounded-full blur-3xl pointer-events-none z-0" />
-        <div className="absolute bottom-10 left-[-5%] w-72 h-72 bg-[#3a8c7e]/08 rounded-full blur-3xl pointer-events-none z-0" />
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/12 rounded-full blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute top-24 right-[-5%] w-80 sm:w-96 h-80 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute bottom-10 left-[-5%] w-72 h-72 bg-[#3a8c7e]/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
         {/* Content Container */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 relative z-10 space-y-8 sm:space-y-10 pb-6 sm:pb-8">

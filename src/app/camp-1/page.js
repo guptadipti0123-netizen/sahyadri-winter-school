@@ -167,10 +167,10 @@ export default function Camp1Page() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#f5efe2] text-[#3e2410]">
 
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
+      <section className="relative isolate pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         {/* Soft Ambient Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
-        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/12 rounded-full blur-[110px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-[350px] h-[350px] bg-[#c8880a]/12 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
           <div className="space-y-4 sm:space-y-5 text-left">

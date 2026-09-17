@@ -24,11 +24,12 @@ export default async function BlogPostPage({ params }) {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO HEADER ================= */}
-      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
+      <section className="relative isolate pt-20 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-b from-[#faede0] via-[#f7e6d5] to-[#f5efe2] text-[#3e2410] border-b border-[#dccdb2]/80">
         
-        {/* Ambient Warm Glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-        <div className="absolute top-16 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/08 rounded-full blur-3xl pointer-events-none -z-10" />
+        {/* Ambient Warm Atmosphere Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/12 rounded-full blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute top-10 right-10 w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute bottom-4 left-10 w-64 h-64 bg-[#7a3a1c]/08 rounded-full blur-2xl pointer-events-none -z-10" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-4 sm:space-y-5">
           
@@ -36,9 +37,9 @@ export default async function BlogPostPage({ params }) {
           <div>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-[#7a5232] hover:text-[#1f5c54] transition-colors group"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-xs md:text-sm font-semibold text-[#1f5c54] hover:bg-[#ebe2d1] hover:text-[#184841] transition-all shadow-xs group"
             >
-              <ArrowLeft size={16} className="text-[#1f5c54] group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft size={15} className="text-[#1f5c54] group-hover:-translate-x-1 transition-transform" />
               <span>Back to All Stories</span>
             </Link>
           </div>
@@ -65,18 +66,18 @@ export default async function BlogPostPage({ params }) {
           )}
 
           {/* Meta Bar */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a5232] pt-3 sm:pt-4 border-t border-[#dccdb2]/60 font-medium">
-            <span className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#7a5232] pt-3 sm:pt-4 border-t border-[#dccdb2]/80 font-medium">
+            <span className="flex items-center gap-1.5 bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs">
               <Calendar size={14} className="text-[#1f5c54]" />
               {blog.date}
             </span>
-            <span className="text-[#dccdb2]">•</span>
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs">
               <Clock size={14} className="text-[#c8880a]" />
               {blog.readTime}
             </span>
-            <span className="text-[#dccdb2]">•</span>
-            <span>By {blog.author}</span>
+            <span className="bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs text-[#3e2410]">
+              By {blog.author}
+            </span>
           </div>
 
         </div>
