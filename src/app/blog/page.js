@@ -26,7 +26,7 @@ export default function BlogHubPage() {
     <main className="min-h-screen relative overflow-x-hidden bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] pt-28 sm:pt-36 md:pt-44 pb-20 sm:pb-28 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
+      <section className="relative overflow-hidden min-h-[260px] sm:min-h-[420px] md:min-h-[520px] pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-24 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
 
         {/* ================= LAYER 2: LAYERED ABSTRACT MOUNTAINS ================= */}
         <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">

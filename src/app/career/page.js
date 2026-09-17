@@ -9,7 +9,7 @@ export default function CareerPage() {
     <main className="min-h-screen bg-[#faf6ee] text-[#3e2410] overflow-x-hidden selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= TOP HERO & PILLARS SECTION ================= */}
-      <section className="relative overflow-hidden pt-28 sm:pt-36 md:pt-40 pb-32 sm:pb-40 md:pb-48 border-b border-[#dccdb2]/60">
+      <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-48 border-b border-[#dccdb2]/60">
 
         {/* Layered Abstract Mountains at Bottom of Section */}
         <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">

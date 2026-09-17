@@ -188,7 +188,7 @@ export default function Hero() {
   const activeSlide = featuredSlides[current]
 
   return (
-    <section className="relative w-full bg-[#f5efe2] pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-14 px-3.5 sm:px-6 lg:px-8 font-sans border-b border-[#dccdb2]/70">
+    <section className="relative w-full bg-[#f5efe2] pt-16 sm:pt-24 md:pt-30 pb-8 sm:pb-14 px-3.5 sm:px-6 lg:px-8 font-sans border-b border-[#dccdb2]/70">
       <div className="max-w-7xl mx-auto">
         
         {/* --- MAIN 2-COLUMN GRID --- */}

@@ -27,7 +27,7 @@ export default async function BlogPostPage({ params }) {
     <main className="min-h-screen relative overflow-x-hidden bg-[#f5efe2] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
 
       {/* ================= HERO HEADER ================= */}
-      <section className="relative pt-28 md:pt-36 pb-14 overflow-hidden bg-[#241407] text-[#f5efe2]">
+      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-10 sm:pb-14 overflow-hidden bg-[#241407] text-[#f5efe2]">
         
         {/* Background Subtle Glows */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#3a8c7e]/15 rounded-full blur-3xl pointer-events-none" />

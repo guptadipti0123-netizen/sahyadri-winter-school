@@ -52,7 +52,7 @@ export default function CampsHubPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
       
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative pt-28 sm:pt-36 md:pt-40 pb-12 sm:pb-16 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
+      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
         {/* Subtle Background Glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />
         <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />

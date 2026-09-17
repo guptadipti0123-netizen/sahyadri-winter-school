@@ -81,7 +81,7 @@ export default function VolunteerPage() {
     <main className="min-h-screen relative overflow-x-hidden bg-[#f5efe2] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative pt-28 md:pt-36 pb-8">
+      <section className="relative pt-16 sm:pt-28 md:pt-36 pb-6 sm:pb-8">
         
         {/* Subtle Background Glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/10 rounded-full blur-[110px] pointer-events-none -z-10" />

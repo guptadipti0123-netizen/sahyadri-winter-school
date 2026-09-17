@@ -82,7 +82,7 @@ export default function RegisterPage() {
       </div>
 
       {/* ================= 1. HERO SECTION & SHOWCASE ================= */}
-      <section className="relative z-10 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12">
+      <section className="relative z-10 pt-16 sm:pt-24 lg:pt-32 pb-8 sm:pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* DESKTOP SPLIT GRID (lg: 2-Cols) | MOBILE FLOW: Template on Top (order-1), Content on Bottom (order-2) */}
