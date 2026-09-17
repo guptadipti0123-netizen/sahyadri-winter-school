@@ -52,46 +52,46 @@ export default function CampsHubPage() {
     <main className="min-h-screen relative overflow-x-hidden font-sans bg-[#faf6ee] text-[#3e2410] selection:bg-[#3a8c7e]/25 selection:text-[#3e2410]">
       
       {/* ================= 1. HERO SECTION ================= */}
-      <section className="relative isolate pt-24 sm:pt-36 md:pt-44 pb-20 sm:pb-28 overflow-hidden border-b border-[#dccdb2]/60 text-white">
+      <section className="relative isolate pt-24 sm:pt-36 md:pt-44 pb-20 sm:pb-28 overflow-hidden border-b border-[#dccdb2]/60">
         
-        {/* Photographic Scenic Sahyadri Background (Clearly Visible) */}
+        {/* Photographic Scenic Sahyadri Background (Bright, Sunny & Clear) */}
         <div 
           className="absolute inset-0 bg-cover bg-center md:bg-fixed -z-10"
           style={{
             backgroundImage: "url('/sahyadri-camps-hero-bg.jpg')",
           }}
         >
-          {/* Subtle balanced overlay so mountain peaks, valleys & morning mist shine through */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a0e06]/65 via-[#1a0e06]/40 to-[#1a0e06]/85" />
+          {/* Luminous light overlay: keeps mountain ridges, valleys, and sky sunny & bright while seamlessly transitioning */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/15 to-[#faf6ee]" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-6">
           
           {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 shadow-md">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#68d391] animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md border border-[#dccdb2] shadow-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#1f5c54] animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#1f5c54]">
               Grassroots Immersion Cohorts
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-white leading-tight tracking-tight drop-shadow-md">
-            Sahyadri <span className="text-[#a7f3d0] italic font-serif">Camps Directory</span>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight drop-shadow-sm">
+            Sahyadri <span className="text-[#1f5c54] italic font-serif">Camps Directory</span>
           </h1>
 
-          <p className="font-serif italic text-base sm:text-lg md:text-xl text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow">
+          <p className="font-serif italic text-base sm:text-lg md:text-xl text-[#4a2e18] max-w-2xl mx-auto leading-relaxed">
             Explore our past immersion cohorts, field archives, and the upcoming camp registration portal.
           </p>
 
           {/* Quick Stats Highlights */}
           <div className="pt-2 pb-1 flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
-            <span className="px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 shadow-sm text-white">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md border border-[#dccdb2] shadow-sm text-[#3e2410]">
               🏔️ 3 Immersion Editions
             </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 shadow-sm text-white">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md border border-[#dccdb2] shadow-sm text-[#3e2410]">
               🎓 120+ Student Fellows
             </span>
-            <span className="px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 shadow-sm text-white">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#fdfbf7]/90 backdrop-blur-md border border-[#dccdb2] shadow-sm text-[#3e2410]">
               🌾 Tribal Hamlets &amp; Research
             </span>
           </div>
@@ -99,7 +99,7 @@ export default function CampsHubPage() {
           <div className="pt-3 flex flex-wrap justify-center items-center gap-3.5">
             <Link
               href="/register"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#3a8c7e] hover:bg-[#2c6e63] text-white font-semibold text-xs sm:text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#1f5c54] hover:bg-[#184841] text-white font-semibold text-xs sm:text-sm shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all"
             >
               <span>Upcoming Camp Registration</span>
               <ArrowRight size={14} />
