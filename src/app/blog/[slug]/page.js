@@ -27,23 +27,8 @@ export default async function BlogPostPage({ params }) {
       <section className="relative pt-16 sm:pt-28 md:pt-36 pb-12 sm:pb-16 overflow-hidden bg-[#faf6ee] text-[#3e2410] border-b border-[#dccdb2]/60">
         
         {/* Ambient Warm Glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/15 rounded-full blur-[110px] pointer-events-none -z-10" />
-        <div className="absolute top-16 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none -z-10" />
-
-        {/* Top Skyline Ridge Silhouette */}
-        <div className="absolute top-0 inset-x-0 h-36 sm:h-44 pointer-events-none select-none -z-10 opacity-25">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 1440 220"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon
-              fill="#1f5c54"
-              points="0,0 1440,0 1440,50 1320,100 1180,45 960,115 760,35 540,105 320,45 140,80 0,35"
-            />
-          </svg>
-        </div>
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute top-16 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/08 rounded-full blur-3xl pointer-events-none -z-10" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-4 sm:space-y-5">
           

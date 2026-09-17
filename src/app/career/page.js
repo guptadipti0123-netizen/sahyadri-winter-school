@@ -11,69 +11,22 @@ export default function CareerPage() {
       {/* ================= TOP HERO & PILLARS SECTION ================= */}
       <section className="relative overflow-hidden pt-16 sm:pt-28 md:pt-36 pb-20 sm:pb-32 md:pb-44 border-b border-[#dccdb2]/60">
 
-        {/* Ambient Warm & Teal Glows (z-0 so it sits above main background) */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/18 rounded-full blur-[100px] pointer-events-none z-0" />
-        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/15 rounded-full blur-3xl pointer-events-none z-0" />
-
-        {/* Top Mountain Ridge Skyline Silhouette (Visible on Mobile & Desktop) */}
-        <div className="absolute top-0 inset-x-0 h-44 sm:h-56 pointer-events-none select-none z-0 opacity-40">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 1440 220"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon
-              fill="#1f5c54"
-              points="0,0 1440,0 1440,60 1320,110 1180,50 960,130 760,40 540,120 320,50 140,90 0,40"
-            />
-          </svg>
-        </div>
-
-        {/* Layered Abstract Mountains Background (Visible on mobile & desktop) */}
-        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
-          <svg
-            className="w-full h-80 sm:h-96 md:h-[420px] lg:h-[480px]"
-            viewBox="0 0 1440 340"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            {/* Layer 1: Lightest Sage (Back Peaks) */}
-            <polygon
-              fill="#a8cdc6"
-              fillOpacity="0.70"
-              points="0,80 220,25 440,95 680,20 920,105 1140,35 1340,95 1440,55 1440,340 0,340"
-            />
-            {/* Layer 2: Medium Soft Sage */}
-            <polygon
-              fill="#83b9af"
-              fillOpacity="0.80"
-              points="0,135 180,65 380,145 640,50 860,140 1080,60 1280,130 1440,90 1440,340 0,340"
-            />
-            {/* Layer 3: Muted Forest Green */}
-            <polygon
-              fill="#5f9e93"
-              fillOpacity="0.88"
-              points="0,190 220,120 460,200 720,100 960,210 1180,110 1360,190 1440,140 1440,340 0,340"
-            />
-            {/* Layer 4: Deep Front Teal Ridge */}
-            <polygon
-              fill="#3a8275"
-              fillOpacity="0.95"
-              points="0,245 250,170 520,250 800,145 1090,255 1310,175 1440,225 1440,340 0,340"
-            />
-          </svg>
-          <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
-        </div>
+        {/* Clean Ambient Warm & Sage Organic Atmospheric Glows */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/10 rounded-full blur-[120px] pointer-events-none z-0" />
+        <div className="absolute top-24 right-[-5%] w-80 sm:w-96 h-80 sm:h-96 bg-[#c8880a]/08 rounded-full blur-3xl pointer-events-none z-0" />
+        <div className="absolute bottom-10 left-[-5%] w-72 h-72 bg-[#3a8c7e]/08 rounded-full blur-3xl pointer-events-none z-0" />
 
         {/* Content Container */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 relative z-10 space-y-8 sm:space-y-10 pb-6 sm:pb-8">
           
           {/* Header Area */}
-          <div className="space-y-2.5 sm:space-y-3.5 text-left max-w-3xl">
-            <p className="text-xs sm:text-sm font-bold tracking-[0.22em] text-[#124d45] uppercase font-sans">
-              JOIN OUR MISSION
-            </p>
+          <div className="space-y-3 sm:space-y-4 text-left max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
+              <p className="text-xs sm:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
+                Join Our Mission
+              </p>
+            </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
               Career Opportunities

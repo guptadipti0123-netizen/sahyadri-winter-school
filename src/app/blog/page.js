@@ -29,55 +29,9 @@ export default function BlogHubPage() {
       <section className="relative overflow-hidden min-h-[300px] sm:min-h-[420px] md:min-h-[500px] pt-16 sm:pt-28 md:pt-36 pb-16 sm:pb-24 md:pb-36 bg-[#faf6ee] border-b border-[#dccdb2]/60 flex flex-col justify-center">
 
         {/* Ambient Warm & Teal Atmospheric Glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#3a8c7e]/15 rounded-full blur-[110px] pointer-events-none z-0" />
-        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/12 rounded-full blur-3xl pointer-events-none z-0" />
-
-        {/* Top Skyline Ridge Silhouette */}
-        <div className="absolute top-0 inset-x-0 h-40 sm:h-48 pointer-events-none select-none z-0 opacity-30">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 1440 220"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon
-              fill="#1f5c54"
-              points="0,0 1440,0 1440,50 1320,100 1180,45 960,115 760,35 540,105 320,45 140,80 0,35"
-            />
-          </svg>
-        </div>
-
-        {/* ================= LAYER 2: LAYERED ABSTRACT MOUNTAINS ================= */}
-        <div className="absolute inset-x-0 bottom-0 pointer-events-none select-none z-0">
-          <svg
-            className="w-full h-36 sm:h-48 md:h-64"
-            viewBox="0 0 1440 380"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <polygon
-              fill="#a8cdc6"
-              fillOpacity="0.45"
-              points="0,170 200,85 400,165 640,65 880,180 1080,85 1280,175 1440,110 1440,380 0,380"
-            />
-            <polygon
-              fill="#83b9af"
-              fillOpacity="0.60"
-              points="0,225 180,140 370,230 600,115 820,225 1040,125 1260,220 1440,155 1440,380 0,380"
-            />
-            <polygon
-              fill="#5f9e93"
-              fillOpacity="0.75"
-              points="0,270 220,185 460,280 720,165 960,290 1180,180 1360,265 1440,210 1440,380 0,380"
-            />
-            <polygon
-              fill="#3a8275"
-              fillOpacity="0.85"
-              points="0,320 250,240 520,335 800,215 1090,340 1310,245 1440,305 1440,380 0,380"
-            />
-          </svg>
-          <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 md:h-32 bg-gradient-to-t from-[#faf6ee] via-[#faf6ee]/70 to-transparent" />
-        </div>
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-[#3a8c7e]/10 rounded-full blur-[120px] pointer-events-none z-0" />
+        <div className="absolute top-20 right-[-10%] w-72 sm:w-96 h-72 sm:h-96 bg-[#c8880a]/08 rounded-full blur-3xl pointer-events-none z-0" />
+        <div className="absolute bottom-10 left-[-5%] w-72 h-72 bg-[#3a8c7e]/08 rounded-full blur-3xl pointer-events-none z-0" />
 
         {/* ================= HERO FOREGROUND CONTENT ================= */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-3 sm:space-y-4">
