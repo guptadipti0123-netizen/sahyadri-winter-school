@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Calendar, MapPin, ArrowRight, Sparkles } from "lucide-react"
+import { Calendar, MapPin, ArrowRight } from "lucide-react"
 
 export default function CampsHubPage() {
   const camps = [
@@ -58,13 +58,6 @@ export default function CampsHubPage() {
         <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/10 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-            <Sparkles size={13} className="text-[#c8880a]" />
-            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-widest uppercase">
-              All Editions &amp; Cohorts
-            </p>
-          </div>
-
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
             Sahyadri <span className="text-[#1f5c54] italic font-serif">Camps Directory</span>
           </h1>
