@@ -130,13 +130,6 @@ export default function ContactPage() {
         <div className="absolute top-10 right-10 w-[300px] h-[300px] bg-[#c8880a]/12 rounded-full blur-[90px] pointer-events-none -z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] mb-3 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3a8c7e] animate-pulse" />
-            <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-widest uppercase">
-              Contact Us
-            </p>
-          </div>
-
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] mb-3 leading-tight tracking-tight">
             Get in <span className="italic font-serif text-[#1f5c54]">Touch</span>
           </h1>
