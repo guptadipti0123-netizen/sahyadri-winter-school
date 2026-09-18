@@ -28,15 +28,15 @@ export default function Footer() {
   return (
     <footer className="relative text-white pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden">
 
-      {/* --- BACKGROUND IMAGE SETUP (Real Camera Landscape Photograph) --- */}
+      {/* --- BACKGROUND IMAGE SETUP (Authentic Camera Rural Walk Photo) --- */}
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center md:bg-fixed"
         style={{
-          backgroundImage: "url('/sahyadri-bg-hero.jpeg')",
+          backgroundImage: "url('/rural-connect-footer-real.jpg')",
         }}
       >
-        {/* Subtle contrast balance so the authentic camera landscape is clearly visible while text is crisp */}
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-[0.5px]" />
+        {/* Soft balanced overlay so authentic rural walk photo is clearly visible */}
+        <div className="absolute inset-0 bg-black/25" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
