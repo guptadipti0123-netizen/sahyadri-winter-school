@@ -9,7 +9,7 @@ export const blogsData = [
     authorRole: "Summer Cohort Preview",
     readTime: "4 min read",
     category: "Culture & Governance",
-    image: "/palghar/palghar-community-tree-dialogue.jpg",
+    image: "/sahyadri-1.jpg",
     excerpt: "Direct dialogues with village elders under community trees, exploring indigenous wisdom, forest ecology, and tribal self-governance under PESA in Jawhar.",
     content: [
       {

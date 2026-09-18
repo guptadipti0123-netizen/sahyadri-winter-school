@@ -72,12 +72,22 @@ const themes = [
 ]
 
 const galleryImages = [
-  "/sahyadri-1.jpg", "/floating1.jpeg", "/floating2.jpeg",
-  "/floating4.jpeg", "/sahyadri-2.jpeg", "/floating8.jpeg",
-  "/floating3.jpeg", "/sahyadri-3.jpg", "/floating6.jpeg",
-  "/floating11.jpeg", "/sahyadri-6.jpg", "/floating5.jpeg",
-  "/sahyadri-5.jpg", "/floating10.jpeg", "/sahyadri-7.jpg",
-  "/floating9.jpeg", "/sahyadri-8.jpg", "/grassland-hero1.jpg",
+  "/palghar/palghar-cohort-memorial-courtyard.jpg",
+  "/palghar/palghar-community-tree-dialogue.jpg",
+  "/palghar/palghar-solar-pump-valley-field.jpg",
+  "/palghar/palghar-solar-panels-valley-view.jpg",
+  "/palghar/palghar-irrigation-filter-demo.jpg",
+  "/palghar/palghar-fort-stone-steps-cohort.jpg",
+  "/palghar/palghar-mango-orchard-community.jpg",
+  "/palghar/palghar-classroom-reflection-session.jpg",
+  "/palghar/palghar-tribal-household-mangoes.jpg",
+  "/palghar/palghar-village-street-interaction.jpg",
+  "/palghar/palghar-traditional-community-meal.jpg",
+  "/palghar/palghar-village-children-fellows.jpg",
+  "/palghar/palghar-viewpoint-fellows-scooter.jpg",
+  "/palghar/palghar-mango-harvest-fellows.jpg",
+  "/palghar/palghar-village-temple-community-assembly.jpg",
+  "/palghar/palghar-heritage-stone-wada-dusk.png",
 ]
 
 // --- SLIDER BLOCK COMPONENT FOR MOBILE ---
@@ -220,12 +230,12 @@ export default function Camp1Page() {
           {/* Polaroid Hero Card */}
           <div className="flex justify-center">
             <div 
-              onClick={() => setSelectedPhoto("/grassland-hero1.jpg")}
+              onClick={() => setSelectedPhoto("/palghar/palghar-cohort-memorial-courtyard.jpg")}
               className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[420px] h-[270px] xs:h-[300px] md:h-[360px] bg-[#fdfbf7] p-3 pb-10 sm:pb-12 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500 rounded-2xl cursor-pointer border border-[#dccdb2]"
             >
               <div className="relative w-full h-full overflow-hidden rounded-xl bg-[#ebe2d1]">
                 <Image 
-                  src="/grassland-hero1.jpg" 
+                  src="/palghar/palghar-cohort-memorial-courtyard.jpg" 
                   alt="Winter Camp Jan 2025 Memories" 
                   fill 
                   className="object-cover hover:scale-105 transition-transform duration-700" 

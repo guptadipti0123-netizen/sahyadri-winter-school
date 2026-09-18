@@ -28,10 +28,10 @@ export default function AboutPage() {
   const heroCamps = [
     {
       badge: "Jawhar • May 2026",
-      title: "Grassroots Dialogue with Tribal Elders",
+      title: "Grassroots Dialogue & PESA Fieldwork",
       tag: "Summer Edition",
       caption: "Direct dialogues with village elders and Gram Panchayats on PESA self-governance and tribal livelihoods in the Sahyadris.",
-      image: "/palghar/palghar-community-tree-dialogue.jpg",
+      image: "/sahyadri-1.jpg",
       href: "/camp-3",
       duration: "Summer 2026"
     },

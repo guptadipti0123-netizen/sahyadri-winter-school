@@ -142,24 +142,24 @@ const itinerary = [
   }
 ]
 
-// --- COMPLETE PALGHAR & JAWHAR FIELD IMMERSION PHOTO GALLERY (16 Photos) ---
-const palgharPhotos = [
-  { src: "/palghar/palghar-cohort-memorial-courtyard.jpg", alt: "Palghar Inaugural Cohort Group" },
-  { src: "/palghar/palghar-solar-pump-valley-field.jpg", alt: "Solar Lift Irrigation Demonstration" },
-  { src: "/palghar/palghar-solar-panels-valley-view.jpg", alt: "Valley Micro-Grid & Renewable Energy" },
-  { src: "/palghar/palghar-irrigation-filter-demo.jpg", alt: "Micro-Irrigation & Water Filtration Tech" },
-  { src: "/palghar/palghar-fort-stone-steps-cohort.jpg", alt: "Heritage Fort Exploration" },
-  { src: "/palghar/palghar-mango-orchard-community.jpg", alt: "Grassroots Dialogue with Farming Families" },
-  { src: "/palghar/palghar-classroom-reflection-session.jpg", alt: "Peer Learning & Cohort Reflections" },
-  { src: "/palghar/palghar-community-tree-dialogue.jpg", alt: "Village Tree Assembly & Dialogue" },
-  { src: "/palghar/palghar-tribal-household-mangoes.jpg", alt: "Tribal Household & Family Immersion" },
-  { src: "/palghar/palghar-village-street-interaction.jpg", alt: "Village Walk & Elder Interactions" },
-  { src: "/palghar/palghar-traditional-community-meal.jpg", alt: "Communal Dining in Village Hamlet" },
-  { src: "/palghar/palghar-village-children-fellows.jpg", alt: "Learning with Village Youth" },
-  { src: "/palghar/palghar-viewpoint-fellows-scooter.jpg", alt: "Sahyadri Ridge Explorations" },
-  { src: "/palghar/palghar-mango-harvest-fellows.jpg", alt: "Local Produce & Agro-Ecology" },
-  { src: "/palghar/palghar-village-temple-community-assembly.jpg", alt: "Village Temple Community Assembly" },
-  { src: "/palghar/palghar-heritage-stone-wada-dusk.png", alt: "Traditional Stone Wada Architecture" }
+// --- COMPLETE JAWHAR & SAHYADRI FIELD IMMERSION PHOTO GALLERY (16 Photos) ---
+const jawharPhotos = [
+  { src: "/sahyadri-1.jpg", alt: "Gram Panchayat & PESA Fieldwork Dialogue in Jawhar" },
+  { src: "/sahyadri-8.jpg", alt: "Village Community Immersion & Cohort Interactions" },
+  { src: "/sahyadri-3.jpg", alt: "Sahyadri Rural Landscape & Agro-Ecological Fields" },
+  { src: "/sahyadri-5.jpg", alt: "Tribal Hamlet Immersion & Village Assemblies" },
+  { src: "/sahyadri-7.jpg", alt: "Forest Biodiversity Trails & Ethnobotany Study" },
+  { src: "/sahyadri-6.jpg", alt: "Traditional Livelihoods & Community Culture" },
+  { src: "/sahyadri-2.jpeg", alt: "Sahyadri Mountain Horizon & Forest Trails" },
+  { src: "/floating8.jpeg", alt: "Warli Folk Artistry & Indigenous Craft" },
+  { src: "/floating1.jpeg", alt: "Fieldwork Mapping & Cohort Discussions" },
+  { src: "/floating3.jpeg", alt: "Watershed & Traditional Water Commons Exploration" },
+  { src: "/floating11.jpeg", alt: "Tribal Farm Systems & Agro-Forestry" },
+  { src: "/floating6.jpeg", alt: "Vernacular Village Architecture & Habitat Study" },
+  { src: "/floating7.jpeg", alt: "Cohort Evening Reflection & Synthesis Circles" },
+  { src: "/floating9.jpeg", alt: "Rural Hamlet Explorations & Community Walks" },
+  { src: "/floating4.jpeg", alt: "Participatory Rural Appraisal in Progress" },
+  { src: "/floating5.jpeg", alt: "Forest Produce & Sustainable Resource Management" }
 ]
 
 export default function SummerSchoolJawharPage() {
@@ -214,7 +214,7 @@ export default function SummerSchoolJawharPage() {
             <div className="w-full max-w-[380px] bg-[#fdfbf7] p-4 shadow-md rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-4">
               <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60">
                 <Image
-                  src="/palghar/palghar-community-tree-dialogue.jpg"
+                  src="/sahyadri-1.jpg"
                   alt="Summer School Jawhar Tribal Community"
                   fill
                   className="object-cover"
@@ -397,7 +397,7 @@ export default function SummerSchoolJawharPage() {
         </div>
       </section>
 
-      {/* ================= 6. GLIMPSES & PALGHAR VISUAL ARCHIVE (ALL 16 REAL PHOTOS - CLEAN IMAGES ONLY) ================= */}
+      {/* ================= 6. GLIMPSES & JAWHAR VISUAL ARCHIVE (ALL 16 REAL PHOTOS - CLEAN IMAGES ONLY) ================= */}
       <section id="gallery" className="py-14 sm:py-18 px-4 sm:px-6 md:px-8 bg-[#ebe2d1]/30 border-t border-[#dccdb2]">
         <div className="max-w-7xl mx-auto">
           
@@ -405,19 +405,19 @@ export default function SummerSchoolJawharPage() {
           <div className="text-center mb-8 sm:mb-12 space-y-2 sm:space-y-3">
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#c8880a]/15 border border-[#c8880a]/30 shadow-xs text-[#c8880a] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-1">
               <Camera size={13} className="text-[#c8880a]" />
-              <span>Palghar &amp; Jawhar Visual Archive</span>
+              <span>Jawhar Field Immersion Archive</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3e2410]">
-              Memories &amp; Glimpses from <span className="text-[#3a8c7e] italic">Palghar</span>
+              Memories &amp; Glimpses from <span className="text-[#3a8c7e] italic">Jawhar</span>
             </h2>
             <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-medium max-w-2xl mx-auto">
-              100% real field moments capturing community dialogues, tribal immersion, clean-tech demonstrations, and cohort fellowship across Palghar district.
+              100% authentic field moments capturing Warli heritage, forest ethnobotany, Gram Sabha deliberations, and cohort fellowship across Jawhar tribal hamlets.
             </p>
           </div>
 
           {/* --- 16-PHOTO RESPONSIVE GALLERY GRID (CLEAN IMAGES ONLY) --- */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 auto-rows-[240px] sm:auto-rows-[280px]">
-            {palgharPhotos.map((item, idx) => (
+            {jawharPhotos.map((item, idx) => (
               <div
                 key={idx}
                 onClick={() => setSelectedPhoto(item)}
