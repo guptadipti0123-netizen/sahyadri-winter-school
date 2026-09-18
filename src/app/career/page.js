@@ -24,13 +24,6 @@ export default function CareerPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Header Area */}
             <div className="lg:col-span-7 space-y-3 sm:space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-                <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-                <p className="text-xs sm:text-sm font-semibold text-[#1f5c54] tracking-widest uppercase">
-                  Join Our Mission
-                </p>
-              </div>
-
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#1a0e06] leading-tight tracking-tight">
                 Career Opportunities
               </h1>

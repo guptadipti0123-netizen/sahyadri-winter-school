@@ -193,14 +193,6 @@ export default function RegisterPage() {
             {/* ================= 2. LEFT NARRATIVE CONTENT ================= */}
             <div className="order-2 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-6">
 
-              {/* Status Capsule */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-                <span className="w-2 h-2 rounded-full bg-[#3a8c7e] animate-pulse" />
-                <span className="text-[11px] sm:text-xs font-bold text-[#1f5c54] tracking-widest uppercase">
-                  Winter Camp 2026 • Registration Loading
-                </span>
-              </div>
-
               {/* Main Headline */}
               <h1 className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#3e2410] leading-[1.15] tracking-tight">
                 Where Classroom Theory <br className="hidden sm:inline" />
@@ -238,10 +230,7 @@ export default function RegisterPage() {
       {/* ================= 2. FOUR PILLARS / HIGHLIGHTS ================= */}
       <section className="px-4 sm:px-6 lg:px-8 py-8 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-6">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#c8880a] bg-[#c8880a]/10 px-3.5 py-1 rounded-full border border-[#c8880a]/20">
-            WHY JOIN US
-          </span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#3e2410] mt-2">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#3e2410]">
             Why Join the Winter Cohort?
           </h2>
         </div>

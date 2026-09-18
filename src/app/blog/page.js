@@ -38,14 +38,6 @@ export default function BlogHubPage() {
           
           {/* Left Column: Heading & Info */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#3a8c7e] animate-pulse" />
-              <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] tracking-[0.2em] uppercase font-sans">
-                Dispatches from the Ground
-              </p>
-            </div>
-
             {/* Heading */}
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[#3e2410] leading-tight tracking-tight">
               Stories from <span className="text-[#1f5c54] italic font-serif">Real Bharat</span>

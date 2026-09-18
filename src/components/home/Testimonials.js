@@ -65,10 +65,6 @@ export default function TestimonialsSection() {
         
         {/* HEADER */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] shadow-xs text-[#3a8c7e] text-[11px] font-semibold tracking-widest uppercase mb-1.5">
-            <Sparkles size={13} className="text-[#c8880a]" />
-            <span>Community Voices</span>
-          </div>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#3e2410] mb-2">
             Student <span className="italic text-[#3a8c7e]">Testimonials</span>
           </h2>

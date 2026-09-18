@@ -3,15 +3,13 @@ import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
-  ArrowRight, ArrowUpRight, MapPin, Mail, CheckCircle2,
+  ArrowRight, ArrowUpRight, MapPin,
   Calendar, Users, BookOpen, Landmark, Trees, Lightbulb,
   ShieldCheck, HeartHandshake, Compass, Eye, Target, Sparkles, Quote
 } from "lucide-react"
 import MentorsSection from "@/components/home/MentorsSection"
 
 export default function AboutPage() {
-  const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
-  const [submitted, setSubmitted] = useState(false)
   const [activeCampIdx, setActiveCampIdx] = useState(0)
   const [isCampPaused, setIsCampPaused] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
@@ -107,13 +105,6 @@ export default function AboutPage() {
     }
   }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
-    setFormState({ name: "", email: "", subject: "", message: "" })
-  }
-
   const timelineMilestones = [
     {
       date: "May '26",
@@ -165,19 +156,6 @@ export default function AboutPage() {
           {/* Left Column: Hero Copy & CTA (Staggered smooth slide-up from bottom) */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
             
-            {/* 1. Badge */}
-            <div 
-              style={{
-                transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-                transform: hasMounted ? "translateY(0)" : "translateY(40px)",
-                opacity: hasMounted ? 1 : 0
-              }}
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#1f5c54] text-[11px] sm:text-xs font-semibold tracking-widest uppercase shadow-xs">
-                ABOUT SAHYADRI RURAL CONNECT
-              </span>
-            </div>
-
             {/* 2. Main Title */}
             <div
               style={{
@@ -709,122 +687,6 @@ export default function AboutPage() {
 
       {/* ================= 5. MENTORS & ADVISORY ================= */}
       <MentorsSection />
-
-      {/* ================= 6. START A CONVERSATION / CONTACT ================= */}
-      <section id="contact-section" className="py-14 sm:py-20 px-4 sm:px-6 md:px-8 bg-[#fdfbf7] border-t border-[#dccdb2] relative">
-        <div className="max-w-6xl mx-auto">
-          
-          <div className="grid lg:grid-cols-12 gap-8 md:gap-12 items-center">
-            
-            {/* Left Info Column */}
-            <div className="lg:col-span-5 space-y-4 sm:space-y-6 text-left">
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#3e2410]">
-                Let&apos;s Start a <span className="italic text-[#3a8c7e]">Conversation</span>
-              </h2>
-
-              <p className="text-[#7a5232] text-xs sm:text-sm md:text-base leading-relaxed">
-                Reach out for institutional partnerships, student cohort applications, volunteer opportunities, or questions about our upcoming camps.
-              </p>
-
-              <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
-                <div className="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#f5efe2] border border-[#dccdb2]">
-                  <MapPin className="w-5 h-5 text-[#3a8c7e] flex-shrink-0 mt-0.5" />
-                  <div className="min-w-0">
-                    <span className="text-xs font-bold text-[#3e2410] block">Field Locations</span>
-                    <span className="text-xs text-[#7a5232] font-medium block">
-                      Palghar • Karjat • Jawhar (Maharashtra)
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Contact Form Card */}
-            <div className="lg:col-span-7 bg-[#f5efe2] border border-[#dccdb2] p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-sm text-left">
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-[#3e2410] mb-3.5 sm:mb-4">
-                Send a Message
-              </h3>
-
-              {submitted ? (
-                <div className="p-6 bg-[#3a8c7e]/10 border border-[#3a8c7e]/30 rounded-2xl text-center space-y-2">
-                  <CheckCircle2 className="w-8 h-8 text-[#3a8c7e] mx-auto" />
-                  <h4 className="font-serif font-bold text-[#1f5c54] text-lg">Message Received!</h4>
-                  <p className="text-xs text-[#3e2410]">Thank you for reaching out. Our team will get back to you shortly.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-[11px] font-bold text-[#3e2410] uppercase tracking-wider block mb-1">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Your Name"
-                        value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#dccdb2] text-xs text-[#3e2410] focus:outline-none focus:border-[#3a8c7e]"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-[11px] font-bold text-[#3e2410] uppercase tracking-wider block mb-1">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="your@email.com"
-                        value={formState.email}
-                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#dccdb2] text-xs text-[#3e2410] focus:outline-none focus:border-[#3a8c7e]"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-[11px] font-bold text-[#3e2410] uppercase tracking-wider block mb-1">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Student Cohort Application / Partnership"
-                      value={formState.subject}
-                      onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#dccdb2] text-xs text-[#3e2410] focus:outline-none focus:border-[#3a8c7e]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-[11px] font-bold text-[#3e2410] uppercase tracking-wider block mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      placeholder="Tell us about yourself or your query..."
-                      value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#dccdb2] text-xs text-[#3e2410] focus:outline-none focus:border-[#3a8c7e] resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#3a8c7e] hover:bg-[#1f5c54] text-[#f5efe2] text-xs md:text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all cursor-pointer"
-                  >
-                    <span>Send Message</span>
-                    <ArrowRight size={15} />
-                  </button>
-                </form>
-              )}
-            </div>
-
-          </div>
-
-        </div>
-      </section>
 
     </main>
   )
