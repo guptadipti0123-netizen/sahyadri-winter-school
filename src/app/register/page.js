@@ -228,29 +228,6 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto">
-                <Link
-                  href="/register/form"
-                  className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#1f5c54] hover:bg-[#124d45] text-white font-bold text-sm sm:text-base shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all text-center"
-                >
-                  <span>Register for Winter Camp</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-
-                <a
-                  href="#camp-curriculum"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#fdfbf7] text-[#3e2410] border border-[#dccdb2] font-semibold text-xs sm:text-sm shadow-xs hover:bg-[#ebe2d1] transition-all duration-300 text-center"
-                >
-                  <BookOpen size={16} className="text-[#3a8c7e]" />
-                  <span>Explore Curriculum</span>
-                </a>
-              </div>
-
-              <p className="text-xs text-[#7a5232] font-medium">
-                *Early registration helps with cohort shortlisting &amp; field logistics.
-              </p>
-
             </div>
 
           </div>
