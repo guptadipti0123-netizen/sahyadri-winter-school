@@ -65,36 +65,58 @@ export default function SpeakersSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const scrollRef = useRef(null)
-  const pauseTimeoutRef = useRef(null)
+  const isPausedRef = useRef(false)
+  const isDraggingRef = useRef(false)
+  const startXRef = useRef(0)
+  const scrollLeftPosRef = useRef(0)
+  const hasDraggedRef = useRef(false)
+  const resumeTimeoutRef = useRef(null)
+  const lastTimeRef = useRef(null)
 
-  // Duplicate speakers array to allow infinite seamless auto-scrolling
-  const allSpeakers = [...speakers, ...speakers, ...speakers, ...speakers]
+  // Duplicate speakers array to allow infinite seamless continuous auto-scrolling
+  const allSpeakers = [...speakers, ...speakers, ...speakers, ...speakers, ...speakers]
 
-  // Auto-scroll card by card from right to left every 2.6 seconds
+  // Synchronize pause state with ref for requestAnimationFrame loop
   useEffect(() => {
-    if (isPaused || selectedSpeaker) return
-
-    const timer = setInterval(() => {
-      if (!scrollRef.current) return
-      const container = scrollRef.current
-      const firstCard = container.querySelector("[data-speaker-card]")
-      if (!firstCard) return
-
-      const cardWidth = firstCard.offsetWidth + 16 // card width + gap (gap-4 = 16px)
-      const currentScroll = container.scrollLeft
-      const maxScroll = container.scrollWidth - container.clientWidth
-
-      // Loop back smoothly if approaching the end
-      if (currentScroll >= maxScroll - cardWidth * 2) {
-        container.scrollTo({ left: 0, behavior: "instant" })
-        container.scrollBy({ left: cardWidth, behavior: "smooth" })
-      } else {
-        container.scrollBy({ left: cardWidth, behavior: "smooth" })
-      }
-    }, 2600)
-
-    return () => clearInterval(timer)
+    isPausedRef.current = isPaused || Boolean(selectedSpeaker)
   }, [isPaused, selectedSpeaker])
+
+  // Continuous smooth 60fps auto-gliding loop across mobile & desktop
+  useEffect(() => {
+    let animationFrameId
+    const speed = 42 // pixels per second (smooth continuous luxury pace)
+
+    const step = (currentTime) => {
+      if (!lastTimeRef.current) lastTimeRef.current = currentTime
+      const deltaTime = Math.min((currentTime - lastTimeRef.current) / 1000, 0.1)
+      lastTimeRef.current = currentTime
+
+      const container = scrollRef.current
+      if (container && !isPausedRef.current && !isDraggingRef.current) {
+        container.scrollLeft += speed * deltaTime
+
+        // Measure single set width dynamically (6 cards)
+        const firstCard = container.querySelector("[data-speaker-card]")
+        if (firstCard) {
+          const singleCardStep = firstCard.offsetWidth + 16 // card width + gap (16px)
+          const singleSetWidth = singleCardStep * speakers.length
+
+          // When scrolled past 2 full sets, seamlessly reset by subtracting 1 set
+          if (container.scrollLeft >= singleSetWidth * 2) {
+            container.scrollLeft -= singleSetWidth
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(step)
+    }
+
+    animationFrameId = requestAnimationFrame(step)
+
+    return () => {
+      cancelAnimationFrame(animationFrameId)
+    }
+  }, [speakers.length])
 
   // Track active card on scroll for progress dots
   const handleScroll = () => {
@@ -108,46 +130,57 @@ export default function SpeakersSection() {
     setActiveIndex(index)
   }
 
-  // Handle touch or interaction pause with auto-resume
-  const handleUserInteraction = () => {
+  // Mouse Drag Handlers for Desktop
+  const handleMouseEnter = () => {
     setIsPaused(true)
-    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
-    pauseTimeoutRef.current = setTimeout(() => {
-      setIsPaused(false)
-    }, 4000)
   }
 
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeftPos, setScrollLeftPos] = useState(0)
-  const hasDraggedRef = useRef(false)
+  const handleMouseLeave = () => {
+    if (isDraggingRef.current) {
+      isDraggingRef.current = false
+    }
+    setIsPaused(false)
+  }
 
-  // Mouse Drag Handlers for Desktop
   const handleMouseDown = (e) => {
-    setIsDragging(true)
+    isDraggingRef.current = true
     hasDraggedRef.current = false
-    handleUserInteraction()
+    setIsPaused(true)
     if (!scrollRef.current) return
-    setStartX(e.pageX - scrollRef.current.offsetLeft)
-    setScrollLeftPos(scrollRef.current.scrollLeft)
+    startXRef.current = e.pageX - scrollRef.current.offsetLeft
+    scrollLeftPosRef.current = scrollRef.current.scrollLeft
   }
 
   const handleMouseMove = (e) => {
-    if (!isDragging || !scrollRef.current) return
+    if (!isDraggingRef.current || !scrollRef.current) return
     e.preventDefault()
     const x = e.pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX) * 1.5
-    if (Math.abs(walk) > 6) {
+    const walk = (x - startXRef.current) * 1.3
+    if (Math.abs(walk) > 5) {
       hasDraggedRef.current = true
     }
-    scrollRef.current.scrollLeft = scrollLeftPos - walk
+    scrollRef.current.scrollLeft = scrollLeftPosRef.current - walk
   }
 
-  const handleMouseUpOrLeave = () => {
-    if (isDragging) {
-      setIsDragging(false)
-      handleUserInteraction()
-    }
+  const handleMouseUp = () => {
+    isDraggingRef.current = false
+  }
+
+  // Touch handlers for Mobile
+  const handleTouchStart = () => {
+    setIsPaused(true)
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+  }
+
+  const handleTouchMove = () => {
+    setIsPaused(true)
+  }
+
+  const handleTouchEnd = () => {
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false)
+    }, 1500)
   }
 
   const handleCardClick = (speaker) => {
@@ -156,7 +189,12 @@ export default function SpeakersSection() {
   }
 
   const scrollManual = (direction) => {
-    handleUserInteraction()
+    setIsPaused(true)
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false)
+    }, 3000)
+
     if (!scrollRef.current) return
     const container = scrollRef.current
     const firstCard = container.querySelector("[data-speaker-card]")
@@ -166,7 +204,12 @@ export default function SpeakersSection() {
   }
 
   const scrollToSpeaker = (idx) => {
-    handleUserInteraction()
+    setIsPaused(true)
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false)
+    }, 3000)
+
     if (!scrollRef.current) return
     const container = scrollRef.current
     const firstCard = container.querySelector("[data-speaker-card]")
@@ -192,7 +235,7 @@ export default function SpeakersSection() {
     return () => {
       document.body.style.overflow = "unset"
       window.removeEventListener("keydown", handleKeyDown)
-      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
     }
   }, [selectedSpeaker])
 
@@ -241,14 +284,15 @@ export default function SpeakersSection() {
       </div>
 
       {/* ========================================================= */}
-      {/* AUTOMATIC & MANUAL CARD-BY-CARD SCROLLING TRACK */}
+      {/* CONTINUOUS AUTO-GLIDING & MANUAL DRAG SCROLLING TRACK */}
       {/* ========================================================= */}
       <div 
         className="relative w-full overflow-hidden py-2"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={handleUserInteraction}
-        onTouchMove={handleUserInteraction}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Left Edge Soft Fade */}
         <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
@@ -256,17 +300,14 @@ export default function SpeakersSection() {
         {/* Right Edge Soft Fade */}
         <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
-        {/* Scrollable Track - Auto slides card by card, supports swipe & mouse drag */}
+        {/* Scrollable Track - Glides continuously at 60fps, pauses on hover, supports touch/mouse drag */}
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUpOrLeave}
-          onMouseLeave={handleMouseUpOrLeave}
-          className={`flex overflow-x-auto gap-3.5 sm:gap-4.5 px-4 sm:px-8 py-2 no-scrollbar select-none ${
-            isDragging ? "cursor-grabbing scroll-auto" : "cursor-grab scroll-smooth"
-          }`}
+          onMouseUp={handleMouseUp}
+          className="flex overflow-x-auto gap-3.5 sm:gap-4.5 px-4 sm:px-8 py-2 no-scrollbar select-none cursor-grab active:cursor-grabbing"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
