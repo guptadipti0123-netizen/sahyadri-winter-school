@@ -1,7 +1,7 @@
 "use client"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { X, User } from "lucide-react"
+import { X, User, ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function SpeakersSection() {
   const speakers = [
@@ -62,9 +62,80 @@ export default function SpeakersSection() {
   ]
 
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const scrollRef = useRef(null)
+  const pauseTimeoutRef = useRef(null)
 
-  // Duplicate speakers to ensure smooth infinite loop
-  const marqueeSpeakers = [...speakers, ...speakers, ...speakers, ...speakers]
+  // Duplicate speakers array to allow infinite seamless auto-scrolling
+  const allSpeakers = [...speakers, ...speakers, ...speakers, ...speakers]
+
+  // Auto-scroll card by card from right to left every 2.6 seconds
+  useEffect(() => {
+    if (isPaused || selectedSpeaker) return
+
+    const timer = setInterval(() => {
+      if (!scrollRef.current) return
+      const container = scrollRef.current
+      const firstCard = container.querySelector("[data-speaker-card]")
+      if (!firstCard) return
+
+      const cardWidth = firstCard.offsetWidth + 16 // card width + gap (gap-4 = 16px)
+      const currentScroll = container.scrollLeft
+      const maxScroll = container.scrollWidth - container.clientWidth
+
+      // Loop back smoothly if approaching the end
+      if (currentScroll >= maxScroll - cardWidth * 2) {
+        container.scrollTo({ left: 0, behavior: "instant" })
+        container.scrollBy({ left: cardWidth, behavior: "smooth" })
+      } else {
+        container.scrollBy({ left: cardWidth, behavior: "smooth" })
+      }
+    }, 2600)
+
+    return () => clearInterval(timer)
+  }, [isPaused, selectedSpeaker])
+
+  // Track active card on scroll for progress dots
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+    const container = scrollRef.current
+    const firstCard = container.querySelector("[data-speaker-card]")
+    if (!firstCard) return
+
+    const cardWidth = firstCard.offsetWidth + 16
+    const index = Math.round(container.scrollLeft / cardWidth) % speakers.length
+    setActiveIndex(index)
+  }
+
+  // Handle touch or interaction pause with auto-resume
+  const handleUserInteraction = () => {
+    setIsPaused(true)
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false)
+    }, 4000)
+  }
+
+  const scrollManual = (direction) => {
+    handleUserInteraction()
+    if (!scrollRef.current) return
+    const container = scrollRef.current
+    const firstCard = container.querySelector("[data-speaker-card]")
+    const cardWidth = firstCard ? firstCard.offsetWidth + 16 : 240
+    const scrollAmount = direction === "left" ? -cardWidth : cardWidth
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" })
+  }
+
+  const scrollToSpeaker = (idx) => {
+    handleUserInteraction()
+    if (!scrollRef.current) return
+    const container = scrollRef.current
+    const firstCard = container.querySelector("[data-speaker-card]")
+    const cardWidth = firstCard ? firstCard.offsetWidth + 16 : 240
+    container.scrollTo({ left: idx * cardWidth, behavior: "smooth" })
+    setActiveIndex(idx)
+  }
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -83,6 +154,7 @@ export default function SpeakersSection() {
     return () => {
       document.body.style.overflow = "unset"
       window.removeEventListener("keydown", handleKeyDown)
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current)
     }
   }, [selectedSpeaker])
 
@@ -97,44 +169,71 @@ export default function SpeakersSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* ========================================================= */}
-        {/* SECTION HEADER */}
+        {/* SECTION HEADER WITH ARROWS */}
         {/* ========================================================= */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-[#3e2410] tracking-tight leading-tight">
-            Voices of Change: <span className="italic text-[#3a8c7e] font-serif">Faculty &amp; Speakers</span>
-          </h2>
-          <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal leading-relaxed">
-            Learn from distinguished practitioners with decades of experience in governance, social development, and education.
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12">
+          <div className="space-y-2 text-left max-w-2xl">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-[#3e2410] tracking-tight leading-tight">
+              Voices of Change: <span className="italic text-[#3a8c7e] font-serif">Faculty &amp; Speakers</span>
+            </h2>
+            <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal leading-relaxed">
+              Learn from distinguished practitioners with decades of experience in governance, social development, and education.
+            </p>
+          </div>
+
+          {/* Quick Arrow Controls for Desktop & Mobile */}
+          <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
+            <button
+              onClick={() => scrollManual("left")}
+              className="p-2 sm:p-2.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] hover:bg-[#3a8c7e] hover:text-white transition-all shadow-xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e]"
+              aria-label="Previous speaker"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={() => scrollManual("right")}
+              className="p-2 sm:p-2.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] hover:bg-[#3a8c7e] hover:text-white transition-all shadow-xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e]"
+              aria-label="Next speaker"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
 
       </div>
 
       {/* ========================================================= */}
-      {/* CONTINUOUS AUTO-SCROLLING MARQUEE TRACK */}
+      {/* AUTOMATIC CARD-BY-CARD SCROLLING TRACK */}
       {/* ========================================================= */}
-      <div className="relative w-full overflow-hidden py-2">
+      <div 
+        className="relative w-full overflow-hidden py-2"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={handleUserInteraction}
+      >
         {/* Left Edge Soft Fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Right Edge Soft Fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
-        {/* Continuous Horizontal Marquee Track (Smooth hardware-accelerated scroll on both mobile & desktop) */}
+        {/* Scrollable Track - Moves automatically card by card & supports touch swiping */}
         <div 
-          className="flex flex-row flex-nowrap w-max animate-continuous-scroll gap-3 sm:gap-4.5 px-3"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "nowrap",
-            width: "max-content",
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex overflow-x-auto gap-3.5 sm:gap-4.5 px-4 sm:px-8 py-2 scroll-smooth no-scrollbar"
+          style={{ 
+            scrollbarWidth: 'none', 
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch',
           }}
         >
-          {marqueeSpeakers.map((speaker, idx) => (
+          {allSpeakers.map((speaker, idx) => (
             <button
               key={`${speaker.id}-${idx}`}
+              data-speaker-card="true"
               onClick={() => setSelectedSpeaker(speaker)}
-              className="group w-[175px] sm:w-[210px] md:w-[225px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
+              className="group w-[185px] sm:w-[215px] md:w-[235px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
               style={{ flexShrink: 0 }}
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
             >
@@ -148,7 +247,7 @@ export default function SpeakersSection() {
                       alt={`${speaker.name} - ${speaker.title}`}
                       fill
                       className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 185px, 225px"
+                      sizes="(max-width: 640px) 185px, 235px"
                     />
                     <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
                   </div>
@@ -181,6 +280,21 @@ export default function SpeakersSection() {
             </button>
           ))}
         </div>
+
+        {/* Progress Indicator Dots */}
+        <div className="flex items-center justify-center gap-1.5 pt-4">
+          {speakers.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollToSpeaker(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                activeIndex === i ? "w-6 bg-[#3a8c7e]" : "w-1.5 bg-[#dccdb2] hover:bg-[#a69880]"
+              }`}
+              aria-label={`Scroll to speaker ${i + 1}`}
+            />
+          ))}
+        </div>
+
       </div>
 
       {/* ========================================================= */}
