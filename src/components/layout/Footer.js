@@ -28,15 +28,15 @@ export default function Footer() {
   return (
     <footer className="relative text-white pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden">
 
-      {/* --- BACKGROUND IMAGE SETUP (Authentic Real Sahyadri Mountain Landscape) --- */}
+      {/* --- BACKGROUND IMAGE SETUP (Sahyadri Field Trail Photo) --- */}
       <div
-        className="absolute inset-0 -z-10 bg-cover bg-center"
+        className="absolute inset-0 -z-10 bg-cover bg-[center_55%] md:bg-[center_60%]"
         style={{
-          backgroundImage: "url('/Sahyadri-footer-2.jpg')",
+          backgroundImage: "url('/sahyadri-3.jpg')",
         }}
       >
-        {/* Balanced contrast overlay so real mountain landscape is visible while text remains crisp */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/65 to-black/75" />
+        {/* Rich atmospheric overlay so the authentic field trail is clearly visible with crystal-clear text */}
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/65 to-stone-950/85" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
