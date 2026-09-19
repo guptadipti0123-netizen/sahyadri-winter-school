@@ -1,7 +1,7 @@
 "use client"
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
-import { X, ArrowRight, User, ChevronLeft, ChevronRight } from "lucide-react"
+import { X, User } from "lucide-react"
 
 export default function SpeakersSection() {
   const speakers = [
@@ -62,7 +62,10 @@ export default function SpeakersSection() {
   ]
 
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
-  const scrollRef = useRef(null)
+  const [isPaused, setIsPaused] = useState(false)
+
+  // Duplicate speakers to ensure smooth infinite loop
+  const marqueeSpeakers = [...speakers, ...speakers, ...speakers, ...speakers]
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -84,13 +87,6 @@ export default function SpeakersSection() {
     }
   }, [selectedSpeaker])
 
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -320 : 320
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" })
-    }
-  }
-
   return (
     <section 
       id="speakers-section"
@@ -102,55 +98,47 @@ export default function SpeakersSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* ========================================================= */}
-        {/* SECTION HEADER & MANUAL NAVIGATION BUTTONS */}
+        {/* SECTION HEADER */}
         {/* ========================================================= */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12">
-          <div className="space-y-2 text-left max-w-2xl">
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-[#3e2410] tracking-tight leading-tight">
-              Voices of Change: <span className="italic text-[#3a8c7e] font-serif">Faculty &amp; Speakers</span>
-            </h2>
-            <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal leading-relaxed">
-              Learn from distinguished practitioners with decades of experience in governance, social development, and education.
-            </p>
-          </div>
-
-          {/* Manual Scroll Controls */}
-          <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-            <button
-              onClick={() => scroll("left")}
-              className="p-2.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] hover:bg-[#3a8c7e] hover:text-white transition-all shadow-xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e]"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="p-2.5 rounded-full bg-[#fdfbf7] border border-[#dccdb2] text-[#3e2410] hover:bg-[#3a8c7e] hover:text-white transition-all shadow-xs cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e]"
-              aria-label="Scroll right"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-normal text-[#3e2410] tracking-tight leading-tight">
+            Voices of Change: <span className="italic text-[#3a8c7e] font-serif">Faculty &amp; Speakers</span>
+          </h2>
+          <p className="text-[#7a5232] text-xs sm:text-sm md:text-base font-normal leading-relaxed">
+            Learn from distinguished practitioners with decades of experience in governance, social development, and education.
+          </p>
         </div>
 
-        {/* ========================================================= */}
-        {/* MANUAL SCROLLABLE TRACK */}
-        {/* ========================================================= */}
-        <div 
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 pt-1 snap-x snap-mandatory scroll-smooth no-scrollbar"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {speakers.map((speaker) => (
+      </div>
+
+      {/* ========================================================= */}
+      {/* CONTINUOUS AUTO-SCROLLING MARQUEE TRACK */}
+      {/* ========================================================= */}
+      <div 
+        className="relative w-full overflow-hidden py-2"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
+      >
+        {/* Left Edge Soft Fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+
+        {/* Right Edge Soft Fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+
+        {/* Continuous Horizontal Marquee Track */}
+        <div className={`animate-continuous-scroll ${isPaused ? "paused" : ""} gap-3.5 sm:gap-4.5 px-3`}>
+          {marqueeSpeakers.map((speaker, idx) => (
             <button
-              key={speaker.id}
+              key={`${speaker.id}-${idx}`}
               onClick={() => setSelectedSpeaker(speaker)}
-              className="group w-[230px] sm:w-[260px] md:w-[280px] shrink-0 snap-start bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-3 sm:p-4 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1"
+              className="group w-[185px] sm:w-[210px] md:w-[225px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1"
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
             >
               
               {/* Compact Portrait Image with Soft Backdrop */}
-              <div className="relative w-full h-36 sm:h-44 rounded-xl overflow-hidden bg-[#f5efe2] border border-[#dccdb2]/60 flex items-end justify-center select-none">
+              <div className="relative w-full h-28 sm:h-34 rounded-xl overflow-hidden bg-[#f5efe2] border border-[#dccdb2]/60 flex items-end justify-center select-none">
                 {speaker.image ? (
                   <div className="relative w-full h-full flex items-end justify-center">
                     <Image
@@ -158,32 +146,32 @@ export default function SpeakersSection() {
                       alt={`${speaker.name} - ${speaker.title}`}
                       fill
                       className="object-contain object-bottom filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 230px, 280px"
+                      sizes="(max-width: 640px) 185px, 225px"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-[#fdfbf7] via-[#fdfbf7]/60 to-transparent pointer-events-none" />
                   </div>
                 ) : (
-                  <div className="w-12 h-12 rounded-full bg-[#ebe2d1] flex items-center justify-center text-[#7a5232] mb-3 border border-[#dccdb2]">
-                    <User size={22} />
+                  <div className="w-10 h-10 rounded-full bg-[#ebe2d1] flex items-center justify-center text-[#7a5232] mb-2 border border-[#dccdb2]">
+                    <User size={18} />
                   </div>
                 )}
               </div>
 
-              {/* Bottom Details */}
-              <div className="pt-3 space-y-1 text-left">
-                <span className="inline-block px-2 py-0.5 rounded bg-[#3a8c7e]/10 text-[#1f5c54] text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider border border-[#3a8c7e]/20">
+              {/* Bottom Details (Compact & Clean) */}
+              <div className="pt-2 space-y-1 text-left">
+                <span className="inline-block px-1.5 py-0.5 rounded bg-[#3a8c7e]/10 text-[#1f5c54] text-[8.5px] sm:text-[9.5px] font-bold uppercase tracking-wider border border-[#3a8c7e]/20 truncate max-w-full">
                   {speaker.tag}
                 </span>
 
-                <h3 className="font-serif font-bold text-sm sm:text-base text-[#3e2410] group-hover:text-[#1f5c54] transition-colors leading-snug truncate">
+                <h3 className="font-serif font-bold text-xs sm:text-[14.5px] text-[#3e2410] group-hover:text-[#1f5c54] transition-colors leading-tight truncate">
                   {speaker.name}
                 </h3>
                 
-                <p className="text-[11px] sm:text-xs font-semibold text-[#1f5c54] truncate">
+                <p className="text-[10px] sm:text-[11.5px] font-semibold text-[#1f5c54] truncate">
                   {speaker.title}
                 </p>
 
-                <p className="text-[10.5px] sm:text-[11px] text-[#7a5232] leading-snug line-clamp-2">
+                <p className="text-[9.5px] sm:text-[10.5px] text-[#7a5232] leading-snug line-clamp-2">
                   {speaker.role}
                 </p>
               </div>
@@ -191,7 +179,6 @@ export default function SpeakersSection() {
             </button>
           ))}
         </div>
-
       </div>
 
       {/* ========================================================= */}
