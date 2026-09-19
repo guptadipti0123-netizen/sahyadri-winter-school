@@ -128,12 +128,21 @@ export default function SpeakersSection() {
         <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Continuous Horizontal Marquee Track */}
-        <div className={`animate-continuous-scroll ${isPaused ? "paused" : ""} gap-3.5 sm:gap-4.5 px-3`}>
+        <div 
+          className={`flex flex-row flex-nowrap w-max animate-continuous-scroll ${isPaused ? "paused" : ""} gap-3.5 sm:gap-4.5 px-3`}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "nowrap",
+            width: "max-content",
+          }}
+        >
           {marqueeSpeakers.map((speaker, idx) => (
             <button
               key={`${speaker.id}-${idx}`}
               onClick={() => setSelectedSpeaker(speaker)}
-              className="group w-[185px] sm:w-[210px] md:w-[225px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1"
+              className="group w-[185px] sm:w-[210px] md:w-[225px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
+              style={{ flexShrink: 0 }}
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
             >
               
