@@ -28,16 +28,13 @@ export default function Footer() {
   return (
     <footer className="relative text-white pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden">
 
-      {/* --- BACKGROUND IMAGE SETUP (Sahyadri Field Trail Photo) --- */}
+      {/* --- BACKGROUND IMAGE SETUP (Palghar Mango Orchard & Community Photo) --- */}
       <div
-        className="absolute inset-0 -z-10 bg-cover bg-[center_55%] md:bg-[center_60%]"
+        className="absolute inset-0 -z-10 bg-cover bg-[center_35%]"
         style={{
-          backgroundImage: "url('/sahyadri-3.jpg')",
+          backgroundImage: "url('/palghar/palghar-mango-orchard-community.jpg')",
         }}
-      >
-        {/* Rich atmospheric overlay so the authentic field trail is clearly visible with crystal-clear text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/65 to-stone-950/85" />
-      </div>
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
