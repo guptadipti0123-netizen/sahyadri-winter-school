@@ -188,11 +188,15 @@ h1, h2, h3, h4, h5, h6 {
   animation: continuousScroll 24s linear infinite !important;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .animate-continuous-scroll:hover {
-    -webkit-animation-play-state: paused !important;
-    animation-play-state: paused !important;
-  }
+.animate-continuous-scroll:hover,
+.animate-continuous-scroll:active,
+.group\/marquee:hover .animate-continuous-scroll,
+.group\/marquee:active .animate-continuous-scroll,
+.group\/marquee:focus-within .animate-continuous-scroll,
+.animate-continuous-scroll.paused,
+.animate-continuous-scroll.is-paused {
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important;
 }
 
 @keyframes scroll {
