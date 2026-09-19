@@ -63,18 +63,19 @@ export default function CareerPage() {
           {/* Thin Horizontal Divider Line */}
           <div className="w-full h-[1.5px] bg-[#dccdb2]" />
 
-          {/* 3 Value Pillars with Original Lucide Icons */}
+          {/* 3 Value Pillars with Original Lucide Icons beside Title */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 pt-2 sm:pt-4">
             
             {/* Column 1: Meaningful Work */}
-            <div className="md:pr-8 md:border-r border-[#dccdb2] flex flex-col items-start text-left space-y-3.5 group">
-              <div className="h-14 flex items-center text-[#1f5c54] group-hover:scale-110 transition-transform duration-300">
-                <HeartHandshake className="w-10 h-10 text-[#1f5c54]" />
+            <div className="md:pr-8 md:border-r border-[#dccdb2] flex flex-col items-start text-left space-y-3 group">
+              <div className="flex items-center gap-3 sm:gap-3.5">
+                <div className="text-[#1f5c54] group-hover:scale-110 transition-transform duration-300 shrink-0">
+                  <HeartHandshake className="w-8 h-8 sm:w-9 sm:h-9 text-[#1f5c54]" />
+                </div>
+                <h2 className="font-serif text-2xl sm:text-[26px] font-medium text-[#112620] group-hover:text-[#1f5c54] transition-colors leading-snug" style={{ color: '#112620' }}>
+                  Meaningful Work
+                </h2>
               </div>
-
-              <h2 className="font-serif text-2xl sm:text-[27px] font-medium text-[#112620] group-hover:text-[#1f5c54] transition-colors leading-snug" style={{ color: '#112620' }}>
-                Meaningful Work
-              </h2>
 
               <p className="text-sm sm:text-[15px] text-[#241508] font-normal leading-relaxed" style={{ color: '#241508' }}>
                 Contribute to impactful projects that make a real difference in rural communities across Maharashtra.
@@ -82,14 +83,15 @@ export default function CareerPage() {
             </div>
 
             {/* Column 2: Collaborative Team */}
-            <div className="md:px-8 md:border-r border-[#dccdb2] flex flex-col items-start text-left space-y-3.5 group">
-              <div className="h-14 flex items-center text-[#1f5c54] group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-10 h-10 text-[#1f5c54]" />
+            <div className="md:px-8 md:border-r border-[#dccdb2] flex flex-col items-start text-left space-y-3 group">
+              <div className="flex items-center gap-3 sm:gap-3.5">
+                <div className="text-[#1f5c54] group-hover:scale-110 transition-transform duration-300 shrink-0">
+                  <Users className="w-8 h-8 sm:w-9 sm:h-9 text-[#1f5c54]" />
+                </div>
+                <h2 className="font-serif text-2xl sm:text-[26px] font-medium text-[#112620] group-hover:text-[#1f5c54] transition-colors leading-snug" style={{ color: '#112620' }}>
+                  Collaborative Team
+                </h2>
               </div>
-
-              <h2 className="font-serif text-2xl sm:text-[27px] font-medium text-[#112620] group-hover:text-[#1f5c54] transition-colors leading-snug" style={{ color: '#112620' }}>
-                Collaborative Team
-              </h2>
 
               <p className="text-sm sm:text-[15px] text-[#241508] font-normal leading-relaxed" style={{ color: '#241508' }}>
                 Work with a diverse team of passionate professionals, educators, and ground leaders dedicated to social transformation.
@@ -97,14 +99,15 @@ export default function CareerPage() {
             </div>
 
             {/* Column 3: Growth & Learning */}
-            <div className="md:pl-8 flex flex-col items-start text-left space-y-3.5 group">
-              <div className="h-14 flex items-center text-[#1f5c54] group-hover:scale-110 transition-transform duration-300">
-                <TrendingUp className="w-10 h-10 text-[#1f5c54]" />
+            <div className="md:pl-8 flex flex-col items-start text-left space-y-3 group">
+              <div className="flex items-center gap-3 sm:gap-3.5">
+                <div className="text-[#1f5c54] group-hover:scale-110 transition-transform duration-300 shrink-0">
+                  <TrendingUp className="w-8 h-8 sm:w-9 sm:h-9 text-[#1f5c54]" />
+                </div>
+                <h2 className="font-serif text-2xl sm:text-[26px] font-medium text-[#112620] group-hover:text-[#1f5c54] transition-colors leading-snug" style={{ color: '#112620' }}>
+                  Growth &amp; Learning
+                </h2>
               </div>
-
-              <h2 className="font-serif text-2xl sm:text-[27px] font-medium text-[#112620] group-hover:text-[#1f5c54] transition-colors leading-snug" style={{ color: '#112620' }}>
-                Growth &amp; Learning
-              </h2>
 
               <p className="text-sm sm:text-[15px] text-[#241508] font-normal leading-relaxed" style={{ color: '#241508' }}>
                 Develop your skills through grassroots fieldwork, continuous mentorship, and hands-on community leadership programs.
