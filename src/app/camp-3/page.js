@@ -214,7 +214,7 @@ export default function SummerSchoolJawharPage() {
             <div className="w-full max-w-[380px] bg-[#fdfbf7] p-4 shadow-md rounded-3xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-[#dccdb2] flex flex-col gap-4">
               <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-[#ebe2d1] shrink-0 border border-[#dccdb2]/60">
                 <Image
-                  src="/sahyadri-1.jpg"
+                  src="/sahyadri-8.jpg"
                   alt="Summer School Jawhar Tribal Community"
                   fill
                   className="object-cover"

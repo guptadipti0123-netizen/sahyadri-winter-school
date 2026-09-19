@@ -16,7 +16,7 @@ export default function CampsHubPage() {
       status: "Archive / Completed",
       statusBadge: "bg-[#c8880a]/15 text-[#c8880a] border-[#c8880a]/30",
       description: "Exploring Warli indigenous art, Sahyadri forest ethnobotany, and grassroots tribal governance under PESA in Jawhar.",
-      image: "/sahyadri-1.jpg",
+      image: "/sahyadri-8.jpg",
       href: "/camp-3",
       highlights: ["Warli Masterclass", "Ethnobotany Trail", "Gram Sabha Dialogue", "Policy Synthesis"]
     },

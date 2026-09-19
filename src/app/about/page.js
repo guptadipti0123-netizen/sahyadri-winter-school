@@ -31,7 +31,7 @@ export default function AboutPage() {
       title: "Grassroots Dialogue & PESA Fieldwork",
       tag: "Summer Edition",
       caption: "Direct dialogues with village elders and Gram Panchayats on PESA self-governance and tribal livelihoods in the Sahyadris.",
-      image: "/sahyadri-1.jpg",
+      image: "/sahyadri-8.jpg",
       href: "/camp-3",
       duration: "Summer 2026"
     },

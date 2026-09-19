@@ -9,7 +9,7 @@ export const blogsData = [
     authorRole: "Summer Cohort Preview",
     readTime: "4 min read",
     category: "Culture & Governance",
-    image: "/sahyadri-1.jpg",
+    image: "/palghar/palghar-community-tree-dialogue.jpg",
     excerpt: "Direct dialogues with village elders under community trees, exploring indigenous wisdom, forest ecology, and tribal self-governance under PESA in Jawhar.",
     content: [
       {
@@ -57,7 +57,7 @@ export const blogsData = [
     authorRole: "Field Notes & Analysis",
     readTime: "4 min read",
     category: "Tech & Infrastructure",
-    image: "/camp2/camp2-day4-i1.jpg",
+    image: "/palghar/palghar-solar-panels-valley-view.jpg",
     excerpt: "Examining PMGSY all-weather road access, solar-powered hybrid telecom towers, and Common Service Centers delivering public services across Sahyadri hill hamlets.",
     content: [
       {
@@ -109,7 +109,7 @@ export const blogsData = [
     authorRole: "Field Notes & Observations",
     readTime: "4 min read",
     category: "Culture & Economy",
-    image: "/camp2/camp2-day2-i1.jpg",
+    image: "/palghar/palghar-fort-stone-steps-cohort.jpg",
     excerpt: "Climbing the craggy spurs of Karjat at dawn to explore Maratha watershed systems, followed by an in-depth dialogue with local farmer producer collectives.",
     content: [
       {
@@ -152,7 +152,7 @@ export const blogsData = [
     authorRole: "Field Notes & Observations",
     readTime: "4 min read",
     category: "Ecology & Innovation",
-    image: "/camp2/camp2-day3-i2.jpg",
+    image: "/sahyadri-3.jpg",
     excerpt: "Walking through dense groves with tribal elders and organic farming practitioners, learning regenerative agriculture, wild forest foods, and decentralized clean tech.",
     content: [
       {
