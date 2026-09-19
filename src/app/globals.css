@@ -184,8 +184,8 @@ h1, h2, h3, h4, h5, h6 {
   backface-visibility: hidden;
   -webkit-perspective: 1000;
   perspective: 1000;
-  -webkit-animation: continuousScroll 26s linear infinite !important;
-  animation: continuousScroll 26s linear infinite !important;
+  -webkit-animation: continuousScroll 24s linear infinite !important;
+  animation: continuousScroll 24s linear infinite !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
