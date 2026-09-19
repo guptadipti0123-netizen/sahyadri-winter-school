@@ -77,9 +77,6 @@ export default async function BlogPostPage({ params }) {
                 <Clock size={14} className="text-[#c8880a]" />
                 {blog.readTime}
               </span>
-              <span className="bg-[#fdfbf7] px-3 py-1 rounded-full border border-[#dccdb2]/60 shadow-2xs text-[#3e2410]">
-                By {blog.author}
-              </span>
             </div>
           </div>
 
