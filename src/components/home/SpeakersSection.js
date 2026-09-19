@@ -130,9 +130,20 @@ export default function SpeakersSection() {
     setActiveIndex(index)
   }
 
-  // Mouse Drag Handlers for Desktop
+  // Pointer and Mouse Handlers for Desktop & Mobile Emulation
   const handleMouseEnter = () => {
     setIsPaused(true)
+    isPausedRef.current = true
+  }
+
+  const handlePointerEnter = () => {
+    setIsPaused(true)
+    isPausedRef.current = true
+  }
+
+  const handlePointerMove = () => {
+    setIsPaused(true)
+    isPausedRef.current = true
   }
 
   const handleMouseLeave = () => {
@@ -140,18 +151,30 @@ export default function SpeakersSection() {
       isDraggingRef.current = false
     }
     setIsPaused(false)
+    isPausedRef.current = false
+  }
+
+  const handlePointerLeave = () => {
+    if (isDraggingRef.current) {
+      isDraggingRef.current = false
+    }
+    setIsPaused(false)
+    isPausedRef.current = false
   }
 
   const handleMouseDown = (e) => {
     isDraggingRef.current = true
     hasDraggedRef.current = false
     setIsPaused(true)
+    isPausedRef.current = true
     if (!scrollRef.current) return
     startXRef.current = e.pageX - scrollRef.current.offsetLeft
     scrollLeftPosRef.current = scrollRef.current.scrollLeft
   }
 
   const handleMouseMove = (e) => {
+    setIsPaused(true)
+    isPausedRef.current = true
     if (!isDraggingRef.current || !scrollRef.current) return
     e.preventDefault()
     const x = e.pageX - scrollRef.current.offsetLeft
@@ -169,17 +192,20 @@ export default function SpeakersSection() {
   // Touch handlers for Mobile
   const handleTouchStart = () => {
     setIsPaused(true)
+    isPausedRef.current = true
     if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
   }
 
   const handleTouchMove = () => {
     setIsPaused(true)
+    isPausedRef.current = true
   }
 
   const handleTouchEnd = () => {
     if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
     resumeTimeoutRef.current = setTimeout(() => {
       setIsPaused(false)
+      isPausedRef.current = false
     }, 1500)
   }
 
@@ -190,9 +216,11 @@ export default function SpeakersSection() {
 
   const scrollManual = (direction) => {
     setIsPaused(true)
+    isPausedRef.current = true
     if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
     resumeTimeoutRef.current = setTimeout(() => {
       setIsPaused(false)
+      isPausedRef.current = false
     }, 3000)
 
     if (!scrollRef.current) return
@@ -205,9 +233,11 @@ export default function SpeakersSection() {
 
   const scrollToSpeaker = (idx) => {
     setIsPaused(true)
+    isPausedRef.current = true
     if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
     resumeTimeoutRef.current = setTimeout(() => {
       setIsPaused(false)
+      isPausedRef.current = false
     }, 3000)
 
     if (!scrollRef.current) return
@@ -289,7 +319,12 @@ export default function SpeakersSection() {
       <div 
         className="relative w-full overflow-hidden py-2"
         onMouseEnter={handleMouseEnter}
+        onMouseOver={handleMouseEnter}
+        onPointerEnter={handlePointerEnter}
+        onPointerOver={handlePointerEnter}
+        onPointerMove={handlePointerMove}
         onMouseLeave={handleMouseLeave}
+        onPointerLeave={handlePointerLeave}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -304,9 +339,19 @@ export default function SpeakersSection() {
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
+          onMouseEnter={handleMouseEnter}
+          onMouseOver={handleMouseEnter}
+          onPointerEnter={handlePointerEnter}
+          onPointerOver={handlePointerEnter}
+          onPointerMove={handlePointerMove}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onPointerLeave={handlePointerLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           className="flex overflow-x-auto gap-3.5 sm:gap-4.5 px-4 sm:px-8 py-2 no-scrollbar select-none cursor-grab active:cursor-grabbing"
           style={{ 
             scrollbarWidth: 'none', 
@@ -319,6 +364,12 @@ export default function SpeakersSection() {
               key={`${speaker.id}-${idx}`}
               data-speaker-card="true"
               onClick={() => handleCardClick(speaker)}
+              onMouseEnter={handleMouseEnter}
+              onMouseOver={handleMouseEnter}
+              onPointerEnter={handlePointerEnter}
+              onPointerOver={handlePointerEnter}
+              onFocus={handleMouseEnter}
+              onBlur={handleMouseLeave}
               className="group w-[185px] sm:w-[215px] md:w-[235px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
               style={{ flexShrink: 0 }}
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
