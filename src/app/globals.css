@@ -157,8 +157,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes continuousScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@-webkit-keyframes continuousScroll {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .animate-continuous-scroll {
@@ -167,12 +180,19 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: nowrap !important;
   width: max-content !important;
   will-change: transform;
-  animation: continuousScroll 35s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-animation: continuousScroll 26s linear infinite !important;
+  animation: continuousScroll 26s linear infinite !important;
 }
 
-.animate-continuous-scroll.paused,
-.animate-continuous-scroll:hover {
-  animation-play-state: paused !important;
+@media (hover: hover) and (pointer: fine) {
+  .animate-continuous-scroll:hover {
+    -webkit-animation-play-state: paused !important;
+    animation-play-state: paused !important;
+  }
 }
 
 @keyframes scroll {

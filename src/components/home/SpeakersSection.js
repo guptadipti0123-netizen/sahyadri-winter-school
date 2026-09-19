@@ -62,7 +62,6 @@ export default function SpeakersSection() {
   ]
 
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
-  const [isPaused, setIsPaused] = useState(false)
 
   // Duplicate speakers to ensure smooth infinite loop
   const marqueeSpeakers = [...speakers, ...speakers, ...speakers, ...speakers]
@@ -114,22 +113,16 @@ export default function SpeakersSection() {
       {/* ========================================================= */}
       {/* CONTINUOUS AUTO-SCROLLING MARQUEE TRACK */}
       {/* ========================================================= */}
-      <div 
-        className="relative w-full overflow-hidden py-2"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setTimeout(() => setIsPaused(false), 2000)}
-      >
+      <div className="relative w-full overflow-hidden py-2">
         {/* Left Edge Soft Fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
         {/* Right Edge Soft Fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-24 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
-        {/* Continuous Horizontal Marquee Track */}
+        {/* Continuous Horizontal Marquee Track (Smooth hardware-accelerated scroll on both mobile & desktop) */}
         <div 
-          className={`flex flex-row flex-nowrap w-max animate-continuous-scroll ${isPaused ? "paused" : ""} gap-3.5 sm:gap-4.5 px-3`}
+          className="flex flex-row flex-nowrap w-max animate-continuous-scroll gap-3 sm:gap-4.5 px-3"
           style={{
             display: "flex",
             flexDirection: "row",
@@ -141,7 +134,7 @@ export default function SpeakersSection() {
             <button
               key={`${speaker.id}-${idx}`}
               onClick={() => setSelectedSpeaker(speaker)}
-              className="group w-[185px] sm:w-[210px] md:w-[225px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
+              className="group w-[175px] sm:w-[210px] md:w-[225px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
               style={{ flexShrink: 0 }}
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
             >
