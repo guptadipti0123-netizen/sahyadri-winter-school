@@ -117,6 +117,44 @@ export default function SpeakersSection() {
     }, 4000)
   }
 
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeftPos, setScrollLeftPos] = useState(0)
+  const hasDraggedRef = useRef(false)
+
+  // Mouse Drag Handlers for Desktop
+  const handleMouseDown = (e) => {
+    setIsDragging(true)
+    hasDraggedRef.current = false
+    handleUserInteraction()
+    if (!scrollRef.current) return
+    setStartX(e.pageX - scrollRef.current.offsetLeft)
+    setScrollLeftPos(scrollRef.current.scrollLeft)
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !scrollRef.current) return
+    e.preventDefault()
+    const x = e.pageX - scrollRef.current.offsetLeft
+    const walk = (x - startX) * 1.5
+    if (Math.abs(walk) > 6) {
+      hasDraggedRef.current = true
+    }
+    scrollRef.current.scrollLeft = scrollLeftPos - walk
+  }
+
+  const handleMouseUpOrLeave = () => {
+    if (isDragging) {
+      setIsDragging(false)
+      handleUserInteraction()
+    }
+  }
+
+  const handleCardClick = (speaker) => {
+    if (hasDraggedRef.current) return
+    setSelectedSpeaker(speaker)
+  }
+
   const scrollManual = (direction) => {
     handleUserInteraction()
     if (!scrollRef.current) return
@@ -203,13 +241,14 @@ export default function SpeakersSection() {
       </div>
 
       {/* ========================================================= */}
-      {/* AUTOMATIC CARD-BY-CARD SCROLLING TRACK */}
+      {/* AUTOMATIC & MANUAL CARD-BY-CARD SCROLLING TRACK */}
       {/* ========================================================= */}
       <div 
         className="relative w-full overflow-hidden py-2"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleUserInteraction}
+        onTouchMove={handleUserInteraction}
       >
         {/* Left Edge Soft Fade */}
         <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
@@ -217,11 +256,17 @@ export default function SpeakersSection() {
         {/* Right Edge Soft Fade */}
         <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#f5efe2] via-[#f5efe2]/80 to-transparent z-20 pointer-events-none" />
 
-        {/* Scrollable Track - Moves automatically card by card & supports touch swiping */}
+        {/* Scrollable Track - Auto slides card by card, supports swipe & mouse drag */}
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex overflow-x-auto gap-3.5 sm:gap-4.5 px-4 sm:px-8 py-2 scroll-smooth no-scrollbar"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          className={`flex overflow-x-auto gap-3.5 sm:gap-4.5 px-4 sm:px-8 py-2 no-scrollbar select-none ${
+            isDragging ? "cursor-grabbing scroll-auto" : "cursor-grab scroll-smooth"
+          }`}
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
@@ -232,7 +277,7 @@ export default function SpeakersSection() {
             <button
               key={`${speaker.id}-${idx}`}
               data-speaker-card="true"
-              onClick={() => setSelectedSpeaker(speaker)}
+              onClick={() => handleCardClick(speaker)}
               className="group w-[185px] sm:w-[215px] md:w-[235px] shrink-0 bg-[#fdfbf7] hover:bg-[#faf6ee] rounded-2xl p-2.5 sm:p-3.5 border border-[#dccdb2] hover:border-[#3a8c7e]/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3a8c7e] hover:-translate-y-1 select-none"
               style={{ flexShrink: 0 }}
               aria-label={`View bio for ${speaker.name}, ${speaker.title}`}
